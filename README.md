@@ -29,6 +29,7 @@ A repo for the electrical subteam 2024-2025
 **How to upload your work to git:**
 1. Navigate to directory containing repo.
 2. ```git add -A``` (adds all files to commit)
+    If you only want to add certain files to your commit, run ```git add filename``` instead
 3. ```git commit -am "Label your commit withing these quotes"``` (creates a commit)
 4. ```git push``` (pushes your commit to github)
 
