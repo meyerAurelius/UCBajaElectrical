@@ -19,7 +19,7 @@ A repo for the electrical subteam 2024-2025
 
 **Installation: Windows**
 
-**How to download the current repo (sync with the code on your computer):**
+**How to sync local code with code on github:**
 
 1.```git pull```
 
