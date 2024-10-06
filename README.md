@@ -6,7 +6,7 @@ A repo for the electrical subteam 2024-2025
 **Installation: Debian/Ubuntu**
 1. Create a Github account
 2. ```sudo apt update && sudo apt install git ssh``` (ensures git and ssh are installed)
-3. ```ssh-keygen -t ed25519 -C "your_email@example.com"``` (replace with your credentials)
+3. ```ssh-keygen -t ed25519 -C "your_email@example.com"``` (replace with your credentials used to create github account)
 4. ```cat .ssh/id_ed25519.pub``` (copy this output)
 5. Paste the output in step 4 into the "Key" section of this form: https://github.com/settings/ssh/new
 6. Click "Add SSH Key" (fill in the title with bajaSshKey), this should succeed without errors
