@@ -3,8 +3,9 @@ A repo for the electrical subteam 2024-2025
 
 **How to use this repo:**
 
-In order to use github for its intended use (code versioning while colaborating), some setup needs to be done.
-
+**Installation: Debian/Ubuntu**
+1. ``sudo apt update && sudo apt install git ssh
+2. 
 
 How to upload your work to git:
 1. Navigate to directory containing repo.
