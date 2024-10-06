@@ -19,9 +19,12 @@ A repo for the electrical subteam 2024-2025
 
 **Installation: Windows**
 
+
+
 **How to sync local code with code on github:**
 
 1.```git pull```
+
 
 **How to upload your work to git:**
 1. Navigate to directory containing repo.
