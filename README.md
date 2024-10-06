@@ -4,7 +4,7 @@ A repo for the electrical subteam 2024-2025
 **How to use this repo:**
 
 **Installation: Debian/Ubuntu**
-1. ``sudo apt update && sudo apt install git ssh
+1. ```sudo apt update && sudo apt install git ssh``
 2. 
 
 How to upload your work to git:
