@@ -9,6 +9,6 @@ In order to use github for its intended use (code versioning while colaborating)
 How to upload your work to git:
 1. Navigate to directory containing repo.
 2. ```git add -A``` (adds all files to commit)
-3. ```git commit``` (creates a commit)
+3. ```git commit -am "Label your commit withing these quotes"``` (creates a commit)
 4. ```git push``` (pushes your commit to github)
 
