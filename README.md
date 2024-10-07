@@ -18,7 +18,19 @@ A repo for the electrical subteam 2024-2025
 12. Enjoy!
 
 **Installation: Windows**
-
+1. Download and install the 64 bit standalone version of git bash (https://git-scm.com/downloads/win)
+2. Open git bash cli
+3. ```ssh-keygen -t ed25519 -C "your_email@example.com"```
+4. ```cat .ssh/id_ed25519.pub```
+5. Paste the output in step 4 into the "Key" section of this form: https://github.com/settings/ssh/new
+6. Click "Add SSH Key" (fill in the title with bajaSshKey), this should succeed without errors
+7. Type in git bash cli: ```eval "$(ssh-agent -s)"``` (ensures ssh-add is running)
+7. ```ssh-add .ssh/id_ed25519``` (should return without errors)
+8. Check the connection to github with ```ssh -T git@github.com``` (you should see your username in the output)
+9. Change to a directory where you want the baja code stored
+10. ```git clone https://github.com/SunStone7-Dragonnacho/UCBajaElectrical.git``` (clones the repo)
+11. ```git remote set-url origin git@github.com:SunStone7-Dragonnacho/UCBajaElectrical.git``` (sets to origin to our repo for when code is pushed).
+12. Start working on your code!
 
 
 **How to sync local code with code on github:**
