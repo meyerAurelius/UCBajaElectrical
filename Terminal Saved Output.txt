@@ -1,0 +1,135 @@
+ashazali@ashazs-mbp Newest Car 2025 % ls
+2024_Baja_SAE_Design_Review_Briefing_Template.pptx	G - Ergonomics
+2024_Baja_SAE_Redesign_Comparison_Template.pptx		L - Logistics
+B - Business						M - Master Assembly
+BAJA_RULES_2025_Rev_A_2024-08-06.pdf			MS - Machine Shop
+Baja Calender 2024.docx					N - Manufacturing
+Baja Calender 2025.docx					O - Online Document
+Baja Media Account.txt					P - Powertrain
+Baja Photo Upload.docx					S - Steering
+C - Chassis						Test_Ackermann.SLDASM
+E - Electrical						U - Suspension
+F - Final Drive						V - Photos and Videos - Baja Photo Upload.docx
+File Naming System.html					W - Software
+ashazali@ashazs-mbp Newest Car 2025 % cd E\ -\ Electrical 
+ashazali@ashazs-mbp E - Electrical % ls
+1. DAQ 2.0			2025 Plan - TODO		DAQ 2.0				Tabs
+2. Half Shaft Strain Guage	3. Digital Dash			DEWESoft Drivers and Info	untitled folder
+ashazali@ashazs-mbp E - Electrical % ls
+1. DAQ 2.0			2025 Plan - TODO		DAQ 2.0				Tabs
+2. Half Shaft Strain Guage	3. Digital Dash			DEWESoft Drivers and Info
+ashazali@ashazs-mbp E - Electrical % mkdir bajaGitRepo
+ashazali@ashazs-mbp E - Electrical % cd bajaGitRepo 
+ashazali@ashazs-mbp bajaGitRepo % ls
+ashazali@ashazs-mbp bajaGitRepo % git clone https://github.com/SunStone7-Dragonnacho/UCBajaElectrical.git
+Cloning into 'UCBajaElectrical'...
+remote: Enumerating objects: 66, done.
+remote: Counting objects: 100% (66/66), done.
+remote: Compressing objects: 100% (38/38), done.
+remote: Total 66 (delta 18), reused 52 (delta 10), pack-reused 0 (from 0)
+Receiving objects: 100% (66/66), 17.60 KiB | 5.87 MiB/s, done.
+Resolving deltas: 100% (18/18), done.
+ashazali@ashazs-mbp bajaGitRepo % ls
+UCBajaElectrical
+ashazali@ashazs-mbp bajaGitRepo % cd UCBajaElectrical 
+ashazali@ashazs-mbp UCBajaElectrical % ls
+README.md	dashboard	den.txt		worddoc.docx
+ashazali@ashazs-mbp UCBajaElectrical % cd ..
+ashazali@ashazs-mbp bajaGitRepo % ls
+UCBajaElectrical
+ashazali@ashazs-mbp bajaGitRepo % git remote set-url origin git@github.com:SunStone7-Dragonnacho/UCBajaElectrical.git
+fatal: not a git repository (or any of the parent directories): .git
+ashazali@ashazs-mbp bajaGitRepo % cd UCBajaElectrical 
+ashazali@ashazs-mbp UCBajaElectrical % git remote set-url origin git@github.com:SunStone7-Dragonnacho/UCBajaElectrical.git
+ashazali@ashazs-mbp UCBajaElectrical % clear
+
+ashazali@ashazs-mbp UCBajaElectrical % nano ash.txt
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  UW PICO 5.09                                                   File: ash.txt                                                    Modified  
+
+ash's first time 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                          [ Unknown Command: ^S ]                                                           
+^G Get Help            ^O WriteOut            ^R Read File           ^Y Prev Pg             ^K Cut Text            ^C Cur Pos             
+^X Exit                ^J Justify             ^W Where is            ^V Next Pg             ^U UnCut Text          ^T To Spell            
