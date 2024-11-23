@@ -55,7 +55,7 @@ void loop() {
       dataString += gps.date.year();
       dataString += ", ";
       
-      dataString += gps.time.hour();
+      dataString += gps.time.hour() - 7;
       dataString += ":";
       dataString += gps.time.minute();
       dataString += ":";
@@ -88,8 +88,3 @@ void loop() {
     }
   }
 }
-
-
-
-
-
