@@ -1,4 +1,4 @@
-#include <TinyGPS++.h>
+#include <TinyGPSPlus.h>
 #include <SoftwareSerial.h>
 #include <SD.h>
 #include <SPI.h>
@@ -8,7 +8,7 @@ TinyGPSPlus gps;
 
 // Define RX and TX pins for the SoftwareSerial
 SoftwareSerial gpsSerial(3, 4); // RX, TX
-
+SoftwareSerial bridge(6, 7);
 // Define chip select pin for the SD card module
 const int chipSelect = 10;
 
@@ -72,6 +72,8 @@ void loop() {
 
       // Print data to Serial Monitor
       Serial.println(dataString);
+
+      Serial.write("Test string");
 
       // Save data to SD card
       File dataFile = SD.open("gpslog.txt", FILE_WRITE);

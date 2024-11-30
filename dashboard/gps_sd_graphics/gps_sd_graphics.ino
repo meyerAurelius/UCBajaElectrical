@@ -10,6 +10,10 @@
 
 **********************************************************************************/
 
+
+
+
+// DEPRICATE THIS CODE
 #include <LCDWIKI_GUI.h> //Core graphics library
 #include <LCDWIKI_KBV.h> //Hardware-specific library
 #include <TinyGPS++.h>

@@ -326,31 +326,45 @@ void loop()
 {
   i++;
 
-  if (i > 99){
+  if (i > 99){ // resets the development lap counter
     i = 1;
   }
 
-  current_lap = round(i/5);
+  current_lap = round(i/5); // five i to a lap
 
-  bool fuel_low_state = check_if_fuel_low();
+  bool fuel_low_state = check_if_fuel_low(); // check to see if the fuel low, in the future this may be implemented mechanically
+  bool fuel_low_drawn = false; //
+
+  if (mylcd.Read_Pixel(1, 1) == 63488){
+    Serial.println("Red");
+  };
   
-  if(fuel_low_state){
+  Serial.println(mylcd.Read_Pixel(1, 1));
+
+  if(fuel_low_state && fuel_low_drawn == false){
     draw_low_fuel(); 
     fuel_low_chg_flag = true; 
-  }
-  
-  if(fuel_low_state == false || fuel_low_chg_flag == true){
-    draw_safe_background();
-    fuel_low_chg_flag = true;
+    fuel_low_drawn = true;
     
+    draw_spedometer_laps(i, current_lap, fuel_low_state);
   }
 
+  if(fuel_low_state == false && fuel_low_chg_flag == true){
+    draw_safe_background();
+    fuel_low_chg_flag = false;
+    fuel_low_drawn = false;
 
-  
+    draw_spedometer_laps(i, current_lap, fuel_low_state);
+  }
+
+  else{
+    draw_spedometer_laps(i, current_lap, fuel_low_state);
+  }
   
   draw_spedometer_laps(i, current_lap, fuel_low_state);
- 
 
-  delay(250);
+  delay(120);
 
 }
+// current behaviour 
+// at 80 laps low fuel displays, but draws each time, we need to fix this
