@@ -1,6 +1,15 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "driver/i2c.h"
 #include "esp_log.h"
+#include "esp_log.h"
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+#include "freertos/queue.h"
+#include "freertos/semphr.h"
+#include "esp_err.h"
+
+#include "driver/twai.h"
 
 #define I2C_MASTER_SCL_IO           15     // SCL pin
 #define I2C_MASTER_SDA_IO           13     // SDA pin
@@ -13,6 +22,8 @@
 #define MPU6050_ACCEL_CONFIG        0x1C
 #define ACCEL_RANGE_8G              0x10   // AFS_SEL=2
 #define ACCEL_SCALE_FACTOR          4096.0f
+
+
 
 static const char *TAG = "MPU6050";
 
@@ -59,7 +70,7 @@ void app_main(void) {
     i2c_scanner();
 
     // Wake up MPU6050
-    ESP_ERROR_CHECK(mpu6050_write_byte(MPU6050_PWR_MGMT_1, 0x10));
+    ESP_ERROR_CHECK(mpu6050_write_byte(MPU6050_PWR_MGMT_1, 0x10));zzaa
     vTaskDelay(pdMS_TO_TICKS(100));
 
 
