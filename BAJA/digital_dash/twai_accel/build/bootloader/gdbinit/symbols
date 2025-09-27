@@ -17,4 +17,4 @@ set confirm off
 set confirm on
 
 # Load application symbols
-file C:/Espressif/frameworks/esp-idf-v5.5.1/BAJA/digital_dash/twai_accel/build/bootloader/bootloader.elf
+file C:/UCBajaElectrical/BAJA/digital_dash/twai_accel/build/bootloader/bootloader.elf

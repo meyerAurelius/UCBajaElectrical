@@ -1,2 +1,2 @@
-source C:/Espressif/frameworks/esp-idf-v5.5.1/BAJA/digital_dash/twai_accel/build/bootloader/gdbinit/symbols
-source C:/Espressif/frameworks/esp-idf-v5.5.1/BAJA/digital_dash/twai_accel/build/bootloader/gdbinit/connect
+source C:/UCBajaElectrical/BAJA/digital_dash/twai_accel/build/bootloader/gdbinit/symbols
+source C:/UCBajaElectrical/BAJA/digital_dash/twai_accel/build/bootloader/gdbinit/connect

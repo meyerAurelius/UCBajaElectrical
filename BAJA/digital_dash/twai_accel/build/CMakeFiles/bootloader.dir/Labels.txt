@@ -1,13 +1,13 @@
 # Target labels
  bootloader
 # Source files and their labels
-C:/Espressif/frameworks/esp-idf-v5.5.1/BAJA/digital_dash/twai_accel/build/CMakeFiles/bootloader
-C:/Espressif/frameworks/esp-idf-v5.5.1/BAJA/digital_dash/twai_accel/build/CMakeFiles/bootloader.rule
-C:/Espressif/frameworks/esp-idf-v5.5.1/BAJA/digital_dash/twai_accel/build/CMakeFiles/bootloader-complete.rule
-C:/Espressif/frameworks/esp-idf-v5.5.1/BAJA/digital_dash/twai_accel/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
-C:/Espressif/frameworks/esp-idf-v5.5.1/BAJA/digital_dash/twai_accel/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
-C:/Espressif/frameworks/esp-idf-v5.5.1/BAJA/digital_dash/twai_accel/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
-C:/Espressif/frameworks/esp-idf-v5.5.1/BAJA/digital_dash/twai_accel/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
-C:/Espressif/frameworks/esp-idf-v5.5.1/BAJA/digital_dash/twai_accel/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
-C:/Espressif/frameworks/esp-idf-v5.5.1/BAJA/digital_dash/twai_accel/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
-C:/Espressif/frameworks/esp-idf-v5.5.1/BAJA/digital_dash/twai_accel/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule
+C:/UCBajaElectrical/BAJA/digital_dash/twai_accel/build/CMakeFiles/bootloader
+C:/UCBajaElectrical/BAJA/digital_dash/twai_accel/build/CMakeFiles/bootloader.rule
+C:/UCBajaElectrical/BAJA/digital_dash/twai_accel/build/CMakeFiles/bootloader-complete.rule
+C:/UCBajaElectrical/BAJA/digital_dash/twai_accel/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+C:/UCBajaElectrical/BAJA/digital_dash/twai_accel/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+C:/UCBajaElectrical/BAJA/digital_dash/twai_accel/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+C:/UCBajaElectrical/BAJA/digital_dash/twai_accel/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+C:/UCBajaElectrical/BAJA/digital_dash/twai_accel/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+C:/UCBajaElectrical/BAJA/digital_dash/twai_accel/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+C:/UCBajaElectrical/BAJA/digital_dash/twai_accel/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule

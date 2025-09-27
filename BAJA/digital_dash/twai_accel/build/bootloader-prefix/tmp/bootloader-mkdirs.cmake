@@ -10,18 +10,18 @@ if(NOT EXISTS "C:/Espressif/frameworks/esp-idf-v5.5.1/components/bootloader/subp
   file(MAKE_DIRECTORY "C:/Espressif/frameworks/esp-idf-v5.5.1/components/bootloader/subproject")
 endif()
 file(MAKE_DIRECTORY
-  "C:/Espressif/frameworks/esp-idf-v5.5.1/BAJA/digital_dash/twai_accel/build/bootloader"
-  "C:/Espressif/frameworks/esp-idf-v5.5.1/BAJA/digital_dash/twai_accel/build/bootloader-prefix"
-  "C:/Espressif/frameworks/esp-idf-v5.5.1/BAJA/digital_dash/twai_accel/build/bootloader-prefix/tmp"
-  "C:/Espressif/frameworks/esp-idf-v5.5.1/BAJA/digital_dash/twai_accel/build/bootloader-prefix/src/bootloader-stamp"
-  "C:/Espressif/frameworks/esp-idf-v5.5.1/BAJA/digital_dash/twai_accel/build/bootloader-prefix/src"
-  "C:/Espressif/frameworks/esp-idf-v5.5.1/BAJA/digital_dash/twai_accel/build/bootloader-prefix/src/bootloader-stamp"
+  "C:/UCBajaElectrical/BAJA/digital_dash/twai_accel/build/bootloader"
+  "C:/UCBajaElectrical/BAJA/digital_dash/twai_accel/build/bootloader-prefix"
+  "C:/UCBajaElectrical/BAJA/digital_dash/twai_accel/build/bootloader-prefix/tmp"
+  "C:/UCBajaElectrical/BAJA/digital_dash/twai_accel/build/bootloader-prefix/src/bootloader-stamp"
+  "C:/UCBajaElectrical/BAJA/digital_dash/twai_accel/build/bootloader-prefix/src"
+  "C:/UCBajaElectrical/BAJA/digital_dash/twai_accel/build/bootloader-prefix/src/bootloader-stamp"
 )
 
 set(configSubDirs )
 foreach(subDir IN LISTS configSubDirs)
-    file(MAKE_DIRECTORY "C:/Espressif/frameworks/esp-idf-v5.5.1/BAJA/digital_dash/twai_accel/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
+    file(MAKE_DIRECTORY "C:/UCBajaElectrical/BAJA/digital_dash/twai_accel/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
 endforeach()
 if(cfgdir)
-  file(MAKE_DIRECTORY "C:/Espressif/frameworks/esp-idf-v5.5.1/BAJA/digital_dash/twai_accel/build/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
+  file(MAKE_DIRECTORY "C:/UCBajaElectrical/BAJA/digital_dash/twai_accel/build/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
 endif()

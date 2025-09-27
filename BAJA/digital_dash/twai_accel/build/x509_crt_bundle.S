@@ -1,4 +1,4 @@
-/* * Data converted from C:/Espressif/frameworks/esp-idf-v5.5.1/BAJA/digital_dash/twai_accel/build/esp-idf/mbedtls/x509_crt_bundle
+/* * Data converted from C:/UCBajaElectrical/BAJA/digital_dash/twai_accel/build/esp-idf/mbedtls/x509_crt_bundle
  */
 .data
 #if !defined (__APPLE__) && !defined (__linux__)

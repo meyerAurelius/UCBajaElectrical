@@ -13,8 +13,8 @@ end
 
 # Load bootloader symbols
 set confirm off
-    add-symbol-file C:/Espressif/frameworks/esp-idf-v5.5.1/BAJA/digital_dash/twai_accel/build/bootloader/bootloader.elf
+    add-symbol-file C:/UCBajaElectrical/BAJA/digital_dash/twai_accel/build/bootloader/bootloader.elf
 set confirm on
 
 # Load application symbols
-file C:/Espressif/frameworks/esp-idf-v5.5.1/BAJA/digital_dash/twai_accel/build/twai_accel.elf
+file C:/UCBajaElectrical/BAJA/digital_dash/twai_accel/build/twai_accel.elf
