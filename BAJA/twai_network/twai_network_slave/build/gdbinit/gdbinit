@@ -1,0 +1,2 @@
+source C:/Espressif/frameworks/esp-idf-v5.5.1/examples/peripherals/twai/twai_network/twai_network_slave/build/gdbinit/symbols
+source C:/Espressif/frameworks/esp-idf-v5.5.1/examples/peripherals/twai/twai_network/twai_network_slave/build/gdbinit/connect
