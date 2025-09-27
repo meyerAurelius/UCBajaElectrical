@@ -1,2 +1,0 @@
-Command: ninja all
-[1/4] C:\Windows\system32\cmd.exe /C "cd /D C:\Users\danaz\esp_idf_projects\mpu6050_test\build\esp-idf\esptool_py && C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:/Espressif/frameworks/esp-idf-v5.5.1/components/partition_table/check_sizes.py --offset 0x8000 partition --type app C:/Users/danaz/esp_idf_projects/mpu6050_test/build/partition_table/partition-table.bin C:/Users/danaz/esp_idf_projects/mpu6050_test/build/mpu6050_test.bin"
