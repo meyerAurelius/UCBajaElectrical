@@ -1,0 +1,226 @@
+Command: C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:\Espressif\frameworks\esp-idf-v5.5.1\tools/idf_monitor.py -p COM6 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 C:\Users\danaz\Desktop\Baja_code_2025-26\UCBajaElectrical\BAJA\twai_network\twai_network_master\build\twai_network_master.elf C:\Users\danaz\Desktop\Baja_code_2025-26\UCBajaElectrical\BAJA\twai_network\twai_network_master\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'C:\Espressif\frameworks\esp-idf-v5.5.1\tools\idf.py' '-p' 'COM6'
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x2b (SPI_FAST_FLASH_BOOT)
+Saved PC:0x403778e2
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x158c
+load:0x403c8700,len:0xd24
+load:0x403cb700,len:0x2f34
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5.1-dirty 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Sep 27 2025 15:46:46[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (32) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (36) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (48) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (70) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (76) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=088fch ( 35068) map[0m
+[0;32mI (93) esp_image: segment 1: paddr=00018924 vaddr=3fc92400 size=028c8h ( 10440) load[0m
+[0;32mI (96) esp_image: segment 2: paddr=0001b1f4 vaddr=40374000 size=04e24h ( 20004) load[0m
+[0;32mI (106) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=161e8h ( 90600) map[0m
+[0;32mI (125) esp_image: segment 4: paddr=00036210 vaddr=40378e24 size=09564h ( 38244) load[0m
+[0;32mI (134) esp_image: segment 5: paddr=0003f77c vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (140) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (140) boot: Disabling RNG early entropy source...[0m
+[0;32mI (152) cpu_start: Multicore app[0m
+[0;32mI (161) cpu_start: Pro cpu start user code[0m
+[0;32mI (161) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (161) app_init: Application information:[0m
+[0;32mI (161) app_init: Project name:     twai_network_master[0m
+[0;32mI (166) app_init: App version:      446ece2[0m
+[0;32mI (170) app_init: Compile time:     Sep 27 2025 15:46:23[0m
+[0;32mI (175) app_init: ELF file SHA256:  b5e2b2a95...[0m
+[0;32mI (179) app_init: ESP-IDF:          v5.5.1-dirty[0m
+[0;32mI (183) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (187) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (191) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (195) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (201) heap_init: At 3FC95538 len 000541D8 (336 KiB): RAM[0m
+[0;32mI (206) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (212) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (217) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (223) spi_flash: detected chip: gd[0m
+[0;32mI (225) spi_flash: flash io: dio[0m
+[0;33mW (228) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (241) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (247) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (254) main_task: Started on CPU0[0m
+[0;32mI (264) main_task: Calling app_main()[0m
+Master Program Started!I (264) TWAI Master: Driver installed
+[0;32mI (264) TWAI Master: Driver started[0m
+[0;32mI (264) TWAI Master: Transmitting ping[0m
+[0;32mI (387274) TWAI Master: Transmitted start command[0m
+[0;32mI (387274) TWAI Master: Received data value 333[0m
+[0;32mI (387324) TWAI Master: Received data value 338[0m
+[0;32mI (387374) TWAI Master: Received data value 343[0m
+[0;32mI (387424) TWAI Master: Received data value 348[0m
+[0;32mI (387474) TWAI Master: Received data value 353[0m
+[0;32mI (387524) TWAI Master: Received data value 358[0m
+[0;32mI (387574) TWAI Master: Received data value 363[0m
+[0;32mI (387624) TWAI Master: Received data value 368[0m
+[0;32mI (387674) TWAI Master: Received data value 373[0m
+[0;32mI (387724) TWAI Master: Received data value 378[0m
+[0;32mI (387774) TWAI Master: Received data value 383[0m
+[0;32mI (387824) TWAI Master: Received data value 388[0m
+[0;32mI (387874) TWAI Master: Received data value 393[0m
+[0;32mI (387924) TWAI Master: Received data value 398[0m
+[0;32mI (387974) TWAI Master: Received data value 403[0m
+[0;32mI (388024) TWAI Master: Received data value 408[0m
+[0;32mI (388074) TWAI Master: Received data value 413[0m
+[0;32mI (388124) TWAI Master: Received data value 418[0m
+[0;32mI (388174) TWAI Master: Received data value 423[0m
+[0;32mI (388224) TWAI Master: Received data value 428[0m
+[0;32mI (388274) TWAI Master: Received data value 433[0m
+[0;32mI (388324) TWAI Master: Received data value 438[0m
+[0;32mI (388374) TWAI Master: Received data value 443[0m
+[0;32mI (388424) TWAI Master: Received data value 448[0m
+[0;32mI (388474) TWAI Master: Received data value 453[0m
+[0;32mI (388524) TWAI Master: Received data value 458[0m
+[0;32mI (388574) TWAI Master: Received data value 463[0m
+[0;32mI (388624) TWAI Master: Received data value 468[0m
+[0;32mI (388674) TWAI Master: Received data value 473[0m
+[0;32mI (388724) TWAI Master: Received data value 478[0m
+[0;32mI (388774) TWAI Master: Received data value 483[0m
+[0;32mI (388824) TWAI Master: Received data value 488[0m
+[0;32mI (388874) TWAI Master: Received data value 493[0m
+[0;32mI (388924) TWAI Master: Received data value 498[0m
+[0;32mI (388974) TWAI Master: Received data value 503[0m
+[0;32mI (389024) TWAI Master: Received data value 508[0m
+[0;32mI (389074) TWAI Master: Received data value 513[0m
+[0;32mI (389124) TWAI Master: Received data value 518[0m
+[0;32mI (389174) TWAI Master: Received data value 523[0m
+[0;32mI (389224) TWAI Master: Received data value 528[0m
+[0;32mI (389274) TWAI Master: Received data value 533[0m
+[0;32mI (389324) TWAI Master: Received data value 538[0m
+[0;32mI (389374) TWAI Master: Received data value 543[0m
+[0;32mI (389424) TWAI Master: Received data value 548[0m
+[0;32mI (389474) TWAI Master: Received data value 553[0m
+[0;32mI (389524) TWAI Master: Received data value 558[0m
+[0;32mI (389574) TWAI Master: Received data value 563[0m
+[0;32mI (389624) TWAI Master: Received data value 568[0m
+[0;32mI (389674) TWAI Master: Received data value 573[0m
+[0;32mI (389724) TWAI Master: Received data value 578[0m
+[0;32mI (389724) TWAI Master: Transmitted stop command[0m
+[0;32mI (389774) TWAI Master: Driver stopped[0m
+[0;32mI (390774) TWAI Master: Driver started[0m
+[0;32mI (390774) TWAI Master: Transmitting ping[0m
+[0;32mI (391274) TWAI Master: Transmitted start command[0m
+[0;32mI (391274) TWAI Master: Received data value 733[0m
+[0;32mI (391324) TWAI Master: Received data value 738[0m
+[0;32mI (391374) TWAI Master: Received data value 743[0m
+[0;32mI (391424) TWAI Master: Received data value 748[0m
+[0;32mI (391474) TWAI Master: Received data value 753[0m
+[0;32mI (391524) TWAI Master: Received data value 758[0m
+[0;32mI (391574) TWAI Master: Received data value 763[0m
+[0;32mI (391624) TWAI Master: Received data value 768[0m
+[0;32mI (391674) TWAI Master: Received data value 773[0m
+[0;32mI (391724) TWAI Master: Received data value 778[0m
+[0;32mI (391774) TWAI Master: Received data value 783[0m
+[0;32mI (391824) TWAI Master: Received data value 788[0m
+[0;32mI (391874) TWAI Master: Received data value 793[0m
+[0;32mI (391924) TWAI Master: Received data value 798[0m
+[0;32mI (391974) TWAI Master: Received data value 803[0m
+[0;32mI (392024) TWAI Master: Received data value 808[0m
+[0;32mI (392074) TWAI Master: Received data value 813[0m
+[0;32mI (392124) TWAI Master: Received data value 818[0m
+[0;32mI (392174) TWAI Master: Received data value 823[0m
+[0;32mI (392224) TWAI Master: Received data value 828[0m
+[0;32mI (392274) TWAI Master: Received data value 833[0m
+[0;32mI (392324) TWAI Master: Received data value 838[0m
+[0;32mI (392374) TWAI Master: Received data value 843[0m
+[0;32mI (392424) TWAI Master: Received data value 848[0m
+[0;32mI (392474) TWAI Master: Received data value 853[0m
+[0;32mI (392524) TWAI Master: Received data value 858[0m
+[0;32mI (392574) TWAI Master: Received data value 863[0m
+[0;32mI (392624) TWAI Master: Received data value 868[0m
+[0;32mI (392674) TWAI Master: Received data value 873[0m
+[0;32mI (392724) TWAI Master: Received data value 878[0m
+[0;32mI (392774) TWAI Master: Received data value 883[0m
+[0;32mI (392824) TWAI Master: Received data value 888[0m
+[0;32mI (392874) TWAI Master: Received data value 893[0m
+[0;32mI (392924) TWAI Master: Received data value 898[0m
+[0;32mI (392974) TWAI Master: Received data value 903[0m
+[0;32mI (393024) TWAI Master: Received data value 908[0m
+[0;32mI (393074) TWAI Master: Received data value 913[0m
+[0;32mI (393124) TWAI Master: Received data value 918[0m
+[0;32mI (393174) TWAI Master: Received data value 923[0m
+[0;32mI (393224) TWAI Master: Received data value 928[0m
+[0;32mI (393274) TWAI Master: Received data value 933[0m
+[0;32mI (393324) TWAI Master: Received data value 938[0m
+[0;32mI (393374) TWAI Master: Received data value 943[0m
+[0;32mI (393424) TWAI Master: Received data value 948[0m
+[0;32mI (393474) TWAI Master: Received data value 953[0m
+[0;32mI (393524) TWAI Master: Received data value 958[0m
+[0;32mI (393574) TWAI Master: Received data value 963[0m
+[0;32mI (393624) TWAI Master: Received data value 968[0m
+[0;32mI (393674) TWAI Master: Received data value 973[0m
+[0;32mI (393724) TWAI Master: Received data value 978[0m
+[0;32mI (393724) TWAI Master: Transmitted stop command[0m
+[0;32mI (393774) TWAI Master: Driver stopped[0m
+[0;32mI (394774) TWAI Master: Driver started[0m
+[0;32mI (394774) TWAI Master: Transmitting ping[0m
+[0;32mI (395274) TWAI Master: Transmitted start command[0m
+[0;32mI (395274) TWAI Master: Received data value 1133[0m
+[0;32mI (395324) TWAI Master: Received data value 1138[0m
+[0;32mI (395374) TWAI Master: Received data value 1143[0m
+[0;32mI (395424) TWAI Master: Received data value 1148[0m
+[0;32mI (395474) TWAI Master: Received data value 1153[0m
+[0;32mI (395524) TWAI Master: Received data value 1158[0m
+[0;32mI (395574) TWAI Master: Received data value 1163[0m
+[0;32mI (395624) TWAI Master: Received data value 1168[0m
+[0;32mI (395674) TWAI Master: Received data value 1173[0m
+[0;32mI (395724) TWAI Master: Received data value 1178[0m
+[0;32mI (395774) TWAI Master: Received data value 1183[0m
+[0;32mI (395824) TWAI Master: Received data value 1188[0m
+[0;32mI (395874) TWAI Master: Received data value 1193[0m
+[0;32mI (395924) TWAI Master: Received data value 1198[0m
+[0;32mI (395974) TWAI Master: Received data value 1203[0m
+[0;32mI (396024) TWAI Master: Received data value 1208[0m
+[0;32mI (396074) TWAI Master: Received data value 1213[0m
+[0;32mI (396124) TWAI Master: Received data value 1218[0m
+[0;32mI (396174) TWAI Master: Received data value 1223[0m
+[0;32mI (396224) TWAI Master: Received data value 1228[0m
+[0;32mI (396274) TWAI Master: Received data value 1233[0m
+[0;32mI (396324) TWAI Master: Received data value 1238[0m
+[0;32mI (396374) TWAI Master: Received data value 1243[0m
+[0;32mI (396424) TWAI Master: Received data value 1248[0m
+[0;32mI (396474) TWAI Master: Received data value 1253[0m
+[0;32mI (396524) TWAI Master: Received data value 1258[0m
+[0;32mI (396574) TWAI Master: Received data value 1263[0m
+[0;32mI (396624) TWAI Master: Received data value 1268[0m
+[0;32mI (396674) TWAI Master: Received data value 1273[0m
+[0;32mI (396724) TWAI Master: Received data value 1278[0m
+[0;32mI (396774) TWAI Master: Received data value 1283[0m
+[0;32mI (396824) TWAI Master: Received data value 1288[0m
+[0;32mI (396874) TWAI Master: Received data value 1293[0m
+[0;32mI (396924) TWAI Master: Received data value 1298[0m
+[0;32mI (396974) TWAI Master: Received data value 1303[0m
+[0;32mI (397024) TWAI Master: Received data value 1308[0m
+[0;32mI (397074) TWAI Master: Received data value 1313[0m
+[0;32mI (397124) TWAI Master: Received data value 1318[0m
+[0;32mI (397174) TWAI Master: Received data value 1323[0m
+[0;32mI (397224) TWAI Master: Received data value 1328[0m
+[0;32mI (397274) TWAI Master: Received data value 1333[0m
+[0;32mI (397324) TWAI Master: Received data value 1338[0m
+[0;32mI (397374) TWAI Master: Received data value 1343[0m
+[0;32mI (397424) TWAI Master: Received data value 1348[0m
+[0;32mI (397474) TWAI Master: Received data value 1353[0m
+[0;32mI (397524) TWAI Master: Received data value 1358[0m
+[0;32mI (397574) TWAI Master: Received data value 1363[0m
+[0;32mI (397624) TWAI Master: Received data value 1368[0m
+[0;32mI (397674) TWAI Master: Received data value 1373[0m
+[0;32mI (397724) TWAI Master: Received data value 1378[0m
+[0;32mI (397724) TWAI Master: Transmitted stop command[0m
+[0;32mI (397774) TWAI Master: Driver stopped[0m
+[0;32mI (398774) TWAI Master: Driver uninstalled[0m
+[0;32mI (398774) main_task: Returned from app_main()[0m
