@@ -1,0 +1,78 @@
+Command: C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:\Espressif\frameworks\esp-idf-v5.5.1\tools/idf_monitor.py -p COM6 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 C:\Users\danaz\esp_idf_projects\mpu6050_test\build\mpu6050_test.elf C:\Users\danaz\esp_idf_projects\mpu6050_test\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'C:\Espressif\frameworks\esp-idf-v5.5.1\tools\idf.py' '-p' 'COM6'
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x28 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40377dae
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x158c
+load:0x403c8700,len:0xd24
+load:0x403cb700,len:0x2f34
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Sep 17 2025 19:37:25[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (31) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (35) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (62) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (76) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0b634h ( 46644) map[0m
+[0;32mI (94) esp_image: segment 1: paddr=0001b65c vaddr=3fc93900 size=02b08h ( 11016) load[0m
+[0;32mI (97) esp_image: segment 2: paddr=0001e16c vaddr=40374000 size=01each (  7852) load[0m
+[0;32mI (103) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=1a344h (107332) map[0m
+[0;32mI (127) esp_image: segment 4: paddr=0003a36c vaddr=40375eac size=0da40h ( 55872) load[0m
+[0;32mI (140) esp_image: segment 5: paddr=00047db4 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (147) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (147) boot: Disabling RNG early entropy source...[0m
+[0;32mI (158) cpu_start: Multicore app[0m
+[0;32mI (167) cpu_start: Pro cpu start user code[0m
+[0;32mI (167) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (167) app_init: Application information:[0m
+[0;32mI (167) app_init: Project name:     mpu6050_test[0m
+[0;32mI (171) app_init: App version:      1[0m
+[0;32mI (175) app_init: Compile time:     Sep 17 2025 19:35:20[0m
+[0;32mI (180) app_init: ELF file SHA256:  b7dfef7df...[0m
+[0;32mI (184) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (188) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (192) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (196) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (200) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (206) heap_init: At 3FC96CF0 len 00052A20 (330 KiB): RAM[0m
+[0;32mI (211) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (216) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (221) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (228) spi_flash: detected chip: gd[0m
+[0;32mI (230) spi_flash: flash io: dio[0m
+[0;33mW (233) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (245) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (255) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (261) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (268) main_task: Started on CPU0[0m
+[0;32mI (278) main_task: Calling app_main()[0m
+[0;32mI (278) MPU6050: Accel X:0 Y:0 Z:0[0m
+[0;32mI (778) MPU6050: Accel X:0 Y:0 Z:0[0m
+[0;32mI (1278) MPU6050: Accel X:0 Y:0 Z:0[0m
+[0;32mI (1778) MPU6050: Accel X:0 Y:0 Z:0[0m
+[0;32mI (2278) MPU6050: Accel X:0 Y:0 Z:0[0m
+[0;32mI (2778) MPU6050: Accel X:0 Y:0 Z:0[0m
+[0;32mI (3278) MPU6050: Accel X:0 Y:0 Z:0[0m
+[0;32mI (3778) MPU6050: Accel X:0 Y:0 Z:0[0m
+[0;32mI (4278) MPU6050: Accel X:0 Y:0 Z:0[0m
+[0;32mI (4778) MPU6050: Accel X:0 Y:0 Z:0[0m
+[0;32mI (5278) MPU6050: Accel X:0 Y:0 Z:0[0m
+[0;32mI (5778) MPU6050: Accel X:0 Y:0 Z:0[0m
+[0;32mI (6278) MPU6050: Accel X:0 Y:0 Z:0[0m
+[0;32mI (6778) MPU6050: Accel X:0 Y:0 Z:0[0m
+[0;32mI (7278) MPU6050: Accel X:0 Y:0 Z:0[0m
+[0;32mI (7778) MPU6050: Accel X:0 Y:0 Z:0[0m
+[0;32mI (8278) MPU6050: Accel X:0 Y:0 Z:0[0m
+[0;32mI (8778) MPU6050: Accel X:0 Y:0 Z:0[0m
+[0;32mI (9278) MPU6050: Accel X:0 Y:0 Z:0[0m
