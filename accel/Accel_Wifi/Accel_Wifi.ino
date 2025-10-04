@@ -13,13 +13,21 @@
 
 #define SWITCH_PIN 34
 
+const char* WIFI_SSID = "BAJA AP";
+const char* WIFI_PASS = "password123";
+
+const char* SERVER_IP = "192.168.0.104"; // <-- replace with your laptop's LAN IP
+const uint16_t SERVER_PORT = 5055;
+
+WiFiClient client;
+
+uint32_t intervalMs = 200;  // default 1s
+uint32_t lastSend = 0;
+uint32_t counter = 0;
+
 int filenumber = 0;
 File myFile;
 bool isWriting = false;
-
-// --- WiFi credentials ---
-const char* ssid     = "DaddysIphone";
-const char* password = "babygirlgojo";
 
 // --- NTP config ---
 const char* ntpServer = "pool.ntp.org";
@@ -53,6 +61,51 @@ String getHighPrecisionTimestamp() {
   return String(buffer);
 }
 
+void connectWiFi() {
+  if (WiFi.status() == WL_CONNECTED) return;
+
+  Serial.printf("[wifi] Connecting to \"%s\"...\n", WIFI_SSID);
+  WiFi.mode(WIFI_STA);
+  WiFi.begin(WIFI_SSID, WIFI_PASS);
+
+  unsigned long start = millis();
+  while (WiFi.status() != WL_CONNECTED && millis() - start < 15000) {
+    delay(250);
+    Serial.print(".");
+  }
+  Serial.println();
+
+  if (WiFi.status() == WL_CONNECTED) {
+    Serial.print("[wifi] Connected. IP: ");
+    Serial.println(WiFi.localIP());
+    // Optional: sometimes helps in noisy environments
+    // WiFi.setSleep(false);
+  } else {
+    Serial.println("[wifi] Failed to connect.");
+  }
+}
+
+bool connectServer() {
+  if (client.connected()) return true;
+
+  Serial.printf("[tcp] Connecting to %s:%u ...\n", SERVER_IP, SERVER_PORT);
+  if (client.connect(SERVER_IP, SERVER_PORT)) {
+    client.setTimeout(1000);
+    Serial.println("[tcp] Connected to server.");
+    // Say hello
+    client.print("HELLO ESP32\n");
+    return true;
+  }
+  Serial.println("[tcp] Connect failed.");
+  return false;
+}
+
+void sendSample(double accel_x, double accel_y, double accel_z){
+  uint32_t now = millis();
+
+  client.printf("{\"uptime\":%d,\"accel_x\":%f,\"accel_y\":%f,\"accel_z\":%f}\n", now, accel_x, accel_y, accel_z);
+}
+
 void displaySensorDetails() {
   sensor_t accel, mag;
   accelmag.getSensor(&accel, &mag);
@@ -70,34 +123,35 @@ void displaySensorDetails() {
 
 void setup() {
   Serial.begin(115200);
+  delay(200);
   pinMode(SWITCH_PIN, INPUT);
 
-  // --- Connect WiFi & NTP ---
-  WiFi.begin(ssid, password);
-  Serial.print("Connecting to WiFi");
-  unsigned long startAttempt = millis();
-  while (WiFi.status() != WL_CONNECTED && millis() - startAttempt < 15000) {
-    Serial.print(".");
-    delay(500);
-  }
-  Serial.println();
+  connectWiFi();
+  connectServer();
+
 
   if (WiFi.status() == WL_CONNECTED) {
-    Serial.println("WiFi connected.");
+    
     configTime(gmtOffset_sec, daylightOffset_sec, ntpServer);
     struct tm timeinfo;
-    while (!getLocalTime(&timeinfo)) {
-      delay(100);
-      Serial.print(".");
-    }
-    Serial.println("NTP time synced.");
 
-    // record base epoch for monotonic timestamps
-    time(&baseEpoch);
-    startMillis = millis();
-    lastMillisSync = millis();
+    for(int i = 0; i < 5; i++){
+      if(getLocalTime(&timeinfo)){
+        Serial.println("NTP time synced.");
+
+        time(&baseEpoch);
+        startMillis = millis();
+        lastMillisSync = millis();
+        break;
+      }
+      else{
+        Serial.println("NTP sync FAILED!");
+      }
+
+      delay(200);
+    }
   } else {
-    Serial.println("Failed to sync time — continuing without NTP.");
+    Serial.println("Failed to connect to wifi — continuing without NTP.");
     time(&baseEpoch);
     startMillis = millis();
   }
@@ -169,5 +223,17 @@ void loop() {
       Serial.println(dataString);
     }
   }
-}
 
+  
+
+  if (now - lastSend >= intervalMs) {
+    lastSend = now;
+    if (WiFi.status() == WL_CONNECTED){
+    if (client.connected()) {
+      
+        sendSample(aevent.acceleration.x, aevent.acceleration.y, aevent.acceleration.z);
+      
+    }
+    }
+  }
+}
