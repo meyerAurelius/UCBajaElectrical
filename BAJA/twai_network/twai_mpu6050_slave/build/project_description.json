@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "twai_mpu6050_slave",
-    "project_version":    "a7a1f10",
+    "project_version":    "a4eef74-dirty",
     "project_path":       "C:/Users/danaz/Desktop/Baja_code_2025-26/UCBajaElectrical/BAJA/twai_network/twai_mpu6050_slave",
     "idf_path":           "C:/Espressif/frameworks/esp-idf-v5.5.1",
     "build_dir":          "C:/Users/danaz/Desktop/Baja_code_2025-26/UCBajaElectrical/BAJA/twai_network/twai_mpu6050_slave/build",

@@ -70,7 +70,7 @@ void app_main(void) {
     i2c_scanner();
 
     // Wake up MPU6050
-    ESP_ERROR_CHECK(mpu6050_write_byte(MPU6050_PWR_MGMT_1, 0x10));zzaa
+    ESP_ERROR_CHECK(mpu6050_write_byte(MPU6050_PWR_MGMT_1, 0x10));
     vTaskDelay(pdMS_TO_TICKS(100));
 
 
