@@ -1,6 +1,6 @@
 /* Automatically generated file; DO NOT EDIT */
 /* Espressif IoT Development Framework Linker Script */
-/* Generated from: C:\Users\danaz\Desktop\Baja_code_2025-26\twai_mpu6050_dualmaster\build\esp-idf\esp_system\ld\sections.ld.in */
+/* Generated from: C:\Users\danaz\Desktop\Baja_code_2025-26\UCBajaElectrical\BAJA\twai_network\twai_mpu6050_dualmaster\build\esp-idf\esp_system\ld\sections.ld.in */
 
 /*
 

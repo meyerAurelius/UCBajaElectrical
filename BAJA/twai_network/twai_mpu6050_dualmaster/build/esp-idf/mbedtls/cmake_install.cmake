@@ -39,6 +39,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/danaz/Desktop/Baja_code_2025-26/twai_mpu6050_dualmaster/build/esp-idf/mbedtls/mbedtls/cmake_install.cmake")
+  include("C:/Users/danaz/Desktop/Baja_code_2025-26/UCBajaElectrical/BAJA/twai_network/twai_mpu6050_dualmaster/build/esp-idf/mbedtls/mbedtls/cmake_install.cmake")
 endif()
 

@@ -17,4 +17,4 @@ set confirm off
 set confirm on
 
 # Load application symbols
-file C:/Users/danaz/Desktop/Baja_code_2025-26/twai_mpu6050_dualmaster/build/bootloader/bootloader.elf
+file C:/Users/danaz/Desktop/Baja_code_2025-26/UCBajaElectrical/BAJA/twai_network/twai_mpu6050_dualmaster/build/bootloader/bootloader.elf

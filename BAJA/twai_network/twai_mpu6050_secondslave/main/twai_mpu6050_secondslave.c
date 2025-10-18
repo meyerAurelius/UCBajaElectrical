@@ -17,8 +17,8 @@
 #define RX_TASK_PRIO                    8       //Receiving task priority
 #define TX_TASK_PRIO                    9       //Sending task priority
 #define CTRL_TSK_PRIO                   10      //Control task priority
-#define TX_GPIO_NUM                     17
-#define RX_GPIO_NUM                     16
+#define TX_GPIO_NUM                     1
+#define RX_GPIO_NUM                     3
 #define EXAMPLE_TAG                     "TWAI Slave"
 
 #define ID_MASTER_STOP_CMD              0x0A0
@@ -30,8 +30,8 @@
 
 
 /* --------------------- MPU6050 Definitions and static variables ------------------ */
-#define I2C_MASTER_SCL_IO           22     // SCL pin
-#define I2C_MASTER_SDA_IO           21     // SDA pin
+#define I2C_MASTER_SCL_IO           15     // SCL pin
+#define I2C_MASTER_SDA_IO           13     // SDA pin
 #define I2C_MASTER_NUM              I2C_NUM_0
 #define I2C_MASTER_FREQ_HZ          100000
 #define MPU6050_ADDR                0x68   // Change to 0x69 if AD0 is tied high

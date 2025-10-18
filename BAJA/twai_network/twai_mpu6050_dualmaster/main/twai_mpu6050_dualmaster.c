@@ -95,6 +95,11 @@ static SemaphoreHandle_t done_sem;
 
 static void twai_receive_task(void *arg)
 {
+    bool slave1_found = false;
+    bool slave2_found = false;
+
+    TickType_t start_time = xTaskGetTickCount();
+    
     printf("Master Program Started!");
     while (1) {
         
@@ -104,13 +109,33 @@ static void twai_receive_task(void *arg)
         if (action == RX_RECEIVE_PING_RESP) {
             //Listen for ping response from slave
             while (1) {
-                twai_message_t rx_msg;
-                twai_receive(&rx_msg, portMAX_DELAY);
-                if (rx_msg.identifier == ID_SLAVE_PING_RESP) {
+                while (!(slave1_found && slave2_found) &&
+                     (xTaskGetTickCount() - start_time < pdMS_TO_TICKS(60000))){
+
+                    twai_message_t rx_msg;
+
+                    if (twai_receive(&rx_msg, pdMS_TO_TICKS(500)) == ESP_OK){
+                        if (rx_msg.identifier == ID_SLAVE_PING_RESP) {
+                            slave1_found = true;
+                            ESP_LOGI(EXAMPLE_TAG, "Slave 1 connected");
+
+                        } else if (rx_msg.identifier == 0x0C2) {
+                            slave2_found = true;
+                            ESP_LOGI(EXAMPLE_TAG, "Slave 2 connected");
+                        }                                 
+                    }
+                         
+                }
+                if (slave1_found || slave2_found){
                     xSemaphoreGive(stop_ping_sem);
                     xSemaphoreGive(ctrl_task_sem);
-                    break;
+                    ESP_LOGI(EXAMPLE_TAG, "Ping phase complete (S1=%d, S2=%d)",
+                            slave1_found, slave2_found);
+                } else{
+                    ESP_LOGW(EXAMPLE_TAG, "No slaves responded to ping");
                 }
+                
+                break;
             }
         } else if (action == RX_RECEIVE_DATA) {
             //Receive data messages from slave

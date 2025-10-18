@@ -13,8 +13,8 @@ end
 
 # Load bootloader symbols
 set confirm off
-    add-symbol-file C:/Users/danaz/Desktop/Baja_code_2025-26/twai_mpu6050_dualmaster/build/bootloader/bootloader.elf
+    add-symbol-file C:/Users/danaz/Desktop/Baja_code_2025-26/UCBajaElectrical/BAJA/twai_network/twai_mpu6050_dualmaster/build/bootloader/bootloader.elf
 set confirm on
 
 # Load application symbols
-file C:/Users/danaz/Desktop/Baja_code_2025-26/twai_mpu6050_dualmaster/build/twai_mpu6050_dualmaster.elf
+file C:/Users/danaz/Desktop/Baja_code_2025-26/UCBajaElectrical/BAJA/twai_network/twai_mpu6050_dualmaster/build/twai_mpu6050_dualmaster.elf

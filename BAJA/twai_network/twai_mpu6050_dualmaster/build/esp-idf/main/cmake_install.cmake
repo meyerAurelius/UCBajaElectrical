@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/danaz/Desktop/Baja_code_2025-26/twai_mpu6050_dualmaster/main
+# Install script for directory: C:/Users/danaz/Desktop/Baja_code_2025-26/UCBajaElectrical/BAJA/twai_network/twai_mpu6050_dualmaster/main
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
