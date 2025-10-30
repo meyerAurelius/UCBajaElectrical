@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            UCalgary BAJA Remote Dash
+        </title>
+        
+        <script src="jquery-3.7.1.js"></script>
+        <script src="RequestData.js"></script>
+        <link rel="stylesheet" href="remote_dash_style.css">
+    </head>
+    <body>
+
+        <img id= "DashTitleImg" src="UCalgaryBajaLogo.png" alt="UCalgaryBaja.ca" width="84" height="100"> 
+        <h1 id="DashTitle">
+            WELCOME TO THE DASH
+        </h1>
+        <p id="time"></p>
+        <div style="height: 200px;"></div>
+        <div id="battery_voltage">Voltage</div>
+        <div id="battery_voltage_data">Heres the voltage data</div>
+        <p id="brake_pressure"></p>
+        <p id="engine_rpm"></p>
+        <p id="temps"></p>
+
+        <img id="animated" src="CarCutout.png" style="height:100px;width:100px;position:relative;left:700px;bottom:-300px;">
+
+
+
+
+
+
+
+
+        <script>
+        $(document).ready(
+        $("#battery_voltage").click(function(){
+            $("#battery_voltage_data").slideToggle();
+        }));
+        $('#battery_voltage').hover(
+            function() {
+                // Mouse enters the element
+                $(this).css('cursor', 'pointer'); // Change to a hand cursor
+            },
+            function() {
+                // Mouse leaves the element
+                $(this).css('cursor', 'default'); // Revert to default cursor
+            }
+        )
+        </script>
+        <script>
+            //PRIMARY UPDATE SCRIPT
+            //THIS IS WHERE ALL THE DATA COMES IN
+            //AND EVERYTHING IS RUN
+            //I WILL EVENTUALLY MOVE THIS TO ITS OWN .js FILE TO AVOID A 3000 LINE LONG FILE
+            //UNTILL THEN IT REMAINS FOR EASE OF ACCESS
+
+            //Set up ip domain 
+            
+            // let domain = '192.168.0.67'; //rasberryPI address
+            
+            let domain = 'baja.403587.xyz'; //online host address (Test purposes only)
+            
+            
+            $(document).ready(function(){
+                const callTime = setInterval(getTimeHRMINS, 10);
+                const callAnimate = setInterval(animateCarPosition, 10);
+                const callData = setInterval(requestVoltage, 1000);
+            });
+
+            const initial_timestamp = new Date();
+            const initial_milliseconds = initial_timestamp.getTime();
+            function getTimeHRMINS(){
+                const timestamp = new Date();
+                hour = timestamp.getHours();
+                minute = timestamp.getMinutes();
+                second = timestamp.getSeconds();
+                secondDif = (timestamp.getTime() - initial_timestamp.getTime())/1000;
+                hoursElapsed = Math.round(secondDif/(60*60));
+                minutesElapsed = Math.round((secondDif/(60))%60);
+                secondsElapsed = Math.round((timestamp.getTime() - initial_timestamp.getTime())/(1000));
+                $("#time").text("Time: " + hour.toString().padStart(2, '0') + ":" + minute.toString().padStart(2, '0') + ":" + second.toString().padStart(2, '0') 
+                + "\nElapsed Time: " + hoursElapsed.toString().padStart(2, '0') + ":" + minutesElapsed.toString().padStart(2, '0') + ":" + secondsElapsed.toString().padStart(2, '0'));
+            }
+            
+
+            const pageStartFullDate = new Date();
+            const pageStartMilli = pageStartFullDate.getTime();
+
+            function animateCarPosition(){
+                const currentTime = new Date();
+
+                x = 4 * Math.sin((currentTime.getTime() - pageStartMilli)/1000);
+                
+                y = 4 * Math.cos((currentTime.getTime() - pageStartMilli)/1000);
+                xmove = "+=" + x + "px";
+                
+                ymove = "+=" + y + "px";
+                $("#animated").animate({
+                left: xmove,
+                bottom: ymove
+                }, 10);
+
+            }
+
+
+            function requestData(requestType){
+                
+                $.ajax({method: 'GET', url: "http://127.0.0.1:5000/helloworld", cache: false, data: requestType}).done(function(data){
+                    console.log(data);
+                })
+
+            }
+
+
+            const baseURL = 'http://' + domain + '/FakeData/battery_voltage/';
+            function requestVoltage(){
+                fetch(baseURL + "?numEntries=1")
+                    .then(response => {
+                        if (!response.ok) throw new Error("Network response was not ok");
+                        return response.json();
+                })
+                .then(rdata => {
+                    if (!rdata.ok) throw new Error("API returned an error: " + (rdata.error || "Unknown"));
+                        console.log("Device:", rdata.device);
+                        rdata.data.forEach((entry, index) => {
+                        
+                    
+                        $("#battery_voltage_data").text(`Voltage: ${entry.voltage} | Time: ${entry.dt}`);
+
+                    });
+                })
+                .catch(err => {
+                    console.error("Fetch failed:", err);
+                });
+            }
+        </script>
+    </body>
+</html>

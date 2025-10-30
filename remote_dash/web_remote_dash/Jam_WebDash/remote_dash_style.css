@@ -1,0 +1,36 @@
+:root{
+    --BAJA_RED: #a80029;
+    --BAJA_BLACK: #1c1c1c;
+}
+body {
+    font-family: Basel Grotesk,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+    background-color: var(--BAJA_BLACK);
+    color: white
+}
+
+#DashTitleImg{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+#DashTitle{
+  position: absolute;
+  top: 0px;
+  left: 100px;
+  height: 100px;
+}
+#battery_voltage{
+  background-color: #a80029;
+  width: 100px;
+}
+
+
+#time{
+  position: fixed;
+  top: 0;
+  right: 0;
+  font-size: xx-large;
+
+}
+
