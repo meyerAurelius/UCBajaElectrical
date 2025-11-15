@@ -17,8 +17,8 @@
 #define RX_TASK_PRIO            8
 #define TX_TASK_PRIO            9
 #define CTRL_TSK_PRIO           10
-#define TX_GPIO_NUM             1
-#define RX_GPIO_NUM             3
+#define TX_GPIO_NUM             21
+#define RX_GPIO_NUM             22
 #define EXAMPLE_TAG             "TWAI Master"
 
 #define ID_MASTER_STOP_CMD      0x0A0
@@ -97,6 +97,7 @@ static void twai_receive_task(void *arg)
 {
     bool slave1_found = false;
     bool slave2_found = false;
+    bool slave3_found = false;
 
     TickType_t start_time = xTaskGetTickCount();
     
@@ -109,7 +110,7 @@ static void twai_receive_task(void *arg)
         if (action == RX_RECEIVE_PING_RESP) {
             //Listen for ping response from slave
             while (1) {
-                while (!(slave1_found && slave2_found) &&
+                while (!(slave1_found && slave2_found && slave3_found) &&
                      (xTaskGetTickCount() - start_time < pdMS_TO_TICKS(60000))){
 
                     twai_message_t rx_msg;
@@ -122,15 +123,20 @@ static void twai_receive_task(void *arg)
                         } else if (rx_msg.identifier == 0x0C2) {
                             slave2_found = true;
                             ESP_LOGI(EXAMPLE_TAG, "Slave 2 connected");
-                        }                                 
+                            
+                        } else if (rx_msg.identifier == 0x0D2) {
+                            slave3_found = true;
+                            ESP_LOGI(EXAMPLE_TAG, "Slave 3 connected");
+                            
+                        }                            
                     }
                          
                 }
-                if (slave1_found || slave2_found){
+                if (slave1_found || slave2_found || slave3_found){
                     xSemaphoreGive(stop_ping_sem);
                     xSemaphoreGive(ctrl_task_sem);
-                    ESP_LOGI(EXAMPLE_TAG, "Ping phase complete (S1=%d, S2=%d)",
-                            slave1_found, slave2_found);
+                    ESP_LOGI(EXAMPLE_TAG, "Ping phase complete (S1=%d, S2=%d, S3=%d)",
+                            slave1_found, slave2_found, slave3_found);
                 } else{
                     ESP_LOGW(EXAMPLE_TAG, "No slaves responded to ping");
                 }
@@ -143,7 +149,7 @@ static void twai_receive_task(void *arg)
             while (data_msgs_rec < NO_OF_DATA_MSGS) {
                 twai_message_t rx_msg;
                 twai_receive(&rx_msg, portMAX_DELAY);
-                if (rx_msg.identifier == ID_SLAVE_DATA || rx_msg.identifier == 0x0C1) {
+                if (rx_msg.identifier == ID_SLAVE_DATA || rx_msg.identifier == 0x0C1 || rx_msg.identifier == 0x0D1) {
                     
                     /*uint32_t data = 0;
                     for (int i = 0; i < rx_msg.data_length_code; i++) {
@@ -167,8 +173,11 @@ static void twai_receive_task(void *arg)
                             ESP_LOGI(EXAMPLE_TAG, "[Unpaid Intern 1] X=%.2fg Y=%.2fg Z=%.2fg", ax_g, ay_g, az_g);
 
                         // Log Slave 2 values
-                        else
+                        else if(rx_msg.identifier == 0x0C1)
                             ESP_LOGI(EXAMPLE_TAG, "[Unpaid Intern 2] X=%.2fg Y=%.2fg Z=%.2fg", ax_g, ay_g, az_g);
+                        
+                        else if(rx_msg.identifier == 0x0D1)
+                            ESP_LOGI(EXAMPLE_TAG, "[Unpaid Intern 3] X=%.2fg Y=%.2fg Z=%.2fg", ax_g, ay_g, az_g);
                 
                     } else{
                         ESP_LOGW(EXAMPLE_TAG, "Invalid data length: %d", rx_msg.data_length_code);
@@ -258,7 +267,9 @@ static void twai_control_task(void *arg)
         ESP_ERROR_CHECK(twai_stop());
         ESP_LOGI(EXAMPLE_TAG, "Driver stopped");
         vTaskDelay(pdMS_TO_TICKS(ITER_DELAY_MS));*/
+        
     }
+    
     //Stop TX and RX tasks
     tx_action = TX_TASK_EXIT;
     rx_action = RX_TASK_EXIT;
