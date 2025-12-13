@@ -1,0 +1,138 @@
+{
+    "asset": {
+        "version": "2.0",
+        "generator": "Open Asset Import Library (assimp v5.2.cf7d3637)"
+    },
+    "extensionsUsed": [
+        "KHR_materials_volume",
+        "FB_ngon_encoding"
+    ],
+    "accessors": [
+        {
+            "bufferView": 0,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 117882,
+            "type": "VEC3",
+            "max": [
+                396.8606872558594,
+                1157.528564453125,
+                21.09356689453125
+            ],
+            "min": [
+                -396.8606872558594,
+                -724.95947265625,
+                -1260.4749755859376
+            ]
+        },
+        {
+            "bufferView": 1,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 117882,
+            "type": "VEC3",
+            "max": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "min": [
+                -1.0,
+                -1.0,
+                -1.0
+            ]
+        },
+        {
+            "bufferView": 2,
+            "byteOffset": 0,
+            "componentType": 5125,
+            "count": 117882,
+            "type": "SCALAR",
+            "max": [
+                117881
+            ],
+            "min": [
+                0
+            ]
+        }
+    ],
+    "buffers": [
+        {
+            "byteLength": 3300696,
+            "uri": "result.bin"
+        }
+    ],
+    "bufferViews": [
+        {
+            "buffer": 0,
+            "byteOffset": 0,
+            "byteLength": 1414584,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 1414584,
+            "byteLength": 1414584,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 2829168,
+            "byteLength": 471528,
+            "target": 34963
+        }
+    ],
+    "materials": [
+        {
+            "name": "material"
+        }
+    ],
+    "meshes": [
+        {
+            "name": "OR26-C-R01-Frame",
+            "primitives": [
+                {
+                    "mode": 4,
+                    "material": 0,
+                    "indices": 2,
+                    "attributes": {
+                        "POSITION": 0,
+                        "NORMAL": 1
+                    }
+                }
+            ]
+        }
+    ],
+    "nodes": [
+        {
+            "name": "OR26-C-R01-Frame",
+            "matrix": [
+                0.20000000298023225,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                -2.3841858265427619e-8,
+                0.20000003278255464,
+                0.0,
+                0.0,
+                -0.20000003278255464,
+                -2.3841858265427619e-8,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "mesh": 0
+        }
+    ],
+    "scenes": [
+        {
+            "nodes": [
+                0
+            ]
+        }
+    ],
+    "scene": 0
+}

@@ -1,22 +1,14 @@
-from flask import Flask, request, jsonify
-
-from flask_cors import CORS
-
-app = Flask(__name__)
+from quart import Quart, request
 import json
-
-CORS(app)
-
-def json_file_to_object(file_path):
-    with open(file_path, 'r') as f:
-        data = json.load(f)  # Parses the JSON data from the file into a Python object (dict or list)
-    return data
-
-@app.route('/<helloworld>', methods=['GET'])
-def give_json(helloworld):
-    return helloworld
-
+from quart_cors import cors
+import Data_Falsifier
+app = Quart(__name__)
+app = cors(app, allow_origin="*")
 
 @app.route('/')
-def function():
-    return "<h1>Hey Ya'll!</h1> <p>You arent supposed to be here. Go to the real dash.</p>"
+async def send__data():
+    Data_Falsifier.falsedata()
+    with open(r"C:\Users\prudh\Desktop\Baja\UCBajaElectrical\remote_dash\web_remote_dash\Jam_WebDash\TheoreticalDataIn.json", "r") as file:
+        data = json.load(file)
+        return data
+

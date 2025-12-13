@@ -20,10 +20,7 @@ body {
   left: 100px;
   height: 100px;
 }
-#battery_voltage{
-  background-color: #a80029;
-  width: 100px;
-}
+
 
 
 #time{
@@ -33,4 +30,81 @@ body {
   font-size: xx-large;
 
 }
+
+#DataBackBorder{
+  position: fixed;
+  top: 100px;
+  left: 0px;
+  height: 840px; 
+  width: 750px; 
+  border: 2px; 
+  border-style: solid;
+  border-color: #a80029;
+  border-radius: 5px;
+  z-index: -1;
+}
+#MapBackBorder{
+  position:fixed;
+  top: 100px;
+  left: 750px;
+  height: 500px; 
+  width: 600px; 
+  border: 2px; 
+  border-style: solid;
+  border-color: #a80029;
+  border-radius: 5px;
+  z-index: -1;
+}
+#AccelBackBorder{
+  position: fixed;
+  top: 600px;
+  left: 750px;
+  height: 340px; 
+  width: 600px; 
+  border: 2px; 
+  border-style: solid;
+  border-color: #a80029;
+  border-radius: 5px;
+  z-index: -1;
+}
+#ErrorBackBorder{
+  position: fixed;
+  top: 100px;
+  left: 1350px;
+  height: 700px; 
+  width: 565px; 
+  border: 2px; 
+  border-style: solid;
+  border-color: #a80029;
+  border-radius: 5px;
+  z-index: -1;
+  overflow-y: auto;
+}
+#SessionBackBorder{
+  position: fixed;
+  top: 800px;
+  left: 1350px;
+  height: 140px; 
+  width: 565px; 
+  border: 2px; 
+  border-style: solid;
+  border-color: #a80029;
+  border-radius: 5px;
+  z-index: -1;
+}
+
+canvas{
+  position: absolute;
+  display: block; 
+  top: 670px;
+  left: 800px;
+}
+
+#PLACEHOLDERaccel{
+  position: absolute;
+  top: 600px;
+  left: 1000px;
+
+}
+#map { height: 500px; }
 

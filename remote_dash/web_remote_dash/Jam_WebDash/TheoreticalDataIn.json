@@ -1,3 +1,15 @@
 {
-    "EpochTime":{"Hello":""}
+"Logging_Event":1,
+"Logging_Data":
+[{"timestamp": "2025-11-22 14:02:50.982516", "type": "Accel", "device_id": "1", "data": [602]},
+{"timestamp": "2025-11-22 14:02:51.092780", "type": "TransTemp", "device_id": "1", "data":[522]},
+{"timestamp": "2025-11-22 14:02:51.195377", "type": "Voltage", "device_id": "1", "data":[14]},
+{"timestamp": "2025-11-22 14:02:51.295935", "type": "EngineRPM", "device_id": "1", "data":[660]},
+{"timestamp": "2025-11-22 14:02:51.396467", "type": "TransTemp", "device_id": "1", "data":[149]},
+{"timestamp": "2025-11-22 14:02:51.496994", "type": "TransTemp", "device_id": "1", "data":[754]},
+{"timestamp": "2025-11-22 14:02:51.597612", "type": "TransTemp", "device_id": "1", "data":[899]},
+{"timestamp": "2025-11-22 14:02:51.698266", "type": "Accel", "device_id": "2", "data": [56]},
+{"timestamp": "2025-11-22 14:02:51.798552", "type": "Accel", "device_id": "2", "data": [709]},
+{"timestamp": "2025-11-22 14:02:51.899115", "type": "Voltage", "device_id": "1", "data":[15]}
+]
 }

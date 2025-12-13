@@ -1,3 +1,4 @@
+
 // Domain values:
 
 domain = 
@@ -8,7 +9,7 @@ domain =
 
 
 //URL for access
-const baseURL = 'http://' + domain + '/FakeData/battery_voltage/';
+//const baseURL = 'http://' + domain + '/FakeData/battery_voltage/';
 
 
 //Function to call:
@@ -16,11 +17,24 @@ function pull_data(){
 
         $.ajax({
             method: 'GET', 
-            url: "http://127.0.0.1:5000/helloworld", 
+            url: "http://127.0.0.1:8000/", 
             cache: false, 
             data: JSON})
         .done(function(data){
-            console.log(data);
+            console.log(data.Logging_Event);
+            dataArray_str = data.Logging_Data;
+            console.log(dataArray_str);
+            for(k in dataArray_str){
+                current_data = dataArray_str[k];
+                console.log(current_data.type);
+                const datatimestamp = new Date(current_data.timestamp)
+                switch (current_data.type){
+                    case "Voltage":
+                        document.getElementById("battery_voltage_data").innerHTML = current_data.data + " Volts at " + datatimestamp;
+                    break;
+                }
+            }
+
         })
 
 }
