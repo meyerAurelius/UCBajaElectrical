@@ -1,13 +1,15 @@
 /*
  * ESP32 CYD / ILI9341 basic bring-up example
+ * with simple full-screen color test
  *
  * Assumed board: ESP32-2432S028R ("Cheap Yellow Display")
- * LCD controller: ILI9341
  * Framework: ESP-IDF
  */
 
 #include <stdio.h>
 #include <inttypes.h>
+#include <string.h>
+#include <stdlib.h>
 
 #include "sdkconfig.h"
 #include "freertos/FreeRTOS.h"
@@ -42,12 +44,13 @@
 
 #define LCD_H_RES               240
 #define LCD_V_RES               320
-
 #define LCD_PIXEL_CLOCK_HZ      (40 * 1000 * 1000)
+
+// Draw in chunks to avoid huge buffers
+#define DRAW_BUF_LINES          20
 
 static const char *TAG = "CYD_LCD";
 
-// Optional transfer done callback context
 typedef struct {
     int dummy;
 } lcd_callback_ctx_t;
@@ -64,11 +67,8 @@ static bool example_callback(esp_lcd_panel_io_handle_t panel_io,
     return false;
 }
 
-void app_main(void)
+static void lcd_backlight_init(void)
 {
-    // -----------------------------
-    // Backlight setup
-    // -----------------------------
     gpio_config_t bk_gpio_config = {
         .pin_bit_mask = 1ULL << LCD_BK_LIGHT,
         .mode = GPIO_MODE_OUTPUT,
@@ -78,6 +78,46 @@ void app_main(void)
     };
     ESP_ERROR_CHECK(gpio_config(&bk_gpio_config));
     ESP_ERROR_CHECK(gpio_set_level(LCD_BK_LIGHT, 1));
+}
+
+static void fill_screen_color(esp_lcd_panel_handle_t panel, uint16_t color)
+{
+    const int buf_pixels = LCD_H_RES * DRAW_BUF_LINES;
+    uint16_t *buf = heap_caps_malloc(buf_pixels * sizeof(uint16_t), MALLOC_CAP_DMA);
+
+    if (buf == NULL) {
+        ESP_LOGE(TAG, "Failed to allocate draw buffer");
+        return;
+    }
+
+    for (int i = 0; i < buf_pixels; i++) {
+        buf[i] = color;
+    }
+
+    for (int y = 0; y < LCD_V_RES; y += DRAW_BUF_LINES) {
+        int lines = DRAW_BUF_LINES;
+        if ((y + lines) > LCD_V_RES) {
+            lines = LCD_V_RES - y;
+        }
+
+        ESP_ERROR_CHECK(esp_lcd_panel_draw_bitmap(
+            panel,
+            0,
+            y,
+            LCD_H_RES,
+            y + lines,
+            buf));
+    }
+
+    free(buf);
+}
+
+void app_main(void)
+{
+    // -----------------------------
+    // Backlight setup
+    // -----------------------------
+    lcd_backlight_init();
 
     // -----------------------------
     // Initialize SPI bus
@@ -90,7 +130,7 @@ void app_main(void)
         .miso_io_num = LCD_MISO,
         .quadwp_io_num = -1,
         .quadhd_io_num = -1,
-        .max_transfer_sz = LCD_H_RES * 80 * sizeof(uint16_t),
+        .max_transfer_sz = LCD_H_RES * DRAW_BUF_LINES * sizeof(uint16_t),
     };
     ESP_ERROR_CHECK(spi_bus_initialize(LCD_HOST, &bus_config, SPI_DMA_CH_AUTO));
 
@@ -130,12 +170,10 @@ void app_main(void)
     };
 
     ESP_ERROR_CHECK(esp_lcd_new_panel_ili9341(io_handle, &panel_config, &panel_handle));
-
     ESP_ERROR_CHECK(esp_lcd_panel_reset(panel_handle));
     ESP_ERROR_CHECK(esp_lcd_panel_init(panel_handle));
 
-    // Optional orientation tweaks
-    // For many CYD boards, one of these combinations may be needed.
+    // Orientation tweak for CYD
     ESP_ERROR_CHECK(esp_lcd_panel_swap_xy(panel_handle, true));
     ESP_ERROR_CHECK(esp_lcd_panel_mirror(panel_handle, false, true));
 
@@ -143,46 +181,60 @@ void app_main(void)
 
     ESP_LOGI(TAG, "LCD initialized");
 
-    printf("Hello world!\n");
-
     // -----------------------------
-    // Print chip information
+    // Simple LCD color test
+    // RGB565 colors
     // -----------------------------
-    esp_chip_info_t chip_info;
-    uint32_t flash_size;
-
-    esp_chip_info(&chip_info);
-
-    printf("This is %s chip with %d CPU core(s), %s%s%s%s, ",
-           CONFIG_IDF_TARGET,
-           chip_info.cores,
-           (chip_info.features & CHIP_FEATURE_WIFI_BGN) ? "WiFi/" : "",
-           (chip_info.features & CHIP_FEATURE_BT) ? "BT" : "",
-           (chip_info.features & CHIP_FEATURE_BLE) ? "BLE" : "",
-           (chip_info.features & CHIP_FEATURE_IEEE802154) ? ", 802.15.4 (Zigbee/Thread)" : "");
-
-    unsigned major_rev = chip_info.revision / 100;
-    unsigned minor_rev = chip_info.revision % 100;
-    printf("silicon revision v%d.%d, ", major_rev, minor_rev);
-
-    if (esp_flash_get_size(NULL, &flash_size) != ESP_OK) {
-        printf("Get flash size failed\n");
-        return;
-    }
-
-    printf("%" PRIu32 "MB %s flash\n",
-           flash_size / (uint32_t)(1024 * 1024),
-           (chip_info.features & CHIP_FEATURE_EMB_FLASH) ? "embedded" : "external");
-
-    printf("Minimum free heap size: %" PRIu32 " bytes\n",
-           esp_get_minimum_free_heap_size());
-
-    for (int i = 10; i >= 0; i--) {
-        printf("Restarting in %d seconds...\n", i);
+    while (1) {
+        ESP_LOGI(TAG, "Fill RED");
+        fill_screen_color(panel_handle, 0xF800);
         vTaskDelay(pdMS_TO_TICKS(1000));
-    }
 
-    printf("Restarting now.\n");
-    fflush(stdout);
-    // esp_restart();
+        ESP_LOGI(TAG, "Fill GREEN");
+        fill_screen_color(panel_handle, 0x07E0);
+        vTaskDelay(pdMS_TO_TICKS(1000));
+
+        ESP_LOGI(TAG, "Fill BLUE");
+        fill_screen_color(panel_handle, 0x001F);
+        vTaskDelay(pdMS_TO_TICKS(1000));
+
+        ESP_LOGI(TAG, "Fill WHITE");
+        fill_screen_color(panel_handle, 0xFFFF);
+        vTaskDelay(pdMS_TO_TICKS(1000));
+
+        ESP_LOGI(TAG, "Fill BLACK");
+        fill_screen_color(panel_handle, 0x0000);
+        vTaskDelay(pdMS_TO_TICKS(1000));
+
+        // Print chip info once per cycle
+        printf("Hello world!\n");
+
+        esp_chip_info_t chip_info;
+        uint32_t flash_size;
+
+        esp_chip_info(&chip_info);
+
+        printf("This is %s chip with %d CPU core(s), %s%s%s%s, ",
+               CONFIG_IDF_TARGET,
+               chip_info.cores,
+               (chip_info.features & CHIP_FEATURE_WIFI_BGN) ? "WiFi/" : "",
+               (chip_info.features & CHIP_FEATURE_BT) ? "BT" : "",
+               (chip_info.features & CHIP_FEATURE_BLE) ? "BLE" : "",
+               (chip_info.features & CHIP_FEATURE_IEEE802154) ? ", 802.15.4 (Zigbee/Thread)" : "");
+
+        unsigned major_rev = chip_info.revision / 100;
+        unsigned minor_rev = chip_info.revision % 100;
+        printf("silicon revision v%d.%d, ", major_rev, minor_rev);
+
+        if (esp_flash_get_size(NULL, &flash_size) == ESP_OK) {
+            printf("%" PRIu32 "MB %s flash\n",
+                   flash_size / (uint32_t)(1024 * 1024),
+                   (chip_info.features & CHIP_FEATURE_EMB_FLASH) ? "embedded" : "external");
+        } else {
+            printf("Get flash size failed\n");
+        }
+
+        printf("Minimum free heap size: %" PRIu32 " bytes\n",
+               esp_get_minimum_free_heap_size());
+    }
 }

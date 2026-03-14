@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "hello_world",
-    "project_version":    "6e6b36bb",
+    "project_version":    "23b10196-dirty",
     "project_path":       "/home/marcus/Desktop/UCBajaElectrical/BAJA/digital_dash/front_end/esp_idf_based/core",
     "idf_path":           "/home/marcus/esp/esp-idf-v5.5",
     "build_dir":          "/home/marcus/Desktop/UCBajaElectrical/BAJA/digital_dash/front_end/esp_idf_based/core/build",
