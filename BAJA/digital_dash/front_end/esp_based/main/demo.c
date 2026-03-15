@@ -46,6 +46,9 @@ static void ui_event_button_1(lv_event_t *e)
     }
 }
 
+int subject_temp = 30;
+int subject_test = 11;
+
 static esp_err_t app_lvgl_main(void)
 {
     if (!lvgl_port_lock(0)) {
@@ -53,59 +56,63 @@ static esp_err_t app_lvgl_main(void)
         return ESP_FAIL;
     }
 
-    /* Create and load a new screen */
-    lv_obj_t *scr = lv_obj_create(NULL);
-    lv_obj_set_size(scr, LV_PCT(100), LV_PCT(100));
-    lv_obj_set_style_bg_color(scr, lv_color_white(), LV_PART_MAIN);
-    lv_obj_set_style_bg_opa(scr, LV_OPA_COVER, LV_PART_MAIN);
-    lv_obj_set_style_border_width(scr, 0, LV_PART_MAIN);
-    lv_screen_load(scr);
+    
 
-    /* ---------------- Button: Settings ---------------- */
-    lv_obj_t *button_1 = lv_button_create(scr);
-    lv_obj_set_size(button_1, 90, 40);
-    lv_obj_set_pos(button_1, 228, 5);
-    lv_obj_add_event_cb(button_1, ui_event_button_1, LV_EVENT_CLICKED, NULL);
+    lv_obj_t * lv_obj_0 = lv_obj_create(NULL);
 
-    lv_obj_t *button_label = lv_label_create(button_1);
-    lv_label_set_text(button_label, "Settings");
-    lv_obj_center(button_label);
+	lv_obj_set_width(lv_obj_0, lv_pct(100));
+    lv_obj_set_height(lv_obj_0, lv_pct(100));
 
-    /* ---------------- Slider: Temperature ---------------- */
-    lv_obj_t *temp_slide = lv_slider_create(scr);
-    lv_obj_set_pos(temp_slide, 47, 199);
-    lv_obj_set_size(temp_slide, 173, 23);
-    lv_slider_set_range(temp_slide, 0, 100);
-    lv_slider_set_value(temp_slide, 50, LV_ANIM_OFF);
+    lv_obj_t * button_1 = lv_button_create(lv_obj_0);
+    lv_obj_t * button_1_label = lv_label_create(button_1);
+    lv_label_set_text(button_1_label, "Settings");
+    lv_obj_center(button_1_label);
 
-    /* Rotate slider by -90.0 degrees
-       LVGL uses 0.1 degree units, so -900 = -90.0 deg */
+	lv_obj_set_x(button_1, 228);
+    lv_obj_set_y(button_1, 5);
+    
+    lv_obj_t * temp_slide = lv_slider_create(lv_obj_0);
+
+	lv_obj_set_x(temp_slide, 7);
+    lv_obj_set_y(temp_slide, 213);
+    lv_obj_set_width(temp_slide, 131);
+    lv_obj_set_height(temp_slide, 18);
     lv_obj_set_style_transform_rotation(temp_slide, -900, 0);
+    
+    lv_obj_t * h4_1 = lv_label_create(lv_obj_0);
+    lv_label_set_text(h4_1, "CVT   Temperature");
 
-    lv_obj_t *temp_label = lv_label_create(scr);
-    lv_label_set_text(temp_label, "Temperature");
-    lv_obj_set_pos(temp_label, 16, 208);
-    lv_obj_set_style_text_color(temp_label, lv_color_black(), 0);
+	lv_obj_set_x(h4_1, 10);
+    lv_obj_set_y(h4_1, 219);
+    
+    lv_obj_t * arc_1 = lv_arc_create(lv_obj_0);
 
-    /* ---------------- Arc: Speed ---------------- */
-    lv_obj_t *arc_1 = lv_arc_create(scr);
-    lv_obj_set_pos(arc_1, 136, 59);
-    lv_obj_set_size(arc_1, 153, 135);
-    lv_arc_set_range(arc_1, 0, 180);
-    lv_arc_set_value(arc_1, 80);
-    lv_arc_set_rotation(arc_1, 135);
-    lv_arc_set_bg_angles(arc_1, 0, 270);
+	lv_obj_set_x(arc_1, 144);
+    lv_obj_set_y(arc_1, 75);
+    lv_obj_set_width(arc_1, 170);
+    lv_obj_set_height(arc_1, 162);
+    
+    lv_obj_t * h3_1 = lv_label_create(lv_obj_0);
+    lv_label_set_text(h3_1, "Speed");
 
-    lv_obj_t *speed_label = lv_label_create(scr);
-    lv_label_set_text(speed_label, "Speed");
-    lv_obj_set_pos(speed_label, 183, 194);
-    lv_obj_set_style_text_color(speed_label, lv_color_black(), 0);
+	lv_obj_set_x(h3_1, 200);
+    lv_obj_set_y(h3_1, 219);
+    
+    lv_obj_t * value_large_1 = lv_label_create(lv_obj_0);
+    lv_label_set_text(value_large_1, "VALUE");
 
-    /* ---------------- Counter label ---------------- */
-    lbl_counter = lv_label_create(scr);
-    lv_label_set_text(lbl_counter, "0000");
-    lv_obj_set_pos(lbl_counter, 10, 10);
-    lv_obj_set_style_text_color(lbl_counter, lv_color_black(), 0);
+	lv_obj_set_x(value_large_1, 38);
+    lv_obj_set_y(value_large_1, 160);
+    lv_obj_set_width(value_large_1, 79);
+    lv_obj_set_height(value_large_1, 48);
+    
+    lv_obj_t * value_large_2 = lv_label_create(lv_obj_0);
+    lv_label_set_text(value_large_2, "VALUE");
+
+	lv_obj_set_x(value_large_2, 178);
+    lv_obj_set_y(value_large_2, 130);
+
+
 
     lvgl_port_unlock();
     return ESP_OK;
