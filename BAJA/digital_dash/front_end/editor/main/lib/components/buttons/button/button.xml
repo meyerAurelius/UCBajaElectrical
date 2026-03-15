@@ -1,0 +1,25 @@
+<component>
+	<styles>
+		<style
+			name="style_base"
+			width="content"
+			height="content"
+			radius="#base_lib_radius"
+			pad_hor="#base_lib_unit_lg"
+			pad_ver="#base_lib_unit_sm"
+			text_font="font_sm"
+		/>
+	</styles>
+	<api>
+		<prop name="text" type="string" default="Button" />
+	</api>
+	<view extends="lv_button">
+		<remove_style_all />
+		<style name="style_base" />
+		<style name="style_light_button" />
+		<style name="style_light_button_pressed" selector="pressed" />
+		<bind_style name="style_dark_button" subject="subject_dark_mode" ref_value="1" />
+		<bind_style name="style_dark_button_pressed" selector="pressed" subject="subject_dark_mode" ref_value="1" />
+		<lv_label text="$text" />
+	</view>
+</component>

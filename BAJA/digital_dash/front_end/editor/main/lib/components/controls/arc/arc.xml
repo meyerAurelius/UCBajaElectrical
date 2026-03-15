@@ -1,0 +1,25 @@
+<component>
+	<api>
+		<prop name="subject" type="subject" default="subject_test" />
+	</api>
+
+	<styles>
+		<style name="style_light_arc" arc_width="#base_lib_unit_lg" arc_color="#color_accent" arc_opa="16%" />
+		<style
+			name="style_light_arc_indicator"
+			arc_width="#base_lib_unit_lg"
+			arc_color="#color_accent"
+			arc_opa="100%"
+		/>
+		<style name="style_light_arc_knob" bg_color="#color_accent_text" pad_all="-4" />
+
+		<style name="style_dark_arc" arc_width="#base_lib_unit_lg" arc_color="#color_accent" arc_opa="16%" />
+	</styles>
+	<view extends="lv_arc" bind_value="$subject">
+		<style name="style_light_arc" />
+		<style name="style_light_arc_indicator" selector="indicator" />
+		<style name="style_light_arc_knob" selector="knob" />
+
+		<bind_style name="style_dark_arc" subject="subject_dark_mode" ref_value="1" />
+	</view>
+</component>

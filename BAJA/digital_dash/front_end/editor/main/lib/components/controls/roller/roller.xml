@@ -1,0 +1,22 @@
+<component>
+	<api>
+		<prop name="options" type="string" default="Option 1&#10;Option 2&#10;Option 3" />
+	</api>
+	<styles>
+		<style
+			name="style_main"
+			radius="#base_lib_radius"
+			border_width="0"
+			bg_color="#color_light_panel"
+			text_font="font_md"
+			text_color="#color_light_text"
+		/>
+		<style name="style_main_dark" bg_color="#color_dark_panel" text_color="#color_dark_text" />
+		<style name="style_indicator" border_width="0" bg_color="#color_accent" text_color="#color_accent_text" />
+	</styles>
+	<view extends="lv_roller" options="$options">
+		<style name="style_main" />
+		<bind_style name="style_main_dark" subject="subject_dark_mode" ref_value="1" />
+		<style name="style_indicator" selector="selected" />
+	</view>
+</component>

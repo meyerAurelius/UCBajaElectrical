@@ -1,0 +1,26 @@
+<component>
+	<api>
+		<prop name="subject" type="subject" default="subject_test" />
+	</api>
+	<styles>
+		<style
+			name="style_slider_light"
+			height="#base_lib_unit_lg"
+			bg_color="#color_accent"
+			bg_opa="16%"
+			radius="#base_lib_radius"
+			clip_corner="true"
+		/>
+		<style name="style_slider_light_indicator" bg_color="#color_accent" bg_opa="100%" radius="#base_lib_radius" />
+		<style name="style_slider_light_knob" bg_color="#color_accent_text" pad_left="3" pad_right="-10" pad_ver="-4" />
+		<style name="style_slider_light_knob_pressed" transform_height="0" transform_width="0" />
+		<style name="style_slider_dark" bg_color="#color_dark_text" />
+	</styles>
+	<view extends="lv_slider" value="50" bind_value="$subject">
+		<style name="style_slider_light" />
+		<style name="style_slider_light_indicator" selector="indicator" />
+		<style name="style_slider_light_knob" selector="knob" />
+		<style name="style_slider_light_knob_pressed" selector="knob|pressed" />
+		<bind_style name="style_slider_dark" subject="subject_dark_mode" ref_value="1" />
+	</view>
+</component>

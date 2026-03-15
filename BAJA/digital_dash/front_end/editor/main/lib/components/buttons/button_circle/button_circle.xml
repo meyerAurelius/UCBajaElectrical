@@ -1,0 +1,22 @@
+<component>
+	<styles>
+		<style
+			name="style_base"
+			image_recolor_opa="255"
+			width="#base_lib_unit_xxl"
+			height="#base_lib_unit_xxl"
+			radius="100"
+		/>
+	</styles>
+	<api>
+		<prop name="icon" type="image" default="icon_plus" />
+	</api>
+	<view extends="lv_image" src="$icon" clickable="true">
+		<remove_style_all />
+		<style name="style_base" />
+		<style name="style_light_button" />
+		<style name="style_light_button_pressed" selector="pressed" />
+		<bind_style name="style_dark_button" subject="subject_dark_mode" ref_value="1" />
+		<bind_style name="style_dark_button_pressed" selector="pressed" subject="subject_dark_mode" ref_value="1" />
+	</view>
+</component>
