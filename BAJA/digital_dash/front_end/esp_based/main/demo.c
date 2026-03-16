@@ -46,8 +46,8 @@ static void ui_event_button_1(lv_event_t *e)
     }
 }
 
-int subject_temp = 30;
-int subject_test = 11;
+int cvt_temp = 30;
+int vehicle_speed = 11;
 
 static esp_err_t app_lvgl_main(void)
 {
@@ -55,13 +55,14 @@ static esp_err_t app_lvgl_main(void)
         ESP_LOGE(TAG, "Failed to lock LVGL");
         return ESP_FAIL;
     }
-
-    
+   
 
     lv_obj_t * lv_obj_0 = lv_obj_create(NULL);
 
 	lv_obj_set_width(lv_obj_0, lv_pct(100));
     lv_obj_set_height(lv_obj_0, lv_pct(100));
+
+    lv_obj_set_style_bg_color(lv_obj_0, lv_color_white(), 0);
 
     lv_obj_t * button_1 = lv_button_create(lv_obj_0);
     lv_obj_t * button_1_label = lv_label_create(button_1);
@@ -74,47 +75,57 @@ static esp_err_t app_lvgl_main(void)
     lv_obj_t * temp_slide = lv_slider_create(lv_obj_0);
 
 	lv_obj_set_x(temp_slide, 7);
-    lv_obj_set_y(temp_slide, 213);
+    lv_obj_set_y(temp_slide, 190);
     lv_obj_set_width(temp_slide, 131);
     lv_obj_set_height(temp_slide, 18);
     lv_obj_set_style_transform_rotation(temp_slide, -900, 0);
     
     lv_obj_t * h4_1 = lv_label_create(lv_obj_0);
     lv_label_set_text(h4_1, "CVT   Temperature");
+    lv_obj_set_style_text_color(h4_1, lv_color_black(), LV_PART_MAIN);
 
 	lv_obj_set_x(h4_1, 10);
-    lv_obj_set_y(h4_1, 219);
+    lv_obj_set_y(h4_1, 210);
     
     lv_obj_t * arc_1 = lv_arc_create(lv_obj_0);
 
 	lv_obj_set_x(arc_1, 144);
-    lv_obj_set_y(arc_1, 75);
+    lv_obj_set_y(arc_1, 55);
     lv_obj_set_width(arc_1, 170);
     lv_obj_set_height(arc_1, 162);
     
     lv_obj_t * h3_1 = lv_label_create(lv_obj_0);
     lv_label_set_text(h3_1, "Speed");
+    lv_obj_set_style_text_color(h3_1, lv_color_black(), LV_PART_MAIN);
 
 	lv_obj_set_x(h3_1, 200);
-    lv_obj_set_y(h3_1, 219);
+    lv_obj_set_y(h3_1, 210);
     
-    lv_obj_t * value_large_1 = lv_label_create(lv_obj_0);
-    lv_label_set_text(value_large_1, "VALUE");
+    lv_obj_t * temp_value = lv_label_create(lv_obj_0);
+    lv_label_set_text(temp_value, "temp val");
+    lv_obj_set_style_text_color(temp_value, lv_color_black(), LV_PART_MAIN);
 
-	lv_obj_set_x(value_large_1, 38);
-    lv_obj_set_y(value_large_1, 160);
-    lv_obj_set_width(value_large_1, 79);
-    lv_obj_set_height(value_large_1, 48);
+	lv_obj_set_x(temp_value, 38);
+    lv_obj_set_y(temp_value, 160);
+    lv_obj_set_width(temp_value, 79);
+    lv_obj_set_height(temp_value, 48);
+
     
-    lv_obj_t * value_large_2 = lv_label_create(lv_obj_0);
-    lv_label_set_text(value_large_2, "VALUE");
+    
+    lv_obj_t * km_value = lv_label_create(lv_obj_0);
+    lv_label_set_text(km_value, "speed val");
+    lv_obj_set_style_text_color(km_value, lv_color_black(), LV_PART_MAIN);
 
-	lv_obj_set_x(value_large_2, 178);
-    lv_obj_set_y(value_large_2, 130);
+	lv_obj_set_x(km_value, 178);
+    lv_obj_set_y(km_value, 130);
 
 
+    lv_screen_load(lv_obj_0); // remeber to actually load the screen!!!
+    
 
     lvgl_port_unlock();
+
+
     return ESP_OK;
 }
 
