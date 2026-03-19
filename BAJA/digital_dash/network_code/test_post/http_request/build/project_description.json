@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "http_request",
-    "project_version":    "ae48fc84",
+    "project_version":    "18b2a9c7-dirty",
     "project_path":       "C:/Users/marcu/baja/repos/UCBajaElectrical/BAJA/digital_dash/network_code/test_post/http_request",
     "idf_path":           "C:/Espressif/frameworks/esp-idf-v5.5.3",
     "build_dir":          "C:/Users/marcu/baja/repos/UCBajaElectrical/BAJA/digital_dash/network_code/test_post/http_request/build",
