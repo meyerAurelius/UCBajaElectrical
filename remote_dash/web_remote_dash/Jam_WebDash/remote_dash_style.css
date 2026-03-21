@@ -16,9 +16,11 @@ body {
 
 #DashTitle{
   position: absolute;
-  top: 0px;
+  top: 0;
   left: 100px;
   height: 100px;
+  font-size: 400%;
+  font-weight: bold;
 }
 
 
@@ -27,8 +29,29 @@ body {
   position: fixed;
   top: 0;
   right: 0;
-  font-size: xx-large;
+  font-size: 400%;
+  margin: 0;
+  font-weight: bold;
 
+}
+
+#SessionInfo{
+  white-space: pre;
+  position: fixed;
+  top: 0;
+  left: 48%;
+  font-size: 200%;
+  margin: 0;
+  font-weight: bold;
+}
+#ServerInfo{
+  white-space: pre;
+  position: fixed;
+  top: 5%;
+  left: 48%;
+  font-size: 200%;
+  margin: 0;
+  font-weight: bold;
 }
 
 #DataBackBorder{
@@ -53,7 +76,7 @@ body {
   border-style: solid;
   border-color: #a80029;
   border-radius: 5px;
-  z-index: -1;
+  z-index: -2;
 }
 #AccelBackBorder{
   position: fixed;
@@ -71,7 +94,7 @@ body {
   position: fixed;
   top: 100px;
   left: 1350px;
-  height: 700px; 
+  height: 600px; 
   width: 565px; 
   border: 2px; 
   border-style: solid;
@@ -82,9 +105,9 @@ body {
 }
 #SessionBackBorder{
   position: fixed;
-  top: 800px;
+  top: 700px;
   left: 1350px;
-  height: 140px; 
+  height: 240px; 
   width: 565px; 
   border: 2px; 
   border-style: solid;
@@ -106,5 +129,64 @@ canvas{
   left: 1000px;
 
 }
-#map { height: 500px; }
+#map { height: 500px;}
 
+.DataViewport {
+    height: 50px;
+    border: 2px;
+    border-style: solid;
+    border-color: var(--BAJA_BLACK);
+    border-radius: 5px;
+}
+
+.DataTitle {
+  position: relative;
+  top: 25%;
+    font-family: "Arial", Helvetica, sans-serif; /* Changes the font typeface */
+    font-size: 20px;                         /* Changes the size */
+    color: #ffffff;                          /* Changes the color */
+    font-weight: bold; 
+}
+.DataHolder {
+  position: relative;
+  top: -20%;
+  left: 50%
+}
+
+.TEMP {
+  background-color: rgb(190, 109, 2);
+}
+
+.RPM {
+  background-color: rgb(1, 177, 177);
+}
+
+.ELEC {
+  background-color: rgb(175, 175, 4);
+}
+
+.BRAKE {
+  background-color: green;
+}
+
+.CLICKABLE{
+  background-color: #1c1c1c;
+  transition: background-color 0.3s ease;
+}
+
+.CLICKABLE:hover{
+  background-color: #a80029;
+  cursor: pointer;
+}
+
+#MenuBack{
+  background-color: black;
+
+  opacity: 70%;
+  z-index: 10000000;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  height: 100%;
+  width: 100%;
+}

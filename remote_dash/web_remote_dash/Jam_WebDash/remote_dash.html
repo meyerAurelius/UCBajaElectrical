@@ -24,10 +24,10 @@
 					}
 				</script>
             <!--MAP-->
-                <link rel="stylesheet" href="Jam_WebDash/LIBRARY/dist/leaflet.css" />
-                <script src="/LIBRARY/dist/leaflet.js"></script>
+                <link rel="stylesheet" href="/Jam_WebDash/Leaflet/leaflet.css" />
+                <script src="/Jam_WebDash/Leaflet/leaflet.js"></script>
             <!--MAP Markers-->
-                <script href="LIBRARY\markerplayer-src.js" crossorigin=""></script>
+                <script src="Leaflet/markerplayer-src.js" crossorigin=""></script>
 
 
             
@@ -40,20 +40,59 @@
     <body>
         <!--HEADER-->
         <img id= "DashTitleImg" src="UCalgaryBajaLogo.png" alt="UCalgaryBaja.ca" width="84" height="100"> 
-        <h1 id="DashTitle">
-            WELCOME TO THE DASH
-        </h1>
-        <p id="time"></p>
+        <div id="DashTitle">
+            UCALGARY REMOTE DASH
+        </div>
+        <div id="time"></div>
+        <div id="SessionInfo">Session ID: Inactive    | Session Elapsed: 00:00:00</div>
+        <div id="ServerInfo" >Server status: 999ms  | Car status: Disconnected</div>
 
         <!--DATA VIEW-->
         <div id="DataBackBorder">
-            DATA HERE
+
+            <!--TRANS TEMP-->
+            <div class="DataViewport TEMP">
+                <div class="DataTitle"> Transmission Temperature </div>
+                <div class="DataHolder"><div id="TRANSTEMP" style="position: relative;">##</div></div>
+
+            </div>
+            <!---->
+                        <!--PRI RPM-->
+            <div class="DataViewport RPM">
+                <div class="DataTitle"> Primary Transmission RPM </div>
+                <div class="DataHolder"><div id="PRIMARYRPM" style="position: relative;">##</div></div>
+
+            </div>
+            <!---->
+                        <!--SEC RPM-->
+            <div class="DataViewport RPM">
+                <div class="DataTitle"> Secondary Transmission RPM </div>
+                <div class="DataHolder"><div id="SECONDARYRPM" style="position: relative;">##</div></div>
+
+            </div>
+            <!---->
+                        <!--Brake Pressure-->
+            <div class="DataViewport BRAKE">
+                <div class="DataTitle"> Brake Pressure </div>
+                <div class="DataHolder"><div id="BRAKEPRESSURE" style="position: relative;">##</div></div>
+
+            </div>
+            <!---->
+
+
+
+
+
         </div>
+
+
+        <!--MAP VIEW-->
         <div id="MapBackBorder">
             <div id="map">
                 <script>
-                    
                     var map = L.map('map').setView([51.082780, -114.130201], 17.5);
+
+                    
                     
                     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
                         maxZoom: 19,
@@ -97,31 +136,70 @@
                     //...
 
                     myMarkerPlayer.start();
+                    L.Control.MyButton = L.Control.extend({
+                        onAdd: function(map) {
+                        var buttonContainer = L.DomUtil.create('div', 'my-button-container');
+                        buttonContainer.innerHTML = '<button>Track</button>';
+
+                        // Prevent click events from propagating to the map below
+                        L.DomEvent.disableClickPropagation(buttonContainer);
+
+                        // Add an event listener to your button
+                        buttonContainer.querySelector('button').onclick = function() {
+                        alert('WIP ):');
+                        };
+
+                        return buttonContainer;
+                        },
+
+                        onRemove: function(map) {
+                        // Cleanup code if needed
+                        }
+                    });
+
+                    L.control.myButton = function(opts) {
+                        return new L.Control.MyButton(opts);
+                    }
+
+                    // Add the new control to the map and position it
+                    L.control.myButton({ position: 'topleft' }).addTo(map);
                 </script>
             </div>
+            
+            
+            
         </div>
 
 
         <div id="AccelBackBorder">
-        
+            <Canvas id="Speedometer">
+
+            </Canvas>
+            <Canvas id="Accelerometer"></Canvas>
+
         </div>
 		
         
         
         <div id="ErrorBackBorder">
-
+            
         </div>
 
 
         <div id="SessionBackBorder">
-            Error Management<br>
-            Network<br>
-            Session Management<br>
-            View previous sessions<br>
-            Car configuration<br>
-            Dash Settings<br>
+            <div onclick="ActiveServerMenuCall()" class="CLICKABLE" style="position: absolute; left: 15%; top: 20%;"><svg style="width:50px; height: 50px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Active Session</title><path fill="#FFFFFF" d="M6 2C4.89 2 4 2.89 4 4V20A2 2 0 0 0 6 22H12.68A7 7 0 0 1 12 19A7 7 0 0 1 19 12A7 7 0 0 1 20 12.08V8L14 2H6M13 3.5L18.5 9H13V3.5M18 14C17.87 14 17.76 14.09 17.74 14.21L17.55 15.53C17.25 15.66 16.96 15.82 16.7 16L15.46 15.5C15.35 15.5 15.22 15.5 15.15 15.63L14.15 17.36C14.09 17.47 14.11 17.6 14.21 17.68L15.27 18.5C15.25 18.67 15.24 18.83 15.24 19C15.24 19.17 15.25 19.33 15.27 19.5L14.21 20.32C14.12 20.4 14.09 20.53 14.15 20.64L15.15 22.37C15.21 22.5 15.34 22.5 15.46 22.5L16.7 22C16.96 22.18 17.24 22.35 17.55 22.47L17.74 23.79C17.76 23.91 17.86 24 18 24H20C20.11 24 20.22 23.91 20.24 23.79L20.43 22.47C20.73 22.34 21 22.18 21.27 22L22.5 22.5C22.63 22.5 22.76 22.5 22.83 22.37L23.83 20.64C23.89 20.53 23.86 20.4 23.77 20.32L22.7 19.5C22.72 19.33 22.74 19.17 22.74 19C22.74 18.83 22.73 18.67 22.7 18.5L23.76 17.68C23.85 17.6 23.88 17.47 23.82 17.36L22.82 15.63C22.76 15.5 22.63 15.5 22.5 15.5L21.27 16C21 15.82 20.73 15.65 20.42 15.53L20.23 14.21C20.22 14.09 20.11 14 20 14H18M19 17.5C19.83 17.5 20.5 18.17 20.5 19C20.5 19.83 19.83 20.5 19 20.5C18.16 20.5 17.5 19.83 17.5 19C17.5 18.17 18.17 17.5 19 17.5Z" /></svg></div>
+            <div class="CLICKABLE" style="position: absolute; left: 45%; top: 20%;"><svg style="width:50px; height: 50px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Car Configuration</title><path fill="#FFFFFF" d="M5,11L6.5,6.5H17.5L19,11M17.5,16A1.5,1.5 0 0,1 16,14.5A1.5,1.5 0 0,1 17.5,13A1.5,1.5 0 0,1 19,14.5A1.5,1.5 0 0,1 17.5,16M6.5,16A1.5,1.5 0 0,1 5,14.5A1.5,1.5 0 0,1 6.5,13A1.5,1.5 0 0,1 8,14.5A1.5,1.5 0 0,1 6.5,16M18.92,6C18.72,5.42 18.16,5 17.5,5H6.5C5.84,5 5.28,5.42 5.08,6L3,12V20A1,1 0 0,0 4,21H5A1,1 0 0,0 6,20V19H18V20A1,1 0 0,0 19,21H20A1,1 0 0,0 21,20V12L18.92,6Z" /></svg></div>
+            <div class="CLICKABLE" style="position: absolute; left: 75%; top: 20%;"><svg style="width:50px; height: 50px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Error Configuration</title><path fill="#FFFFFF" d="M12 2C11.5 2 11 2.19 10.59 2.59L2.59 10.59C1.8 11.37 1.8 12.63 2.59 13.41L10.59 21.41C11.37 22.2 12.63 22.2 13.41 21.41L21.41 13.41C22.2 12.63 22.2 11.37 21.41 10.59L13.41 2.59C13 2.19 12.5 2 12 2M11 7H13V13H11V7M11 15H13V17H11V15Z" /></svg></div>
+            <div class="CLICKABLE" style="position: absolute; left: 15%; top: 55%;"><svg style="width:50px; height: 50px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Server Settings</title><path fill="#FFFFFF" d="M2 4.6V9.4C2 10.3 2.5 11 3.2 11H20.9C21.5 11 22.1 10.3 22.1 9.4V4.6C22 3.7 21.5 3 20.8 3H3.2C2.5 3 2 3.7 2 4.6M10 8V6H9V8H10M5 8H7V6H5V8M20 9H4V5H20V9M2 14.6V19.4C2 20.3 2.5 21 3.2 21H20.9C21.5 21 22.1 20.3 22.1 19.4V14.6C22.1 13.7 21.6 13 20.9 13H3.2C2.5 13 2 13.7 2 14.6M10 18V16H9V18H10M5 18H7V16H5V18M20 19H4V15H20V19Z"/></svg></div>
+            <div class="CLICKABLE" style="position: absolute; left: 45%; top: 55%;"><svg style="width:50px; height: 50px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Race Configuration</title><path fill="#FFFFFF" d="M14.4,6H20V16H13L12.6,14H7V21H5V4H14L14.4,6M14,14H16V12H18V10H16V8H14V10L13,8V6H11V8H9V6H7V8H9V10H7V12H9V10H11V12H13V10L14,12V14M11,10V8H13V10H11M14,10H16V12H14V10Z" /></svg></div>
+            <div class="CLICKABLE" style="position: absolute; left: 75%; top: 55%;"><svg style="width:50px; height: 50px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Session Replay</title><path fill="#FFFFFF" d="M14,12H19.5L14,6.5V12M8,5H15L21,11V21A2,2 0 0,1 19,23H8C6.89,23 6,22.1 6,21V18H11V20L15,17L11,14V16H6V7A2,2 0 0,1 8,5M13.5,3H4V16H6V18H4A2,2 0 0,1 2,16V3A2,2 0 0,1 4,1H11.5L13.5,3Z" /></svg></div>
         </div>
         
+
+    <!--Active Session Window-->
+        <div id="MenuBack" style="display: none;">
+            
+        </div>
         
         
         
@@ -145,7 +223,7 @@
             
             $(document).ready(function(){
                 const callTime = setInterval(getTimeHRMINS, 10);
-                const callNewData = setInterval(pull_data, 1000);
+                //const callNewData = setInterval(pull_data, 1000);
                 const callErrorbank = setInterval(FalseError, 100000);
             });
 
@@ -161,8 +239,7 @@
                 hoursElapsed = Math.floor(secondDif/(60*60));
                 minutesElapsed = Math.floor(((secondDif/(60))%60));
                 secondsElapsed = Math.floor(secondDif%60);
-                $("#time").text("Time: " + hour.toString().padStart(2, '0') + ":" + minute.toString().padStart(2, '0') + ":" + second.toString().padStart(2, '0') 
-                + "\nElapsed Time: " + hoursElapsed.toString().padStart(2, '0') + ":" + minutesElapsed.toString().padStart(2, '0') + ":" + secondsElapsed.toString().padStart(2, '0'));
+                $("#time").text(hour.toString().padStart(2, '0') + ":" + minute.toString().padStart(2, '0') + ":" + second.toString().padStart(2, '0'));
             }
             function FalseError(){
                     const errorstamp = new Date;
@@ -173,9 +250,34 @@
                     document.getElementById("ErrorBackBorder").lastChild.style.cursor = "pointer"; 
             }
 
+
+
+                const closeModalButton = document.getElementById("MenuBack");
+                const MenuBackground = document.getElementById("MenuBack");
+
+            // Function to open the modal
+            function ActiveServerMenuCall() {
+                MenuBackground.style.display = "flex"; // Use "flex" to center content
+            }
+
+            // Function to close the modal
+            function closeModal() {
+               MenuBackground.style.display = "none";
+                      }
+
+            // Event listeners
+
+            closeModalButton.addEventListener("click", closeModal);
+
+            // Close the modal if the user clicks outside of the content
+            window.onclick = function(event) {
+                if (event.target === modalOverlay) {
+                    closeModal();
+            }
+        }
         </script>
  
-        </script>
+        
 
         <!--EOF-->
     </body>
