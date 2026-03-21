@@ -1,0 +1,223 @@
+<globals>
+	<api>
+		<!-- Add <enumdefs> here -->
+	</api>
+
+	<consts>
+		<!-- Add <px>, <int>, <color> etc here -->
+		<int name="base_lib_unit_xs" value="2" help="Use this as base unit to set spaces and sizes" />
+		<int name="base_lib_unit_sm" value="4" help="Use this as base unit to set spaces and sizes" />
+		<int name="base_lib_unit_md" value="8" help="Use this as base unit to set spaces and sizes" />
+		<int name="base_lib_unit_lg" value="16" help="Use this as base unit to set spaces and sizes" />
+		<int name="base_lib_unit_xl" value="24" help="Use this as base unit to set spaces and sizes" />
+		<int name="base_lib_unit_xxl" value="32" help="Use this as base unit to set spaces and sizes" />
+		<int name="base_lib_unit_xxxl" value="40" help="Use this as base unit to set spaces and sizes" />
+
+		<int name="base_lib_radius" value="20" help="Used as radius in styles" />
+		<int name="base_lib_border_width" value="2" help="Used as border width styles" />
+
+		<int name="base_lib_block_0_5" value="50" help="When setting up size sizes it's 0.5 unit" />
+		<int name="base_lib_block_1" value="100" help="When setting up size sizes it's 1 unit" />
+		<int name="base_lib_block_1_25" value="125" help="When setting up size sizes it's 0.5 unit" />
+		<int name="base_lib_block_1_5" value="150" help="When setting up size sizes it's 1.5 unit" />
+		<int name="base_lib_block_2" value="200" help="When setting up size sizes it's 2 units" />
+		<int name="base_lib_block_3" value="300" help="When setting up size sizes it's 3 units" />
+
+		<color name="color_light_bg" value="0xD2D0F2" />
+		<color name="color_light_panel" value="0xF4EDF8" />
+		<color name="color_light_text" value="0x161019" />
+		<color name="color_light_button" value="0xD2BAFF" />
+		<color name="color_light_button_text" value="0x5C428A" />
+
+		<color name="color_dark_bg" value="0x161019" />
+		<color name="color_dark_panel" value="0x26212C" />
+		<color name="color_dark_text" value="0xD1CBD7" />
+		<color name="color_dark_button" value="0xD9C2FF" />
+		<color name="color_dark_button_text" value="0x462182" />
+
+		<color name="color_accent" value="0x70609C" />
+		<color name="color_accent_text" value="0xFFF" />
+	</consts>
+
+	<styles>
+		<!-- Add <style> tags here -->
+		<style
+			name="style_light_bg"
+			bg_color="#color_light_bg"
+			text_color="#color_light_text"
+			image_recolor="#color_light_text"
+			bg_opa="100%"
+		/>
+		<style
+			name="style_light_panel"
+			bg_color="#color_light_panel"
+			border_color="#color_light_text"
+			text_color="#color_light_text"
+			line_color="#color_light_text"
+			image_recolor="#color_light_text"
+			bg_opa="100%"
+			border_opa="20%"
+			line_opa="20%"
+		/>
+		<style
+			name="style_light_button"
+			bg_color="#color_light_button"
+			text_color="#color_light_button_text"
+			image_recolor="#color_light_button_text"
+			bg_opa="100%"
+		/>
+		<style name="style_light_text" text_color="#color_light_text" />
+		<style name="style_light_text_accent" text_color="#color_accent" />
+		<style name="style_light_button_pressed" recolor="#color_light_text" recolor_opa="40%" />
+		<style
+			name="style_light_scrollbar"
+			width="#base_lib_unit_sm"
+			radius="#base_lib_unit_sm"
+			bg_color="0x888"
+			bg_opa="50%"
+		/>
+
+		<style
+			name="style_dark_bg"
+			bg_color="#color_dark_bg"
+			text_color="#color_dark_text"
+			image_recolor="#color_dark_text"
+			bg_opa="100%"
+		/>
+		<style
+			name="style_dark_panel"
+			bg_color="#color_dark_panel"
+			border_color="#color_dark_text"
+			text_color="#color_dark_text"
+			line_color="#color_dark_text"
+			image_recolor="#color_dark_text"
+			bg_opa="100%"
+			border_opa="20%"
+			line_opa="20%"
+		/>
+		<style
+			name="style_dark_button"
+			bg_color="#color_dark_button"
+			text_color="#color_dark_button_text"
+			image_recolor="#color_dark_button_text"
+			bg_opa="100%"
+		/>
+		<style name="style_dark_button_pressed" recolor="#color_dark_bg" recolor_opa="40%" />
+		<style name="style_dark_text" text_color="#color_dark_text" />
+		<style name="style_dark_text_accent" text_color="#color_accent" />
+		<style
+			name="style_dark_scrollbar"
+			width="#base_lib_unit_sm"
+			radius="#base_lib_unit_sm"
+			bg_color="0x888"
+			bg_opa="50%"
+		/>
+	</styles>
+
+	<subjects>
+		<!-- Add <int>, <string>, or <float> subjects here -->
+		<int name="subject_dark_mode" value="0" />
+		<int name="subject_hour" value="9" />
+		<int name="subject_minute" value="43" />
+		<int name="subject_day_index" value="12" />
+		<string name="subject_day_name" value="Wednesday" />
+		<string name="subject_month_name" value="Jan" />
+		<int name="subject_temp" value="23" />
+		<int name="subject_test" value="30" />
+	</subjects>
+
+	<images sync="true">
+		<!-- Add <file> or <data> tags here -->
+
+		<data name="icon_check" src_path="images/icon_check.png" color_format="argb8888" />
+		<data name="icon_minus" src_path="images/icon_minus.png" color_format="argb8888" />
+		<data name="icon_plus" src_path="images/icon_plus.png" color_format="argb8888" />
+		<data name="icon_wifi" src_path="images/icon_wifi.png" color_format="argb8888" />
+		<data name="image_alarm" src_path="images/image_alarm.png" color_format="argb8888" />
+		<data name="image_weather_foggy" src_path="images/image_weather_foggy.png" color_format="argb8888" />
+	</images>
+
+	<fonts>
+		<!-- Add <bin> , <tiny_ttf>, <freetype> tags here -->
+
+		<bin
+			name="font_xs"
+			size="12"
+			src_path="fonts/Roboto-Medium.ttf"
+			bpp="4"
+			range="0x20-0x7F"
+			symbols="°—"
+			as_file="false"
+		/>
+
+		<bin
+			name="font_sm"
+			size="14"
+			src_path="fonts/Roboto-Medium.ttf"
+			bpp="4"
+			range="0x20-0x7F"
+			symbols="°—"
+			as_file="false"
+		/>
+
+		<bin
+			name="font_md"
+			size="16"
+			src_path="fonts/Roboto-Regular.ttf"
+			bpp="4"
+			range="0x20-0x7F"
+			symbols="°—"
+			as_file="false"
+		/>
+
+		<bin
+			name="font_md_bold"
+			size="16"
+			src_path="fonts/Roboto-Medium.ttf"
+			bpp="4"
+			range="0x20-0x7F"
+			symbols="°—"
+			as_file="false"
+		/>
+
+		<bin
+			name="font_lg"
+			size="20"
+			src_path="fonts/Roboto-Regular.ttf"
+			bpp="4"
+			range="0x20-0x7F"
+			symbols="°—"
+			as_file="false"
+		/>
+
+		<bin
+			name="font_lg_bold"
+			size="20"
+			src_path="fonts/Roboto-Medium.ttf"
+			bpp="4"
+			range="0x20-0x7F"
+			symbols="°—"
+			as_file="false"
+		/>
+
+		<bin
+			name="font_xl"
+			size="32"
+			src_path="fonts/Roboto-Medium.ttf"
+			bpp="4"
+			range="0x20-0x7F"
+			symbols="°—"
+			as_file="false"
+		/>
+
+		<bin
+			name="font_xxl"
+			size="40"
+			src_path="fonts/Roboto-Medium.ttf"
+			bpp="4"
+			range="0x20-0x7F"
+			symbols="°—"
+			as_file="false"
+		/>
+	</fonts>
+</globals>

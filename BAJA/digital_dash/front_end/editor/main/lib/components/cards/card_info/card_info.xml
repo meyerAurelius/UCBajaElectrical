@@ -1,0 +1,31 @@
+<component>
+	<previews>
+		<preview width="480" style_bg_color="0xddd" />
+	</previews>
+	<api>
+		<prop name="title" type="string" default="Title" />
+		<prop name="subtitle" type="string" default="Subtitle" />
+		<prop name="icon" type="image" default="" />
+		<prop name="grow" type="int" default="NULL" />
+	</api>
+
+	<styles>
+		<style name="style_base" text_font="font_xl" width="#base_lib_block_2" height="#base_lib_block_1_5" />
+	</styles>
+	<view extends="card_empty" flex_grow="$grow">
+		<style name="style_base" />
+		<column
+			width="content"
+			height="100%"
+			style_flex_main_place="center"
+			style_flex_cross_place="start"
+			padding_side="0"
+		>
+			<row horizontal_align="start" vertical_align="center" padding_side="0">
+				<image_mono src="$icon" style_image_recolor="#color_accent" style_margin_top="-6" />
+				<h1 text="$title" />
+			</row>
+			<h3 text="$subtitle" />
+		</column>
+	</view>
+</component>

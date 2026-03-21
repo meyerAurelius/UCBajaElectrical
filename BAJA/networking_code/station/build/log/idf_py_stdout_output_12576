@@ -1,0 +1,69 @@
+Command: ninja flash
+[1/5] C:\WINDOWS\system32\cmd.exe /C "cd /D C:\UCBajaElectrical\UCBajaElectrical\BAJA\networking_code\station\build\esp-idf\esptool_py && C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:/Espressif/frameworks/esp-idf-v5.5.1/components/partition_table/check_sizes.py --offset 0x8000 partition --type app C:/UCBajaElectrical/UCBajaElectrical/BAJA/networking_code/station/build/partition_table/partition-table.bin C:/UCBajaElectrical/UCBajaElectrical/BAJA/networking_code/station/build/wifi_station.bin"
+wifi_station.bin binary size 0xad220 bytes. Smallest app partition is 0x100000 bytes. 0x52de0 bytes (32%) free.
+[2/5] Performing build step for 'bootloader'
+[1/1] C:\WINDOWS\system32\cmd.exe /C "cd /D C:\UCBajaElectrical\UCBajaElectrical\BAJA\networking_code\station\build\bootloader\esp-idf\esptool_py && C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:/Espressif/frameworks/esp-idf-v5.5.1/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 C:/UCBajaElectrical/UCBajaElectrical/BAJA/networking_code/station/build/bootloader/bootloader.bin"
+Bootloader binary size 0x5240 bytes. 0x2dc0 bytes (36%) free.
+[3/5] No install step for 'bootloader'
+[4/5] Completed 'bootloader'
+[4/5] C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Espressif\frameworks\esp-idf-v5.5.1\components\esptool_py && C:\Espressif\tools\cmake\3.30.2\bin\cmake.exe -D IDF_PATH=C:/Espressif/frameworks/esp-idf-v5.5.1 -D SERIAL_TOOL=C:/Espressif/python_env/idf5.5_py3.11_env/Scripts/python.exe;;C:/Espressif/frameworks/esp-idf-v5.5.1/components/esptool_py/esptool/esptool.py;--chip;esp32s3 -D SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args -D WORKING_DIRECTORY=C:/UCBajaElectrical/UCBajaElectrical/BAJA/networking_code/station/build -P C:/Espressif/frameworks/esp-idf-v5.5.1/components/esptool_py/run_serial_tool.cmake"
+esptool.py --chip esp32s3 -p COM8 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 80m --flash_size 2MB 0x0 bootloader/bootloader.bin 0x10000 wifi_station.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.10.dev2
+Serial port COM8
+Connecting...
+Chip is ESP32-S3 (QFN56) (revision v0.2)
+Features: WiFi, BLE, Embedded Flash 8MB (GD)
+Crystal is 40MHz
+USB mode: USB-Serial/JTAG
+MAC: 48:ca:43:39:a3:90
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00000000 to 0x00005fff...
+Flash will be erased from 0x00010000 to 0x000bdfff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+SHA digest in image updated
+Compressed 21056 bytes to 13409...
+Writing at 0x00000000... (100 %)
+Wrote 21056 bytes (13409 compressed) at 0x00000000 in 0.4 seconds (effective 473.6 kbit/s)...
+Hash of data verified.
+Compressed 709152 bytes to 437028...
+Writing at 0x00010000... (3 %)
+Writing at 0x0001c51d... (7 %)
+Writing at 0x000253a9... (11 %)
+Writing at 0x0002f9ba... (14 %)
+Writing at 0x00035d54... (18 %)
+Writing at 0x0003c1d4... (22 %)
+Writing at 0x00042188... (25 %)
+Writing at 0x00048228... (29 %)
+Writing at 0x0004e101... (33 %)
+Writing at 0x000531ae... (37 %)
+Writing at 0x00058ba3... (40 %)
+Writing at 0x0005e26f... (44 %)
+Writing at 0x00063614... (48 %)
+Writing at 0x00068c49... (51 %)
+Writing at 0x0006eb26... (55 %)
+Writing at 0x0007437f... (59 %)
+Writing at 0x0007a041... (62 %)
+Writing at 0x0007fdd0... (66 %)
+Writing at 0x0008587a... (70 %)
+Writing at 0x0008b40f... (74 %)
+Writing at 0x00090c37... (77 %)
+Writing at 0x0009677f... (81 %)
+Writing at 0x000a111c... (85 %)
+Writing at 0x000a6fc2... (88 %)
+Writing at 0x000ad560... (92 %)
+Writing at 0x000b3b34... (96 %)
+Writing at 0x000b8f75... (100 %)
+Wrote 709152 bytes (437028 compressed) at 0x00010000 in 4.8 seconds (effective 1183.0 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.0 seconds (effective 552.6 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...

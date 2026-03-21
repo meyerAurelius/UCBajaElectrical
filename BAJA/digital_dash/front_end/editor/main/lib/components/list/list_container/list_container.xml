@@ -1,0 +1,21 @@
+<component>
+	<styles>
+		<style
+			name="style_base"
+			height="content"
+			width="100%"
+			bg_color="#color_light_panel"
+			bg_opa="100%"
+			radius="#base_lib_radius"
+			pad_all="0"
+			pad_row="0"
+			flex_grow="1"
+		/>
+		<style name="style_base_dark" bg_color="#color_dark_panel" />
+	</styles>
+	<view extends="column">
+		<style name="style_base" />
+		<bind_style name="style_base_dark" subject="subject_dark_mode" ref_value="1" />
+		<style name="style_light_scrollbar" selector="scrollbar" />
+	</view>
+</component>

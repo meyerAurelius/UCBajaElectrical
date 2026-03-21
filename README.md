@@ -13,8 +13,8 @@ A repo for the electrical subteam 2024-2025
 7. ```ssh-add .ssh/id_ed25519``` (makes the key you generated in step 3 availible to ssh)
 8. Check the connection to github with ```ssh -T git@github.com``` (you should see your username in the output)
 9. Change to a directory where you want the baja code stored
-10. ```git clone https://github.com/SunStone7-Dragonnacho/UCBajaElectrical.git``` (clones the repo)
-11. ```git remote set-url origin git@github.com:SunStone7-Dragonnacho/UCBajaElectrical.git``` (sets to origin to our repo for when code is pushed).
+10. ```git clone https://github.com/meyerAurelius/UCBajaElectrical.git``` (clones the repo)
+11. ```git remote set-url origin git@github.com:meyerAurelius/UCBajaElectrical.git``` (sets to origin to our repo for when code is pushed).
 12. Enjoy!
 
 **Installation: Windows**
@@ -28,8 +28,8 @@ A repo for the electrical subteam 2024-2025
 7. ```ssh-add .ssh/id_ed25519``` (should return without errors)
 8. Check the connection to github with ```ssh -T git@github.com``` (you should see your username in the output)
 9. Change to a directory where you want the baja code stored
-10. ```git clone https://github.com/SunStone7-Dragonnacho/UCBajaElectrical.git``` (clones the repo)
-11. ```git remote set-url origin git@github.com:SunStone7-Dragonnacho/UCBajaElectrical.git``` (sets to origin to our repo for when code is pushed).
+10. ```git clone https://github.com/meyerAurelius/UCBajaElectrical.git``` (clones the repo)
+11. ```git remote set-url origin git@github.com:meyerAurelius/UCBajaElectrical.git``` (sets to origin to our repo for when code is pushed).
 12. Start working on your code!
 
 
