@@ -17,7 +17,7 @@ function pull_data(){
 
         $.ajax({
             method: 'GET', 
-            url: "http://127.0.0.1:8000/", 
+            url: "http:/baja.403587.xyz/data/?since=5%20minutes", 
             cache: false, 
             data: JSON})
         .done(function(data){

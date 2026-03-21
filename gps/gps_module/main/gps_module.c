@@ -244,7 +244,7 @@ void get_tick_timestamp_string(char *buffer, size_t len)
 	sec = ms / 1000;
 	rem_ms = ms % 1000;
 
-	snprintf(buffer, len, "%lu.%03lu", (unsigned long)sec, (unsigned long)rem_ms);
+	snprintf(buffer, len, timestamp);
 }
 
 
@@ -269,6 +269,9 @@ static char *build_sample_json_payload(void)
 		ESP_LOGE(TAG, "Failed to initialize json payload");
 		return NULL;
 	}
+
+//TIMESTAMP
+
 
 	/*
 	 * imu entry #1
@@ -512,97 +515,6 @@ static void http_post_task(void *pvParameters)
 	}
 }
 
-
-
-
-/*
-//HTTP
-#include "esp_http_client.h"
-
-static const char *HTTPTAG = "HTTP_CLIENT_POST";
-
-// Event handler (optional, but recommended for processing responses)
-esp_err_t _http_event_handler(esp_http_client_event_t *evt) {
-    switch(evt->event_id) {
-        case HTTP_EVENT_ON_DATA:
-            ESP_LOGI(HTTPTAG, "HTTP_EVENT_ON_DATA, len=%d", evt->data_len);
-            if (!esp_http_client_is_chunked_response(evt->client)) {
-                // Print data received
-                printf("%.*s\n", evt->data_len, (char*)evt->data);
-            }
-            break;
-        // Other events can be handled here (ERROR, CONNECTED, etc.)
-        default:
-            break;
-    }
-    return ESP_OK;
-}
-
-void http_post_rest_function(void*) {
-    while (true) {
-
-    if (STATUS != 86){
-    // 1. Define the POST data (e.g., JSON string)
-    char post_data[2000];
-
-        sprintf(post_data, "{\"Logging_Event\":\"UK\",\"Logging_Data\":["
-                "{\"type\": \"lat\",\"sensor_id\": \"gps_module\",\"value\": %f,\"ts\": \"%s\"}"
-                "{\"type\": \"lon\",\"sensor_id\": \"gps_module\",\"value\": %f,\"ts\": \"%s\"}"
-                "{\"type\": \"alt\",\"sensor_id\": \"gps_module\",\"value\": %f,\"ts\": \"%s\"}"
-                "{\"type\": \"spd\",\"sensor_id\": \"gps_module\",\"value\": %f,\"ts\": \"%s\"}"
-                "{\"type\": \"deg\",\"sensor_id\": \"gps_module\",\"value\": %f,\"ts\": \"%s\"}"
-                "{\"type\": \"sat\",\"sensor_id\": \"gps_module\",\"value\": %d,\"ts\": \"%s\"}"
-                "{\"type\": \"acc\",\"sensor_id\": \"gps_module\",\"value\": %f,\"ts\": \"%s\"}]}",
-                latitude, timestamp,
-                longitude, timestamp,
-                altitude, timestamp,
-                kmhr, timestamp,
-                degreesTrue, timestamp,
-                satCount, timestamp,
-                accuracy, timestamp
-                );
-
-    //http://baja.403587.xyz/tests/echo
-    // 2. Configure the HTTP client
-    esp_http_client_config_t config = {
-        .url = "https://webhook.site/9db68824-4b75-44dd-b35d-2138160d8498", // Target URL for the POST request
-        .event_handler = _http_event_handler, // Assign the event handler
-    };
-    esp_http_client_handle_t client = esp_http_client_init(&config);
-
-    // 3. Set the request method to POST
-    esp_http_client_set_method(client, HTTP_METHOD_POST);
-
-    // 4. Set headers, specifically Content-Type for JSON data
-    esp_http_client_set_header(client, "Content-Type", "application/json");
-
-    // 5. Set the POST field with data and its length
-    esp_http_client_set_post_field(client, post_data, strlen(post_data));
-
-        ESP_LOGI(HTTPTAG, "%d",client);
-
-    // 6. Perform the request
-    esp_err_t err = esp_http_client_perform(client);
-
-    // 7. Check the result and status code
-    if (err == ESP_OK) {
-        ESP_LOGI(HTTPTAG, "HTTP POST Status = %d, content_length = %" PRId64,
-                 esp_http_client_get_status_code(client),
-                 esp_http_client_get_content_length(client));
-    } else {
-        ESP_LOGE(HTTPTAG, "HTTP POST request failed: %s", esp_err_to_name(err));
-    }
-
-    // 8. Cleanup the client resources
-    esp_http_client_cleanup(client);
-    } else {
-        ESP_LOGI(HTTPTAG, "ERROR: NO DATA TO SEND");
-        vTaskDelay(pdMS_TO_TICKS(4000));
-    }
-    }
-}
-
-*/
 
 
 //GPS HANDLING
