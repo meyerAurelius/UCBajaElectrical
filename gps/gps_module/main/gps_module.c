@@ -270,12 +270,11 @@ static char *build_sample_json_payload(void)
 		return NULL;
 	}
 
-//TIMESTAMP
 
 
 	/*
 	 * imu entry #1
-	 */
+
 	imu_entry = imu_sensor_reading("imu_accel_1");
 	imu_entry.x = 10.0f;
 	imu_entry.y = 12.0f;
@@ -289,10 +288,10 @@ static char *build_sample_json_payload(void)
 		return NULL;
 	}
 
-	/*
+
 	 * imu entry #2
 	 * proves variable reuse is safe with new payload design
-	 */
+
 	imu_entry = imu_sensor_reading("imu_accel_1");
 	imu_entry.x = 5.2f;
 	imu_entry.y = 6.8f;
@@ -305,7 +304,7 @@ static char *build_sample_json_payload(void)
 		json_payload_free(&payload);
 		return NULL;
 	}
-
+	*/
 	/*
 	 * gps
 	 */
@@ -339,7 +338,7 @@ static char *build_sample_json_payload(void)
 
 	/*
 	 * pressure
-	 */
+
 	pressure_entry = pressure_sensor_reading("oil_pressure_1");
 	pressure_entry.pressure = 410.0f;
 	pressure_entry.temperature = 82.5f;
@@ -352,9 +351,9 @@ static char *build_sample_json_payload(void)
 		return NULL;
 	}
 
-	/*
-	 * rpm
-	 */
+
+	  rpm
+
 	rpm_entry = rpm_sensor_reading("eng_rpm_1");
 	rpm_entry.rpm = 3125.0f;
 
@@ -365,9 +364,9 @@ static char *build_sample_json_payload(void)
 		return NULL;
 	}
 
-	/*
+
 	 * voltage
-	 */
+
 	voltage_entry = voltage_sensor_reading("batt_volt_1");
 	voltage_entry.voltage = 12.84f;
 
@@ -377,6 +376,7 @@ static char *build_sample_json_payload(void)
 		json_payload_free(&payload);
 		return NULL;
 	}
+	*/
 
 	json_string = json_payload_build_string_unformatted(&payload);
 	json_payload_free(&payload);
@@ -544,7 +544,7 @@ void raw_nmea(void)
 {
     memset(buf, 0, BUFFER);
     uart_read_bytes(UART_NUM_2, buf, BUFFER, portMAX_DELAY);
-   //ESP_LOGI(TAG, "%s", buf);
+
 }
 
 
@@ -561,9 +561,10 @@ void gpstask(void *arg)
         //intake data
         raw_nmea();
         char *GPRMCDATA = strstr(buf, "$GPRMC");
-        sscanf(GPRMCDATA, "$GPRMC,%10s,%c,%2d%9f,%c,%3d%8f,%c,%f,%f,%6s", timeIN, &STATUS, &latDD, &latM, &NS, &lonDDD, &lonM, &EW, &speedKnots, &degreesTrue, date);
-
-        if(STATUS != 86){
+		ESP_LOGI(GPSTAG, "%s", GPRMCDATA);
+        sscanf(GPRMCDATA, "$GPRMC,%9s,%c,%2d%9f,%c,%3d%8f,%c,%f,%f,%6s", timeIN, &STATUS, &latDD, &latM, &NS, &lonDDD, &lonM, &EW, &speedKnots, &degreesTrue, date);
+//STATUS != 86
+        if(1){
 
         //Aquire accurate long and lat values
         if(EW == 87){
@@ -610,7 +611,7 @@ void gpstask(void *arg)
         //Altitude accuracy correction
         TrueAltitude = altitude - undulation;
 
-        ESP_LOGI(GPSTAG, "%d,%f,%f,%f,%f,%f,%d,%d,%f,%f", iteration, latitude, longitude, altitude, kmhr, degreesTrue, satCount, quality, HDOP, accuracy);
+        ESP_LOGI(GPSTAG, "%d,%f,%f,%f,%f,%f,%d,%d,%f,%f,%s", iteration, latitude, longitude, altitude, kmhr, degreesTrue, satCount, quality, HDOP, accuracy, timestamp);
 
         } else {
         //If GPS data is invalid (i.e. no signal)
