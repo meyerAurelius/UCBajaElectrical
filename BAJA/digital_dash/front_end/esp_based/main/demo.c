@@ -14,10 +14,22 @@
 
 #include "lcd.h"
 #include "touch.h"
+#include "nvs_flash.h"
 
-static const char *TAG = "demo";
+#include "esp_system.h"
+#include "esp_wifi.h"
+#include "esp_mac.h"
 
+
+#include "espnow_example_main.c"
+
+#include "esp_now.h"
+
+#include "espnow_example.h"
 static lv_obj_t *lbl_counter = NULL;
+
+// thermistor esp mac 94:A9:90:0B:2A:04
+static uint8_t s_peer_mac[6] =  { 0x94, 0xA9, 0x90, 0x0B, 0x2A, 0x04 };
 
 /* Button click event */
 static void ui_event_button_1(lv_event_t *e)
@@ -46,7 +58,7 @@ static void ui_event_button_1(lv_event_t *e)
     }
 }
 
-int cvt_temp = 30;
+int cvt_temp = 30;  
 int vehicle_speed = 11;
 
 static esp_err_t app_lvgl_main(void)
@@ -129,8 +141,53 @@ static esp_err_t app_lvgl_main(void)
     return ESP_OK;
 }
 
+
+
+
+
+static void comms_task(void)
+{
+    esp_err_t ret = nvs_flash_init();
+
+    if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {
+        ESP_ERROR_CHECK( nvs_flash_erase() );
+        ret = nvs_flash_init();
+    }
+
+    ESP_ERROR_CHECK( ret );
+
+    example_wifi_init();
+    
+    ESP_ERROR_CHECK(example_espnow_init());
+}
+
+
+
 void app_main(void)
 {
+
+    uint8_t mac[6];
+    // ESP_MAC_WIFI_STA can be changed to ESP_MAC_BASE, ESP_MAC_BT, etc.
+    esp_err_t ret = esp_read_mac(mac, ESP_MAC_WIFI_STA);
+    
+        if (ret == ESP_OK) {
+            printf("STA MAC Address: %02X:%02X:%02X:%02X:%02X:%02X\n",
+                mac[0], mac[1], mac[2], mac[3], mac[4], mac[5]);
+        } else {
+            printf("Failed to read STA MAC address\n");
+        }
+
+        ret = esp_read_mac(mac, ESP_MAC_BASE);
+
+        if (ret == ESP_OK){
+            printf("STA MAC Address: %02X:%02X:%02X:%02X:%02X:%02X\n",
+                mac[0], mac[1], mac[2], mac[3], mac[4], mac[5]);
+        } else {
+            printf("Failed to read BASE MAC address\n");
+        }
+
+
+
     esp_lcd_panel_io_handle_t lcd_io = NULL;
     esp_lcd_panel_handle_t lcd_panel = NULL;
     esp_lcd_touch_handle_t tp = NULL;
@@ -161,7 +218,12 @@ void app_main(void)
 
     ESP_ERROR_CHECK(app_lvgl_main());
 
+
+    
+    comms_task();
+
     while (1) {
+
         snprintf(buf, sizeof(buf), "%04u", n++);
 
         if (lvgl_port_lock(0)) {
