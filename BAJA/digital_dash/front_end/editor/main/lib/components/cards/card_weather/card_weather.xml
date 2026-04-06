@@ -1,0 +1,33 @@
+<component>
+	<previews>
+		<preview style_bg_color="0xddd" />
+	</previews>
+	<api>
+		<prop name="grow" type="int" default="NULL" />
+	</api>
+	<styles>
+		<style
+			name="style_main"
+			width="#base_lib_block_2"
+			height="#base_lib_block_1_5"
+			layout="flex"
+			flex_flow="column"
+			flex_main_place="center"
+			pad_column="#base_lib_unit_sm"
+			pad_all="#base_lib_unit_xl"
+			text_font="font_md"
+		/>
+	</styles>
+
+	<view extends="card_empty" flex_grow="$grow">
+		<style name="style_main" />
+		<row horizontal_align="start" vertical_align="center" padding_side="0">
+			<image_mono src="image_weather_foggy" style_image_recolor="#color_accent" style_margin_top="-6" />
+			<value_large value="subject_temp" format="%d" unit="°C" />
+		</row>
+		<row padding_side="0">
+			<lv_label text="Foggy" style_text_font="font_md_bold" />
+			<lv_label text="H:19° L:10°" />
+		</row>
+	</view>
+</component>

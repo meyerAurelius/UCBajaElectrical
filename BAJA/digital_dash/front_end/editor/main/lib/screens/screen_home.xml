@@ -1,0 +1,71 @@
+<screen>
+	<view>
+		<column width="100%" height="100%" padding_side="0" padding_inside="0">
+			<header name="header">
+				<time subject_hour="subject_hour" subject_minute="subject_minute" />
+				<spacer />
+				<h4 text="Main screen" />
+				<spacer />
+				<icon icon="icon_wifi" />
+			</header>
+			<theme>
+				<column name="intro" width="100%" horizontal_align="start" padding_side="#base_lib_unit_xl">
+					<h2 name="h2_2" text="Starter Component Library Demo" />
+					<h3 name="h3_1" text="See how LVGL Pro's new Design Mode brings components to life." />
+				</column>
+
+				<column width="100%" padding_side="#base_lib_unit_xl" padding_inside="#base_lib_unit_xl">
+					<row name="cards" padding_inside="#base_lib_unit_lg" padding_side="1" width="100%">
+						<card_clock name="card_clock_1" grow="1" />
+						<card_weather name="card_weather_1" grow="1" />
+						<card_info
+							name="card_info_1"
+							title="6:05"
+							subtitle="This Morning"
+							icon="image_alarm"
+							grow="1"
+						/>
+					</row>
+
+					<container width="100%" height="#base_lib_block_2">
+						<row
+							vertical_align="center"
+							horizontal_align="space_between"
+							height="100%"
+							width="100%"
+							padding_inside="#base_lib_unit_xxxl"
+							padding_side="0"
+						>
+							<column height="100%" vertical_align="space_around" padding_side="0">
+								<checkbox />
+								<switch />
+								<panel width="content" padding_side="#base_lib_unit_xs">
+									<value_setter />
+								</panel>
+							</column>
+							<roller
+								height="100%"
+								options="Jan&#10;Feb&#10;Mar&#10;Apr&#10;May&#10;Jun&#10;Jul&#10;Aug&#10;Sep&#10;Oct&#10;Nov&#10;Dec"
+							/>
+							<chart height="100%" tick_count="5" point_count="10" />
+						</row>
+					</container>
+
+					<container width="100%">
+						<row width="100%" padding_side="0" padding_inside="#base_lib_unit_xl">
+							<column padding_side="0" padding_inside="#base_lib_unit_xl">
+								<arc_box />
+								<slider_box />
+							</column>
+							<list_container>
+								<list_item />
+								<list_item />
+								<list_item />
+							</list_container>
+						</row>
+					</container>
+				</column>
+			</theme>
+		</column>
+	</view>
+</screen>

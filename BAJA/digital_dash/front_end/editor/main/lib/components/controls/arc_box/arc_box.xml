@@ -1,0 +1,35 @@
+<component>
+	<api>
+		<prop name="title" type="string" default="Title" />
+		<prop name="subject" type="subject" default="subject_test" />
+		<prop name="format" type="string" default="%d" />
+	</api>
+
+	<styles>
+		<style name="style_base" width="#base_lib_block_2" height="#base_lib_block_1_5" />
+	</styles>
+	<view
+		extends="panel"
+		flex_flow="column"
+		style_flex_track_place="center"
+		style_flex_cross_place="center"
+		height="content"
+	>
+		<style name="style_base" />
+		<h3 text="$title" width="100%" />
+
+		<arc subject="$subject" style_margin_bottom="#base_lib_unit_md">
+			<lv_label style_text_font="font_lg_bold" align="center" bind_text="$subject" bind_text-fmt="$format" />
+		</arc>
+
+		<button_circle ignore_layout="true" align="bottom_left" icon="icon_minus">
+			<subject_increment_event step="-1" subject="$subject" trigger="clicked" />
+			<subject_increment_event step="-1" subject="$subject" trigger="long_pressed_repeat" />
+		</button_circle>
+
+		<button_circle ignore_layout="true" align="bottom_right" icon="icon_plus">
+			<subject_increment_event step="1" subject="$subject" trigger="clicked" />
+			<subject_increment_event step="1" subject="$subject" trigger="long_pressed_repeat" />
+		</button_circle>
+	</view>
+</component>

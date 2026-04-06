@@ -1,0 +1,19 @@
+<component>
+	<styles>
+		<style
+			name="style_base"
+			width="#base_lib_block_2"
+			height="#base_lib_block_1"
+			radius="#base_lib_radius"
+			pad_all="#base_lib_unit_xl"
+			pad_row="#base_lib_unit_md"
+			pad_column="#base_lib_unit_md"
+		/>
+	</styles>
+	<view>
+		<remove_style_all />
+		<style name="style_light_panel" />
+		<bind_style name="style_dark_panel" subject="subject_dark_mode" ref_value="1" />
+		<style name="style_base" />
+	</view>
+</component>

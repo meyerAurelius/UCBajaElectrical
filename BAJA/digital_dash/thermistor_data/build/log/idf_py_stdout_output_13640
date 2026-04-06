@@ -1,0 +1,753 @@
+Command: C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:\Espressif\frameworks\esp-idf-v5.5.3\tools/idf_monitor.py -p COM17 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 C:\Users\marcu\baja\repos\UCBajaElectrical\BAJA\digital_dash\thermistor_data\build\thermistor_data.elf C:\Users\marcu\baja\repos\UCBajaElectrical\BAJA\digital_dash\thermistor_data\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'C:\Espressif\frameworks\esp-idf-v5.5.3\tools\idf.py'
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x14f0
+load:0x403c8700,len:0xd24
+load:0x403cb700,len:0x2ef0
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5.3 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Apr  4 2026 14:04:25[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (31) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (35) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (76) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c090020 size=19520h (103712) map[0m
+[0;32mI (105) esp_image: segment 1: paddr=00029548 vaddr=3fc9a300 size=04e8ch ( 20108) load[0m
+[0;32mI (109) esp_image: segment 2: paddr=0002e3dc vaddr=40374000 size=01c3ch (  7228) load[0m
+[0;32mI (111) esp_image: segment 3: paddr=00030020 vaddr=42000020 size=80250h (524880) map[0m
+[0;32mI (208) esp_image: segment 4: paddr=000b0278 vaddr=40375c3c size=14690h ( 83600) load[0m
+[0;32mI (227) esp_image: segment 5: paddr=000c4910 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (236) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (236) boot: Disabling RNG early entropy source...[0m
+[0;32mI (246) cpu_start: Multicore app[0m
+[0;32mI (255) cpu_start: GPIO 44 and 43 are used as console UART I/O pins[0m
+[0;32mI (255) cpu_start: Pro cpu start user code[0m
+[0;32mI (256) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (257) app_init: Application information:[0m
+[0;32mI (261) app_init: Project name:     thermistor_data[0m
+[0;32mI (265) app_init: App version:      1cf7d277-dirty[0m
+[0;32mI (270) app_init: Compile time:     Apr  4 2026 14:04:12[0m
+[0;32mI (275) app_init: ELF file SHA256:  27d161c5b...[0m
+[0;32mI (279) app_init: ESP-IDF:          v5.5.3[0m
+[0;32mI (283) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (287) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (291) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (295) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (301) heap_init: At 3FCA2ED8 len 00046838 (282 KiB): RAM[0m
+[0;32mI (306) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (311) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (317) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (323) spi_flash: detected chip: generic[0m
+[0;32mI (326) spi_flash: flash io: dio[0m
+[0;33mW (329) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (341) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (347) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (354) main_task: Started on CPU0[0m
+[0;32mI (374) main_task: Calling app_main()[0m
+STA MAC Address: 94:A9:90:0B:2A:04
+STA MAC Address: 94:A9:90:0B:2A:04
+[0;32mI (384) pp: pp rom version: e7ae62f[0m
+[0;32mI (384) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (394) wifi:wifi driver task: 3fcee9d8, prio:23, stack:6656, core=0[0m
+[0;32mI (394) wifi:wifi firmware version: 4df78f2[0m
+[0;32mI (394) wifi:wifi certification version: v7.0[0m
+[0;32mI (394) wifi:config NVS flash: enabled[0m
+[0;32mI (404) wifi:config nano formatting: disabled[0m
+[0;32mI (404) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (414) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (414) wifi:Init management short buffer num: 32[0m
+[0;32mI (414) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (424) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (424) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (434) wifi:Init static rx buffer num: 10[0m
+[0;32mI (434) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (434) wifi_init: rx ba win: 6[0m
+[0;32mI (444) wifi_init: accept mbox: 6[0m
+[0;32mI (444) wifi_init: tcpip mbox: 32[0m
+[0;32mI (444) wifi_init: udp mbox: 6[0m
+[0;32mI (444) wifi_init: tcp mbox: 6[0m
+[0;32mI (454) wifi_init: tcp tx win: 5760[0m
+[0;32mI (454) wifi_init: tcp rx win: 5760[0m
+[0;32mI (454) wifi_init: tcp mss: 1440[0m
+[0;32mI (464) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (464) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (464) phy_init: phy_version 711,97bcf0a2,Aug 25 2025,19:04:10[0m
+[0;32mI (514) wifi:mode : sta (94:a9:90:0b:2a:04)[0m
+[0;32mI (514) wifi:enable tsf[0m
+[0;32mI (514) ESPNOW: espnow [version: 2.0] init[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+ADC= 1868 Voltage= 1.505 V Resistance=11921.8 ofms Temp21.04 C 
+ADC= 1869 Voltage= 1.506 V Resistance=11910.1 ofms Temp21.06 C 
+ADC= 1866 Voltage= 1.504 V Resistance=11945.3 ofms Temp20.99 C 
+[0;32mI (5514) espnow_example: Start sending broadcast data[0m
+ADC= 1847 Voltage= 1.488 V Resistance=12171.1 ofms Temp20.58 C 
+ADC= 1867 Voltage= 1.505 V Resistance=11933.6 ofms Temp21.02 C 
+[0;32mI (6544) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1868 Voltage= 1.505 V Resistance=11921.8 ofms Temp21.04 C 
+[0;32mI (7564) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1867 Voltage= 1.505 V Resistance=11933.6 ofms Temp21.02 C 
+[0;32mI (8564) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1868 Voltage= 1.505 V Resistance=11921.8 ofms Temp21.04 C 
+[0;32mI (9564) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1867 Voltage= 1.505 V Resistance=11933.6 ofms Temp21.02 C 
+[0;32mI (10564) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1867 Voltage= 1.505 V Resistance=11933.6 ofms Temp21.02 C 
+[0;32mI (11564) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1868 Voltage= 1.505 V Resistance=11921.8 ofms Temp21.04 C 
+[0;32mI (12564) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+[0;32mI (12564) espnow_example: Receive 0th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1867 Voltage= 1.505 V Resistance=11933.6 ofms Temp21.02 C 
+[0;32mI (13564) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+[0;32mI (13564) espnow_example: Receive 1th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+[0;32mI (13564) espnow_example: Start sending unicast data[0m
+[0;32mI (13564) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+[0;32mI (13754) espnow_example: Receive 2th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1869 Voltage= 1.506 V Resistance=11910.1 ofms Temp21.06 C 
+[0;32mI (14764) espnow_example: Receive 3th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1868 Voltage= 1.505 V Resistance=11921.8 ofms Temp21.04 C 
+[0;32mI (15764) espnow_example: Receive 4th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1868 Voltage= 1.505 V Resistance=11921.8 ofms Temp21.04 C 
+[0;32mI (16764) espnow_example: Receive 5th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1867 Voltage= 1.505 V Resistance=11933.6 ofms Temp21.02 C 
+[0;32mI (17764) espnow_example: Receive 6th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1867 Voltage= 1.505 V Resistance=11933.6 ofms Temp21.02 C 
+[0;32mI (18764) espnow_example: Receive 7th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1868 Voltage= 1.505 V Resistance=11921.8 ofms Temp21.04 C 
+[0;32mI (19764) espnow_example: Receive 8th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1868 Voltage= 1.505 V Resistance=11921.8 ofms Temp21.04 C 
+[0;32mI (20764) espnow_example: Receive 9th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (21764) espnow_example: Receive 10th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1866 Voltage= 1.504 V Resistance=11945.3 ofms Temp20.99 C 
+[0;32mI (22764) espnow_example: Receive 11th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1866 Voltage= 1.504 V Resistance=11945.3 ofms Temp20.99 C 
+[0;32mI (23764) espnow_example: Receive 12th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1867 Voltage= 1.505 V Resistance=11933.6 ofms Temp21.02 C 
+[0;32mI (24764) espnow_example: Receive 13th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (25774) espnow_example: Receive 14th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1866 Voltage= 1.504 V Resistance=11945.3 ofms Temp20.99 C 
+[0;32mI (26774) espnow_example: Receive 15th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (27774) espnow_example: Receive 16th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+ADC= 1866 Voltage= 1.504 V Resistance=11945.3 ofms Temp20.99 C 
+ADC= 1862 Voltage= 1.501 V Resistance=11992.5 ofms Temp20.91 C 
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+ADC= 1866 Voltage= 1.504 V Resistance=11945.3 ofms Temp20.99 C 
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+ADC= 1866 Voltage= 1.504 V Resistance=11945.3 ofms Temp20.99 C 
+[0;32mI (35284) espnow_example: Receive 0th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1866 Voltage= 1.504 V Resistance=11945.3 ofms Temp20.99 C 
+[0;32mI (36284) espnow_example: Receive 1th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (37284) espnow_example: Receive 2th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1869 Voltage= 1.506 V Resistance=11910.1 ofms Temp21.06 C 
+[0;32mI (38284) espnow_example: Receive 3th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1868 Voltage= 1.505 V Resistance=11921.8 ofms Temp21.04 C 
+[0;32mI (39294) espnow_example: Receive 4th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1868 Voltage= 1.505 V Resistance=11921.8 ofms Temp21.04 C 
+[0;32mI (40294) espnow_example: Receive 5th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1862 Voltage= 1.501 V Resistance=11992.5 ofms Temp20.91 C 
+[0;32mI (41284) espnow_example: Receive 6th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1866 Voltage= 1.504 V Resistance=11945.3 ofms Temp20.99 C 
+[0;32mI (42284) espnow_example: Receive 7th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (43284) espnow_example: Receive 8th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1866 Voltage= 1.504 V Resistance=11945.3 ofms Temp20.99 C 
+[0;32mI (44284) espnow_example: Receive 9th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1861 Voltage= 1.500 V Resistance=12004.3 ofms Temp20.89 C 
+[0;32mI (45284) espnow_example: Receive 10th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (46284) espnow_example: Receive 11th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1866 Voltage= 1.504 V Resistance=11945.3 ofms Temp20.99 C 
+[0;32mI (47284) espnow_example: Receive 12th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (48284) espnow_example: Receive 13th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (49284) espnow_example: Receive 14th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (50284) espnow_example: Receive 15th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1867 Voltage= 1.505 V Resistance=11933.6 ofms Temp21.02 C 
+ADC= 1867 Voltage= 1.505 V Resistance=11933.6 ofms Temp21.02 C 
+ADC= 1867 Voltage= 1.505 V Resistance=11933.6 ofms Temp21.02 C 
+ADC= 1867 Voltage= 1.505 V Resistance=11933.6 ofms Temp21.02 C 
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x14f0
+load:0x403c8700,len:0xd24
+load:0x403cb700,len:0x2ef0
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5.3 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Apr  4 2026 14:04:25[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (31) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (35) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (76) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c090020 size=19520h (103712) map[0m
+[0;32mI (105) esp_image: segment 1: paddr=00029548 vaddr=3fc9a300 size=04e8ch ( 20108) load[0m
+[0;32mI (109) esp_image: segment 2: paddr=0002e3dc vaddr=40374000 size=01c3ch (  7228) load[0m
+[0;32mI (111) esp_image: segment 3: paddr=00030020 vaddr=42000020 size=80250h (524880) map[0m
+[0;32mI (208) esp_image: segment 4: paddr=000b0278 vaddr=40375c3c size=14690h ( 83600) load[0m
+[0;32mI (227) esp_image: segment 5: paddr=000c4910 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (236) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (236) boot: Disabling RNG early entropy source...[0m
+[0;32mI (246) cpu_start: Multicore app[0m
+[0;32mI (255) cpu_start: GPIO 44 and 43 are used as console UART I/O pins[0m
+[0;32mI (255) cpu_start: Pro cpu start user code[0m
+[0;32mI (256) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (257) app_init: Application information:[0m
+[0;32mI (261) app_init: Project name:     thermistor_data[0m
+[0;32mI (265) app_init: App version:      1cf7d277-dirty[0m
+[0;32mI (270) app_init: Compile time:     Apr  4 2026 14:04:12[0m
+[0;32mI (275) app_init: ELF file SHA256:  27d161c5b...[0m
+[0;32mI (279) app_init: ESP-IDF:          v5.5.3[0m
+[0;32mI (283) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (287) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (291) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (295) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (301) heap_init: At 3FCA2ED8 len 00046838 (282 KiB): RAM[0m
+[0;32mI (306) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (311) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (317) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (323) spi_flash: detected chip: generic[0m
+[0;32mI (326) spi_flash: flash io: dio[0m
+[0;33mW (329) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (341) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (347) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (354) main_task: Started on CPU0[0m
+[0;32mI (374) main_task: Calling app_main()[0m
+STA MAC Address: 94:A9:90:0B:2A:04
+STA MAC Address: 94:A9:90:0B:2A:04
+[0;32mI (384) pp: pp rom version: e7ae62f[0m
+[0;32mI (384) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (394) wifi:wifi driver task: 3fcee9d8, prio:23, stack:6656, core=0[0m
+[0;32mI (394) wifi:wifi firmware version: 4df78f2[0m
+[0;32mI (394) wifi:wifi certification version: v7.0[0m
+[0;32mI (394) wifi:config NVS flash: enabled[0m
+[0;32mI (404) wifi:config nano formatting: disabled[0m
+[0;32mI (404) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (414) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (414) wifi:Init management short buffer num: 32[0m
+[0;32mI (414) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (424) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (424) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (434) wifi:Init static rx buffer num: 10[0m
+[0;32mI (434) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (434) wifi_init: rx ba win: 6[0m
+[0;32mI (444) wifi_init: accept mbox: 6[0m
+[0;32mI (444) wifi_init: tcpip mbox: 32[0m
+[0;32mI (444) wifi_init: udp mbox: 6[0m
+[0;32mI (444) wifi_init: tcp mbox: 6[0m
+[0;32mI (454) wifi_init: tcp tx win: 5760[0m
+[0;32mI (454) wifi_init: tcp rx win: 5760[0m
+[0;32mI (454) wifi_init: tcp mss: 1440[0m
+[0;32mI (464) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (464) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (464) phy_init: phy_version 711,97bcf0a2,Aug 25 2025,19:04:10[0m
+[0;32mI (514) wifi:mode : sta (94:a9:90:0b:2a:04)[0m
+[0;32mI (514) wifi:enable tsf[0m
+[0;32mI (514) ESPNOW: espnow [version: 2.0] init[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+ADC= 1867 Voltage= 1.505 V Resistance=11933.6 ofms Temp21.02 C 
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+ADC= 1867 Voltage= 1.505 V Resistance=11933.6 ofms Temp21.02 C 
+ADC= 1861 Voltage= 1.500 V Resistance=12004.3 ofms Temp20.89 C 
+[0;32mI (5514) espnow_example: Start sending broadcast data[0m
+[0;32mI (5514) espnow_example: Receive 0th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+[0;32mI (5514) espnow_example: Receive 1th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+[0;32mI (5514) espnow_example: Receive 2th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (6524) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+[0;32mI (6524) espnow_example: Receive 3th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (7524) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+[0;32mI (7524) espnow_example: Receive 4th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+[0;32mI (7524) espnow_example: Start sending unicast data[0m
+[0;32mI (7524) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1862 Voltage= 1.501 V Resistance=11992.5 ofms Temp20.91 C 
+[0;32mI (8224) espnow_example: Receive 5th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1862 Voltage= 1.501 V Resistance=11992.5 ofms Temp20.91 C 
+[0;32mI (9244) espnow_example: Receive 6th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1861 Voltage= 1.500 V Resistance=12004.3 ofms Temp20.89 C 
+[0;32mI (10234) espnow_example: Receive 7th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (11234) espnow_example: Receive 8th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (12244) espnow_example: Receive 9th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1866 Voltage= 1.504 V Resistance=11945.3 ofms Temp20.99 C 
+[0;32mI (13234) espnow_example: Receive 10th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1859 Voltage= 1.498 V Resistance=12028.0 ofms Temp20.84 C 
+[0;32mI (14234) espnow_example: Receive 11th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1861 Voltage= 1.500 V Resistance=12004.3 ofms Temp20.89 C 
+[0;32mI (15234) espnow_example: Receive 12th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (16234) espnow_example: Receive 13th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (17234) espnow_example: Receive 14th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (18234) espnow_example: Receive 15th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (19244) espnow_example: Receive 16th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (20244) espnow_example: Receive 17th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1866 Voltage= 1.504 V Resistance=11945.3 ofms Temp20.99 C 
+[0;32mI (21244) espnow_example: Receive 18th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (22234) espnow_example: Receive 19th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (23234) espnow_example: Receive 20th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1862 Voltage= 1.501 V Resistance=11992.5 ofms Temp20.91 C 
+[0;32mI (24234) espnow_example: Receive 21th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1867 Voltage= 1.505 V Resistance=11933.6 ofms Temp21.02 C 
+[0;32mI (25244) espnow_example: Receive 22th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1870 Voltage= 1.507 V Resistance=11898.4 ofms Temp21.08 C 
+[0;32mI (26234) espnow_example: Receive 23th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1860 Voltage= 1.499 V Resistance=12016.1 ofms Temp20.86 C 
+[0;32mI (27234) espnow_example: Receive 24th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1866 Voltage= 1.504 V Resistance=11945.3 ofms Temp20.99 C 
+[0;32mI (28234) espnow_example: Receive 25th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1861 Voltage= 1.500 V Resistance=12004.3 ofms Temp20.89 C 
+[0;32mI (29244) espnow_example: Receive 26th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1861 Voltage= 1.500 V Resistance=12004.3 ofms Temp20.89 C 
+[0;32mI (30244) espnow_example: Receive 27th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1862 Voltage= 1.501 V Resistance=11992.5 ofms Temp20.91 C 
+[0;32mI (31234) espnow_example: Receive 28th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (32234) espnow_example: Receive 29th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1862 Voltage= 1.501 V Resistance=11992.5 ofms Temp20.91 C 
+[0;32mI (33234) espnow_example: Receive 30th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1868 Voltage= 1.505 V Resistance=11921.8 ofms Temp21.04 C 
+[0;32mI (34244) espnow_example: Receive 31th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (35234) espnow_example: Receive 32th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1868 Voltage= 1.505 V Resistance=11921.8 ofms Temp21.04 C 
+[0;32mI (36234) espnow_example: Receive 33th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (37244) espnow_example: Receive 34th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (38234) espnow_example: Receive 35th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1868 Voltage= 1.505 V Resistance=11921.8 ofms Temp21.04 C 
+[0;32mI (39234) espnow_example: Receive 36th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1861 Voltage= 1.500 V Resistance=12004.3 ofms Temp20.89 C 
+[0;32mI (40234) espnow_example: Receive 37th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1867 Voltage= 1.505 V Resistance=11933.6 ofms Temp21.02 C 
+[0;32mI (41234) espnow_example: Receive 38th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (42234) espnow_example: Receive 39th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (43234) espnow_example: Receive 40th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1866 Voltage= 1.504 V Resistance=11945.3 ofms Temp20.99 C 
+[0;32mI (44244) espnow_example: Receive 41th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (45234) espnow_example: Receive 42th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (46234) espnow_example: Receive 43th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (47234) espnow_example: Receive 44th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1866 Voltage= 1.504 V Resistance=11945.3 ofms Temp20.99 C 
+[0;32mI (48244) espnow_example: Receive 45th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (49234) espnow_example: Receive 46th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1866 Voltage= 1.504 V Resistance=11945.3 ofms Temp20.99 C 
+[0;32mI (50244) espnow_example: Receive 47th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (51244) espnow_example: Receive 48th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (52244) espnow_example: Receive 49th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (53244) espnow_example: Receive 50th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1866 Voltage= 1.504 V Resistance=11945.3 ofms Temp20.99 C 
+[0;32mI (54254) espnow_example: Receive 51th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1869 Voltage= 1.506 V Resistance=11910.1 ofms Temp21.06 C 
+[0;32mI (55244) espnow_example: Receive 52th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1862 Voltage= 1.501 V Resistance=11992.5 ofms Temp20.91 C 
+[0;32mI (56254) espnow_example: Receive 53th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1869 Voltage= 1.506 V Resistance=11910.1 ofms Temp21.06 C 
+[0;32mI (57244) espnow_example: Receive 54th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1868 Voltage= 1.505 V Resistance=11921.8 ofms Temp21.04 C 
+[0;32mI (58244) espnow_example: Receive 55th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (59244) espnow_example: Receive 56th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (60244) espnow_example: Receive 57th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1867 Voltage= 1.505 V Resistance=11933.6 ofms Temp21.02 C 
+[0;32mI (61244) espnow_example: Receive 58th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (62244) espnow_example: Receive 59th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (63254) espnow_example: Receive 60th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (64254) espnow_example: Receive 61th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (65244) espnow_example: Receive 62th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1866 Voltage= 1.504 V Resistance=11945.3 ofms Temp20.99 C 
+[0;32mI (66244) espnow_example: Receive 63th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (67244) espnow_example: Receive 64th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1861 Voltage= 1.500 V Resistance=12004.3 ofms Temp20.89 C 
+[0;32mI (68244) espnow_example: Receive 65th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1866 Voltage= 1.504 V Resistance=11945.3 ofms Temp20.99 C 
+[0;32mI (69244) espnow_example: Receive 66th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1862 Voltage= 1.501 V Resistance=11992.5 ofms Temp20.91 C 
+[0;32mI (70244) espnow_example: Receive 67th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1867 Voltage= 1.505 V Resistance=11933.6 ofms Temp21.02 C 
+[0;32mI (71254) espnow_example: Receive 68th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1867 Voltage= 1.505 V Resistance=11933.6 ofms Temp21.02 C 
+[0;32mI (72254) espnow_example: Receive 69th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (73244) espnow_example: Receive 70th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (74254) espnow_example: Receive 71th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (75254) espnow_example: Receive 72th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (76244) espnow_example: Receive 73th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1862 Voltage= 1.501 V Resistance=11992.5 ofms Temp20.91 C 
+[0;32mI (77244) espnow_example: Receive 74th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (78244) espnow_example: Receive 75th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (79244) espnow_example: Receive 76th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1861 Voltage= 1.500 V Resistance=12004.3 ofms Temp20.89 C 
+[0;32mI (80254) espnow_example: Receive 77th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (81244) espnow_example: Receive 78th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1862 Voltage= 1.501 V Resistance=11992.5 ofms Temp20.91 C 
+[0;32mI (82254) espnow_example: Receive 79th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1862 Voltage= 1.501 V Resistance=11992.5 ofms Temp20.91 C 
+[0;32mI (83254) espnow_example: Receive 80th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (84254) espnow_example: Receive 81th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1869 Voltage= 1.506 V Resistance=11910.1 ofms Temp21.06 C 
+[0;32mI (85244) espnow_example: Receive 82th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1862 Voltage= 1.501 V Resistance=11992.5 ofms Temp20.91 C 
+[0;32mI (86244) espnow_example: Receive 83th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1866 Voltage= 1.504 V Resistance=11945.3 ofms Temp20.99 C 
+[0;32mI (87254) espnow_example: Receive 84th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (88244) espnow_example: Receive 85th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (89244) espnow_example: Receive 86th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (90244) espnow_example: Receive 87th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1869 Voltage= 1.506 V Resistance=11910.1 ofms Temp21.06 C 
+[0;32mI (91244) espnow_example: Receive 88th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (92244) espnow_example: Receive 89th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1869 Voltage= 1.506 V Resistance=11910.1 ofms Temp21.06 C 
+[0;32mI (93254) espnow_example: Receive 90th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1866 Voltage= 1.504 V Resistance=11945.3 ofms Temp20.99 C 
+[0;32mI (94244) espnow_example: Receive 91th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1859 Voltage= 1.498 V Resistance=12028.0 ofms Temp20.84 C 
+[0;32mI (95244) espnow_example: Receive 92th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (96254) espnow_example: Receive 93th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1866 Voltage= 1.504 V Resistance=11945.3 ofms Temp20.99 C 
+[0;32mI (97244) espnow_example: Receive 94th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (98254) espnow_example: Receive 95th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (99254) espnow_example: Receive 96th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (100244) espnow_example: Receive 97th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1861 Voltage= 1.500 V Resistance=12004.3 ofms Temp20.89 C 
+[0;32mI (101254) espnow_example: Receive 98th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1862 Voltage= 1.501 V Resistance=11992.5 ofms Temp20.91 C 
+[0;32mI (102254) espnow_example: Receive 99th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (103244) espnow_example: Receive 100th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1859 Voltage= 1.498 V Resistance=12028.0 ofms Temp20.84 C 
+[0;32mI (104254) espnow_example: Receive 101th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1866 Voltage= 1.504 V Resistance=11945.3 ofms Temp20.99 C 
+[0;32mI (105244) espnow_example: Receive 102th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (106254) espnow_example: Receive 103th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1860 Voltage= 1.499 V Resistance=12016.1 ofms Temp20.86 C 
+[0;32mI (107244) espnow_example: Receive 104th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1866 Voltage= 1.504 V Resistance=11945.3 ofms Temp20.99 C 
+[0;32mI (108244) espnow_example: Receive 105th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (109244) espnow_example: Receive 106th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (110244) espnow_example: Receive 107th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (111244) espnow_example: Receive 108th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1862 Voltage= 1.501 V Resistance=11992.5 ofms Temp20.91 C 
+[0;32mI (112244) espnow_example: Receive 109th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1862 Voltage= 1.501 V Resistance=11992.5 ofms Temp20.91 C 
+[0;32mI (113244) espnow_example: Receive 110th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (114254) espnow_example: Receive 111th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1862 Voltage= 1.501 V Resistance=11992.5 ofms Temp20.91 C 
+[0;32mI (115244) espnow_example: Receive 112th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (116244) espnow_example: Receive 113th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1861 Voltage= 1.500 V Resistance=12004.3 ofms Temp20.89 C 
+[0;32mI (117244) espnow_example: Receive 114th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (118244) espnow_example: Receive 115th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (119254) espnow_example: Receive 116th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1861 Voltage= 1.500 V Resistance=12004.3 ofms Temp20.89 C 
+[0;32mI (120254) espnow_example: Receive 117th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1867 Voltage= 1.505 V Resistance=11933.6 ofms Temp21.02 C 
+[0;32mI (121254) espnow_example: Receive 118th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1861 Voltage= 1.500 V Resistance=12004.3 ofms Temp20.89 C 
+[0;32mI (122244) espnow_example: Receive 119th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (123244) espnow_example: Receive 120th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (124254) espnow_example: Receive 121th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1860 Voltage= 1.499 V Resistance=12016.1 ofms Temp20.86 C 
+[0;32mI (125244) espnow_example: Receive 122th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (126254) espnow_example: Receive 123th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (127254) espnow_example: Receive 124th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (128244) espnow_example: Receive 125th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (129244) espnow_example: Receive 126th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1861 Voltage= 1.500 V Resistance=12004.3 ofms Temp20.89 C 
+[0;32mI (130244) espnow_example: Receive 127th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (131244) espnow_example: Receive 128th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1862 Voltage= 1.501 V Resistance=11992.5 ofms Temp20.91 C 
+[0;32mI (132244) espnow_example: Receive 129th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (133244) espnow_example: Receive 130th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1868 Voltage= 1.505 V Resistance=11921.8 ofms Temp21.04 C 
+[0;32mI (134244) espnow_example: Receive 131th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (135244) espnow_example: Receive 132th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1861 Voltage= 1.500 V Resistance=12004.3 ofms Temp20.89 C 
+[0;32mI (136244) espnow_example: Receive 133th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1862 Voltage= 1.501 V Resistance=11992.5 ofms Temp20.91 C 
+[0;32mI (137254) espnow_example: Receive 134th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (138254) espnow_example: Receive 135th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1861 Voltage= 1.500 V Resistance=12004.3 ofms Temp20.89 C 
+[0;32mI (139244) espnow_example: Receive 136th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (140244) espnow_example: Receive 137th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1861 Voltage= 1.500 V Resistance=12004.3 ofms Temp20.89 C 
+[0;32mI (141244) espnow_example: Receive 138th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1862 Voltage= 1.501 V Resistance=11992.5 ofms Temp20.91 C 
+[0;32mI (142254) espnow_example: Receive 139th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (143244) espnow_example: Receive 140th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1861 Voltage= 1.500 V Resistance=12004.3 ofms Temp20.89 C 
+[0;32mI (144254) espnow_example: Receive 141th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1862 Voltage= 1.501 V Resistance=11992.5 ofms Temp20.91 C 
+[0;32mI (145254) espnow_example: Receive 142th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (146254) espnow_example: Receive 143th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1861 Voltage= 1.500 V Resistance=12004.3 ofms Temp20.89 C 
+[0;32mI (147254) espnow_example: Receive 144th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1862 Voltage= 1.501 V Resistance=11992.5 ofms Temp20.91 C 
+[0;32mI (148254) espnow_example: Receive 145th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (149244) espnow_example: Receive 146th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1862 Voltage= 1.501 V Resistance=11992.5 ofms Temp20.91 C 
+[0;32mI (150244) espnow_example: Receive 147th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1867 Voltage= 1.505 V Resistance=11933.6 ofms Temp21.02 C 
+[0;32mI (151254) espnow_example: Receive 148th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1862 Voltage= 1.501 V Resistance=11992.5 ofms Temp20.91 C 
+[0;32mI (152244) espnow_example: Receive 149th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (153244) espnow_example: Receive 150th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (154244) espnow_example: Receive 151th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (155244) espnow_example: Receive 152th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (156254) espnow_example: Receive 153th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1859 Voltage= 1.498 V Resistance=12028.0 ofms Temp20.84 C 
+[0;32mI (157254) espnow_example: Receive 154th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (158254) espnow_example: Receive 155th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (159254) espnow_example: Receive 156th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1869 Voltage= 1.506 V Resistance=11910.1 ofms Temp21.06 C 
+[0;32mI (160254) espnow_example: Receive 157th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (161244) espnow_example: Receive 158th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1858 Voltage= 1.497 V Resistance=12039.8 ofms Temp20.82 C 
+[0;32mI (162254) espnow_example: Receive 159th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (163254) espnow_example: Receive 160th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (164244) espnow_example: Receive 161th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1861 Voltage= 1.500 V Resistance=12004.3 ofms Temp20.89 C 
+[0;32mI (165254) espnow_example: Receive 162th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (166244) espnow_example: Receive 163th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1860 Voltage= 1.499 V Resistance=12016.1 ofms Temp20.86 C 
+[0;32mI (167254) espnow_example: Receive 164th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (168244) espnow_example: Receive 165th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (169254) espnow_example: Receive 166th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1862 Voltage= 1.501 V Resistance=11992.5 ofms Temp20.91 C 
+[0;32mI (170244) espnow_example: Receive 167th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1871 Voltage= 1.508 V Resistance=11886.7 ofms Temp21.10 C 
+[0;32mI (171254) espnow_example: Receive 168th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1859 Voltage= 1.498 V Resistance=12028.0 ofms Temp20.84 C 
+[0;32mI (172244) espnow_example: Receive 169th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1861 Voltage= 1.500 V Resistance=12004.3 ofms Temp20.89 C 
+[0;32mI (173244) espnow_example: Receive 170th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1859 Voltage= 1.498 V Resistance=12028.0 ofms Temp20.84 C 
+[0;32mI (174254) espnow_example: Receive 171th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (175244) espnow_example: Receive 172th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (176254) espnow_example: Receive 173th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1861 Voltage= 1.500 V Resistance=12004.3 ofms Temp20.89 C 
+[0;32mI (177254) espnow_example: Receive 174th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (178254) espnow_example: Receive 175th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1861 Voltage= 1.500 V Resistance=12004.3 ofms Temp20.89 C 
+[0;32mI (179254) espnow_example: Receive 176th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (180244) espnow_example: Receive 177th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1862 Voltage= 1.501 V Resistance=11992.5 ofms Temp20.91 C 
+[0;32mI (181244) espnow_example: Receive 178th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (182254) espnow_example: Receive 179th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1869 Voltage= 1.506 V Resistance=11910.1 ofms Temp21.06 C 
+[0;32mI (183244) espnow_example: Receive 180th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1861 Voltage= 1.500 V Resistance=12004.3 ofms Temp20.89 C 
+[0;32mI (184254) espnow_example: Receive 181th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1867 Voltage= 1.505 V Resistance=11933.6 ofms Temp21.02 C 
+[0;32mI (185254) espnow_example: Receive 182th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (186244) espnow_example: Receive 183th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (187254) espnow_example: Receive 184th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1859 Voltage= 1.498 V Resistance=12028.0 ofms Temp20.84 C 
+[0;32mI (188244) espnow_example: Receive 185th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1861 Voltage= 1.500 V Resistance=12004.3 ofms Temp20.89 C 
+[0;32mI (189244) espnow_example: Receive 186th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1866 Voltage= 1.504 V Resistance=11945.3 ofms Temp20.99 C 
+[0;32mI (190244) espnow_example: Receive 187th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1859 Voltage= 1.498 V Resistance=12028.0 ofms Temp20.84 C 
+[0;32mI (191254) espnow_example: Receive 188th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1862 Voltage= 1.501 V Resistance=11992.5 ofms Temp20.91 C 
+[0;32mI (192244) espnow_example: Receive 189th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (193244) espnow_example: Receive 190th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (194244) espnow_example: Receive 191th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (195254) espnow_example: Receive 192th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1866 Voltage= 1.504 V Resistance=11945.3 ofms Temp20.99 C 
+[0;32mI (196244) espnow_example: Receive 193th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1862 Voltage= 1.501 V Resistance=11992.5 ofms Temp20.91 C 
+[0;32mI (197254) espnow_example: Receive 194th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (198254) espnow_example: Receive 195th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (199244) espnow_example: Receive 196th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1859 Voltage= 1.498 V Resistance=12028.0 ofms Temp20.84 C 
+[0;32mI (200244) espnow_example: Receive 197th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1859 Voltage= 1.498 V Resistance=12028.0 ofms Temp20.84 C 
+[0;32mI (201254) espnow_example: Receive 198th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1861 Voltage= 1.500 V Resistance=12004.3 ofms Temp20.89 C 
+[0;32mI (202254) espnow_example: Receive 199th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1862 Voltage= 1.501 V Resistance=11992.5 ofms Temp20.91 C 
+[0;32mI (203244) espnow_example: Receive 200th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (204244) espnow_example: Receive 201th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (205254) espnow_example: Receive 202th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (206244) espnow_example: Receive 203th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (207244) espnow_example: Receive 204th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1858 Voltage= 1.497 V Resistance=12039.8 ofms Temp20.82 C 
+[0;32mI (208254) espnow_example: Receive 205th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1862 Voltage= 1.501 V Resistance=11992.5 ofms Temp20.91 C 
+[0;32mI (209244) espnow_example: Receive 206th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1862 Voltage= 1.501 V Resistance=11992.5 ofms Temp20.91 C 
+[0;32mI (210254) espnow_example: Receive 207th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1861 Voltage= 1.500 V Resistance=12004.3 ofms Temp20.89 C 
+[0;32mI (211244) espnow_example: Receive 208th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (212244) espnow_example: Receive 209th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1862 Voltage= 1.501 V Resistance=11992.5 ofms Temp20.91 C 
+[0;32mI (213244) espnow_example: Receive 210th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (214254) espnow_example: Receive 211th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (215244) espnow_example: Receive 212th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1861 Voltage= 1.500 V Resistance=12004.3 ofms Temp20.89 C 
+[0;32mI (216254) espnow_example: Receive 213th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (217244) espnow_example: Receive 214th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1862 Voltage= 1.501 V Resistance=11992.5 ofms Temp20.91 C 
+[0;32mI (218244) espnow_example: Receive 215th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1862 Voltage= 1.501 V Resistance=11992.5 ofms Temp20.91 C 
+[0;32mI (219254) espnow_example: Receive 216th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (220254) espnow_example: Receive 217th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1861 Voltage= 1.500 V Resistance=12004.3 ofms Temp20.89 C 
+[0;32mI (221254) espnow_example: Receive 218th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1862 Voltage= 1.501 V Resistance=11992.5 ofms Temp20.91 C 
+[0;32mI (222244) espnow_example: Receive 219th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1861 Voltage= 1.500 V Resistance=12004.3 ofms Temp20.89 C 
+[0;32mI (223244) espnow_example: Receive 220th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (224254) espnow_example: Receive 221th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1861 Voltage= 1.500 V Resistance=12004.3 ofms Temp20.89 C 
+[0;32mI (225254) espnow_example: Receive 222th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (226254) espnow_example: Receive 223th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1866 Voltage= 1.504 V Resistance=11945.3 ofms Temp20.99 C 
+[0;32mI (227254) espnow_example: Receive 224th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (228244) espnow_example: Receive 225th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1861 Voltage= 1.500 V Resistance=12004.3 ofms Temp20.89 C 
+[0;32mI (229254) espnow_example: Receive 226th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (230254) espnow_example: Receive 227th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1860 Voltage= 1.499 V Resistance=12016.1 ofms Temp20.86 C 
+[0;32mI (231244) espnow_example: Receive 228th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (232254) espnow_example: Receive 229th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1862 Voltage= 1.501 V Resistance=11992.5 ofms Temp20.91 C 
+[0;32mI (233244) espnow_example: Receive 230th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (234244) espnow_example: Receive 231th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (235254) espnow_example: Receive 232th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (236244) espnow_example: Receive 233th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (237244) espnow_example: Receive 234th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 

@@ -1,0 +1,109 @@
+/* ============================================================
+ * example usage
+ * ============================================================ */
+
+/* ------------------------------------------------------------
+ * create payload
+ * ------------------------------------------------------------ */
+json_payload_t payload;
+char *json_string = NULL;
+
+if (!json_payload_init(&payload, "session_12345"))
+{
+	return;
+}
+
+/* ------------------------------------------------------------
+ * imu
+ * ------------------------------------------------------------ */
+imu_sensor_reading_t imu_entry = imu_sensor_reading("imu_accel_2");
+
+imu_entry.x = 5.5f;
+imu_entry.y = 6.6f;
+imu_entry.z = 7.7f;
+imu_entry.gyro_x = 0.12f;
+
+json_payload_add_data(&payload, (const telemetry_payload_item_t *)&imu_entry);
+
+/* safe to reuse variable now, because payload stored json, not pointer */
+
+imu_entry = imu_sensor_reading("imu_accel_2");
+
+imu_entry.x = 5.2f;
+imu_entry.y = 6.8f;
+imu_entry.z = 7.3f;
+imu_entry.gyro_x = 0.14f;
+
+json_payload_add_data(&payload, (const telemetry_payload_item_t *)&imu_entry);
+
+/* ------------------------------------------------------------
+ * gps
+ * ------------------------------------------------------------ */
+gps_sensor_reading_t gps_entry = gps_sensor_reading("gps_1");
+
+gps_entry.lat = 51.0447f;
+gps_entry.lon = -114.0719f;
+gps_entry.alt = 1048.5f;
+gps_entry.speed = 12.3f;
+gps_entry.satellites = 9.0f;
+gps_entry.accuracy = 1.8f;
+
+json_payload_add_data(&payload, (const telemetry_payload_item_t *)&gps_entry);
+
+/* ------------------------------------------------------------
+ * temp
+ * ------------------------------------------------------------ */
+temp_sensor_reading_t temp_entry = temp_sensor_reading("eng_temp_1");
+
+temp_entry.temperature = 96.0f;
+
+json_payload_add_data(&payload, (const telemetry_payload_item_t *)&temp_entry);
+
+/* ------------------------------------------------------------
+ * pressure
+ * ------------------------------------------------------------ */
+pressure_sensor_reading_t pressure_entry = pressure_sensor_reading("oil_pressure_1");
+
+pressure_entry.pressure = 410.0f;
+pressure_entry.temperature = 82.5f;
+pressure_entry.raw_value = 2876.0f;
+
+json_payload_add_data(&payload, (const telemetry_payload_item_t *)&pressure_entry);
+
+/* ------------------------------------------------------------
+ * rpm
+ * ------------------------------------------------------------ */
+rpm_sensor_reading_t rpm_entry = rpm_sensor_reading("eng_rpm_1");
+
+rpm_entry.rpm = 3125.0f;
+
+json_payload_add_data(&payload, (const telemetry_payload_item_t *)&rpm_entry);
+
+/* ------------------------------------------------------------
+ * voltage
+ * ------------------------------------------------------------ */
+voltage_sensor_reading_t voltage_entry = voltage_sensor_reading("batt_volt_1");
+
+voltage_entry.voltage = 12.84f;
+
+json_payload_add_data(&payload, (const telemetry_payload_item_t *)&voltage_entry);
+
+/* ------------------------------------------------------------
+ * build payload
+ * ------------------------------------------------------------ */
+json_string = json_payload_build_string_unformatted(&payload);
+
+if (json_string != NULL)
+{
+	/* send json_string to server */
+
+	/***** IMPORTANT to prevent memory leaks ****/
+	cJSON_free(json_string);
+	json_string = NULL;
+}
+
+/* ------------------------------------------------------------
+ * cleanup
+ * ------------------------------------------------------------ */
+/***** IMPORTANT to prevent memory leaks ****/
+json_payload_free(&payload);

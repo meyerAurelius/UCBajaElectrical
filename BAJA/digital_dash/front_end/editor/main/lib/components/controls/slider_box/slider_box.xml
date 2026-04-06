@@ -1,0 +1,19 @@
+<component>
+	<api>
+		<prop name="title" type="string" default="Title" />
+		<prop name="subject" type="subject" default="subject_test" />
+		<prop name="format" type="string" default="%d" />
+	</api>
+
+	<styles>
+		<style name="style_base" width="#base_lib_block_2" height="#base_lib_block_1_5" />
+	</styles>
+	<view extends="panel">
+		<style name="style_base" />
+		<column width="100%" padding_inside="#base_lib_unit_md" height="100%" style_flex_main_place="space_between">
+			<h3 text="$title" />
+			<value_setter width="100%" format="$format" subject="$subject" />
+			<slider width="100%" subject="$subject" />
+		</column>
+	</view>
+</component>

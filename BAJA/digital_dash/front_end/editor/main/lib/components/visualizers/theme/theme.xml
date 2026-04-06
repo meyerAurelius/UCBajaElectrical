@@ -1,0 +1,10 @@
+<component>
+	<styles>
+		<style name="style_base" width="100%" height="100%" flex_grow="1" />
+	</styles>
+	<view extends="column" padding_side="0" vertical_align="start" content_align="start" horizontal_align="start">
+		<style name="style_base" />
+		<style name="style_light_bg" />
+		<bind_style name="style_dark_bg" subject="subject_dark_mode" ref_value="1" />
+	</view>
+</component>
