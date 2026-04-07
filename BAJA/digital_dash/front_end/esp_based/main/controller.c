@@ -13,8 +13,9 @@
 
 static const int RX_BUF_SIZE = 1024;
 
-#define TXD_PIN (CONFIG_EXAMPLE_UART_TXD)           //set in menuconfig
+          
 #define RXD_PIN (CONFIG_EXAMPLE_UART_RXD)           //GPIO27
+                                                    //set in menuconfig
 
 void init(void) //driver install, communication parameters and pins
 {
@@ -29,7 +30,8 @@ void init(void) //driver install, communication parameters and pins
     // We won't use a buffer for sending data.
     uart_driver_install(UART_NUM_1, RX_BUF_SIZE * 2, 0, 0, NULL, 0);
     uart_param_config(UART_NUM_1, &uart_config);
-    uart_set_pin(UART_NUM_1, TXD_PIN, RXD_PIN, UART_PIN_NO_CHANGE, UART_PIN_NO_CHANGE);
+    uart_set_pin(UART_NUM_1, UART_PIN_NO_CHANGE, RXD_PIN, UART_PIN_NO_CHANGE, UART_PIN_NO_CHANGE);
+    //signature: (uart_num, tx, rx, rts, cts)
 }
 
 
@@ -38,43 +40,43 @@ static void rx_task(void *arg)
     static const char *RX_TASK_TAG = "RX_TASK";
     esp_log_level_set(RX_TASK_TAG, ESP_LOG_INFO);
     uint8_t* data = (uint8_t*) malloc(RX_BUF_SIZE + 1);
+
+    if (data == NULL) {                                                //
+        ESP_LOGE(RX_TASK_TAG, "Failed to allocate RX buffer");
+        vTaskDelete(NULL);
+        return;
+    }
+
     while (1) {
         const int rxBytes = uart_read_bytes(UART_NUM_1, data, RX_BUF_SIZE, 1000 / portTICK_PERIOD_MS);
-        if (rxBytes > 0) {
-            data[rxBytes] = 0;
-            
+        if (rxBytes > 0) {            
             //button logic
 
-            uint8_t button = data[0];
+            for (int i = 0; i < rxBytes; i++) {
+
+                uint8_t button = data[i];
+
+                button = button - '0';  //convert ASCII to number
                 
-            switch(button) {
+                switch(button) {
 
-                 case 1: 
-                    move_down();
-                    break;
+                case 1: move_down(); break;
 
-                case 2:
-                    select();
-                    break;
+                case 2: select(); break;
 
-                case 3:
-                    move_right();
-                    break;
+                case 3: move_right(); break;
 
-                case 4:
-                    move_left();
-                    break;
+                case 4: move_left(); break;
 
-                case 5:
-                    move_up();
-                    break;
+                case 5: move_up(); break;
 
                 default:
-                    printf("Unidentified data: %d\n", button);                  //if controller sends something not recognized
-                    break;
-            }
+                    ESP_LOGW(RX_TASK_TAG, "Unidentified data: %d", button);
+                    break;                 //if controller sends something not recognize
 
-
+           } 
+    
+        } 
 
         }
     }
