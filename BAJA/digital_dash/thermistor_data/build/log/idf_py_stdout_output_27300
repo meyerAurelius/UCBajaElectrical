@@ -1,0 +1,430 @@
+Command: C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:\Espressif\frameworks\esp-idf-v5.5.3\tools/idf_monitor.py -p COM17 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 C:\Users\marcu\baja\repos\UCBajaElectrical\BAJA\digital_dash\thermistor_data\build\thermistor_data.elf C:\Users\marcu\baja\repos\UCBajaElectrical\BAJA\digital_dash\thermistor_data\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'C:\Espressif\frameworks\esp-idf-v5.5.3\tools\idf.py'
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x14f0
+load:0x403c8700,len:0xd24
+load:0x403cb700,len:0x2ef0
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5.3 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Apr  4 2026 14:04:25[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (31) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (35) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (76) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c090020 size=19520h (103712) map[0m
+[0;32mI (105) esp_image: segment 1: paddr=00029548 vaddr=3fc9a300 size=04e8ch ( 20108) load[0m
+[0;32mI (109) esp_image: segment 2: paddr=0002e3dc vaddr=40374000 size=01c3ch (  7228) load[0m
+[0;32mI (111) esp_image: segment 3: paddr=00030020 vaddr=42000020 size=80250h (524880) map[0m
+[0;32mI (208) esp_image: segment 4: paddr=000b0278 vaddr=40375c3c size=14690h ( 83600) load[0m
+[0;32mI (227) esp_image: segment 5: paddr=000c4910 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (236) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (236) boot: Disabling RNG early entropy source...[0m
+[0;32mI (246) cpu_start: Multicore app[0m
+[0;32mI (255) cpu_start: GPIO 44 and 43 are used as console UART I/O pins[0m
+[0;32mI (255) cpu_start: Pro cpu start user code[0m
+[0;32mI (256) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (257) app_init: Application information:[0m
+[0;32mI (261) app_init: Project name:     thermistor_data[0m
+[0;32mI (265) app_init: App version:      1cf7d277-dirty[0m
+[0;32mI (270) app_init: Compile time:     Apr  4 2026 14:04:12[0m
+[0;32mI (275) app_init: ELF file SHA256:  27d161c5b...[0m
+[0;32mI (279) app_init: ESP-IDF:          v5.5.3[0m
+[0;32mI (283) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (287) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (291) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (295) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (301) heap_init: At 3FCA2ED8 len 00046838 (282 KiB): RAM[0m
+[0;32mI (306) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (311) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (317) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (323) spi_flash: detected chip: generic[0m
+[0;32mI (326) spi_flash: flash io: dio[0m
+[0;33mW (329) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (341) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (347) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (354) main_task: Started on CPU0[0m
+[0;32mI (374) main_task: Calling app_main()[0m
+STA MAC Address: 94:A9:90:0B:2A:04
+STA MAC Address: 94:A9:90:0B:2A:04
+[0;32mI (384) pp: pp rom version: e7ae62f[0m
+[0;32mI (384) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (394) wifi:wifi driver task: 3fcee9d8, prio:23, stack:6656, core=0[0m
+[0;32mI (394) wifi:wifi firmware version: 4df78f2[0m
+[0;32mI (394) wifi:wifi certification version: v7.0[0m
+[0;32mI (394) wifi:config NVS flash: enabled[0m
+[0;32mI (404) wifi:config nano formatting: disabled[0m
+[0;32mI (404) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (414) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (414) wifi:Init management short buffer num: 32[0m
+[0;32mI (414) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (424) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (424) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (434) wifi:Init static rx buffer num: 10[0m
+[0;32mI (434) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (434) wifi_init: rx ba win: 6[0m
+[0;32mI (444) wifi_init: accept mbox: 6[0m
+[0;32mI (444) wifi_init: tcpip mbox: 32[0m
+[0;32mI (444) wifi_init: udp mbox: 6[0m
+[0;32mI (444) wifi_init: tcp mbox: 6[0m
+[0;32mI (454) wifi_init: tcp tx win: 5760[0m
+[0;32mI (454) wifi_init: tcp rx win: 5760[0m
+[0;32mI (454) wifi_init: tcp mss: 1440[0m
+[0;32mI (464) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (464) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (464) phy_init: phy_version 711,97bcf0a2,Aug 25 2025,19:04:10[0m
+[0;32mI (514) wifi:mode : sta (94:a9:90:0b:2a:04)[0m
+[0;32mI (514) wifi:enable tsf[0m
+[0;32mI (514) ESPNOW: espnow [version: 2.0] init[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+ADC= 1866 Voltage= 1.504 V Resistance=11945.3 ofms Temp20.99 C 
+ADC= 1866 Voltage= 1.504 V Resistance=11945.3 ofms Temp20.99 C 
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (5514) espnow_example: Start sending broadcast data[0m
+ADC= 1846 Voltage= 1.488 V Resistance=12183.1 ofms Temp20.56 C 
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (6544) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (7574) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (8604) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1861 Voltage= 1.500 V Resistance=12004.3 ofms Temp20.89 C 
+[0;32mI (9624) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (10654) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (11674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (12674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (13674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (14674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (15674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (16674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+[0;32mI (16674) espnow_example: Receive 0th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (17674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+[0;32mI (17674) espnow_example: Receive 1th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (18674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+[0;32mI (18674) espnow_example: Receive 2th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+[0;32mI (18674) espnow_example: Receive 3th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1866 Voltage= 1.504 V Resistance=11945.3 ofms Temp20.99 C 
+[0;32mI (19674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (20674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (21674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (22674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (23674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (24674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (25674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (26674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (27674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1862 Voltage= 1.501 V Resistance=11992.5 ofms Temp20.91 C 
+[0;32mI (28674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (29674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (30674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1866 Voltage= 1.504 V Resistance=11945.3 ofms Temp20.99 C 
+[0;32mI (31674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (32674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (33674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (34674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (35674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1859 Voltage= 1.498 V Resistance=12028.0 ofms Temp20.84 C 
+[0;32mI (36674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1861 Voltage= 1.500 V Resistance=12004.3 ofms Temp20.89 C 
+[0;32mI (37674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (38674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1861 Voltage= 1.500 V Resistance=12004.3 ofms Temp20.89 C 
+[0;32mI (39674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (40674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (41674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (42674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (43674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (44674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1859 Voltage= 1.498 V Resistance=12028.0 ofms Temp20.84 C 
+[0;32mI (45674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1857 Voltage= 1.496 V Resistance=12051.7 ofms Temp20.80 C 
+[0;32mI (46674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1862 Voltage= 1.501 V Resistance=11992.5 ofms Temp20.91 C 
+[0;32mI (47674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (48674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1862 Voltage= 1.501 V Resistance=11992.5 ofms Temp20.91 C 
+[0;32mI (49674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1862 Voltage= 1.501 V Resistance=11992.5 ofms Temp20.91 C 
+[0;32mI (50674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1861 Voltage= 1.500 V Resistance=12004.3 ofms Temp20.89 C 
+[0;32mI (51674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (52674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (53674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (54674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1859 Voltage= 1.498 V Resistance=12028.0 ofms Temp20.84 C 
+[0;32mI (55674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (56674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1866 Voltage= 1.504 V Resistance=11945.3 ofms Temp20.99 C 
+[0;32mI (57674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (58674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1860 Voltage= 1.499 V Resistance=12016.1 ofms Temp20.86 C 
+[0;32mI (59674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (60674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1862 Voltage= 1.501 V Resistance=11992.5 ofms Temp20.91 C 
+[0;32mI (61674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (62674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (63674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (64674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (65674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1866 Voltage= 1.504 V Resistance=11945.3 ofms Temp20.99 C 
+[0;32mI (66674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (67674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (68674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (69674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1861 Voltage= 1.500 V Resistance=12004.3 ofms Temp20.89 C 
+[0;32mI (70674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1868 Voltage= 1.505 V Resistance=11921.8 ofms Temp21.04 C 
+[0;32mI (71674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1869 Voltage= 1.506 V Resistance=11910.1 ofms Temp21.06 C 
+[0;32mI (72674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (73674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1867 Voltage= 1.505 V Resistance=11933.6 ofms Temp21.02 C 
+[0;32mI (74674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1861 Voltage= 1.500 V Resistance=12004.3 ofms Temp20.89 C 
+[0;32mI (75674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (76674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1858 Voltage= 1.497 V Resistance=12039.8 ofms Temp20.82 C 
+[0;32mI (77674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (78674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1866 Voltage= 1.504 V Resistance=11945.3 ofms Temp20.99 C 
+[0;32mI (79674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1866 Voltage= 1.504 V Resistance=11945.3 ofms Temp20.99 C 
+[0;32mI (80674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1862 Voltage= 1.501 V Resistance=11992.5 ofms Temp20.91 C 
+[0;32mI (81674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (82674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1862 Voltage= 1.501 V Resistance=11992.5 ofms Temp20.91 C 
+[0;32mI (83674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1866 Voltage= 1.504 V Resistance=11945.3 ofms Temp20.99 C 
+[0;32mI (84674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (85674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (86674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1861 Voltage= 1.500 V Resistance=12004.3 ofms Temp20.89 C 
+[0;32mI (87674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (88674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1861 Voltage= 1.500 V Resistance=12004.3 ofms Temp20.89 C 
+[0;32mI (89674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (90674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (91674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1867 Voltage= 1.505 V Resistance=11933.6 ofms Temp21.02 C 
+[0;32mI (92674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (93674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (94674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1860 Voltage= 1.499 V Resistance=12016.1 ofms Temp20.86 C 
+[0;32mI (95674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (96674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (97674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1862 Voltage= 1.501 V Resistance=11992.5 ofms Temp20.91 C 
+[0;32mI (98674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1870 Voltage= 1.507 V Resistance=11898.4 ofms Temp21.08 C 
+[0;32mI (99674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (100674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1868 Voltage= 1.505 V Resistance=11921.8 ofms Temp21.04 C 
+[0;32mI (101674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1866 Voltage= 1.504 V Resistance=11945.3 ofms Temp20.99 C 
+[0;32mI (102674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (103674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (104674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1867 Voltage= 1.505 V Resistance=11933.6 ofms Temp21.02 C 
+[0;32mI (105674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1866 Voltage= 1.504 V Resistance=11945.3 ofms Temp20.99 C 
+[0;32mI (106674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1867 Voltage= 1.505 V Resistance=11933.6 ofms Temp21.02 C 
+[0;32mI (107674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (108674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1874 Voltage= 1.510 V Resistance=11851.7 ofms Temp21.17 C 
+[0;32mI (109674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (110674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (111674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1866 Voltage= 1.504 V Resistance=11945.3 ofms Temp20.99 C 
+[0;32mI (112674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1868 Voltage= 1.505 V Resistance=11921.8 ofms Temp21.04 C 
+[0;32mI (113674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (114674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1868 Voltage= 1.505 V Resistance=11921.8 ofms Temp21.04 C 
+[0;32mI (115674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1867 Voltage= 1.505 V Resistance=11933.6 ofms Temp21.02 C 
+[0;32mI (116674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1870 Voltage= 1.507 V Resistance=11898.4 ofms Temp21.08 C 
+[0;32mI (117674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1866 Voltage= 1.504 V Resistance=11945.3 ofms Temp20.99 C 
+[0;32mI (118674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1868 Voltage= 1.505 V Resistance=11921.8 ofms Temp21.04 C 
+[0;32mI (119674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1866 Voltage= 1.504 V Resistance=11945.3 ofms Temp20.99 C 
+[0;32mI (120674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (121674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (122674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1867 Voltage= 1.505 V Resistance=11933.6 ofms Temp21.02 C 
+[0;32mI (123674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (124674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1862 Voltage= 1.501 V Resistance=11992.5 ofms Temp20.91 C 
+[0;32mI (125674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1869 Voltage= 1.506 V Resistance=11910.1 ofms Temp21.06 C 
+[0;32mI (126674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1866 Voltage= 1.504 V Resistance=11945.3 ofms Temp20.99 C 
+[0;32mI (127674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1870 Voltage= 1.507 V Resistance=11898.4 ofms Temp21.08 C 
+[0;32mI (128674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1873 Voltage= 1.509 V Resistance=11863.3 ofms Temp21.15 C 
+[0;32mI (129674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (130674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1862 Voltage= 1.501 V Resistance=11992.5 ofms Temp20.91 C 
+[0;32mI (131674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1867 Voltage= 1.505 V Resistance=11933.6 ofms Temp21.02 C 
+[0;32mI (132674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1866 Voltage= 1.504 V Resistance=11945.3 ofms Temp20.99 C 
+[0;32mI (133674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1866 Voltage= 1.504 V Resistance=11945.3 ofms Temp20.99 C 
+[0;32mI (134674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1866 Voltage= 1.504 V Resistance=11945.3 ofms Temp20.99 C 
+[0;32mI (135674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1866 Voltage= 1.504 V Resistance=11945.3 ofms Temp20.99 C 
+[0;32mI (136674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (137674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (138674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (139674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (140674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1870 Voltage= 1.507 V Resistance=11898.4 ofms Temp21.08 C 
+[0;32mI (141674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1867 Voltage= 1.505 V Resistance=11933.6 ofms Temp21.02 C 
+[0;32mI (142674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (143674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (144674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1861 Voltage= 1.500 V Resistance=12004.3 ofms Temp20.89 C 
+[0;32mI (145674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1866 Voltage= 1.504 V Resistance=11945.3 ofms Temp20.99 C 
+[0;32mI (146674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (147674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1867 Voltage= 1.505 V Resistance=11933.6 ofms Temp21.02 C 
+[0;32mI (148674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1857 Voltage= 1.496 V Resistance=12051.7 ofms Temp20.80 C 
+[0;32mI (149674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (150674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (151674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1867 Voltage= 1.505 V Resistance=11933.6 ofms Temp21.02 C 
+[0;32mI (152674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (153674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (154674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (155674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1861 Voltage= 1.500 V Resistance=12004.3 ofms Temp20.89 C 
+[0;32mI (156674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1866 Voltage= 1.504 V Resistance=11945.3 ofms Temp20.99 C 
+[0;32mI (157674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1866 Voltage= 1.504 V Resistance=11945.3 ofms Temp20.99 C 
+[0;32mI (158674) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (159704) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1868 Voltage= 1.505 V Resistance=11921.8 ofms Temp21.04 C 
+[0;32mI (160704) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (161704) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1867 Voltage= 1.505 V Resistance=11933.6 ofms Temp21.02 C 
+[0;32mI (162704) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (163704) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (164704) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+[0;32mI (164704) espnow_example: Receive 0th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+[0;32mI (164704) espnow_example: Receive 1th broadcast data from: ec:e3:34:d6:2b:ac, len: 10[0m
+ADC= 1864 Voltage= 1.502 V Resistance=11968.9 ofms Temp20.95 C 
+[0;32mI (165704) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1866 Voltage= 1.504 V Resistance=11945.3 ofms Temp20.99 C 
+[0;32mI (166704) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1868 Voltage= 1.505 V Resistance=11921.8 ofms Temp21.04 C 
+[0;32mI (167704) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1865 Voltage= 1.503 V Resistance=11957.1 ofms Temp20.97 C 
+[0;32mI (168704) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
+ADC= 1868 Voltage= 1.505 V Resistance=11921.8 ofms Temp21.04 C 
+[0;32mI (169704) espnow_example: send data to ec:e3:34:d6:2b:ac[0m
