@@ -30,6 +30,7 @@
 #include "esp_crc.h"
 #include "espnow_example.h"
 
+
 #define ESPNOW_MAXDELAY 512
 
 static const char *TAG = "espnow_example";
@@ -116,7 +117,7 @@ static void example_espnow_recv_cb(const esp_now_recv_info_t *recv_info, const u
     }
 }
 
-
+float recv_temp[1] = {-1.0};
 
 int example_espnow_data_parse(uint8_t *data, uint16_t data_len,
                               uint8_t *state, uint16_t *seq, uint32_t *magic)
@@ -141,13 +142,14 @@ int example_espnow_data_parse(uint8_t *data, uint16_t data_len,
         return -1;
     }
 
-    float recv_temp = 0.0f;
-    memcpy(&recv_temp, buf->payload, sizeof(float));
-    printf("Received Temperature: %f\n", recv_temp);
+    
+    memcpy(recv_temp, buf->payload, sizeof(float));
+    printf("Received Temperature: %f\n", recv_temp[0]);
 
     return buf->type;
 }
 
+float send_data[1] = {-1.0};
 
 /* Prepare ESPNOW data to be sent. */
 void example_espnow_data_prepare(example_espnow_send_param_t *send_param)
@@ -162,7 +164,10 @@ void example_espnow_data_prepare(example_espnow_send_param_t *send_param)
     buf->crc = 0;
     buf->magic = send_param->magic;
     /* Fill all remaining bytes after the data with random values */
-    esp_fill_random(buf->payload, send_param->len - sizeof(example_espnow_data_t));
+    //esp_fill_random(buf->payload, send_param->len - sizeof(example_espnow_data_t));
+    // need to fill with float array
+    memcpy(buf->payload, send_data, sizeof(send_data));
+
     buf->crc = esp_crc16_le(UINT16_MAX, (uint8_t const *)buf, send_param->len);
 }
 
@@ -233,7 +238,7 @@ static void example_espnow_task(void *pvParameter)
                 ret = example_espnow_data_parse(recv_cb->data, recv_cb->data_len, &recv_state, &recv_seq, &recv_magic);
                 free(recv_cb->data);
                 if (ret == EXAMPLE_ESPNOW_DATA_BROADCAST) {
-                    ESP_LOGI(TAG, "Receive %dth broadcast data from: "MACSTR", len: %d", recv_seq, MAC2STR(recv_cb->mac_addr), recv_cb->data_len);
+                    //ESP_LOGI(TAG, "Receive %dth broadcast data from: "MACSTR", len: %d", recv_seq, MAC2STR(recv_cb->mac_addr), recv_cb->data_len);
 
                     
                     /* If MAC address does not exist in peer list, add it to peer list. */

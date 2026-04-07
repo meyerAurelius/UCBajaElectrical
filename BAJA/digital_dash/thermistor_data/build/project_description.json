@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "thermistor_data",
-    "project_version":    "1cf7d277-dirty",
+    "project_version":    "188adddc-dirty",
     "project_path":       "C:/Users/marcu/baja/repos/UCBajaElectrical/BAJA/digital_dash/thermistor_data",
     "idf_path":           "C:/Espressif/frameworks/esp-idf-v5.5.3",
     "build_dir":          "C:/Users/marcu/baja/repos/UCBajaElectrical/BAJA/digital_dash/thermistor_data/build",
