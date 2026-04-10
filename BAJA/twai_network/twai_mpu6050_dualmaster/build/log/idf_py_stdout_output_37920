@@ -1,0 +1,353 @@
+Command: C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:\Espressif\frameworks\esp-idf-v5.5.1\tools/idf_monitor.py -p COM7 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 C:\Users\danaz\Desktop\Baja_code_2025-26\UCBajaElectrical\BAJA\twai_network\twai_mpu6050_dualmaster\build\twai_mpu6050_dualmaster.elf C:\Users\danaz\Desktop\Baja_code_2025-26\UCBajaElectrical\BAJA\twai_network\twai_mpu6050_dualmaster\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'C:\Espressif\frameworks\esp-idf-v5.5.1\tools\idf.py' '-p' 'COM7'
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x2b (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4037792a
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x158c
+load:0x403c8700,len:0xd24
+load:0x403cb700,len:0x2f34
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5.1-dirty 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Oct 18 2025 13:12:15[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (32) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (36) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (48) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (70) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (76) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0ad70h ( 44400) map[0m
+[0;32mI (95) esp_image: segment 1: paddr=0001ad98 vaddr=3fc92900 size=02ae8h ( 10984) load[0m
+[0;32mI (97) esp_image: segment 2: paddr=0001d888 vaddr=40374000 size=02790h ( 10128) load[0m
+[0;32mI (104) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=19e08h (105992) map[0m
+[0;32mI (128) esp_image: segment 4: paddr=00039e30 vaddr=40376790 size=0c0a8h ( 49320) load[0m
+[0;32mI (139) esp_image: segment 5: paddr=00045ee0 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (145) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (145) boot: Disabling RNG early entropy source...[0m
+[0;32mI (157) cpu_start: Multicore app[0m
+[0;32mI (166) cpu_start: Pro cpu start user code[0m
+[0;32mI (166) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (166) app_init: Application information:[0m
+[0;32mI (166) app_init: Project name:     twai_mpu6050_dualmaster[0m
+[0;32mI (171) app_init: App version:      707284ae-dirty[0m
+[0;32mI (176) app_init: Compile time:     Oct 18 2025 13:11:49[0m
+[0;32mI (181) app_init: ELF file SHA256:  c88477a6f...[0m
+[0;32mI (185) app_init: ESP-IDF:          v5.5.1-dirty[0m
+[0;32mI (189) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (193) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (197) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (201) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (207) heap_init: At 3FC95CD0 len 00053A40 (334 KiB): RAM[0m
+[0;32mI (212) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (218) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (223) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (229) spi_flash: detected chip: gd[0m
+[0;32mI (231) spi_flash: flash io: dio[0m
+[0;33mW (234) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (247) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (253) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (260) main_task: Started on CPU0[0m
+[0;32mI (270) main_task: Calling app_main()[0m
+Master Program Started!I (270) TWAI Master: Driver installed
+[0;32mI (270) TWAI Master: Driver started[0m
+[0;32mI (270) TWAI Master: Transmitting ping[0m
+[0;32mI (10030) TWAI Master: Slave 1 connected[0m
+[0;32mI (15530) TWAI Master: Slave 2 connected[0m
+[0;32mI (15540) TWAI Master: Ping phase complete (S1=1, S2=1)[0m
+[0;32mI (15780) TWAI Master: Transmitted start command[0m
+[0;32mI (15790) TWAI Master: [Unpaid Intern 1] X=-0.08g Y=0.02g Z=3.95g[0m
+[0;32mI (15790) TWAI Master: [Unpaid Intern 2] X=-0.17g Y=0.01g Z=4.21g[0m
+[0;32mI (15830) TWAI Master: [Unpaid Intern 1] X=-0.07g Y=0.04g Z=3.97g[0m
+[0;32mI (15830) TWAI Master: [Unpaid Intern 2] X=-0.15g Y=0.05g Z=4.18g[0m
+[0;32mI (15880) TWAI Master: [Unpaid Intern 1] X=-0.08g Y=0.06g Z=3.99g[0m
+[0;32mI (15880) TWAI Master: [Unpaid Intern 2] X=-0.18g Y=0.03g Z=4.23g[0m
+[0;32mI (15930) TWAI Master: [Unpaid Intern 1] X=-0.09g Y=0.06g Z=3.96g[0m
+[0;32mI (15930) TWAI Master: [Unpaid Intern 2] X=-0.18g Y=0.04g Z=4.27g[0m
+[0;32mI (15980) TWAI Master: [Unpaid Intern 1] X=-0.07g Y=0.04g Z=3.98g[0m
+[0;32mI (15980) TWAI Master: [Unpaid Intern 2] X=-0.20g Y=0.04g Z=4.24g[0m
+[0;32mI (16030) TWAI Master: [Unpaid Intern 1] X=-0.06g Y=0.03g Z=3.98g[0m
+[0;32mI (16030) TWAI Master: [Unpaid Intern 2] X=-0.21g Y=0.02g Z=4.17g[0m
+[0;32mI (16080) TWAI Master: [Unpaid Intern 1] X=-0.08g Y=0.05g Z=3.97g[0m
+[0;32mI (16080) TWAI Master: [Unpaid Intern 2] X=-0.20g Y=0.03g Z=4.25g[0m
+[0;32mI (16130) TWAI Master: [Unpaid Intern 1] X=-0.08g Y=0.04g Z=3.95g[0m
+[0;32mI (16130) TWAI Master: [Unpaid Intern 2] X=-0.19g Y=0.03g Z=4.24g[0m
+[0;32mI (16180) TWAI Master: [Unpaid Intern 1] X=-0.11g Y=0.06g Z=4.01g[0m
+[0;32mI (16180) TWAI Master: [Unpaid Intern 2] X=-0.17g Y=0.01g Z=4.21g[0m
+[0;32mI (16230) TWAI Master: [Unpaid Intern 1] X=-0.09g Y=0.03g Z=3.95g[0m
+[0;32mI (16230) TWAI Master: [Unpaid Intern 2] X=-0.17g Y=0.03g Z=4.25g[0m
+[0;32mI (16280) TWAI Master: [Unpaid Intern 1] X=-0.08g Y=0.03g Z=3.95g[0m
+[0;32mI (16280) TWAI Master: [Unpaid Intern 2] X=-0.19g Y=0.04g Z=4.26g[0m
+[0;32mI (16330) TWAI Master: [Unpaid Intern 1] X=-0.08g Y=0.05g Z=3.98g[0m
+[0;32mI (16330) TWAI Master: [Unpaid Intern 2] X=-0.20g Y=0.04g Z=4.24g[0m
+[0;32mI (16380) TWAI Master: [Unpaid Intern 1] X=-0.07g Y=0.03g Z=3.97g[0m
+[0;32mI (16380) TWAI Master: [Unpaid Intern 2] X=-0.19g Y=0.04g Z=4.21g[0m
+[0;32mI (16430) TWAI Master: [Unpaid Intern 1] X=-0.04g Y=0.05g Z=3.96g[0m
+[0;32mI (16430) TWAI Master: [Unpaid Intern 2] X=-0.18g Y=0.06g Z=4.26g[0m
+[0;32mI (16480) TWAI Master: [Unpaid Intern 1] X=-0.06g Y=0.05g Z=3.98g[0m
+[0;32mI (16480) TWAI Master: [Unpaid Intern 2] X=-0.20g Y=0.04g Z=4.21g[0m
+[0;32mI (16530) TWAI Master: [Unpaid Intern 1] X=-0.11g Y=0.04g Z=4.00g[0m
+[0;32mI (16530) TWAI Master: [Unpaid Intern 2] X=-0.20g Y=0.03g Z=4.24g[0m
+[0;32mI (16580) TWAI Master: [Unpaid Intern 1] X=-0.08g Y=0.04g Z=3.99g[0m
+[0;32mI (16580) TWAI Master: [Unpaid Intern 2] X=-0.19g Y=0.04g Z=4.24g[0m
+[0;32mI (16630) TWAI Master: [Unpaid Intern 1] X=-0.05g Y=0.05g Z=3.95g[0m
+[0;32mI (16630) TWAI Master: [Unpaid Intern 2] X=-0.20g Y=0.03g Z=4.19g[0m
+[0;32mI (16680) TWAI Master: [Unpaid Intern 1] X=-0.08g Y=0.05g Z=4.02g[0m
+[0;32mI (16680) TWAI Master: [Unpaid Intern 2] X=-0.21g Y=0.00g Z=4.23g[0m
+[0;32mI (16730) TWAI Master: [Unpaid Intern 1] X=-0.07g Y=0.04g Z=3.97g[0m
+[0;32mI (16730) TWAI Master: [Unpaid Intern 2] X=-0.18g Y=0.05g Z=4.25g[0m
+[0;32mI (16780) TWAI Master: [Unpaid Intern 1] X=-0.05g Y=0.04g Z=3.99g[0m
+[0;32mI (16780) TWAI Master: [Unpaid Intern 2] X=-0.20g Y=0.02g Z=4.23g[0m
+[0;32mI (16830) TWAI Master: [Unpaid Intern 1] X=-0.09g Y=0.03g Z=3.98g[0m
+[0;32mI (16830) TWAI Master: [Unpaid Intern 2] X=-0.19g Y=0.04g Z=4.23g[0m
+[0;32mI (16880) TWAI Master: [Unpaid Intern 1] X=-0.07g Y=0.04g Z=3.96g[0m
+[0;32mI (16880) TWAI Master: [Unpaid Intern 2] X=-0.19g Y=0.06g Z=4.24g[0m
+[0;32mI (16930) TWAI Master: [Unpaid Intern 1] X=-0.06g Y=0.05g Z=4.00g[0m
+[0;32mI (16930) TWAI Master: [Unpaid Intern 2] X=-0.21g Y=0.00g Z=4.25g[0m
+[0;32mI (16980) TWAI Master: [Unpaid Intern 1] X=-0.07g Y=0.06g Z=3.96g[0m
+[0;32mI (16980) TWAI Master: [Unpaid Intern 2] X=-0.18g Y=0.04g Z=4.22g[0m
+[0;32mI (17030) TWAI Master: [Unpaid Intern 1] X=-0.07g Y=0.06g Z=3.98g[0m
+[0;32mI (17030) TWAI Master: [Unpaid Intern 2] X=-0.19g Y=0.02g Z=4.20g[0m
+[0;32mI (17080) TWAI Master: [Unpaid Intern 1] X=-0.08g Y=0.05g Z=4.00g[0m
+[0;32mI (17080) TWAI Master: [Unpaid Intern 2] X=-0.17g Y=0.05g Z=4.28g[0m
+[0;32mI (17130) TWAI Master: [Unpaid Intern 1] X=-0.08g Y=0.06g Z=3.94g[0m
+[0;32mI (17130) TWAI Master: [Unpaid Intern 2] X=-0.19g Y=0.04g Z=4.26g[0m
+[0;32mI (17180) TWAI Master: [Unpaid Intern 1] X=-0.11g Y=0.04g Z=3.96g[0m
+[0;32mI (17180) TWAI Master: [Unpaid Intern 2] X=-0.20g Y=0.03g Z=4.22g[0m
+[0;32mI (17230) TWAI Master: [Unpaid Intern 1] X=-0.09g Y=0.04g Z=3.97g[0m
+[0;32mI (17230) TWAI Master: [Unpaid Intern 2] X=-0.18g Y=0.02g Z=4.23g[0m
+[0;32mI (17280) TWAI Master: [Unpaid Intern 1] X=-0.08g Y=0.02g Z=3.98g[0m
+[0;32mI (17280) TWAI Master: [Unpaid Intern 2] X=-0.19g Y=0.03g Z=4.28g[0m
+[0;32mI (17330) TWAI Master: [Unpaid Intern 1] X=-0.06g Y=0.03g Z=3.98g[0m
+[0;32mI (17330) TWAI Master: [Unpaid Intern 2] X=-0.19g Y=0.02g Z=4.24g[0m
+[0;32mI (17380) TWAI Master: [Unpaid Intern 1] X=-0.10g Y=0.04g Z=3.97g[0m
+[0;32mI (17380) TWAI Master: [Unpaid Intern 2] X=-0.20g Y=0.05g Z=4.27g[0m
+[0;32mI (17430) TWAI Master: [Unpaid Intern 1] X=-0.06g Y=0.04g Z=3.98g[0m
+[0;32mI (17430) TWAI Master: [Unpaid Intern 2] X=-0.19g Y=0.02g Z=4.23g[0m
+[0;32mI (17480) TWAI Master: [Unpaid Intern 1] X=-0.08g Y=0.07g Z=3.98g[0m
+[0;32mI (17480) TWAI Master: [Unpaid Intern 2] X=-0.19g Y=0.07g Z=4.24g[0m
+[0;32mI (17530) TWAI Master: [Unpaid Intern 1] X=-0.12g Y=0.05g Z=3.98g[0m
+[0;32mI (17530) TWAI Master: [Unpaid Intern 2] X=-0.19g Y=0.05g Z=4.27g[0m
+[0;32mI (17580) TWAI Master: [Unpaid Intern 1] X=-0.08g Y=0.07g Z=3.97g[0m
+[0;32mI (17580) TWAI Master: [Unpaid Intern 2] X=-0.21g Y=0.02g Z=4.22g[0m
+[0;32mI (17630) TWAI Master: [Unpaid Intern 1] X=-0.08g Y=0.05g Z=3.96g[0m
+[0;32mI (17630) TWAI Master: [Unpaid Intern 2] X=-0.18g Y=0.04g Z=4.24g[0m
+[0;32mI (17680) TWAI Master: [Unpaid Intern 1] X=-0.08g Y=0.04g Z=3.95g[0m
+[0;32mI (17680) TWAI Master: [Unpaid Intern 2] X=-0.18g Y=0.05g Z=4.23g[0m
+[0;32mI (17730) TWAI Master: [Unpaid Intern 1] X=-0.08g Y=0.06g Z=3.95g[0m
+[0;32mI (17730) TWAI Master: [Unpaid Intern 2] X=-0.18g Y=0.04g Z=4.21g[0m
+[0;32mI (17780) TWAI Master: [Unpaid Intern 1] X=-0.07g Y=0.02g Z=3.99g[0m
+[0;32mI (17780) TWAI Master: [Unpaid Intern 2] X=-0.16g Y=0.00g Z=4.23g[0m
+[0;32mI (17830) TWAI Master: [Unpaid Intern 1] X=-0.10g Y=0.06g Z=3.97g[0m
+[0;32mI (17830) TWAI Master: [Unpaid Intern 2] X=-0.19g Y=0.02g Z=4.24g[0m
+[0;32mI (17880) TWAI Master: [Unpaid Intern 1] X=-0.09g Y=0.02g Z=3.98g[0m
+[0;32mI (17880) TWAI Master: [Unpaid Intern 2] X=-0.21g Y=0.02g Z=4.21g[0m
+[0;32mI (17930) TWAI Master: [Unpaid Intern 1] X=-0.06g Y=0.02g Z=3.98g[0m
+[0;32mI (17930) TWAI Master: [Unpaid Intern 2] X=-0.17g Y=0.04g Z=4.25g[0m
+[0;32mI (17980) TWAI Master: [Unpaid Intern 1] X=-0.09g Y=0.03g Z=4.01g[0m
+[0;32mI (17980) TWAI Master: [Unpaid Intern 2] X=-0.18g Y=0.05g Z=4.28g[0m
+[0;32mI (18030) TWAI Master: [Unpaid Intern 1] X=-0.09g Y=0.06g Z=3.97g[0m
+[0;32mI (18030) TWAI Master: [Unpaid Intern 2] X=-0.22g Y=0.08g Z=4.20g[0m
+[0;32mI (18080) TWAI Master: [Unpaid Intern 1] X=-0.07g Y=0.04g Z=3.98g[0m
+[0;32mI (18080) TWAI Master: [Unpaid Intern 2] X=-0.19g Y=0.00g Z=4.27g[0m
+[0;32mI (18130) TWAI Master: [Unpaid Intern 1] X=-0.06g Y=0.03g Z=4.00g[0m
+[0;32mI (18130) TWAI Master: [Unpaid Intern 2] X=-0.20g Y=0.03g Z=4.24g[0m
+[0;32mI (18180) TWAI Master: [Unpaid Intern 1] X=-0.08g Y=0.02g Z=3.95g[0m
+[0;32mI (18180) TWAI Master: [Unpaid Intern 2] X=-0.19g Y=0.02g Z=4.22g[0m
+[0;32mI (18230) TWAI Master: [Unpaid Intern 1] X=-0.06g Y=0.05g Z=3.96g[0m
+[0;32mI (18230) TWAI Master: [Unpaid Intern 2] X=-0.19g Y=0.02g Z=4.23g[0m
+[0;32mI (18280) TWAI Master: [Unpaid Intern 1] X=-0.09g Y=0.04g Z=3.98g[0m
+[0;32mI (18280) TWAI Master: [Unpaid Intern 2] X=-0.19g Y=0.04g Z=4.25g[0m
+[0;32mI (18330) TWAI Master: [Unpaid Intern 1] X=-0.05g Y=0.06g Z=3.99g[0m
+[0;32mI (18330) TWAI Master: [Unpaid Intern 2] X=-0.17g Y=0.05g Z=4.25g[0m
+[0;32mI (18380) TWAI Master: [Unpaid Intern 1] X=-0.10g Y=0.03g Z=4.00g[0m
+[0;32mI (18380) TWAI Master: [Unpaid Intern 2] X=-0.19g Y=0.03g Z=4.22g[0m
+[0;32mI (18430) TWAI Master: [Unpaid Intern 1] X=-0.06g Y=0.06g Z=3.96g[0m
+[0;32mI (18430) TWAI Master: [Unpaid Intern 2] X=-0.18g Y=0.05g Z=4.21g[0m
+[0;32mI (18480) TWAI Master: [Unpaid Intern 1] X=-0.08g Y=0.06g Z=3.93g[0m
+[0;32mI (18480) TWAI Master: [Unpaid Intern 2] X=-0.19g Y=0.06g Z=4.22g[0m
+[0;32mI (18530) TWAI Master: [Unpaid Intern 1] X=-0.07g Y=0.04g Z=3.95g[0m
+[0;32mI (18530) TWAI Master: [Unpaid Intern 2] X=-0.19g Y=0.04g Z=4.25g[0m
+[0;32mI (18580) TWAI Master: [Unpaid Intern 1] X=-0.06g Y=0.06g Z=3.96g[0m
+[0;32mI (18580) TWAI Master: [Unpaid Intern 2] X=-0.20g Y=0.04g Z=4.25g[0m
+[0;32mI (18630) TWAI Master: [Unpaid Intern 1] X=-0.08g Y=0.03g Z=3.95g[0m
+[0;32mI (18630) TWAI Master: [Unpaid Intern 2] X=-0.20g Y=0.03g Z=4.25g[0m
+[0;32mI (18680) TWAI Master: [Unpaid Intern 1] X=-0.06g Y=0.04g Z=3.98g[0m
+[0;32mI (18680) TWAI Master: [Unpaid Intern 2] X=-0.18g Y=0.05g Z=4.22g[0m
+[0;32mI (18730) TWAI Master: [Unpaid Intern 1] X=-0.07g Y=0.05g Z=3.98g[0m
+[0;32mI (18730) TWAI Master: [Unpaid Intern 2] X=-0.21g Y=0.03g Z=4.25g[0m
+[0;32mI (18780) TWAI Master: [Unpaid Intern 1] X=-0.06g Y=0.03g Z=3.97g[0m
+[0;32mI (18780) TWAI Master: [Unpaid Intern 2] X=-0.20g Y=0.04g Z=4.22g[0m
+[0;32mI (18830) TWAI Master: [Unpaid Intern 1] X=-0.07g Y=0.06g Z=3.95g[0m
+[0;32mI (18830) TWAI Master: [Unpaid Intern 2] X=-0.20g Y=0.04g Z=4.25g[0m
+[0;32mI (18880) TWAI Master: [Unpaid Intern 1] X=-0.06g Y=0.04g Z=3.98g[0m
+[0;32mI (18880) TWAI Master: [Unpaid Intern 2] X=-0.21g Y=0.04g Z=4.25g[0m
+[0;32mI (18930) TWAI Master: [Unpaid Intern 1] X=-0.08g Y=0.04g Z=3.96g[0m
+[0;32mI (18930) TWAI Master: [Unpaid Intern 2] X=-0.21g Y=0.02g Z=4.24g[0m
+[0;32mI (18980) TWAI Master: [Unpaid Intern 1] X=-0.09g Y=0.04g Z=3.97g[0m
+[0;32mI (18980) TWAI Master: [Unpaid Intern 2] X=-0.20g Y=0.04g Z=4.21g[0m
+[0;32mI (19030) TWAI Master: [Unpaid Intern 1] X=-0.08g Y=0.02g Z=3.99g[0m
+[0;32mI (19030) TWAI Master: [Unpaid Intern 2] X=-0.21g Y=0.03g Z=4.25g[0m
+[0;32mI (19080) TWAI Master: [Unpaid Intern 1] X=-0.08g Y=0.04g Z=4.01g[0m
+[0;32mI (19080) TWAI Master: [Unpaid Intern 2] X=-0.21g Y=0.05g Z=4.25g[0m
+[0;32mI (19130) TWAI Master: [Unpaid Intern 1] X=-0.08g Y=0.03g Z=3.96g[0m
+[0;32mI (19130) TWAI Master: [Unpaid Intern 2] X=-0.18g Y=0.05g Z=4.24g[0m
+[0;32mI (19180) TWAI Master: [Unpaid Intern 1] X=-0.06g Y=0.05g Z=3.98g[0m
+[0;32mI (19180) TWAI Master: [Unpaid Intern 2] X=-0.15g Y=0.00g Z=4.24g[0m
+[0;32mI (19230) TWAI Master: [Unpaid Intern 1] X=-0.07g Y=0.03g Z=3.96g[0m
+[0;32mI (19230) TWAI Master: [Unpaid Intern 2] X=-0.20g Y=0.03g Z=4.22g[0m
+[0;32mI (19280) TWAI Master: [Unpaid Intern 1] X=-0.07g Y=0.03g Z=4.00g[0m
+[0;32mI (19280) TWAI Master: [Unpaid Intern 2] X=-0.20g Y=0.04g Z=4.22g[0m
+[0;32mI (19330) TWAI Master: [Unpaid Intern 1] X=-0.07g Y=0.02g Z=3.96g[0m
+[0;32mI (19330) TWAI Master: [Unpaid Intern 2] X=-0.20g Y=0.01g Z=4.18g[0m
+[0;32mI (19380) TWAI Master: [Unpaid Intern 1] X=-0.07g Y=0.03g Z=3.94g[0m
+[0;32mI (19380) TWAI Master: [Unpaid Intern 2] X=-0.20g Y=0.05g Z=4.27g[0m
+[0;32mI (19430) TWAI Master: [Unpaid Intern 1] X=-0.08g Y=0.05g Z=4.01g[0m
+[0;32mI (19430) TWAI Master: [Unpaid Intern 2] X=-0.18g Y=0.04g Z=4.25g[0m
+[0;32mI (19480) TWAI Master: [Unpaid Intern 1] X=-0.08g Y=0.03g Z=3.97g[0m
+[0;32mI (19480) TWAI Master: [Unpaid Intern 2] X=-0.18g Y=0.04g Z=4.21g[0m
+[0;32mI (19530) TWAI Master: [Unpaid Intern 1] X=-0.06g Y=0.04g Z=3.96g[0m
+[0;32mI (19530) TWAI Master: [Unpaid Intern 2] X=-0.19g Y=0.06g Z=4.23g[0m
+[0;32mI (19580) TWAI Master: [Unpaid Intern 1] X=-0.08g Y=0.05g Z=3.97g[0m
+[0;32mI (19580) TWAI Master: [Unpaid Intern 2] X=-0.19g Y=0.06g Z=4.21g[0m
+[0;32mI (19630) TWAI Master: [Unpaid Intern 1] X=-0.08g Y=0.06g Z=3.97g[0m
+[0;32mI (19630) TWAI Master: [Unpaid Intern 2] X=-0.22g Y=0.06g Z=4.21g[0m
+[0;32mI (19680) TWAI Master: [Unpaid Intern 1] X=-0.08g Y=0.07g Z=4.01g[0m
+[0;32mI (19680) TWAI Master: [Unpaid Intern 2] X=-0.19g Y=0.03g Z=4.24g[0m
+[0;32mI (19730) TWAI Master: [Unpaid Intern 1] X=-0.08g Y=0.05g Z=3.96g[0m
+[0;32mI (19730) TWAI Master: [Unpaid Intern 2] X=-0.19g Y=0.03g Z=4.25g[0m
+[0;32mI (19780) TWAI Master: [Unpaid Intern 1] X=-0.06g Y=0.04g Z=3.97g[0m
+[0;32mI (19780) TWAI Master: [Unpaid Intern 2] X=-0.19g Y=0.05g Z=4.24g[0m
+[0;32mI (19830) TWAI Master: [Unpaid Intern 1] X=-0.08g Y=0.05g Z=3.95g[0m
+[0;32mI (19830) TWAI Master: [Unpaid Intern 2] X=-0.20g Y=0.03g Z=4.20g[0m
+[0;32mI (19880) TWAI Master: [Unpaid Intern 1] X=-0.08g Y=0.04g Z=3.96g[0m
+[0;32mI (19880) TWAI Master: [Unpaid Intern 2] X=-0.21g Y=0.04g Z=4.22g[0m
+[0;32mI (19930) TWAI Master: [Unpaid Intern 1] X=-0.08g Y=0.04g Z=3.99g[0m
+[0;32mI (19930) TWAI Master: [Unpaid Intern 2] X=-0.19g Y=0.04g Z=4.23g[0m
+[0;32mI (19980) TWAI Master: [Unpaid Intern 1] X=-0.07g Y=0.04g Z=3.98g[0m
+[0;32mI (19980) TWAI Master: [Unpaid Intern 2] X=-0.21g Y=0.02g Z=4.25g[0m
+[0;32mI (20030) TWAI Master: [Unpaid Intern 1] X=-0.06g Y=0.06g Z=3.95g[0m
+[0;32mI (20030) TWAI Master: [Unpaid Intern 2] X=-0.19g Y=0.06g Z=4.26g[0m
+[0;32mI (20080) TWAI Master: [Unpaid Intern 1] X=-0.07g Y=0.05g Z=3.98g[0m
+[0;32mI (20080) TWAI Master: [Unpaid Intern 2] X=-0.17g Y=0.03g Z=4.25g[0m
+[0;32mI (20130) TWAI Master: [Unpaid Intern 1] X=-0.08g Y=0.04g Z=3.95g[0m
+[0;32mI (20130) TWAI Master: [Unpaid Intern 2] X=-0.20g Y=0.01g Z=4.21g[0m
+[0;32mI (20180) TWAI Master: [Unpaid Intern 1] X=-0.08g Y=0.06g Z=4.00g[0m
+[0;32mI (20180) TWAI Master: [Unpaid Intern 2] X=-0.21g Y=0.02g Z=4.22g[0m
+[0;32mI (20230) TWAI Master: [Unpaid Intern 1] X=-0.09g Y=0.03g Z=3.98g[0m
+[0;32mI (20230) TWAI Master: [Unpaid Intern 2] X=-0.19g Y=0.04g Z=4.23g[0m
+[0;32mI (20280) TWAI Master: [Unpaid Intern 1] X=-0.09g Y=0.03g Z=3.96g[0m
+[0;32mI (20280) TWAI Master: [Unpaid Intern 2] X=-0.19g Y=0.04g Z=4.24g[0m
+[0;32mI (20330) TWAI Master: [Unpaid Intern 1] X=-0.08g Y=0.06g Z=3.98g[0m
+[0;32mI (20330) TWAI Master: [Unpaid Intern 2] X=-0.21g Y=0.06g Z=4.23g[0m
+[0;32mI (20380) TWAI Master: [Unpaid Intern 1] X=-0.08g Y=0.04g Z=3.96g[0m
+[0;32mI (20380) TWAI Master: [Unpaid Intern 2] X=-0.18g Y=0.00g Z=4.24g[0m
+[0;32mI (20430) TWAI Master: [Unpaid Intern 1] X=-0.06g Y=0.04g Z=3.98g[0m
+[0;32mI (20430) TWAI Master: [Unpaid Intern 2] X=-0.19g Y=0.02g Z=4.24g[0m
+[0;32mI (20480) TWAI Master: [Unpaid Intern 1] X=-0.07g Y=0.06g Z=3.97g[0m
+[0;32mI (20480) TWAI Master: [Unpaid Intern 2] X=-0.20g Y=0.06g Z=4.25g[0m
+[0;32mI (20530) TWAI Master: [Unpaid Intern 1] X=-0.10g Y=0.04g Z=3.97g[0m
+[0;32mI (20530) TWAI Master: [Unpaid Intern 2] X=-0.20g Y=0.03g Z=4.23g[0m
+[0;32mI (20580) TWAI Master: [Unpaid Intern 1] X=-0.09g Y=0.05g Z=3.97g[0m
+[0;32mI (20580) TWAI Master: [Unpaid Intern 2] X=-0.18g Y=0.04g Z=4.26g[0m
+[0;32mI (20630) TWAI Master: [Unpaid Intern 1] X=-0.10g Y=0.05g Z=3.94g[0m
+[0;32mI (20630) TWAI Master: [Unpaid Intern 2] X=-0.21g Y=0.02g Z=4.26g[0m
+[0;32mI (20680) TWAI Master: [Unpaid Intern 1] X=-0.08g Y=0.03g Z=3.99g[0m
+[0;32mI (20680) TWAI Master: [Unpaid Intern 2] X=-0.20g Y=0.05g Z=4.23g[0m
+[0;32mI (20730) TWAI Master: [Unpaid Intern 1] X=-0.07g Y=0.04g Z=3.99g[0m
+[0;32mI (20730) TWAI Master: [Unpaid Intern 2] X=-0.19g Y=0.08g Z=4.24g[0m
+[0;32mI (20780) TWAI Master: [Unpaid Intern 1] X=-0.10g Y=0.04g Z=3.95g[0m
+[0;32mI (20780) TWAI Master: [Unpaid Intern 2] X=-0.19g Y=0.03g Z=4.24g[0m
+[0;32mI (20830) TWAI Master: [Unpaid Intern 1] X=-0.05g Y=0.04g Z=3.96g[0m
+[0;32mI (20830) TWAI Master: [Unpaid Intern 2] X=-0.18g Y=0.03g Z=4.24g[0m
+[0;32mI (20880) TWAI Master: [Unpaid Intern 1] X=-0.06g Y=0.03g Z=3.99g[0m
+[0;32mI (20880) TWAI Master: [Unpaid Intern 2] X=-0.18g Y=0.04g Z=4.25g[0m
+[0;32mI (20930) TWAI Master: [Unpaid Intern 1] X=-0.08g Y=0.03g Z=3.98g[0m
+[0;32mI (20930) TWAI Master: [Unpaid Intern 2] X=-0.19g Y=0.01g Z=4.21g[0m
+[0;32mI (20980) TWAI Master: [Unpaid Intern 1] X=-0.07g Y=0.06g Z=3.94g[0m
+[0;32mI (20980) TWAI Master: [Unpaid Intern 2] X=-0.19g Y=0.01g Z=4.21g[0m
+[0;32mI (21030) TWAI Master: [Unpaid Intern 1] X=-0.10g Y=0.04g Z=3.95g[0m
+[0;32mI (21030) TWAI Master: [Unpaid Intern 2] X=-0.20g Y=0.03g Z=4.23g[0m
+[0;32mI (21080) TWAI Master: [Unpaid Intern 1] X=-0.07g Y=0.04g Z=3.99g[0m
+[0;32mI (21080) TWAI Master: [Unpaid Intern 2] X=-0.20g Y=0.04g Z=4.19g[0m
+[0;32mI (21130) TWAI Master: [Unpaid Intern 1] X=-0.11g Y=0.03g Z=3.96g[0m
+[0;32mI (21130) TWAI Master: [Unpaid Intern 2] X=-0.19g Y=0.03g Z=4.25g[0m
+[0;32mI (21180) TWAI Master: [Unpaid Intern 1] X=-0.08g Y=0.04g Z=3.97g[0m
+[0;32mI (21180) TWAI Master: [Unpaid Intern 2] X=-0.20g Y=0.03g Z=4.27g[0m
+[0;32mI (21230) TWAI Master: [Unpaid Intern 1] X=-0.07g Y=0.06g Z=3.99g[0m
+[0;32mI (21230) TWAI Master: [Unpaid Intern 2] X=-0.20g Y=0.04g Z=4.25g[0m
+[0;32mI (21280) TWAI Master: [Unpaid Intern 1] X=-0.07g Y=0.04g Z=3.97g[0m
+[0;32mI (21280) TWAI Master: [Unpaid Intern 2] X=-0.20g Y=0.03g Z=4.23g[0m
+[0;32mI (21330) TWAI Master: [Unpaid Intern 1] X=-0.08g Y=0.04g Z=3.94g[0m
+[0;32mI (21330) TWAI Master: [Unpaid Intern 2] X=-0.19g Y=0.04g Z=4.24g[0m
+[0;32mI (21380) TWAI Master: [Unpaid Intern 1] X=-0.05g Y=0.05g Z=3.99g[0m
+[0;32mI (21380) TWAI Master: [Unpaid Intern 2] X=-0.17g Y=0.02g Z=4.24g[0m
+[0;32mI (21430) TWAI Master: [Unpaid Intern 1] X=-0.07g Y=0.03g Z=3.99g[0m
+[0;32mI (21430) TWAI Master: [Unpaid Intern 2] X=-0.19g Y=0.02g Z=4.25g[0m
+[0;32mI (21480) TWAI Master: [Unpaid Intern 1] X=-0.08g Y=0.03g Z=4.00g[0m
+[0;32mI (21480) TWAI Master: [Unpaid Intern 2] X=-0.18g Y=0.07g Z=4.24g[0m
+[0;32mI (21530) TWAI Master: [Unpaid Intern 1] X=-0.08g Y=0.06g Z=3.98g[0m
+[0;32mI (21530) TWAI Master: [Unpaid Intern 2] X=-0.20g Y=0.04g Z=4.22g[0m
+[0;32mI (21580) TWAI Master: [Unpaid Intern 1] X=-0.08g Y=0.04g Z=3.99g[0m
+[0;32mI (21580) TWAI Master: [Unpaid Intern 2] X=-0.19g Y=0.04g Z=4.23g[0m
+[0;32mI (21630) TWAI Master: [Unpaid Intern 1] X=-0.09g Y=0.07g Z=3.95g[0m
+[0;32mI (21630) TWAI Master: [Unpaid Intern 2] X=-0.22g Y=0.04g Z=4.21g[0m
+[0;32mI (21680) TWAI Master: [Unpaid Intern 1] X=-0.08g Y=-0.01g Z=4.00g[0m
+[0;32mI (21680) TWAI Master: [Unpaid Intern 2] X=-0.19g Y=0.00g Z=4.24g[0m
+[0;32mI (21730) TWAI Master: [Unpaid Intern 1] X=-0.04g Y=0.06g Z=3.97g[0m
+[0;32mI (21730) TWAI Master: [Unpaid Intern 2] X=-0.15g Y=0.08g Z=4.21g[0m
+[0;32mI (21780) TWAI Master: [Unpaid Intern 1] X=-0.09g Y=0.02g Z=3.96g[0m
+[0;32mI (21780) TWAI Master: [Unpaid Intern 2] X=-0.20g Y=0.03g Z=4.20g[0m
+[0;32mI (21830) TWAI Master: [Unpaid Intern 1] X=-0.09g Y=0.07g Z=3.96g[0m
+[0;32mI (21830) TWAI Master: [Unpaid Intern 2] X=-0.20g Y=0.05g Z=4.24g[0m
+[0;32mI (21880) TWAI Master: [Unpaid Intern 1] X=-0.07g Y=0.02g Z=3.96g[0m
+[0;32mI (21880) TWAI Master: [Unpaid Intern 2] X=-0.18g Y=0.03g Z=4.26g[0m
+[0;32mI (21930) TWAI Master: [Unpaid Intern 1] X=-0.10g Y=0.04g Z=3.96g[0m
+[0;32mI (21930) TWAI Master: [Unpaid Intern 2] X=-0.20g Y=0.03g Z=4.23g[0m
+[0;32mI (21980) TWAI Master: [Unpaid Intern 1] X=-0.06g Y=0.02g Z=3.97g[0m
+[0;32mI (21980) TWAI Master: [Unpaid Intern 2] X=-0.17g Y=0.06g Z=4.21g[0m
+[0;32mI (22030) TWAI Master: [Unpaid Intern 1] X=-0.07g Y=0.06g Z=3.96g[0m
+[0;32mI (22030) TWAI Master: [Unpaid Intern 2] X=-0.20g Y=0.04g Z=4.21g[0m
+[0;32mI (22080) TWAI Master: [Unpaid Intern 1] X=-0.10g Y=0.06g Z=3.97g[0m
+[0;32mI (22080) TWAI Master: [Unpaid Intern 2] X=-0.19g Y=0.02g Z=4.24g[0m
+[0;32mI (22130) TWAI Master: [Unpaid Intern 1] X=-0.07g Y=0.04g Z=3.99g[0m
+[0;32mI (22130) TWAI Master: [Unpaid Intern 2] X=-0.17g Y=0.01g Z=4.20g[0m
+[0;32mI (22180) TWAI Master: [Unpaid Intern 1] X=-0.08g Y=0.03g Z=3.95g[0m
+[0;32mI (22180) TWAI Master: [Unpaid Intern 2] X=-0.20g Y=0.04g Z=4.23g[0m
+[0;32mI (22230) TWAI Master: [Unpaid Intern 1] X=-0.08g Y=0.05g Z=3.98g[0m
+[0;32mI (22230) TWAI Master: [Unpaid Intern 2] X=-0.19g Y=0.02g Z=4.23g[0m
+[0;32mI (22280) TWAI Master: [Unpaid Intern 1] X=-0.07g Y=0.05g Z=3.98g[0m
+[0;32mI (22280) TWAI Master: [Unpaid Intern 2] X=-0.20g Y=0.04g Z=4.25g[0m
+[0;32mI (22330) TWAI Master: [Unpaid Intern 1] X=-0.10g Y=0.04g Z=3.94g[0m
+[0;32mI (22330) TWAI Master: [Unpaid Intern 2] X=-0.19g Y=0.03g Z=4.22g[0m
+[0;32mI (22380) TWAI Master: [Unpaid Intern 1] X=-0.07g Y=0.03g Z=4.03g[0m
+[0;32mI (22380) TWAI Master: [Unpaid Intern 2] X=-0.20g Y=0.04g Z=4.23g[0m
+[0;32mI (22430) TWAI Master: [Unpaid Intern 1] X=-0.08g Y=0.04g Z=3.97g[0m
+[0;32mI (22430) TWAI Master: [Unpaid Intern 2] X=-0.18g Y=0.04g Z=4.25g[0m
+[0;32mI (22480) TWAI Master: [Unpaid Intern 1] X=-0.06g Y=0.02g Z=3.99g[0m
+[0;32mI (22480) TWAI Master: [Unpaid Intern 2] X=-0.19g Y=0.06g Z=4.26g[0m
+[0;32mI (22530) TWAI Master: [Unpaid Intern 1] X=-0.06g Y=0.04g Z=3.92g[0m
+[0;32mI (22530) TWAI Master: [Unpaid Intern 2] X=-0.19g Y=0.06g Z=4.18g[0m
+[0;32mI (22580) TWAI Master: [Unpaid Intern 1] X=-0.08g Y=0.05g Z=4.00g[0m
+[0;32mI (22580) TWAI Master: [Unpaid Intern 2] X=-0.18g Y=0.05g Z=4.22g[0m
+[0;32mI (22630) TWAI Master: [Unpaid Intern 1] X=-0.07g Y=0.03g Z=3.96g[0m
+[0;32mI (22630) TWAI Master: [Unpaid Intern 2] X=-0.19g Y=0.05g Z=4.24g[0m
+[0;32mI (22680) TWAI Master: [Unpaid Intern 1] X=-0.12g Y=0.06g Z=3.95g[0m
+[0;32mI (22680) TWAI Master: [Unpaid Intern 2] X=-0.18g Y=0.02g Z=4.24g[0m
+[0;32mI (22730) TWAI Master: [Unpaid Intern 1] X=-0.09g Y=0.02g Z=3.93g[0m
+[0;32mI (22730) TWAI Master: [Unpaid Intern 2] X=-0.21g Y=-0.00g Z=4.23g[0m
+[0;32mI (22780) TWAI Master: [Unpaid Intern 1] X=-0.06g Y=0.06g Z=3.95g[0m
+[0;32mI (22780) TWAI Master: [Unpaid Intern 2] X=-0.17g Y=0.03g Z=4.23g[0m
+[0;32mI (22830) TWAI Master: [Unpaid Intern 1] X=-0.05g Y=0.04g Z=3.98g[0m
+[0;32mI (22830) TWAI Master: [Unpaid Intern 2] X=-0.19g Y=0.03g Z=4.23g[0m
+[0;32mI (22880) TWAI Master: [Unpaid Intern 1] X=-0.09g Y=0.03g Z=3.95g[0m
+[0;32mI (22880) TWAI Master: [Unpaid Intern 2] X=-0.19g Y=0.02g Z=4.25g[0m
+[0;32mI (22930) TWAI Master: [Unpaid Intern 1] X=-0.07g Y=0.06g Z=3.98g[0m
+[0;32mI (22930) TWAI Master: [Unpaid Intern 2] X=-0.18g Y=0.02g Z=4.24g[0m
