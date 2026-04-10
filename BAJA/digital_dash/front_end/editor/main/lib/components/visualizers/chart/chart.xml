@@ -1,0 +1,72 @@
+<component>
+	<previews>
+		<preview width="800" height="480" style_pad_all="30" />
+	</previews>
+
+	<api>
+		<prop name="type" type="enum:lv_chart_type" default="line" />
+		<prop name="color" type="color" default="#color_accent" />
+		<prop name="min_value" type="int" default="0" />
+		<prop name="max_value" type="int" default="100" />
+		<prop name="tick_count" type="int" default="5" />
+		<prop name="point_count" type="int" default="10" />
+	</api>
+
+	<styles>
+		<style name="style_base" width="#base_lib_block_3" height="#base_lib_block_2" pad_column="0" />
+		<style
+			name="style_chart"
+			flex_grow="1"
+			height="100%"
+			pad_ver="31"
+			pad_hor="#base_lib_unit_lg"
+			pad_column="#base_lib_unit_md"
+			border_width="0"
+			radius="#base_lib_radius"
+			line_width="1"
+		/>
+		<style name="style_series_items" line_width="#base_lib_border_width" radius="10" />
+		<style name="style_series_indicator" width="#base_lib_unit_sm" height="#base_lib_unit_sm" />
+		<style name="style_scale" height="84%" pad_top="32" width="#base_lib_unit_xxl" text_font="font_xs" />
+		<style
+			name="style_scale_indicator"
+			line_color="#color_light_text"
+			line_opa="0"
+			length="#base_lib_unit_sm"
+			pad_left="#base_lib_border_width"
+		/>
+	</styles>
+
+	<view extends="row" style_pad_ver="#base_lib_unit_sm" style_pad_column="-2" padding_side="0">
+		<style name="style_base" />
+		<lv_scale
+			mode="vertical_left"
+			min_value="$min_value"
+			max_value="$max_value"
+			major_tick_every="1"
+			total_tick_count="$tick_count"
+		>
+			<style name="style_scale" />
+			<style name="style_light_text" />
+			<style name="style_scale_indicator" selector="indicator" />
+			<bind_style name="style_dark_text" subject="subject_dark_mode" ref_value="1" />
+		</lv_scale>
+
+		<lv_chart
+			style_line_width="4"
+			type="bar"
+			point_count="$point_count"
+			hor_div_line_count="$tick_count"
+			ver_div_line_count="0"
+		>
+			<remove_style_all />
+			<style name="style_chart" />
+			<style name="style_light_panel" />
+			<style name="style_series_items" selector="items" />
+			<style name="style_series_indicator" selector="indicator" />
+			<bind_style name="style_dark_panel" subject="subject_dark_mode" ref_value="1" />
+			<lv_chart-series color="$color" values="00 20 0 40 80 90 20 60 40 70 20 30" />
+			<lv_chart-axis axis="primary_y" min_value="$min_value" max_value="$max_value" />
+		</lv_chart>
+	</view>
+</component>

@@ -1,0 +1,9 @@
+list(
+  APPEND
+  LV_EDITOR_PROJECT_SOURCES
+  ${CMAKE_CURRENT_LIST_DIR}/main_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/main.c
+  ${CMAKE_CURRENT_LIST_DIR}/screens/main_screen/main/main_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/screens/screen1_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/screens/screen2_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/screens/screen3_gen.c)

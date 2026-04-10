@@ -1,0 +1,33 @@
+<component>
+	<previews>
+		<preview width="480" style_bg_color="0xddd" />
+	</previews>
+	<api>
+		<prop name="grow" type="int" default="NULL" />
+	</api>
+	<styles>
+		<style
+			name="style_clock"
+			text_font="font_xl"
+			width="#base_lib_block_2"
+			height="#base_lib_block_1_5"
+			flex_track_place="start"
+			flex_main_place="center"
+			flex_cross_place="start"
+			layout="flex"
+			flex_flow="column"
+			pad_row="0"
+		/>
+	</styles>
+	<view extends="card_empty" style_pad_all="#base_lib_unit_xl" flex_grow="$grow">
+		<style name="style_clock" />
+		<bind_style name="style_dark_panel" subject="subject_dark_mode" ref_value="1" />
+		<time subject_hour="subject_hour" subject_minute="subject_minute" font="font_xxl" height="48" />
+		<date
+			subject_day_index="subject_day_index"
+			subject_day_name="subject_day_name"
+			subject_month_name="subject_month_name"
+			font="font_md"
+		/>
+	</view>
+</component>

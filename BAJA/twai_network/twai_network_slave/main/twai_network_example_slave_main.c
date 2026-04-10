@@ -35,8 +35,8 @@
 #define RX_TASK_PRIO                    8       //Receiving task priority
 #define TX_TASK_PRIO                    9       //Sending task priority
 #define CTRL_TSK_PRIO                   10      //Control task priority
-#define TX_GPIO_NUM                     17
-#define RX_GPIO_NUM                     16 
+#define TX_GPIO_NUM                     1
+#define RX_GPIO_NUM                     3 
 #define EXAMPLE_TAG                     "TWAI Slave"
 
 #define ID_MASTER_STOP_CMD              0x0A0

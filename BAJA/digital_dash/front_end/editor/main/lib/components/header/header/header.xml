@@ -1,0 +1,21 @@
+<component>
+	<previews>
+		<preview width="480" />
+	</previews>
+	<styles>
+		<style
+			name="style_base"
+			width="100%"
+			height="32"
+			pad_hor="#base_lib_unit_md"
+			flex_track_place="center"
+			flex_cross_place="center"
+		/>
+	</styles>
+
+	<view extends="row" scrollable="false" vertical_align="center" content_align="center">
+		<style name="style_base" />
+		<style name="style_dark_bg" />
+		<style name="style_dark_text" />
+	</view>
+</component>

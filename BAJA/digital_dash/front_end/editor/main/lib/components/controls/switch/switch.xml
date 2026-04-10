@@ -1,0 +1,16 @@
+<component>
+	<styles>
+		<style name="style_base" bg_color="#color_accent" bg_opa="24%" />
+		<style name="style_base_dark" bg_color="#color_accent" />
+		<style name="style_indicator_checked" bg_color="#color_accent" bg_opa="100%" />
+		<style name="style_knob" bg_color="#color_accent" pad_all="-5" />
+		<style name="style_knob_checked" bg_color="#color_accent_text" bg_opa="100%" />
+	</styles>
+	<view extends="lv_switch">
+		<style name="style_base" />
+		<style name="style_knob" selector="knob" />
+		<style name="style_indicator_checked" selector="indicator|checked" />
+		<style name="style_knob_checked" selector="knob|checked" />
+		<bind_style name="style_base_dark" subject="subject_dark_mode" ref_value="1" />
+	</view>
+</component>
