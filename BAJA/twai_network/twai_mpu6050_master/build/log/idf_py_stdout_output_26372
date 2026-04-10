@@ -1,0 +1,501 @@
+Command: C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:\Espressif\frameworks\esp-idf-v5.5.1\tools/idf_monitor.py -p COM11 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 C:\Users\danaz\Desktop\Baja_code_2025-26\UCBajaElectrical\BAJA\twai_network\twai_mpu6050_master\build\twai_mpu6050_master.elf C:\Users\danaz\Desktop\Baja_code_2025-26\UCBajaElectrical\BAJA\twai_network\twai_mpu6050_master\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'C:\Espressif\frameworks\esp-idf-v5.5.1\tools\idf.py' '-p' 'COM11'
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5.1-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Oct 29 2025 18:40:18[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (38) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0a250h ( 41552) map[0m
+[0;32mI (103) esp_image: segment 1: paddr=0001a278 vaddr=3ffb0000 size=02408h (  9224) load[0m
+[0;32mI (106) esp_image: segment 2: paddr=0001c688 vaddr=40080000 size=03990h ( 14736) load[0m
+[0;32mI (112) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=15984h ( 88452) map[0m
+[0;32mI (144) esp_image: segment 4: paddr=000359ac vaddr=40083990 size=099f4h ( 39412) load[0m
+[0;32mI (160) esp_image: segment 5: paddr=0003f3a8 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (167) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (167) boot: Disabling RNG early entropy source...[0m
+[0;32mI (178) cpu_start: Multicore app[0m
+[0;32mI (187) cpu_start: Pro cpu start user code[0m
+[0;32mI (187) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (187) app_init: Application information:[0m
+[0;32mI (187) app_init: Project name:     twai_mpu6050_master[0m
+[0;32mI (192) app_init: App version:      bde78596-dirty[0m
+[0;32mI (196) app_init: Compile time:     Oct 29 2025 18:39:56[0m
+[0;32mI (201) app_init: ELF file SHA256:  cd3af463b...[0m
+[0;32mI (206) app_init: ESP-IDF:          v5.5.1-dirty[0m
+[0;32mI (210) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (214) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (218) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (222) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (228) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (233) heap_init: At 3FFB2CE8 len 0002D318 (180 KiB): DRAM[0m
+[0;32mI (238) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (244) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (249) heap_init: At 4008D384 len 00012C7C (75 KiB): IRAM[0m
+[0;33mW (256) spi_flash: Detected boya flash chip but using generic driver. For optimal functionality, enable `SPI_FLASH_SUPPORT_BOYA_CHIP` in menuconfig[0m
+[0;32mI (267) spi_flash: detected chip: generic[0m
+[0;32mI (271) spi_flash: flash io: dio[0m
+[0;33mW (274) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (287) main_task: Started on CPU0[0m
+[0;32mI (297) main_task: Calling app_main()[0m
+Master Program Started!I (297) TWAI Master: Driver installed
+[0;32mI (297) TWAI Master: Driver started[0m
+[0;32mI (297) TWAI Master: Transmitting ping[0m
+[0;32mI (9047) TWAI Master: Transmitted start command[0m
+[0;32mI (9057) TWAI Master: Scaled X=-0.10g Y=0.03g Z=3.96g[0m
+[0;32mI (9107) TWAI Master: Scaled X=-0.07g Y=0.04g Z=4.00g[0m
+[0;32mI (9157) TWAI Master: Scaled X=-0.07g Y=0.04g Z=3.97g[0m
+[0;32mI (9207) TWAI Master: Scaled X=-0.09g Y=0.03g Z=4.00g[0m
+[0;32mI (9257) TWAI Master: Scaled X=-0.08g Y=0.05g Z=3.94g[0m
+[0;32mI (9307) TWAI Master: Scaled X=-0.08g Y=0.03g Z=3.96g[0m
+[0;32mI (9357) TWAI Master: Scaled X=-0.08g Y=0.05g Z=3.99g[0m
+[0;32mI (9407) TWAI Master: Scaled X=-0.09g Y=0.04g Z=3.97g[0m
+[0;32mI (9457) TWAI Master: Scaled X=-0.08g Y=0.02g Z=3.99g[0m
+[0;32mI (9507) TWAI Master: Scaled X=-0.09g Y=0.05g Z=3.97g[0m
+[0;32mI (9557) TWAI Master: Scaled X=-0.09g Y=0.03g Z=3.97g[0m
+[0;32mI (9607) TWAI Master: Scaled X=-0.08g Y=0.04g Z=4.01g[0m
+[0;32mI (9657) TWAI Master: Scaled X=-0.08g Y=0.05g Z=3.99g[0m
+[0;32mI (9707) TWAI Master: Scaled X=-0.10g Y=0.04g Z=4.01g[0m
+[0;32mI (9757) TWAI Master: Scaled X=-0.08g Y=0.05g Z=3.99g[0m
+[0;32mI (9807) TWAI Master: Scaled X=-0.08g Y=0.05g Z=4.00g[0m
+[0;32mI (9857) TWAI Master: Scaled X=-0.09g Y=0.02g Z=3.99g[0m
+[0;32mI (9907) TWAI Master: Scaled X=-0.08g Y=0.04g Z=3.98g[0m
+[0;32mI (9957) TWAI Master: Scaled X=-0.07g Y=0.04g Z=3.97g[0m
+[0;32mI (10007) TWAI Master: Scaled X=-0.08g Y=0.04g Z=3.99g[0m
+[0;32mI (10057) TWAI Master: Scaled X=-0.09g Y=0.04g Z=3.97g[0m
+[0;32mI (10107) TWAI Master: Scaled X=-0.06g Y=0.07g Z=3.96g[0m
+[0;32mI (10157) TWAI Master: Scaled X=-0.08g Y=0.02g Z=3.98g[0m
+[0;32mI (10207) TWAI Master: Scaled X=-0.10g Y=0.03g Z=3.96g[0m
+[0;32mI (10257) TWAI Master: Scaled X=-0.10g Y=0.03g Z=3.96g[0m
+[0;32mI (10307) TWAI Master: Scaled X=-0.07g Y=0.03g Z=3.98g[0m
+[0;32mI (10357) TWAI Master: Scaled X=-0.08g Y=0.04g Z=3.96g[0m
+[0;32mI (10407) TWAI Master: Scaled X=-0.07g Y=0.02g Z=3.98g[0m
+[0;32mI (10457) TWAI Master: Scaled X=-0.08g Y=0.05g Z=3.97g[0m
+[0;32mI (10507) TWAI Master: Scaled X=-0.08g Y=0.02g Z=3.96g[0m
+[0;32mI (10557) TWAI Master: Scaled X=-0.07g Y=0.07g Z=4.01g[0m
+[0;32mI (10607) TWAI Master: Scaled X=-0.07g Y=0.03g Z=3.97g[0m
+[0;32mI (10657) TWAI Master: Scaled X=-0.09g Y=0.05g Z=3.98g[0m
+[0;32mI (10707) TWAI Master: Scaled X=-0.09g Y=0.04g Z=3.99g[0m
+[0;32mI (10757) TWAI Master: Scaled X=-0.10g Y=0.06g Z=4.00g[0m
+[0;32mI (10807) TWAI Master: Scaled X=-0.09g Y=0.05g Z=4.00g[0m
+[0;32mI (10857) TWAI Master: Scaled X=-0.07g Y=0.06g Z=3.97g[0m
+[0;32mI (10907) TWAI Master: Scaled X=-0.10g Y=0.05g Z=3.97g[0m
+[0;32mI (10957) TWAI Master: Scaled X=-0.07g Y=0.04g Z=3.96g[0m
+[0;32mI (11007) TWAI Master: Scaled X=-0.09g Y=0.05g Z=3.97g[0m
+[0;32mI (11057) TWAI Master: Scaled X=-0.08g Y=0.02g Z=3.97g[0m
+[0;32mI (11107) TWAI Master: Scaled X=-0.03g Y=0.05g Z=3.93g[0m
+[0;32mI (11157) TWAI Master: Scaled X=-0.10g Y=0.05g Z=4.04g[0m
+[0;32mI (11207) TWAI Master: Scaled X=-0.05g Y=0.06g Z=3.97g[0m
+[0;32mI (11257) TWAI Master: Scaled X=-0.08g Y=0.05g Z=4.00g[0m
+[0;32mI (11307) TWAI Master: Scaled X=0.08g Y=0.14g Z=3.98g[0m
+[0;32mI (11357) TWAI Master: Scaled X=-0.10g Y=0.00g Z=3.97g[0m
+[0;32mI (11407) TWAI Master: Scaled X=-0.10g Y=0.04g Z=3.95g[0m
+[0;32mI (11457) TWAI Master: Scaled X=-0.04g Y=0.07g Z=3.94g[0m
+[0;32mI (11507) TWAI Master: Scaled X=-0.08g Y=0.00g Z=3.94g[0m
+[0;32mI (11557) TWAI Master: Scaled X=-0.03g Y=0.06g Z=3.99g[0m
+[0;32mI (11607) TWAI Master: Scaled X=-0.06g Y=0.00g Z=3.96g[0m
+[0;32mI (11657) TWAI Master: Scaled X=1.07g Y=0.36g Z=3.87g[0m
+[0;32mI (11707) TWAI Master: Scaled X=-0.12g Y=0.01g Z=3.97g[0m
+[0;32mI (11757) TWAI Master: Scaled X=-0.80g Y=0.02g Z=3.92g[0m
+[0;32mI (11807) TWAI Master: Scaled X=-1.45g Y=0.59g Z=3.65g[0m
+[0;32mI (11857) TWAI Master: Scaled X=-0.40g Y=0.31g Z=4.00g[0m
+[0;32mI (11907) TWAI Master: Scaled X=1.32g Y=-0.66g Z=3.74g[0m
+[0;32mI (11957) TWAI Master: Scaled X=1.99g Y=0.24g Z=3.85g[0m
+[0;32mI (12007) TWAI Master: Scaled X=0.10g Y=-0.25g Z=3.94g[0m
+[0;32mI (12057) TWAI Master: Scaled X=-2.39g Y=-0.15g Z=3.99g[0m
+[0;32mI (12107) TWAI Master: Scaled X=-0.91g Y=0.09g Z=3.94g[0m
+[0;32mI (12157) TWAI Master: Scaled X=-1.02g Y=0.14g Z=3.91g[0m
+[0;32mI (12207) TWAI Master: Scaled X=3.00g Y=-0.28g Z=3.99g[0m
+[0;32mI (12257) TWAI Master: Scaled X=2.97g Y=-0.04g Z=3.84g[0m
+[0;32mI (12307) TWAI Master: Scaled X=-5.73g Y=-1.58g Z=4.03g[0m
+[0;32mI (12357) TWAI Master: Scaled X=-2.17g Y=-0.80g Z=3.79g[0m
+[0;32mI (12407) TWAI Master: Scaled X=1.54g Y=0.84g Z=4.01g[0m
+[0;32mI (12457) TWAI Master: Scaled X=3.81g Y=0.86g Z=4.21g[0m
+[0;32mI (12507) TWAI Master: Scaled X=-3.09g Y=-1.16g Z=3.95g[0m
+[0;32mI (12557) TWAI Master: Scaled X=-3.87g Y=-1.13g Z=3.87g[0m
+[0;32mI (12607) TWAI Master: Scaled X=4.43g Y=1.63g Z=4.22g[0m
+[0;32mI (12657) TWAI Master: Scaled X=1.89g Y=0.42g Z=4.24g[0m
+[0;32mI (12707) TWAI Master: Scaled X=-4.64g Y=-0.75g Z=3.86g[0m
+[0;32mI (12757) TWAI Master: Scaled X=-0.86g Y=-0.23g Z=3.99g[0m
+[0;32mI (12807) TWAI Master: Scaled X=1.59g Y=0.28g Z=4.40g[0m
+[0;32mI (12857) TWAI Master: Scaled X=-1.50g Y=-0.42g Z=3.88g[0m
+[0;32mI (12907) TWAI Master: Scaled X=-2.06g Y=-0.98g Z=3.81g[0m
+[0;32mI (12957) TWAI Master: Scaled X=2.98g Y=1.16g Z=4.12g[0m
+[0;32mI (13007) TWAI Master: Scaled X=3.31g Y=0.92g Z=4.07g[0m
+[0;32mI (13057) TWAI Master: Scaled X=-5.15g Y=-1.16g Z=3.81g[0m
+[0;32mI (13107) TWAI Master: Scaled X=-1.35g Y=-0.24g Z=4.28g[0m
+[0;32mI (13157) TWAI Master: Scaled X=1.99g Y=-0.11g Z=4.67g[0m
+[0;32mI (13207) TWAI Master: Scaled X=-0.29g Y=-0.54g Z=3.88g[0m
+[0;32mI (13257) TWAI Master: Scaled X=-1.99g Y=-0.71g Z=3.92g[0m
+[0;32mI (13307) TWAI Master: Scaled X=0.96g Y=0.79g Z=3.95g[0m
+[0;32mI (13357) TWAI Master: Scaled X=3.46g Y=1.18g Z=4.61g[0m
+[0;32mI (13407) TWAI Master: Scaled X=-2.61g Y=-1.15g Z=3.95g[0m
+[0;32mI (13457) TWAI Master: Scaled X=-2.66g Y=-0.71g Z=3.81g[0m
+[0;32mI (13507) TWAI Master: Scaled X=2.86g Y=1.24g Z=4.03g[0m
+[0;32mI (13557) TWAI Master: Scaled X=2.63g Y=0.73g Z=4.32g[0m
+[0;32mI (13607) TWAI Master: Scaled X=-4.32g Y=-1.11g Z=3.81g[0m
+[0;32mI (13657) TWAI Master: Scaled X=-2.23g Y=-0.40g Z=3.95g[0m
+[0;32mI (13707) TWAI Master: Scaled X=3.89g Y=1.08g Z=3.93g[0m
+[0;32mI (13757) TWAI Master: Scaled X=1.65g Y=-0.22g Z=3.91g[0m
+[0;32mI (13807) TWAI Master: Scaled X=-4.21g Y=-0.66g Z=3.75g[0m
+[0;32mI (13857) TWAI Master: Scaled X=-0.31g Y=0.49g Z=3.90g[0m
+[0;32mI (13907) TWAI Master: Scaled X=2.97g Y=0.63g Z=4.02g[0m
+[0;32mI (13957) TWAI Master: Scaled X=-3.32g Y=-1.23g Z=4.01g[0m
+[0;32mI (14007) TWAI Master: Scaled X=-2.47g Y=-0.28g Z=4.06g[0m
+[0;32mI (14057) TWAI Master: Scaled X=5.22g Y=0.62g Z=3.78g[0m
+[0;32mI (14107) TWAI Master: Scaled X=0.47g Y=-0.10g Z=3.96g[0m
+[0;32mI (14157) TWAI Master: Scaled X=-2.84g Y=-1.27g Z=3.62g[0m
+[0;32mI (14207) TWAI Master: Scaled X=1.23g Y=0.71g Z=3.81g[0m
+[0;32mI (14257) TWAI Master: Scaled X=4.19g Y=0.30g Z=4.36g[0m
+[0;32mI (14307) TWAI Master: Scaled X=-5.94g Y=-1.06g Z=3.59g[0m
+[0;32mI (14357) TWAI Master: Scaled X=-0.67g Y=-0.03g Z=4.14g[0m
+[0;32mI (14407) TWAI Master: Scaled X=4.08g Y=0.65g Z=3.64g[0m
+[0;32mI (14457) TWAI Master: Scaled X=-4.31g Y=-1.26g Z=3.16g[0m
+[0;32mI (14507) TWAI Master: Scaled X=-2.03g Y=-0.42g Z=4.09g[0m
+[0;32mI (14557) TWAI Master: Scaled X=6.70g Y=1.07g Z=1.44g[0m
+[0;32mI (14607) TWAI Master: Scaled X=-0.70g Y=-0.43g Z=3.95g[0m
+[0;32mI (14657) TWAI Master: Scaled X=-2.39g Y=-0.44g Z=4.00g[0m
+[0;32mI (14707) TWAI Master: Scaled X=2.73g Y=1.13g Z=3.42g[0m
+[0;32mI (14757) TWAI Master: Scaled X=2.54g Y=0.45g Z=4.00g[0m
+[0;32mI (14807) TWAI Master: Scaled X=-4.48g Y=-0.59g Z=3.75g[0m
+[0;32mI (14857) TWAI Master: Scaled X=-1.27g Y=0.32g Z=3.90g[0m
+[0;32mI (14907) TWAI Master: Scaled X=2.09g Y=0.52g Z=4.07g[0m
+[0;32mI (14957) TWAI Master: Scaled X=-1.97g Y=-0.73g Z=3.90g[0m
+[0;32mI (15007) TWAI Master: Scaled X=-1.58g Y=0.01g Z=3.91g[0m
+[0;32mI (15057) TWAI Master: Scaled X=3.64g Y=0.40g Z=4.13g[0m
+[0;32mI (15107) TWAI Master: Scaled X=2.04g Y=-0.13g Z=4.04g[0m
+[0;32mI (15157) TWAI Master: Scaled X=-4.12g Y=-0.92g Z=4.02g[0m
+[0;32mI (15207) TWAI Master: Scaled X=-1.75g Y=-0.28g Z=4.00g[0m
+[0;32mI (15257) TWAI Master: Scaled X=4.46g Y=-0.75g Z=4.03g[0m
+[0;32mI (15307) TWAI Master: Scaled X=-0.83g Y=-0.36g Z=3.84g[0m
+[0;32mI (15357) TWAI Master: Scaled X=-2.18g Y=-0.22g Z=4.18g[0m
+[0;32mI (15407) TWAI Master: Scaled X=2.57g Y=1.25g Z=3.47g[0m
+[0;32mI (15457) TWAI Master: Scaled X=1.49g Y=-0.28g Z=3.92g[0m
+[0;32mI (15507) TWAI Master: Scaled X=-3.02g Y=-0.52g Z=3.91g[0m
+[0;32mI (15557) TWAI Master: Scaled X=-0.81g Y=0.50g Z=3.89g[0m
+[0;32mI (15607) TWAI Master: Scaled X=1.99g Y=0.85g Z=4.12g[0m
+[0;32mI (15657) TWAI Master: Scaled X=-2.50g Y=-0.60g Z=4.00g[0m
+[0;32mI (15707) TWAI Master: Scaled X=-1.42g Y=-0.08g Z=3.86g[0m
+[0;32mI (15757) TWAI Master: Scaled X=2.86g Y=0.85g Z=3.24g[0m
+[0;32mI (15807) TWAI Master: Scaled X=1.45g Y=-0.02g Z=4.09g[0m
+[0;32mI (15857) TWAI Master: Scaled X=-3.51g Y=-0.29g Z=3.84g[0m
+[0;32mI (15907) TWAI Master: Scaled X=-1.93g Y=0.29g Z=4.19g[0m
+[0;32mI (15957) TWAI Master: Scaled X=1.16g Y=0.64g Z=4.36g[0m
+[0;32mI (16007) TWAI Master: Scaled X=-1.05g Y=-0.47g Z=3.96g[0m
+[0;32mI (16057) TWAI Master: Scaled X=-2.39g Y=-0.36g Z=3.54g[0m
+[0;32mI (16107) TWAI Master: Scaled X=7.47g Y=2.12g Z=8.00g[0m
+[0;32mI (16157) TWAI Master: Scaled X=0.16g Y=-0.17g Z=4.07g[0m
+[0;32mI (16207) TWAI Master: Scaled X=-0.08g Y=-0.10g Z=3.86g[0m
+[0;32mI (16257) TWAI Master: Scaled X=0.03g Y=0.06g Z=4.00g[0m
+[0;32mI (16307) TWAI Master: Scaled X=-0.05g Y=0.01g Z=4.00g[0m
+[0;32mI (16357) TWAI Master: Scaled X=-0.11g Y=0.08g Z=3.91g[0m
+[0;32mI (16407) TWAI Master: Scaled X=-0.07g Y=0.03g Z=4.00g[0m
+[0;32mI (16457) TWAI Master: Scaled X=-0.04g Y=0.05g Z=3.97g[0m
+[0;32mI (16507) TWAI Master: Scaled X=-0.06g Y=0.05g Z=3.99g[0m
+[0;32mI (16557) TWAI Master: Scaled X=-0.04g Y=0.06g Z=3.96g[0m
+[0;32mI (16607) TWAI Master: Scaled X=-0.07g Y=0.04g Z=3.98g[0m
+[0;32mI (16657) TWAI Master: Scaled X=-0.06g Y=0.04g Z=3.98g[0m
+[0;32mI (16707) TWAI Master: Scaled X=-0.07g Y=0.03g Z=4.00g[0m
+[0;32mI (16757) TWAI Master: Scaled X=-0.06g Y=0.06g Z=3.98g[0m
+[0;32mI (16807) TWAI Master: Scaled X=-0.05g Y=0.06g Z=3.97g[0m
+[0;32mI (16857) TWAI Master: Scaled X=-0.06g Y=0.04g Z=3.96g[0m
+[0;32mI (16907) TWAI Master: Scaled X=-0.06g Y=0.04g Z=3.97g[0m
+[0;32mI (16957) TWAI Master: Scaled X=-0.06g Y=0.04g Z=3.98g[0m
+[0;32mI (17007) TWAI Master: Scaled X=-0.05g Y=0.04g Z=3.98g[0m
+[0;32mI (17057) TWAI Master: Scaled X=-0.05g Y=0.03g Z=3.99g[0m
+[0;32mI (17107) TWAI Master: Scaled X=-0.05g Y=0.05g Z=3.97g[0m
+[0;32mI (17157) TWAI Master: Scaled X=-0.06g Y=0.07g Z=3.96g[0m
+[0;32mI (17207) TWAI Master: Scaled X=-0.05g Y=0.05g Z=3.96g[0m
+[0;32mI (17257) TWAI Master: Scaled X=-0.06g Y=0.03g Z=3.99g[0m
+[0;32mI (17307) TWAI Master: Scaled X=-0.04g Y=0.05g Z=3.97g[0m
+[0;32mI (17357) TWAI Master: Scaled X=-0.07g Y=0.05g Z=3.96g[0m
+[0;32mI (17407) TWAI Master: Scaled X=-0.06g Y=0.05g Z=3.96g[0m
+[0;32mI (17457) TWAI Master: Scaled X=-0.05g Y=0.06g Z=3.97g[0m
+[0;32mI (17507) TWAI Master: Scaled X=-0.06g Y=0.04g Z=3.95g[0m
+[0;32mI (17557) TWAI Master: Scaled X=-0.07g Y=0.05g Z=3.99g[0m
+[0;32mI (17607) TWAI Master: Scaled X=-0.03g Y=0.04g Z=3.98g[0m
+[0;32mI (17657) TWAI Master: Scaled X=-0.06g Y=0.06g Z=3.98g[0m
+[0;32mI (17707) TWAI Master: Scaled X=-0.07g Y=0.04g Z=3.97g[0m
+[0;32mI (17757) TWAI Master: Scaled X=-0.04g Y=0.05g Z=4.01g[0m
+[0;32mI (17807) TWAI Master: Scaled X=-0.07g Y=0.04g Z=3.99g[0m
+[0;32mI (17857) TWAI Master: Scaled X=-0.06g Y=0.06g Z=3.95g[0m
+[0;32mI (17907) TWAI Master: Scaled X=-0.06g Y=0.04g Z=3.96g[0m
+[0;32mI (17957) TWAI Master: Scaled X=-0.06g Y=0.05g Z=3.98g[0m
+[0;32mI (18007) TWAI Master: Scaled X=-0.05g Y=0.04g Z=4.00g[0m
+[0;32mI (18057) TWAI Master: Scaled X=-0.07g Y=0.07g Z=3.98g[0m
+[0;32mI (18107) TWAI Master: Scaled X=-0.07g Y=0.03g Z=4.00g[0m
+[0;32mI (18157) TWAI Master: Scaled X=-0.07g Y=0.04g Z=3.96g[0m
+[0;32mI (18207) TWAI Master: Scaled X=-0.06g Y=0.08g Z=4.00g[0m
+[0;32mI (18257) TWAI Master: Scaled X=-0.06g Y=0.04g Z=3.97g[0m
+[0;32mI (18307) TWAI Master: Scaled X=-0.08g Y=0.04g Z=4.00g[0m
+[0;32mI (18357) TWAI Master: Scaled X=-0.06g Y=0.05g Z=3.99g[0m
+[0;32mI (18407) TWAI Master: Scaled X=-0.06g Y=0.06g Z=3.98g[0m
+[0;32mI (18457) TWAI Master: Scaled X=-0.07g Y=0.04g Z=3.95g[0m
+[0;32mI (18507) TWAI Master: Scaled X=-0.06g Y=0.03g Z=3.96g[0m
+[0;32mI (18557) TWAI Master: Scaled X=-0.06g Y=0.05g Z=4.00g[0m
+[0;32mI (18607) TWAI Master: Scaled X=-0.08g Y=0.05g Z=3.97g[0m
+[0;32mI (18657) TWAI Master: Scaled X=-0.07g Y=0.06g Z=3.96g[0m
+[0;32mI (18707) TWAI Master: Scaled X=-0.05g Y=0.04g Z=3.98g[0m
+[0;32mI (18757) TWAI Master: Scaled X=-0.05g Y=0.05g Z=3.97g[0m
+[0;32mI (18807) TWAI Master: Scaled X=-0.05g Y=0.04g Z=3.99g[0m
+[0;32mI (18857) TWAI Master: Scaled X=-0.06g Y=0.04g Z=3.98g[0m
+[0;32mI (18907) TWAI Master: Scaled X=-0.08g Y=0.07g Z=3.97g[0m
+[0;32mI (18957) TWAI Master: Scaled X=-0.07g Y=0.04g Z=3.98g[0m
+[0;32mI (19007) TWAI Master: Scaled X=-0.04g Y=0.05g Z=3.95g[0m
+[0;32mI (19057) TWAI Master: Scaled X=-0.05g Y=0.04g Z=3.98g[0m
+[0;32mI (19107) TWAI Master: Scaled X=-0.04g Y=0.03g Z=4.01g[0m
+[0;32mI (19157) TWAI Master: Scaled X=-0.05g Y=0.03g Z=3.97g[0m
+[0;32mI (19207) TWAI Master: Scaled X=-0.08g Y=0.03g Z=3.94g[0m
+[0;32mI (19257) TWAI Master: Scaled X=-0.03g Y=0.07g Z=3.98g[0m
+[0;32mI (19307) TWAI Master: Scaled X=-0.05g Y=0.02g Z=3.97g[0m
+[0;32mI (19357) TWAI Master: Scaled X=-0.12g Y=0.01g Z=3.99g[0m
+[0;32mI (19407) TWAI Master: Scaled X=-0.03g Y=0.16g Z=4.10g[0m
+[0;32mI (19457) TWAI Master: Scaled X=0.05g Y=0.10g Z=3.98g[0m
+[0;32mI (19507) TWAI Master: Scaled X=-0.04g Y=0.07g Z=3.98g[0m
+[0;32mI (19557) TWAI Master: Scaled X=-0.04g Y=0.04g Z=3.96g[0m
+[0;32mI (19607) TWAI Master: Scaled X=-0.02g Y=0.03g Z=4.00g[0m
+[0;32mI (19657) TWAI Master: Scaled X=-0.04g Y=0.03g Z=3.98g[0m
+[0;32mI (19707) TWAI Master: Scaled X=-0.06g Y=0.06g Z=4.00g[0m
+[0;32mI (19757) TWAI Master: Scaled X=-0.11g Y=0.00g Z=3.96g[0m
+[0;32mI (19807) TWAI Master: Scaled X=-0.07g Y=0.07g Z=3.95g[0m
+[0;32mI (19857) TWAI Master: Scaled X=-0.06g Y=0.05g Z=4.00g[0m
+[0;32mI (19907) TWAI Master: Scaled X=-0.05g Y=0.03g Z=3.95g[0m
+[0;32mI (19957) TWAI Master: Scaled X=-0.06g Y=0.05g Z=3.99g[0m
+[0;32mI (20007) TWAI Master: Scaled X=-0.06g Y=0.04g Z=3.96g[0m
+[0;32mI (20057) TWAI Master: Scaled X=-0.05g Y=0.03g Z=3.96g[0m
+[0;32mI (20107) TWAI Master: Scaled X=-0.04g Y=0.05g Z=3.98g[0m
+[0;32mI (20157) TWAI Master: Scaled X=-0.07g Y=0.03g Z=3.98g[0m
+[0;32mI (20207) TWAI Master: Scaled X=-0.04g Y=0.05g Z=4.00g[0m
+[0;32mI (20257) TWAI Master: Scaled X=-0.08g Y=0.04g Z=3.99g[0m
+[0;32mI (20307) TWAI Master: Scaled X=-0.05g Y=0.04g Z=3.99g[0m
+[0;32mI (20357) TWAI Master: Scaled X=-0.02g Y=0.03g Z=3.96g[0m
+[0;32mI (20407) TWAI Master: Scaled X=-0.07g Y=0.05g Z=3.99g[0m
+[0;32mI (20457) TWAI Master: Scaled X=-0.05g Y=0.05g Z=3.98g[0m
+[0;32mI (20507) TWAI Master: Scaled X=-0.05g Y=0.05g Z=4.00g[0m
+[0;32mI (20557) TWAI Master: Scaled X=-0.08g Y=0.04g Z=3.98g[0m
+[0;32mI (20607) TWAI Master: Scaled X=-0.04g Y=0.05g Z=3.93g[0m
+[0;32mI (20657) TWAI Master: Scaled X=-0.08g Y=0.05g Z=3.98g[0m
+[0;32mI (20707) TWAI Master: Scaled X=-0.05g Y=0.04g Z=3.96g[0m
+[0;32mI (20757) TWAI Master: Scaled X=-0.06g Y=0.03g Z=3.95g[0m
+[0;32mI (20807) TWAI Master: Scaled X=-0.08g Y=0.06g Z=3.98g[0m
+[0;32mI (20857) TWAI Master: Scaled X=-0.03g Y=0.04g Z=3.97g[0m
+[0;32mI (20907) TWAI Master: Scaled X=-0.08g Y=0.03g Z=4.00g[0m
+[0;32mI (20957) TWAI Master: Scaled X=-0.05g Y=0.04g Z=4.02g[0m
+[0;32mI (21007) TWAI Master: Scaled X=-0.07g Y=0.04g Z=3.94g[0m
+[0;32mI (21057) TWAI Master: Scaled X=-0.05g Y=0.05g Z=3.96g[0m
+[0;32mI (21107) TWAI Master: Scaled X=-0.05g Y=0.05g Z=3.96g[0m
+[0;32mI (21157) TWAI Master: Scaled X=-0.04g Y=0.04g Z=3.98g[0m
+[0;32mI (21207) TWAI Master: Scaled X=-0.07g Y=0.04g Z=3.98g[0m
+[0;32mI (21257) TWAI Master: Scaled X=-0.07g Y=0.06g Z=4.00g[0m
+[0;32mI (21307) TWAI Master: Scaled X=-0.05g Y=0.03g Z=3.98g[0m
+[0;32mI (21357) TWAI Master: Scaled X=-0.06g Y=0.06g Z=3.98g[0m
+[0;32mI (21407) TWAI Master: Scaled X=-0.04g Y=0.03g Z=4.02g[0m
+[0;32mI (21457) TWAI Master: Scaled X=-0.08g Y=0.05g Z=3.96g[0m
+[0;32mI (21507) TWAI Master: Scaled X=-0.06g Y=0.04g Z=3.98g[0m
+[0;32mI (21557) TWAI Master: Scaled X=-0.04g Y=0.04g Z=3.96g[0m
+[0;32mI (21607) TWAI Master: Scaled X=-0.05g Y=0.06g Z=3.97g[0m
+[0;32mI (21657) TWAI Master: Scaled X=-0.05g Y=0.04g Z=3.96g[0m
+[0;32mI (21707) TWAI Master: Scaled X=-0.05g Y=0.06g Z=3.97g[0m
+[0;32mI (21757) TWAI Master: Scaled X=-0.04g Y=0.02g Z=3.98g[0m
+[0;32mI (21807) TWAI Master: Scaled X=-0.06g Y=0.03g Z=4.01g[0m
+[0;32mI (21857) TWAI Master: Scaled X=-0.04g Y=0.02g Z=3.99g[0m
+[0;32mI (21907) TWAI Master: Scaled X=-0.05g Y=0.06g Z=3.99g[0m
+[0;32mI (21957) TWAI Master: Scaled X=-0.07g Y=0.03g Z=3.96g[0m
+[0;32mI (22007) TWAI Master: Scaled X=-0.06g Y=0.04g Z=3.96g[0m
+[0;32mI (22057) TWAI Master: Scaled X=-0.04g Y=0.04g Z=3.98g[0m
+[0;32mI (22107) TWAI Master: Scaled X=-0.07g Y=0.05g Z=3.96g[0m
+[0;32mI (22157) TWAI Master: Scaled X=-0.03g Y=0.05g Z=3.98g[0m
+[0;32mI (22207) TWAI Master: Scaled X=-0.05g Y=0.05g Z=4.00g[0m
+[0;32mI (22257) TWAI Master: Scaled X=-0.08g Y=0.03g Z=3.96g[0m
+[0;32mI (22307) TWAI Master: Scaled X=-0.04g Y=0.03g Z=3.97g[0m
+[0;32mI (22357) TWAI Master: Scaled X=-0.07g Y=0.05g Z=3.96g[0m
+[0;32mI (22407) TWAI Master: Scaled X=-0.05g Y=0.04g Z=3.94g[0m
+[0;32mI (22457) TWAI Master: Scaled X=-0.07g Y=0.03g Z=4.00g[0m
+[0;32mI (22507) TWAI Master: Scaled X=-0.09g Y=0.04g Z=3.97g[0m
+[0;32mI (22557) TWAI Master: Scaled X=-0.06g Y=0.03g Z=3.98g[0m
+[0;32mI (22607) TWAI Master: Scaled X=-0.03g Y=0.06g Z=3.97g[0m
+[0;32mI (22657) TWAI Master: Scaled X=-0.06g Y=0.05g Z=4.02g[0m
+[0;32mI (22707) TWAI Master: Scaled X=-0.06g Y=0.05g Z=4.01g[0m
+[0;32mI (22757) TWAI Master: Scaled X=-0.04g Y=0.06g Z=3.96g[0m
+[0;32mI (22807) TWAI Master: Scaled X=-0.04g Y=0.05g Z=3.98g[0m
+[0;32mI (22857) TWAI Master: Scaled X=-0.07g Y=0.04g Z=3.97g[0m
+[0;32mI (22907) TWAI Master: Scaled X=-0.05g Y=0.05g Z=3.98g[0m
+[0;32mI (22957) TWAI Master: Scaled X=-0.07g Y=0.06g Z=3.97g[0m
+[0;32mI (23007) TWAI Master: Scaled X=-0.08g Y=0.06g Z=3.98g[0m
+[0;32mI (23057) TWAI Master: Scaled X=-0.05g Y=0.05g Z=3.97g[0m
+[0;32mI (23107) TWAI Master: Scaled X=-0.06g Y=0.04g Z=3.97g[0m
+[0;32mI (23157) TWAI Master: Scaled X=-0.05g Y=0.05g Z=3.96g[0m
+[0;32mI (23207) TWAI Master: Scaled X=-0.05g Y=0.01g Z=3.98g[0m
+[0;32mI (23257) TWAI Master: Scaled X=-0.02g Y=0.05g Z=3.93g[0m
+[0;32mI (23307) TWAI Master: Scaled X=-0.09g Y=0.06g Z=3.95g[0m
+[0;32mI (23357) TWAI Master: Scaled X=0.03g Y=0.07g Z=3.97g[0m
+[0;32mI (23407) TWAI Master: Scaled X=-0.37g Y=-0.02g Z=3.86g[0m
+[0;32mI (23457) TWAI Master: Scaled X=-0.03g Y=-0.07g Z=3.92g[0m
+[0;32mI (23507) TWAI Master: Scaled X=-0.08g Y=0.05g Z=4.05g[0m
+[0;32mI (23557) TWAI Master: Scaled X=-0.09g Y=-0.10g Z=3.99g[0m
+[0;32mI (23607) TWAI Master: Scaled X=0.13g Y=0.16g Z=3.92g[0m
+[0;32mI (23657) TWAI Master: Scaled X=-0.10g Y=0.35g Z=3.95g[0m
+[0;32mI (23707) TWAI Master: Scaled X=-0.14g Y=0.59g Z=3.95g[0m
+[0;32mI (23757) TWAI Master: Scaled X=-0.01g Y=-1.94g Z=3.97g[0m
+[0;32mI (23807) TWAI Master: Scaled X=0.09g Y=-2.43g Z=3.99g[0m
+[0;32mI (23857) TWAI Master: Scaled X=-1.42g Y=1.00g Z=3.97g[0m
+[0;32mI (23907) TWAI Master: Scaled X=1.34g Y=3.43g Z=4.00g[0m
+[0;32mI (23957) TWAI Master: Scaled X=1.20g Y=2.43g Z=3.93g[0m
+[0;32mI (24007) TWAI Master: Scaled X=-1.28g Y=-1.72g Z=3.95g[0m
+[0;32mI (24057) TWAI Master: Scaled X=-0.09g Y=-4.12g Z=3.82g[0m
+[0;32mI (24107) TWAI Master: Scaled X=0.23g Y=1.34g Z=4.00g[0m
+[0;32mI (24157) TWAI Master: Scaled X=0.06g Y=-0.11g Z=3.81g[0m
+[0;32mI (24207) TWAI Master: Scaled X=0.36g Y=-0.47g Z=3.90g[0m
+[0;32mI (24257) TWAI Master: Scaled X=-0.08g Y=-0.34g Z=4.18g[0m
+[0;32mI (24307) TWAI Master: Scaled X=-0.17g Y=-0.94g Z=3.88g[0m
+[0;32mI (24357) TWAI Master: Scaled X=0.11g Y=2.58g Z=4.00g[0m
+[0;32mI (24407) TWAI Master: Scaled X=-0.03g Y=2.96g Z=4.06g[0m
+[0;32mI (24457) TWAI Master: Scaled X=0.10g Y=-1.63g Z=3.99g[0m
+[0;32mI (24507) TWAI Master: Scaled X=-0.29g Y=-0.56g Z=3.99g[0m
+[0;32mI (24557) TWAI Master: Scaled X=0.02g Y=-0.81g Z=3.95g[0m
+[0;32mI (24607) TWAI Master: Scaled X=-0.16g Y=2.31g Z=3.99g[0m
+[0;32mI (24657) TWAI Master: Scaled X=-0.13g Y=2.29g Z=3.90g[0m
+[0;32mI (24707) TWAI Master: Scaled X=0.07g Y=-1.24g Z=4.01g[0m
+[0;32mI (24757) TWAI Master: Scaled X=0.18g Y=-0.10g Z=4.23g[0m
+[0;32mI (24807) TWAI Master: Scaled X=-0.24g Y=-0.51g Z=3.91g[0m
+[0;32mI (24857) TWAI Master: Scaled X=-0.17g Y=2.22g Z=4.02g[0m
+[0;32mI (24907) TWAI Master: Scaled X=-0.30g Y=3.71g Z=4.11g[0m
+[0;32mI (24957) TWAI Master: Scaled X=0.47g Y=-1.24g Z=3.76g[0m
+[0;32mI (25007) TWAI Master: Scaled X=0.08g Y=-0.40g Z=4.04g[0m
+[0;32mI (25057) TWAI Master: Scaled X=0.05g Y=-1.17g Z=3.38g[0m
+[0;32mI (25107) TWAI Master: Scaled X=0.30g Y=2.44g Z=3.99g[0m
+[0;32mI (25157) TWAI Master: Scaled X=-0.40g Y=2.25g Z=4.08g[0m
+[0;32mI (25207) TWAI Master: Scaled X=0.41g Y=-1.20g Z=3.95g[0m
+[0;32mI (25257) TWAI Master: Scaled X=0.43g Y=-0.92g Z=4.06g[0m
+[0;32mI (25307) TWAI Master: Scaled X=-0.67g Y=-0.51g Z=3.73g[0m
+[0;32mI (25357) TWAI Master: Scaled X=0.27g Y=3.75g Z=4.11g[0m
+[0;32mI (25407) TWAI Master: Scaled X=0.40g Y=3.01g Z=4.14g[0m
+[0;32mI (25457) TWAI Master: Scaled X=-0.10g Y=-1.65g Z=4.03g[0m
+[0;32mI (25507) TWAI Master: Scaled X=-0.64g Y=-1.61g Z=3.96g[0m
+[0;32mI (25557) TWAI Master: Scaled X=-0.05g Y=0.07g Z=3.94g[0m
+[0;32mI (25607) TWAI Master: Scaled X=-0.19g Y=0.09g Z=4.03g[0m
+[0;32mI (25657) TWAI Master: Scaled X=-0.05g Y=0.04g Z=3.81g[0m
+[0;32mI (25707) TWAI Master: Scaled X=-0.00g Y=0.02g Z=3.97g[0m
+[0;32mI (25757) TWAI Master: Scaled X=0.34g Y=0.37g Z=3.91g[0m
+[0;32mI (25807) TWAI Master: Scaled X=-0.20g Y=-0.02g Z=3.86g[0m
+[0;32mI (25857) TWAI Master: Scaled X=-0.09g Y=0.02g Z=3.95g[0m
+[0;32mI (25907) TWAI Master: Scaled X=-0.07g Y=0.06g Z=3.99g[0m
+[0;32mI (25957) TWAI Master: Scaled X=-0.06g Y=0.02g Z=3.95g[0m
+[0;32mI (26007) TWAI Master: Scaled X=-0.08g Y=0.02g Z=3.99g[0m
+[0;32mI (26057) TWAI Master: Scaled X=-0.03g Y=0.06g Z=3.97g[0m
+[0;32mI (26107) TWAI Master: Scaled X=-0.06g Y=0.00g Z=3.98g[0m
+[0;32mI (26157) TWAI Master: Scaled X=-0.04g Y=0.02g Z=3.92g[0m
+[0;32mI (26207) TWAI Master: Scaled X=-0.05g Y=0.06g Z=4.01g[0m
+[0;32mI (26257) TWAI Master: Scaled X=-0.08g Y=0.04g Z=3.99g[0m
+[0;32mI (26307) TWAI Master: Scaled X=-0.04g Y=0.05g Z=3.98g[0m
+[0;32mI (26357) TWAI Master: Scaled X=-0.07g Y=0.06g Z=3.96g[0m
+[0;32mI (26407) TWAI Master: Scaled X=-0.05g Y=0.06g Z=3.97g[0m
+[0;32mI (26457) TWAI Master: Scaled X=-0.06g Y=0.03g Z=3.98g[0m
+[0;32mI (26507) TWAI Master: Scaled X=-0.05g Y=0.05g Z=3.96g[0m
+[0;32mI (26557) TWAI Master: Scaled X=-0.08g Y=0.06g Z=3.98g[0m
+[0;32mI (26607) TWAI Master: Scaled X=-0.07g Y=0.04g Z=3.98g[0m
+[0;32mI (26657) TWAI Master: Scaled X=-0.05g Y=0.01g Z=3.99g[0m
+[0;32mI (26707) TWAI Master: Scaled X=-0.05g Y=0.06g Z=3.94g[0m
+[0;32mI (26757) TWAI Master: Scaled X=-0.05g Y=0.05g Z=3.98g[0m
+[0;32mI (26807) TWAI Master: Scaled X=-0.07g Y=0.01g Z=3.97g[0m
+[0;32mI (26857) TWAI Master: Scaled X=-0.07g Y=0.05g Z=3.97g[0m
+[0;32mI (26907) TWAI Master: Scaled X=-0.07g Y=0.03g Z=3.99g[0m
+[0;32mI (26957) TWAI Master: Scaled X=-0.06g Y=0.05g Z=3.98g[0m
+[0;32mI (27007) TWAI Master: Scaled X=-0.05g Y=0.05g Z=3.97g[0m
+[0;32mI (27057) TWAI Master: Scaled X=-0.06g Y=0.06g Z=3.98g[0m
+[0;32mI (27107) TWAI Master: Scaled X=-0.07g Y=0.03g Z=3.98g[0m
+[0;32mI (27157) TWAI Master: Scaled X=-0.06g Y=0.04g Z=3.97g[0m
+[0;32mI (27207) TWAI Master: Scaled X=-0.06g Y=0.05g Z=3.96g[0m
+[0;32mI (27257) TWAI Master: Scaled X=-0.05g Y=0.06g Z=3.94g[0m
+[0;32mI (27307) TWAI Master: Scaled X=-0.05g Y=0.03g Z=3.96g[0m
+[0;32mI (27357) TWAI Master: Scaled X=-0.07g Y=0.03g Z=3.97g[0m
+[0;32mI (27407) TWAI Master: Scaled X=-0.05g Y=0.04g Z=3.96g[0m
+[0;32mI (27457) TWAI Master: Scaled X=-0.06g Y=0.05g Z=4.00g[0m
+[0;32mI (27507) TWAI Master: Scaled X=-0.05g Y=0.06g Z=3.97g[0m
+[0;32mI (27557) TWAI Master: Scaled X=-0.05g Y=0.03g Z=3.99g[0m
+[0;32mI (27607) TWAI Master: Scaled X=-0.06g Y=0.03g Z=3.96g[0m
+[0;32mI (27657) TWAI Master: Scaled X=-0.06g Y=0.05g Z=3.95g[0m
+[0;32mI (27707) TWAI Master: Scaled X=-0.06g Y=0.06g Z=3.98g[0m
+[0;32mI (27757) TWAI Master: Scaled X=-0.06g Y=0.08g Z=4.00g[0m
+[0;32mI (27807) TWAI Master: Scaled X=-0.04g Y=0.00g Z=4.00g[0m
+[0;32mI (27857) TWAI Master: Scaled X=-0.08g Y=0.06g Z=3.96g[0m
+[0;32mI (27907) TWAI Master: Scaled X=-0.05g Y=0.05g Z=3.97g[0m
+[0;32mI (27957) TWAI Master: Scaled X=-0.06g Y=0.05g Z=3.97g[0m
+[0;32mI (28007) TWAI Master: Scaled X=-0.05g Y=0.03g Z=3.98g[0m
+[0;32mI (28057) TWAI Master: Scaled X=-0.04g Y=0.04g Z=3.94g[0m
+[0;32mI (28107) TWAI Master: Scaled X=-0.03g Y=0.04g Z=3.98g[0m
+[0;32mI (28157) TWAI Master: Scaled X=-0.07g Y=0.03g Z=4.00g[0m
+[0;32mI (28207) TWAI Master: Scaled X=-0.04g Y=0.04g Z=3.95g[0m
+[0;32mI (28257) TWAI Master: Scaled X=-0.07g Y=0.04g Z=3.97g[0m
+[0;32mI (28307) TWAI Master: Scaled X=-0.04g Y=0.06g Z=3.95g[0m
+[0;32mI (28357) TWAI Master: Scaled X=-0.05g Y=0.04g Z=3.95g[0m
+[0;32mI (28407) TWAI Master: Scaled X=-0.07g Y=0.03g Z=3.99g[0m
+[0;32mI (28457) TWAI Master: Scaled X=-0.06g Y=0.04g Z=3.99g[0m
+[0;32mI (28507) TWAI Master: Scaled X=-0.09g Y=0.03g Z=3.98g[0m
+[0;32mI (28557) TWAI Master: Scaled X=-0.06g Y=0.03g Z=4.01g[0m
+[0;32mI (28607) TWAI Master: Scaled X=-0.09g Y=0.05g Z=3.97g[0m
+[0;32mI (28657) TWAI Master: Scaled X=-0.02g Y=0.05g Z=3.97g[0m
+[0;32mI (28707) TWAI Master: Scaled X=-0.05g Y=0.05g Z=4.00g[0m
+[0;32mI (28757) TWAI Master: Scaled X=-0.06g Y=0.04g Z=3.98g[0m
+[0;32mI (28807) TWAI Master: Scaled X=-0.07g Y=0.05g Z=3.97g[0m
+[0;32mI (28857) TWAI Master: Scaled X=-0.05g Y=0.03g Z=3.96g[0m
+[0;32mI (28907) TWAI Master: Scaled X=-0.07g Y=0.02g Z=3.98g[0m
+[0;32mI (28957) TWAI Master: Scaled X=-0.04g Y=0.03g Z=4.00g[0m
+[0;32mI (29007) TWAI Master: Scaled X=-0.05g Y=0.03g Z=4.01g[0m
+[0;32mI (29057) TWAI Master: Scaled X=-0.06g Y=0.05g Z=3.96g[0m
+[0;32mI (29107) TWAI Master: Scaled X=-0.06g Y=0.05g Z=3.98g[0m
+[0;32mI (29157) TWAI Master: Scaled X=-0.07g Y=0.06g Z=3.99g[0m
+[0;32mI (29207) TWAI Master: Scaled X=-0.05g Y=0.05g Z=4.00g[0m
+[0;32mI (29257) TWAI Master: Scaled X=-0.07g Y=0.02g Z=3.99g[0m
+[0;32mI (29307) TWAI Master: Scaled X=-0.05g Y=0.04g Z=3.95g[0m
+[0;32mI (29357) TWAI Master: Scaled X=-0.05g Y=0.07g Z=3.96g[0m
+[0;32mI (29407) TWAI Master: Scaled X=-0.07g Y=0.06g Z=3.98g[0m
+[0;32mI (29457) TWAI Master: Scaled X=-0.06g Y=0.02g Z=3.96g[0m
+[0;32mI (29507) TWAI Master: Scaled X=-0.06g Y=0.05g Z=4.00g[0m
+[0;32mI (29557) TWAI Master: Scaled X=-0.05g Y=0.03g Z=3.97g[0m
+[0;32mI (29607) TWAI Master: Scaled X=-0.08g Y=0.05g Z=3.96g[0m
+[0;32mI (29657) TWAI Master: Scaled X=-0.06g Y=0.05g Z=3.98g[0m
+[0;32mI (29707) TWAI Master: Scaled X=-0.05g Y=0.02g Z=3.95g[0m
+[0;32mI (29757) TWAI Master: Scaled X=-0.06g Y=0.05g Z=3.99g[0m
+[0;32mI (29807) TWAI Master: Scaled X=-0.06g Y=0.03g Z=3.96g[0m
+[0;32mI (29857) TWAI Master: Scaled X=-0.06g Y=0.04g Z=4.01g[0m
+[0;32mI (29907) TWAI Master: Scaled X=-0.06g Y=0.07g Z=3.96g[0m
+[0;32mI (29957) TWAI Master: Scaled X=-0.04g Y=0.05g Z=3.97g[0m
+[0;32mI (30007) TWAI Master: Scaled X=-0.06g Y=0.05g Z=4.00g[0m
+[0;32mI (30057) TWAI Master: Scaled X=-0.06g Y=0.05g Z=4.01g[0m
+[0;32mI (30107) TWAI Master: Scaled X=-0.11g Y=0.04g Z=3.97g[0m
+[0;32mI (30157) TWAI Master: Scaled X=-0.05g Y=0.06g Z=3.95g[0m
+[0;32mI (30207) TWAI Master: Scaled X=-0.07g Y=0.06g Z=4.01g[0m
+[0;32mI (30257) TWAI Master: Scaled X=-0.06g Y=0.03g Z=3.98g[0m
+[0;32mI (30307) TWAI Master: Scaled X=-0.08g Y=0.03g Z=4.02g[0m
+[0;32mI (30357) TWAI Master: Scaled X=-0.07g Y=0.07g Z=3.97g[0m
+[0;32mI (30407) TWAI Master: Scaled X=-0.05g Y=0.04g Z=3.98g[0m
+[0;32mI (30457) TWAI Master: Scaled X=-0.05g Y=0.04g Z=4.01g[0m
+[0;32mI (30507) TWAI Master: Scaled X=-0.06g Y=0.04g Z=3.99g[0m
+[0;32mI (30557) TWAI Master: Scaled X=-0.05g Y=0.02g Z=3.95g[0m
+[0;32mI (30607) TWAI Master: Scaled X=-0.05g Y=0.02g Z=3.96g[0m
+[0;32mI (30657) TWAI Master: Scaled X=-0.08g Y=0.05g Z=3.95g[0m
+[0;32mI (30707) TWAI Master: Scaled X=-0.05g Y=0.03g Z=3.96g[0m
+[0;32mI (30757) TWAI Master: Scaled X=-0.07g Y=0.04g Z=3.95g[0m
+[0;32mI (30807) TWAI Master: Scaled X=-0.06g Y=0.02g Z=3.98g[0m
+[0;32mI (30857) TWAI Master: Scaled X=-0.06g Y=0.03g Z=4.00g[0m
+[0;32mI (30907) TWAI Master: Scaled X=-0.06g Y=0.07g Z=3.96g[0m
+[0;32mI (30957) TWAI Master: Scaled X=-0.05g Y=0.03g Z=3.97g[0m

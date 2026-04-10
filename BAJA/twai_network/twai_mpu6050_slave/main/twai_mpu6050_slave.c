@@ -178,6 +178,7 @@ static void twai_receive_task(void *arg)
         } else if (action == RX_TASK_EXIT) {
             break;
         }
+        
     }
     vTaskDelete(NULL);
 }
@@ -238,6 +239,7 @@ static void twai_transmit_task(void *arg)
                     twai_transmit(&data_message, portMAX_DELAY);
                     ESP_LOGI("MPU6050", "Sent accel X=%d Y=%d Z=%d", accel_x, accel_y, accel_z);
                     vTaskDelay(pdMS_TO_TICKS(DATA_PERIOD_MS));
+
                     if (xSemaphoreTake(stop_data_sem, 0) == pdTRUE) {
                         break;
                     }
@@ -306,6 +308,7 @@ static void twai_control_task(void *arg)
         ESP_ERROR_CHECK(twai_stop());
         ESP_LOGI(EXAMPLE_TAG, "Driver stopped");
         vTaskDelay(pdMS_TO_TICKS(ITER_DELAY_MS));
+
     }
 
     //Stop TX and RX tasks
