@@ -59,7 +59,7 @@ static uint8_t s_peer_mac[6] =  { 0x94, 0xA9, 0x90, 0x0B, 0x2A, 0x04 };
 
 
 
-static lv_obj_t *endurance_display(void)                     //gps speed, temperatures, maybe headin
+static lv_obj_t *endurance_display(void)                     //gps speed + temperature
 {             
 
     lv_obj_t * lv_obj_0 = lv_obj_create(NULL);
@@ -101,20 +101,6 @@ static lv_obj_t *endurance_display(void)                     //gps speed, temper
 
     lv_color_t orange_red = lv_color_make(245, 84, 66);
 
- /*    
-    // upper bound limit indicator on slider
-    lv_obj_t *max_temp_label = lv_label_create(lv_obj_0);
-    lv_label_set_text(max_temp_label, "125°C");
-    lv_obj_set_style_text_color(max_temp_label, orange_red, LV_PART_MAIN);
-    lv_obj_set_x(max_temp_label, 7);
-    lv_obj_set_y(max_temp_label, 35);
-
-    // lower bound
-    lv_obj_t *min_temp_label = lv_label_create(lv_obj_0);
-    lv_label_set_text(min_temp_label, "0°C");
-    lv_obj_set_style_text_color(min_temp_label, orange_red, LV_PART_MAIN);
-    lv_obj_set_x(min_temp_label, 7);
-    lv_obj_set_y(min_temp_label, 205); */
 
 
     //temp scale
@@ -140,10 +126,10 @@ static lv_obj_t *endurance_display(void)                     //gps speed, temper
     //speedometer
     lv_obj_t * arc_1 = lv_arc_create(lv_obj_0);           
 
-	lv_obj_set_x(arc_1, 144);
-    lv_obj_set_y(arc_1, 55);
-    lv_obj_set_width(arc_1, 170);
-    lv_obj_set_height(arc_1, 162);
+	lv_obj_set_x(arc_1, 155);
+    lv_obj_set_y(arc_1, 55); //from 45
+    lv_obj_set_width(arc_1, 150);
+    lv_obj_set_height(arc_1, 142);
 
     lv_obj_set_style_arc_color(arc_1, lv_color_hex(0x444444), LV_PART_MAIN);
     lv_obj_set_style_arc_color(arc_1, lv_color_hex(0x00FF00), LV_PART_INDICATOR);
@@ -162,7 +148,7 @@ static lv_obj_t *endurance_display(void)                     //gps speed, temper
 
     //speedometer scale
     lv_obj_t *speed_scale = lv_scale_create(lv_obj_0);            
-    lv_obj_set_size(speed_scale, 170, 162);
+    lv_obj_set_size(speed_scale, 150, 142);
     lv_obj_align_to(speed_scale, arc_1, LV_ALIGN_CENTER, 0, 0);
     lv_scale_set_mode(speed_scale, LV_SCALE_MODE_ROUND_OUTER);
     lv_scale_set_label_show(speed_scale, true);
@@ -199,7 +185,7 @@ static lv_obj_t *endurance_display(void)                     //gps speed, temper
     lv_obj_set_style_text_color(km_value, lv_color_black(), LV_PART_MAIN);
 
 	lv_obj_set_x(km_value, 178);
-    lv_obj_set_y(km_value, 130);
+    lv_obj_set_y(km_value, 120);
 
 
     return lv_obj_0;
@@ -214,28 +200,47 @@ static lv_obj_t *driver_display(void)                //lap number, race time, br
     lv_obj_set_height(lv_obj_1, lv_pct(100));
 
     lv_obj_set_style_bg_color(lv_obj_1, lv_color_white(), 0);
-
-    title_1 = lv_label_create(lv_obj_1);
+    
+    //lap time labels
+    lv_obj_t *title_1 = lv_label_create(lv_obj_1);
     lv_label_set_text(title_1, "TIME:");
     lv_obj_align(title_1, LV_ALIGN_TOP_MID, 0, 35);
-    lv_obj_set_style_text_font(title_1, &lv_font_montserrat_22, 0);
+    lv_obj_set_style_text_font(title_1, &lv_font_montserrat_14, 0);
     lv_obj_set_style_text_color(title_1, lv_color_black(), LV_PART_MAIN);
-    
 
-    lap_time = lv_label_create(lv_obj_1);             //race time
+
+    //race time
+    lap_time = lv_label_create(lv_obj_1);             
     lv_label_set_text(lap_time, "00:00");
     lv_obj_align(lap_time, LV_ALIGN_TOP_MID, 0, 60);
     lv_obj_set_style_text_font(lap_time, &lv_font_montserrat_26, 0);
     lv_obj_set_style_text_color(lap_time, lv_color_black(), LV_PART_MAIN);
 
-    lap_num = lv_label_create(lv_obj_1);                  //lap tracking
-    lv_label_set_text(lap_num, "lap #"); //add actual lap tracking
+    //lap number label
+    lv_obj_t *title_2 = lv_label_create(lv_obj_1);
+    lv_label_set_text(title_2, "LAP:");
+    lv_obj_align(title_2, LV_ALIGN_BOTTOM_LEFT, 30, -90);
+    lv_obj_set_style_text_font(title_2, &lv_font_montserrat_14, 0);
+    lv_obj_set_style_text_color(title_2, lv_color_black(), LV_PART_MAIN);
+
+
+    //lap tracking
+    lap_num = lv_label_create(lv_obj_1);                  
+    lv_label_set_text(lap_num, "lap #");                //add actual lap tracking
     lv_obj_align(lap_num, LV_ALIGN_BOTTOM_LEFT, 30, -60);
     lv_obj_set_style_text_font(lap_num, &lv_font_montserrat_22, 0);
     lv_obj_set_style_text_color(lap_num, lv_color_black(), LV_PART_MAIN);
 
 
-    brake_pressure = lv_label_create(lv_obj_1);       //brake pressre (PSI, 2 dec)
+    //brake pressure label
+    lv_obj_t *title_3 = lv_label_create(lv_obj_1);
+    lv_label_set_text(title_3, "BRAKE:");
+    lv_obj_align(title_3, LV_ALIGN_BOTTOM_RIGHT, -30, -90);
+    lv_obj_set_style_text_font(title_3, &lv_font_montserrat_14, 0);
+    lv_obj_set_style_text_color(title_3, lv_color_black(), LV_PART_MAIN);
+
+    //brake pressure
+    brake_pressure = lv_label_create(lv_obj_1);      
     lv_label_set_text(brake_pressure, "0000.00 PSI");
     lv_obj_align(brake_pressure, LV_ALIGN_BOTTOM_RIGHT, -30, -60);
     lv_obj_set_style_text_font(brake_pressure, &lv_font_montserrat_22, 0);    
@@ -333,7 +338,7 @@ static void gui_task(void* )
                 switch_screens();
                 request_screen_switch = false;
             }
-/* 
+
             if (current_screen == 0 && temp_label != NULL) {                //update endurance display only
 
             // accessing recv_temp should be accessed in a threadsafe way (todo)
@@ -352,7 +357,7 @@ static void gui_task(void* )
 
             }
 
-            if (current_screen == 1 && lap_num != NULL) {              //update driver display
+           /*  if (current_screen == 1 && lap_num != NULL) {              //update driver display
 
                 if (lap_num != NULL) {
 
@@ -368,8 +373,8 @@ static void gui_task(void* )
 
                     //real data
                 }
-            } */
-        
+            }  */
+         
             lvgl_port_unlock();
         }
 
