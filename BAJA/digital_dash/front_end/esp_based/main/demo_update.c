@@ -47,15 +47,12 @@ static lv_obj_t * temp_slide = NULL;
 static lv_obj_t *lap_num = NULL;
 static lv_obj_t *lap_time = NULL;
 static lv_obj_t *brake_pressure = NULL;
+static lv_obj_t *title_1 = NULL;
 
 static lv_obj_t *endurance_screen = NULL;
 static lv_obj_t *driver_screen = NULL;
 int current_screen = 0;
 bool request_screen_switch = false;
-
-static lv_style_t section_main_line_style;
-
-static lv_style_t scale_style;
 
 // thermistor esp mac 94:A9:90:0B:2A:04
 static uint8_t s_peer_mac[6] =  { 0x94, 0xA9, 0x90, 0x0B, 0x2A, 0x04 };
@@ -72,13 +69,13 @@ static lv_obj_t *endurance_display(void)                     //gps speed, temper
 
     lv_obj_set_style_bg_color(lv_obj_0, lv_color_white(), 0);
 
-    
-    temp_slide = lv_slider_create(lv_obj_0);
+    //temperature
 
+    temp_slide = lv_slider_create(lv_obj_0);
 
 	lv_obj_set_x(temp_slide, 7);
     lv_obj_set_y(temp_slide, 190);
-    lv_obj_set_width(temp_slide, 131);
+    lv_obj_set_width(temp_slide, 150);
     lv_obj_set_height(temp_slide, 18);
     lv_obj_set_style_transform_rotation(temp_slide, -900, 0);
     lv_slider_set_range(temp_slide, 0, 125);
@@ -104,7 +101,7 @@ static lv_obj_t *endurance_display(void)                     //gps speed, temper
 
     lv_color_t orange_red = lv_color_make(245, 84, 66);
 
-    
+ /*    
     // upper bound limit indicator on slider
     lv_obj_t *max_temp_label = lv_label_create(lv_obj_0);
     lv_label_set_text(max_temp_label, "125°C");
@@ -117,24 +114,31 @@ static lv_obj_t *endurance_display(void)                     //gps speed, temper
     lv_label_set_text(min_temp_label, "0°C");
     lv_obj_set_style_text_color(min_temp_label, orange_red, LV_PART_MAIN);
     lv_obj_set_x(min_temp_label, 7);
-    lv_obj_set_y(min_temp_label, 205);
+    lv_obj_set_y(min_temp_label, 205); */
 
 
-    lv_obj_t *temp_scale = lv_scale_create(lv_obj_0);                   //add scale and ticks to thermometer
-    lv_obj_add_style(temp_scale, &scale_style, LV_PART_MAIN);
-    lv_obj_set_size(temp_scale, 18, 131);
+    //temp scale
+    lv_obj_t *temp_scale = lv_scale_create(lv_obj_0);                   
+    lv_obj_set_size(temp_scale, 18, 150);
     lv_scale_set_range(temp_scale, 0, 125);                                    
     lv_scale_set_mode(temp_scale, LV_SCALE_MODE_VERTICAL_RIGHT);
+    lv_obj_align_to(temp_scale, temp_slide, LV_ALIGN_CENTER, -60, -82);
     lv_scale_set_total_tick_count(temp_scale, 26);
     lv_scale_set_major_tick_every(temp_scale, 5);
     lv_scale_set_label_show(temp_scale, true);
-    lv_obj_set_x(temp_scale, 7);         //align to the temperature slider
-    lv_obj_set_y(temp_scale, 190);
-    lv_obj_set_x(temp_scale, lv_obj_get_x(temp_slide));
-    lv_obj_set_y(temp_scale, lv_obj_get_y(temp_slide));
+    
+    
+
+    lv_obj_set_style_line_color(temp_scale, lv_color_black(), LV_PART_MAIN);
+    lv_obj_set_style_line_color(temp_scale, lv_color_black(), LV_PART_INDICATOR);
+    lv_obj_set_style_line_color(temp_scale, lv_color_black(), LV_PART_ITEMS);
+    lv_obj_set_style_text_color(temp_scale, lv_color_black(), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_color(temp_scale, lv_color_black(), LV_PART_ITEMS | LV_STATE_DEFAULT);
+    
 
 
-    lv_obj_t * arc_1 = lv_arc_create(lv_obj_0);             //speedometer
+    //speedometer
+    lv_obj_t * arc_1 = lv_arc_create(lv_obj_0);           
 
 	lv_obj_set_x(arc_1, 144);
     lv_obj_set_y(arc_1, 55);
@@ -147,8 +151,8 @@ static lv_obj_t *endurance_display(void)                     //gps speed, temper
     lv_obj_set_style_arc_width(arc_1, 6, LV_PART_INDICATOR);
 
     
-    
-    lv_obj_t * h3_1 = lv_label_create(lv_obj_0);                //speedometer label
+    //speedometer label
+    lv_obj_t * h3_1 = lv_label_create(lv_obj_0);     
     lv_label_set_text(h3_1, "Speed");
     lv_obj_set_style_text_color(h3_1, lv_color_black(), LV_PART_MAIN);
 
@@ -156,19 +160,22 @@ static lv_obj_t *endurance_display(void)                     //gps speed, temper
     lv_obj_set_y(h3_1, 210);
 
 
-
-    lv_obj_t *speed_scale = lv_scale_create(lv_obj_0);              //speedometer ticks (scale)
+    //speedometer scale
+    lv_obj_t *speed_scale = lv_scale_create(lv_obj_0);            
     lv_obj_set_size(speed_scale, 170, 162);
     lv_obj_align_to(speed_scale, arc_1, LV_ALIGN_CENTER, 0, 0);
-    
-    lv_obj_add_style(speed_scale, &scale_style, LV_PART_MAIN);
-
-
     lv_scale_set_mode(speed_scale, LV_SCALE_MODE_ROUND_OUTER);
     lv_scale_set_label_show(speed_scale, true);
     lv_scale_set_total_tick_count(speed_scale, 11);
     lv_scale_set_major_tick_every(speed_scale, 5);
     lv_scale_set_range(speed_scale, 0, 50);      
+
+    lv_obj_set_style_line_color(speed_scale, lv_color_black(), LV_PART_MAIN);
+    lv_obj_set_style_line_color(speed_scale, lv_color_black(), LV_PART_INDICATOR);
+    lv_obj_set_style_line_color(speed_scale, lv_color_black(), LV_PART_ITEMS);
+    lv_obj_set_style_text_color(speed_scale, lv_color_black(), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_color(speed_scale, lv_color_black(), LV_PART_ITEMS | LV_STATE_DEFAULT);
+   
     
     //estimated range (50km/h)
 
@@ -179,10 +186,10 @@ static lv_obj_t *endurance_display(void)                     //gps speed, temper
     strcat(temp_val, " °C");
     lv_label_set_text(temp_label, temp_val);
     lv_obj_set_style_text_color(temp_label, lv_color_black(), LV_PART_MAIN);
-    lv_obj_set_style_text_font(temp_label, &lv_font_montserrat_30, 0);
+    lv_obj_set_style_text_font(temp_label, &lv_font_montserrat_22, 0);
 
-	lv_obj_set_x(temp_label, 38);
-    lv_obj_set_y(temp_label, 80);
+	lv_obj_set_x(temp_label, 50);
+    lv_obj_set_y(temp_label, 85);
     lv_obj_set_width(temp_label, 130);
     lv_obj_set_height(temp_label, 48);
 
@@ -208,31 +215,32 @@ static lv_obj_t *driver_display(void)                //lap number, race time, br
 
     lv_obj_set_style_bg_color(lv_obj_1, lv_color_white(), 0);
 
-    lap_num = lv_label_create(lv_obj_1);                  //lap tracking
-    lv_label_set_text(lap_num, "lap number"); //add actual lap tracking
-    lv_obj_align(lap_num, LV_ALIGN_TOP_MID, 0, 0);
-    lv_obj_set_style_text_font(lap_num, &lv_font_montserrat_26, 0);
+    title_1 = lv_label_create(lv_obj_1);
+    lv_label_set_text(title_1, "TIME:");
+    lv_obj_align(title_1, LV_ALIGN_TOP_MID, 0, 35);
+    lv_obj_set_style_text_font(title_1, &lv_font_montserrat_22, 0);
+    lv_obj_set_style_text_color(title_1, lv_color_black(), LV_PART_MAIN);
+    
 
     lap_time = lv_label_create(lv_obj_1);             //race time
     lv_label_set_text(lap_time, "00:00");
-    lv_obj_align(lap_time, LV_ALIGN_BOTTOM_LEFT, 0, 0);
+    lv_obj_align(lap_time, LV_ALIGN_TOP_MID, 0, 60);
     lv_obj_set_style_text_font(lap_time, &lv_font_montserrat_26, 0);
+    lv_obj_set_style_text_color(lap_time, lv_color_black(), LV_PART_MAIN);
+
+    lap_num = lv_label_create(lv_obj_1);                  //lap tracking
+    lv_label_set_text(lap_num, "lap #"); //add actual lap tracking
+    lv_obj_align(lap_num, LV_ALIGN_BOTTOM_LEFT, 30, -60);
+    lv_obj_set_style_text_font(lap_num, &lv_font_montserrat_22, 0);
+    lv_obj_set_style_text_color(lap_num, lv_color_black(), LV_PART_MAIN);
+
 
     brake_pressure = lv_label_create(lv_obj_1);       //brake pressre (PSI, 2 dec)
     lv_label_set_text(brake_pressure, "0000.00 PSI");
-    lv_obj_align(brake_pressure, LV_ALIGN_BOTTOM_RIGHT, 0, 0);
-    lv_obj_set_style_text_font(brake_pressure, &lv_font_montserrat_22, 0);          //&lv_font_montserrat_30
+    lv_obj_align(brake_pressure, LV_ALIGN_BOTTOM_RIGHT, -30, -60);
+    lv_obj_set_style_text_font(brake_pressure, &lv_font_montserrat_22, 0);    
+    lv_obj_set_style_text_color(brake_pressure, lv_color_black(), LV_PART_MAIN);  
     
-
-    /* lv_group_t *groupA = lv_group_create();                 //create group for widgets on this screen
-    lv_group_add_obj(groupA, lap);
-    lv_group_add_obj(groupA, lap_time);
-    lv_group_add_obj(groupA, brake_pressure);
-    lv_group_focus_obj(lap);                                //set first focus to the lap number widget
-
-    ui_input_set_group(groupA); */
-
-
     return lv_obj_1;
 
 }
@@ -299,10 +307,6 @@ static void gui_task(void* )
     ESP_ERROR_CHECK(lcd_display_brightness_set(100));
     ESP_ERROR_CHECK(lcd_display_rotate(lvgl_display, LV_DISPLAY_ROTATION_90));
 
-    lv_style_init(&scale_style);
-    lv_style_set_line_color(&scale_style, lv_color_black());
-
-
 
     if (lvgl_port_lock(0)) {
 
@@ -315,7 +319,6 @@ static void gui_task(void* )
         lvgl_port_unlock();
 
     }
-
 
 
     while (1) {
@@ -405,7 +408,7 @@ void app_main(void)
     comms_task();
     controller_start();
 
-    xTaskCreatePinnedToCore(gui_task, "gui_task", 16384, NULL, 5, NULL, 1);
+    xTaskCreatePinnedToCore(gui_task, "gui_task", 32768, NULL, 5, NULL, 1);
 
 
 
