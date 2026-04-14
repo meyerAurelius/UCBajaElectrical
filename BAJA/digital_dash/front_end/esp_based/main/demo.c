@@ -67,7 +67,7 @@ static void ui_event_button_1(lv_event_t *e)
 
 
 
-static esp_err_t app_lvgl_main(void)
+static esp_err_t app_lvgl_main(void)                 
 {
     if (!lvgl_port_lock(0)) {
         ESP_LOGE(TAG, "Failed to lock LVGL");
@@ -173,7 +173,7 @@ static esp_err_t app_lvgl_main(void)
     lv_obj_set_y(km_value, 130);
 
 
-    lv_screen_load(lv_obj_0); // remeber to actually load the screen!!!
+    lv_screen_load(lv_obj_0); // remember to actually load the screen!!!
     
 
     lvgl_port_unlock();
@@ -181,9 +181,6 @@ static esp_err_t app_lvgl_main(void)
 
     return ESP_OK;
 }
-
-
-
 
 
 static void comms_task(void)

@@ -1,6 +1,7 @@
 // code for digital dash controller UART
 
 #include "controller.h"
+#include "demo_update.h"
 
 // from async_rxtxtasks example
 #include "freertos/FreeRTOS.h"
@@ -12,6 +13,7 @@
 #include "driver/gpio.h"
 
 static const int RX_BUF_SIZE = 1024;
+extern bool request_screen_switch;
 
           
 #define RXD_PIN (CONFIG_EXAMPLE_UART_RXD)           //GPIO27
@@ -41,7 +43,7 @@ static void rx_task(void *arg)
     esp_log_level_set(RX_TASK_TAG, ESP_LOG_INFO);
     uint8_t* data = (uint8_t*) malloc(RX_BUF_SIZE + 1);
 
-    if (data == NULL) {                                                //
+    if (data == NULL) {                                                
         ESP_LOGE(RX_TASK_TAG, "Failed to allocate RX buffer");
         vTaskDelete(NULL);
         return;
@@ -60,8 +62,14 @@ static void rx_task(void *arg)
                 
                 switch(button) {
 
-                case 1: move_down(); break;
+                    case 1:
+                        request_screen_switch = true;
+                        break;
 
+                    default:
+                        break;
+
+/* 
                 case 2: select(); break;
 
                 case 3: move_right(); break;
@@ -72,7 +80,7 @@ static void rx_task(void *arg)
 
                 default:
                     ESP_LOGW(RX_TASK_TAG, "Unidentified data: %d", button);
-                    break;                 //if controller sends something not recognize
+                    break;                 //if controller sends something not recognizeable */
 
            } 
     
@@ -84,7 +92,7 @@ static void rx_task(void *arg)
 }
 
 
-void app_main(void)                 
+void controller_start(void)                 
 {
     init();                         //call communication parameters
     xTaskCreate(rx_task, "uart_rx_task", CONFIG_EXAMPLE_TASK_STACK_SIZE, NULL, configMAX_PRIORITIES - 1, NULL);
