@@ -22,15 +22,15 @@
 
 #include "cJSON.h"
 
-#include "JSON_Payload/telemetry_payload_item.h"
-#include "JSON_Payload/json_payload.h"
-#include "JSON_Payload/sensor_reading_helpers.h"
-#include "JSON_Payload/imu_sensor_reading.h"
-#include "JSON_Payload/gps_sensor_reading.h"
-#include "JSON_Payload/temp_sensor_reading.h"
-#include "JSON_Payload/pressure_sensor_reading.h"
-#include "JSON_Payload/rpm_sensor_reading.h"
-#include "JSON_Payload/voltage_sensor_reading.h"
+#include "telemetry_payload_item.h"
+#include "json_payload.h"
+#include "sensor_reading_helpers.h"
+#include "imu_sensor_reading.h"
+#include "gps_sensor_reading.h"
+#include "temp_sensor_reading.h"
+#include "pressure_sensor_reading.h"
+#include "rpm_sensor_reading.h"
+#include "voltage_sensor_reading.h"
 
 /* ---------------- User-configurable macros ---------------- */
 #define POST_SERVER_HOST   "baja.403587.xyz"

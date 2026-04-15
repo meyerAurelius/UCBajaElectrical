@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+                    <!--ThreeJS Animations-->
+                <script type="importmap">
+					{
+					"imports": {
+						"three": "https://cdn.jsdelivr.net/npm/three@latest/build/three.module.js",
+						"three/addons/": "https://cdn.jsdelivr.net/npm/three@latest/examples/jsm/"
+					}
+					}
+                </script>
+    </head>
+    <body style="margin: 0; padding: 0;">
+
+        <!--ANIMATION-->
+        <script type="module">
+        import * as THREE from 'three';
+        import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+
+        // 1. Scene
+
+        const scene = new THREE.Scene();
+        scene.background = new THREE.Color(0x1c1c1c);
+
+
+        // 2. Camera
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 100000);
+        camera.position.z = 500;
+        camera.position.x = 500;
+        camera.position.y = 500;
+
+        camera.lookAt(scene.position)
+        
+
+
+
+        // 3. Renderer
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setSize( window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+        
+        
+
+        //CHASSIS
+        const geometry = new THREE.BoxGeometry(1000, 1000, -1000);
+        const materialx = new THREE.MeshBasicMaterial({ color: 0x00ff00 }); // Green color
+        const xgforce = new THREE.Mesh(geometry, materialx);
+
+
+        //scene.add(xgforce);
+        xgforce.position.x = 60;
+        xgforce.position.y = 60;
+        xgforce.position.z = 60;
+
+
+        // 1. Set up GLTF and Texture loaders
+        const loader = new THREE.GLTFLoader();
+        const textureLoader = new THREE.TextureLoader();
+
+        // 2. Load the texture and set its properties
+        const texture = textureLoader.load('Jam_WebDash/MODELS/yippee-hyper-yipeeee.png');
+        texture.flipY = false; // Adjust UV orientation to match glTF
+
+        // 3. Load the glTF model
+        loader.load( 'MODELS/CarModel.glb', ( gltf ) => {
+        const model = gltf.scene;
+
+    // 4. Traverse the model and apply the texture
+    model.traverse( ( o ) => {
+        if ( o.isMesh ) {
+            // For a single material:
+            // o.material.map = texture;
+            // o.material.needsUpdate = true;
+
+            // For multi-material meshes (e.g., an array of materials):
+            if (Array.isArray(o.material)) {
+                o.material.forEach(material => {
+                    material.map = texture;
+                    material.needsUpdate = true;
+                });
+            } else {
+                o.material.map = texture;
+                o.material.needsUpdate = true;
+            }
+        }
+    } );
+
+    // 5. Add the model to the scene
+    scene.add( model );
+} );
+
+        const ambientLight = new THREE.AmbientLight(0xFF0F0F, 200); // Color, Intensity
+        scene.add(ambientLight);
+
+
+
+        // 5. Animation Loop
+        function animate() {
+           requestAnimationFrame(animate);
+
+
+
+            renderer.render(scene, camera);
+        }
+
+        animate(); 
+        </script>
+    </body>
+</html>
