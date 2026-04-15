@@ -1,0 +1,13 @@
+{
+    "warningTiers": {
+                        "0": "Green, System message. Used for peer to peer anouncements or system notifications",
+                        "1": "yellow, Alert. Used for minor warnings, addressable after race or with minor driving alterations",
+                        "2": "orange, Warn. Used for moderate warnings, address at next avalible stop or alter driving immediately",
+                        "3": "Red, Emergency. Used for major warnings, stop and address immediately"
+                    },
+    "voltage":  {  
+                "Dead Battery": {"range": [0,1], "tier": "1", "message": "Battery is below minimum threshold. Charge or replace"}
+
+                }  
+
+}

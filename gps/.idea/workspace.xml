@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="58b51003-d45e-4d6a-b678-bb8a52ce6d3d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../BAJA/remote_dash/test.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../remote_dash/web_remote_dash/Jam_WebDash/LIBRARY/Chart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../remote_dash/web_remote_dash/Jam_WebDash/LIBRARY/dist/images/layers-2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../remote_dash/web_remote_dash/Jam_WebDash/LIBRARY/dist/images/layers.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../remote_dash/web_remote_dash/Jam_WebDash/LIBRARY/dist/images/marker-icon-2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../remote_dash/web_remote_dash/Jam_WebDash/LIBRARY/dist/images/marker-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../remote_dash/web_remote_dash/Jam_WebDash/LIBRARY/dist/images/marker-shadow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../remote_dash/web_remote_dash/Jam_WebDash/LIBRARY/dist/leaflet-src.esm.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../remote_dash/web_remote_dash/Jam_WebDash/LIBRARY/dist/leaflet-src.esm.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../remote_dash/web_remote_dash/Jam_WebDash/LIBRARY/dist/leaflet-src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../remote_dash/web_remote_dash/Jam_WebDash/LIBRARY/dist/leaflet-src.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../remote_dash/web_remote_dash/Jam_WebDash/LIBRARY/dist/leaflet.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../remote_dash/web_remote_dash/Jam_WebDash/LIBRARY/dist/leaflet.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../remote_dash/web_remote_dash/Jam_WebDash/LIBRARY/dist/leaflet.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../remote_dash/web_remote_dash/Jam_WebDash/LIBRARY/markerplayer-src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../remote_dash/web_remote_dash/Jam_WebDash/remote_dash.html" beforeDir="false" afterPath="$PROJECT_DIR$/../remote_dash/web_remote_dash/Jam_WebDash/remote_dash.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../remote_dash/web_remote_dash/Jam_WebDash/remote_dash_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../remote_dash/web_remote_dash/Jam_WebDash/remote_dash_style.css" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="3AdGWmKhpIJLDpPTcsLate6PxzY" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.pytest_esp_http_client.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "remote__dash"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-ce6832f46686-7b97d883f26b-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-252.25557.178" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="58b51003-d45e-4d6a-b678-bb8a52ce6d3d" name="Changes" comment="" />
+      <created>1772915069602</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1772915069602</updated>
+    </task>
+    <servers />
+  </component>
+</project>
