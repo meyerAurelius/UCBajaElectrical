@@ -1,0 +1,188 @@
+Command: C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:\Espressif\frameworks\esp-idf-v5.5.1\tools/idf_monitor.py -p COM6 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 C:\Users\danaz\Desktop\Baja_code_2025-26\UCBajaElectrical\BAJA\twai_network\twai_mpu6050_slave\build\twai_mpu6050_slave.elf C:\Users\danaz\Desktop\Baja_code_2025-26\UCBajaElectrical\BAJA\twai_network\twai_mpu6050_slave\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'C:\Espressif\frameworks\esp-idf-v5.5.1\tools\idf.py' '-p' 'COM6'
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x2b (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40377e7e
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x158c
+load:0x403c8700,len:0xd24
+load:0x403cb700,len:0x2f34
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5.1-dirty 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Oct 29 2025 18:40:45[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (32) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (36) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (48) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (70) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (76) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0bd6ch ( 48492) map[0m
+[0;32mI (95) esp_image: segment 1: paddr=0001bd94 vaddr=3fc93b00 size=02b38h ( 11064) load[0m
+[0;32mI (98) esp_image: segment 2: paddr=0001e8d4 vaddr=40374000 size=01744h (  5956) load[0m
+[0;32mI (103) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=1c544h (116036) map[0m
+[0;32mI (130) esp_image: segment 4: paddr=0003c56c vaddr=40375744 size=0e358h ( 58200) load[0m
+[0;32mI (143) esp_image: segment 5: paddr=0004a8cc vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (149) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (149) boot: Disabling RNG early entropy source...[0m
+[0;32mI (160) cpu_start: Multicore app[0m
+[0;32mI (169) cpu_start: Pro cpu start user code[0m
+[0;32mI (169) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (170) app_init: Application information:[0m
+[0;32mI (170) app_init: Project name:     twai_mpu6050_slave[0m
+[0;32mI (174) app_init: App version:      bde78596-dirty[0m
+[0;32mI (179) app_init: Compile time:     Oct 29 2025 18:40:32[0m
+[0;32mI (184) app_init: ELF file SHA256:  52e36fbcf...[0m
+[0;32mI (188) app_init: ESP-IDF:          v5.5.1-dirty[0m
+[0;32mI (193) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (196) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (200) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (204) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (211) heap_init: At 3FC96F38 len 000527D8 (329 KiB): RAM[0m
+[0;32mI (216) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (221) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (226) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (232) spi_flash: detected chip: gd[0m
+[0;32mI (235) spi_flash: flash io: dio[0m
+[0;33mW (238) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (250) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (260) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (266) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (273) main_task: Started on CPU0[0m
+[0;32mI (283) main_task: Calling app_main()[0m
+[0;32mI (283) MPU6050: I2C initialized (SDA=13, SCL=15)[0m
+[0;32mI (383) MPU6050: WHO_AM_I: 0x68[0m
+Slave starting in 3
+Slave starting in 2
+Slave starting in 1
+Slave CAN Bus program started!I (3383) TWAI Slave: Driver installed
+[0;32mI (3383) TWAI Slave: Driver started[0m
+[0;32mI (32073) TWAI Slave: Transmitted ping response[0m
+[0;32mI (32313) TWAI Slave: Start transmitting data[0m
+[0;32mI (32313) MPU6050: Sent accel X=-376 Y=0 Z=16216[0m
+[0;32mI (32363) MPU6050: Sent accel X=-352 Y=140 Z=16348[0m
+[0;32mI (32413) MPU6050: Sent accel X=-264 Y=116 Z=16224[0m
+[0;32mI (32463) MPU6050: Sent accel X=-272 Y=56 Z=16128[0m
+[0;32mI (32513) MPU6050: Sent accel X=-288 Y=112 Z=16312[0m
+[0;32mI (32563) MPU6050: Sent accel X=-264 Y=76 Z=16276[0m
+[0;32mI (32613) MPU6050: Sent accel X=-300 Y=132 Z=16244[0m
+[0;32mI (32663) MPU6050: Sent accel X=-304 Y=8 Z=16176[0m
+[0;32mI (32713) MPU6050: Sent accel X=-312 Y=16 Z=16288[0m
+[0;32mI (32763) MPU6050: Sent accel X=-264 Y=120 Z=16300[0m
+[0;32mI (32813) MPU6050: Sent accel X=-252 Y=224 Z=16288[0m
+[0;32mI (32863) MPU6050: Sent accel X=-308 Y=4 Z=16204[0m
+[0;32mI (32913) MPU6050: Sent accel X=-304 Y=8 Z=16324[0m
+[0;32mI (32963) MPU6050: Sent accel X=-296 Y=144 Z=16148[0m
+[0;32mI (33013) MPU6050: Sent accel X=-204 Y=40 Z=16216[0m
+[0;32mI (33063) MPU6050: Sent accel X=-292 Y=184 Z=16248[0m
+[0;32mI (33113) MPU6050: Sent accel X=-272 Y=68 Z=16128[0m
+[0;32mI (33163) MPU6050: Sent accel X=-420 Y=124 Z=16292[0m
+[0;32mI (33213) MPU6050: Sent accel X=-276 Y=40 Z=16220[0m
+[0;32mI (33263) MPU6050: Sent accel X=-316 Y=84 Z=16176[0m
+[0;32mI (33313) MPU6050: Sent accel X=-368 Y=168 Z=16168[0m
+[0;32mI (33363) MPU6050: Sent accel X=-176 Y=64 Z=16316[0m
+[0;32mI (33413) MPU6050: Sent accel X=-356 Y=-8 Z=16256[0m
+[0;32mI (33463) MPU6050: Sent accel X=-280 Y=4 Z=16132[0m
+[0;32mI (33513) MPU6050: Sent accel X=-260 Y=88 Z=16124[0m
+[0;32mI (33563) MPU6050: Sent accel X=-300 Y=88 Z=16200[0m
+[0;32mI (33613) MPU6050: Sent accel X=-304 Y=160 Z=16152[0m
+[0;32mI (33663) MPU6050: Sent accel X=-376 Y=116 Z=16304[0m
+[0;32mI (33713) MPU6050: Sent accel X=-272 Y=180 Z=16244[0m
+[0;32mI (33763) MPU6050: Sent accel X=-256 Y=20 Z=16328[0m
+[0;32mI (33813) MPU6050: Sent accel X=-300 Y=136 Z=16268[0m
+[0;32mI (33863) MPU6050: Sent accel X=-204 Y=52 Z=16280[0m
+[0;32mI (33913) MPU6050: Sent accel X=-360 Y=116 Z=16176[0m
+[0;32mI (33963) MPU6050: Sent accel X=-376 Y=52 Z=16280[0m
+[0;32mI (34013) MPU6050: Sent accel X=-332 Y=140 Z=16288[0m
+[0;32mI (34063) MPU6050: Sent accel X=-276 Y=144 Z=16204[0m
+[0;32mI (34113) MPU6050: Sent accel X=-316 Y=84 Z=16088[0m
+[0;32mI (34163) MPU6050: Sent accel X=-376 Y=-16 Z=16132[0m
+[0;32mI (34213) MPU6050: Sent accel X=-272 Y=60 Z=16148[0m
+[0;32mI (34263) MPU6050: Sent accel X=-264 Y=48 Z=16244[0m
+[0;32mI (34313) MPU6050: Sent accel X=-416 Y=-112 Z=16320[0m
+[0;32mI (34363) MPU6050: Sent accel X=-284 Y=260 Z=16376[0m
+[0;32mI (34413) MPU6050: Sent accel X=-336 Y=92 Z=16164[0m
+[0;32mI (34463) MPU6050: Sent accel X=-428 Y=88 Z=16168[0m
+[0;32mI (34513) MPU6050: Sent accel X=-336 Y=128 Z=16260[0m
+[0;32mI (34563) MPU6050: Sent accel X=-276 Y=148 Z=16068[0m
+[0;32mI (34613) MPU6050: Sent accel X=-432 Y=140 Z=16340[0m
+[0;32mI (34663) MPU6050: Sent accel X=-332 Y=44 Z=16348[0m
+[0;32mI (34713) MPU6050: Sent accel X=-332 Y=8 Z=16380[0m
+[0;32mI (34763) MPU6050: Sent accel X=-352 Y=20 Z=16500[0m
+[0;32mI (34813) MPU6050: Sent accel X=-376 Y=92 Z=16208[0m
+[0;32mI (34863) MPU6050: Sent accel X=-328 Y=-108 Z=16364[0m
+[0;32mI (34913) MPU6050: Sent accel X=-424 Y=164 Z=16348[0m
+[0;32mI (34963) MPU6050: Sent accel X=-252 Y=-104 Z=16372[0m
+[0;32mI (35013) MPU6050: Sent accel X=-352 Y=16 Z=15976[0m
+[0;32mI (35063) MPU6050: Sent accel X=-440 Y=196 Z=16272[0m
+[0;32mI (35113) MPU6050: Sent accel X=-260 Y=148 Z=16160[0m
+[0;32mI (35163) MPU6050: Sent accel X=-192 Y=44 Z=16244[0m
+[0;32mI (35213) MPU6050: Sent accel X=-260 Y=100 Z=16248[0m
+[0;32mI (35263) MPU6050: Sent accel X=-180 Y=96 Z=16392[0m
+[0;32mI (35313) MPU6050: Sent accel X=-416 Y=44 Z=16160[0m
+[0;32mI (35363) MPU6050: Sent accel X=-252 Y=116 Z=16120[0m
+[0;32mI (35413) MPU6050: Sent accel X=-420 Y=44 Z=16052[0m
+[0;32mI (35463) MPU6050: Sent accel X=-276 Y=196 Z=16244[0m
+[0;32mI (35513) MPU6050: Sent accel X=-280 Y=72 Z=16264[0m
+[0;32mI (35563) MPU6050: Sent accel X=-188 Y=140 Z=16280[0m
+[0;32mI (35613) MPU6050: Sent accel X=-304 Y=104 Z=16208[0m
+[0;32mI (35663) MPU6050: Sent accel X=-272 Y=164 Z=16360[0m
+[0;32mI (35713) MPU6050: Sent accel X=-328 Y=96 Z=16268[0m
+[0;32mI (35763) MPU6050: Sent accel X=-456 Y=152 Z=16132[0m
+[0;32mI (35813) MPU6050: Sent accel X=-240 Y=256 Z=16040[0m
+[0;32mI (35863) MPU6050: Sent accel X=-204 Y=152 Z=16204[0m
+[0;32mI (35913) MPU6050: Sent accel X=-328 Y=164 Z=16132[0m
+[0;32mI (35963) MPU6050: Sent accel X=-424 Y=208 Z=16072[0m
+[0;32mI (36013) MPU6050: Sent accel X=-340 Y=244 Z=16328[0m
+[0;32mI (36063) MPU6050: Sent accel X=-228 Y=156 Z=16084[0m
+[0;32mI (36113) MPU6050: Sent accel X=-276 Y=4 Z=16464[0m
+[0;32mI (36163) MPU6050: Sent accel X=-344 Y=-40 Z=16396[0m
+[0;32mI (36213) MPU6050: Sent accel X=-308 Y=-12 Z=16240[0m
+[0;32mI (36263) MPU6050: Sent accel X=-468 Y=156 Z=16204[0m
+[0;32mI (36313) MPU6050: Sent accel X=-444 Y=-16 Z=16012[0m
+[0;32mI (36363) MPU6050: Sent accel X=-244 Y=80 Z=16192[0m
+[0;32mI (36413) MPU6050: Sent accel X=-244 Y=116 Z=16248[0m
+[0;32mI (36463) MPU6050: Sent accel X=-372 Y=-8 Z=16204[0m
+[0;32mI (36513) MPU6050: Sent accel X=-356 Y=152 Z=16152[0m
+[0;32mI (36563) MPU6050: Sent accel X=-344 Y=220 Z=16332[0m
+[0;32mI (36613) MPU6050: Sent accel X=-324 Y=80 Z=16304[0m
+[0;32mI (36663) MPU6050: Sent accel X=-308 Y=156 Z=16140[0m
+[0;32mI (36713) MPU6050: Sent accel X=-340 Y=92 Z=16308[0m
+[0;32mI (36763) MPU6050: Sent accel X=-316 Y=84 Z=16196[0m
+[0;32mI (36813) MPU6050: Sent accel X=-360 Y=96 Z=16312[0m
+[0;32mI (36863) MPU6050: Sent accel X=-260 Y=8 Z=16236[0m
+[0;32mI (36913) MPU6050: Sent accel X=-248 Y=148 Z=16220[0m
+[0;32mI (36963) MPU6050: Sent accel X=-204 Y=304 Z=16228[0m
+[0;32mI (37013) MPU6050: Sent accel X=-136 Y=128 Z=16208[0m
+[0;32mI (37063) MPU6050: Sent accel X=-344 Y=88 Z=16116[0m
+[0;32mI (37113) MPU6050: Sent accel X=-264 Y=40 Z=16208[0m
+[0;32mI (37163) MPU6050: Sent accel X=-380 Y=176 Z=16108[0m
+[0;32mI (37213) MPU6050: Sent accel X=-164 Y=164 Z=16140[0m
+[0;32mI (37263) MPU6050: Sent accel X=-408 Y=228 Z=16256[0m
+[0;32mI (37313) MPU6050: Sent accel X=-28 Y=312 Z=15892[0m
+[0;32mI (37363) MPU6050: Sent accel X=-524 Y=172 Z=16124[0m
+[0;32mI (37413) MPU6050: Sent accel X=-864 Y=76 Z=16528[0m
+[0;32mI (37463) MPU6050: Sent accel X=-288 Y=148 Z=16172[0m
+[0;32mI (37513) MPU6050: Sent accel X=-220 Y=12 Z=16256[0m
+[0;32mI (37563) MPU6050: Sent accel X=-312 Y=-4 Z=16172[0m
+[0;32mI (37613) MPU6050: Sent accel X=-192 Y=52 Z=16112[0m
+[0;32mI (37663) MPU6050: Sent accel X=-368 Y=100 Z=16140[0m
+[0;32mI (37713) MPU6050: Sent accel X=-456 Y=-4 Z=16252[0m
+[0;32mI (37763) MPU6050: Sent accel X=-316 Y=104 Z=16256[0m
+[0;32mI (37813) MPU6050: Sent accel X=-424 Y=128 Z=16128[0m
+[0;32mI (37863) MPU6050: Sent accel X=-240 Y=108 Z=16308[0m
+[0;32mI (37913) MPU6050: Sent accel X=-232 Y=44 Z=15940[0m
+[0;32mI (37963) MPU6050: Sent accel X=-180 Y=192 Z=16056[0m
+[0;32mI (38013) MPU6050: Sent accel X=-200 Y=100 Z=16176[0m
+[0;32mI (38063) MPU6050: Sent accel X=-352 Y=60 Z=16228[0m
+[0;32mI (38113) MPU6050: Sent accel X=-228 Y=16 Z=16240[0m
+[0;32mI (38163) MPU6050: Sent accel X=-196 Y=60 Z=16184[0m
+[0;32mI (38213) MPU6050: Sent accel X=-320 Y=-16 Z=16228[0m
+[0;32mI (38263) MPU6050: Sent accel X=-284 Y=184 Z=16244[0m

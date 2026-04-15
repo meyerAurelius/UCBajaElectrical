@@ -1,0 +1,1013 @@
+Command: C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:\Espressif\frameworks\esp-idf-v5.5.1\tools/idf_monitor.py -p COM6 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 C:\Users\danaz\esp_idf_projects\mpu6050_test\build\mpu6050_test.elf C:\Users\danaz\esp_idf_projects\mpu6050_test\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'C:\Espressif\frameworks\esp-idf-v5.5.1\tools\idf.py'
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x28 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40048df0
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x158c
+load:0x403c8700,len:0xd24
+load:0x403cb700,len:0x2f34
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Sep 17 2025 19:37:25[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (31) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (35) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (62) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (76) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0b724h ( 46884) map[0m
+[0;32mI (95) esp_image: segment 1: paddr=0001b74c vaddr=3fc93900 size=02b08h ( 11016) load[0m
+[0;32mI (97) esp_image: segment 2: paddr=0001e25c vaddr=40374000 size=01dbch (  7612) load[0m
+[0;32mI (103) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=1a42ch (107564) map[0m
+[0;32mI (128) esp_image: segment 4: paddr=0003a454 vaddr=40375dbc size=0db30h ( 56112) load[0m
+[0;32mI (140) esp_image: segment 5: paddr=00047f8c vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (147) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (147) boot: Disabling RNG early entropy source...[0m
+[0;32mI (158) cpu_start: Multicore app[0m
+[0;32mI (167) cpu_start: Pro cpu start user code[0m
+[0;32mI (167) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (167) app_init: Application information:[0m
+[0;32mI (167) app_init: Project name:     mpu6050_test[0m
+[0;32mI (171) app_init: App version:      1[0m
+[0;32mI (175) app_init: Compile time:     Sep 17 2025 19:35:20[0m
+[0;32mI (180) app_init: ELF file SHA256:  8f85d27e0...[0m
+[0;32mI (184) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (188) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (192) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (196) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (200) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (206) heap_init: At 3FC96CF0 len 00052A20 (330 KiB): RAM[0m
+[0;32mI (211) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (216) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (221) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (228) spi_flash: detected chip: gd[0m
+[0;32mI (230) spi_flash: flash io: dio[0m
+[0;33mW (233) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (245) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (255) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (261) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (268) main_task: Started on CPU0[0m
+[0;32mI (278) main_task: Calling app_main()[0m
+[0;32mI (278) MPU6050: I2C initialized (SDA=13, SCL=15)[0m
+[1;31mE (278) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (288) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (288) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (298) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (298) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (308) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (308) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (318) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (318) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (328) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (328) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (338) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (338) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (348) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (348) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (358) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (368) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (368) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (378) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (378) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (388) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (388) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (398) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (398) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (408) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (408) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (418) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (418) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (428) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (428) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (438) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (438) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (448) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (458) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (458) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (468) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (468) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (478) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (478) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (488) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (488) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (498) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (498) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (508) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (508) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (518) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (518) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (528) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (528) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (538) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (548) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (548) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (558) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (558) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (568) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (568) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (578) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (578) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (588) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (588) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (598) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (598) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (608) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (608) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (618) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (618) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (628) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (638) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (638) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (648) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (648) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (658) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (658) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (668) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (668) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (678) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (678) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (688) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (688) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (698) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (698) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (708) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (708) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (718) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (728) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (728) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (738) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (738) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (748) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (748) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (758) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (758) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (768) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (768) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (778) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (778) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (788) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (788) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (798) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (798) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (808) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (818) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (818) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (828) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (828) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (838) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (838) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (848) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (848) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (858) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (858) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (868) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (868) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (878) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (878) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (888) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (888) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (898) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (908) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (908) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (918) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (918) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (928) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (928) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (938) i2c: i2c_master_write(1316): i2c null address error[0m
+[1;31mE (938) i2c: i2c_master_write(1316): i2c null address error[0m
+[0;32mI (1048) MPU6050: WHO_AM_I register: 0x68[0m
+[0;32mI (1048) MPU6050: Accel X:248 Y:100 Z:15952[0m
+[0;32mI (1248) MPU6050: Accel X:336 Y:52 Z:15972[0m
+[0;32mI (1448) MPU6050: Accel X:276 Y:96 Z:15896[0m
+[0;32mI (1648) MPU6050: Accel X:172 Y:72 Z:15564[0m
+[0;32mI (1848) MPU6050: Accel X:256 Y:64 Z:15880[0m
+[0;32mI (2048) MPU6050: Accel X:328 Y:156 Z:15892[0m
+[0;32mI (2248) MPU6050: Accel X:336 Y:52 Z:15832[0m
+[0;32mI (2448) MPU6050: Accel X:352 Y:228 Z:15992[0m
+[0;32mI (2648) MPU6050: Accel X:156 Y:176 Z:15816[0m
+[0;32mI (2848) MPU6050: Accel X:204 Y:184 Z:15892[0m
+[0;32mI (3048) MPU6050: Accel X:184 Y:180 Z:15892[0m
+[0;32mI (3248) MPU6050: Accel X:192 Y:88 Z:15932[0m
+[0;32mI (3448) MPU6050: Accel X:244 Y:280 Z:15956[0m
+[0;32mI (3648) MPU6050: Accel X:196 Y:80 Z:16068[0m
+[0;32mI (3848) MPU6050: Accel X:272 Y:132 Z:16052[0m
+[0;32mI (4048) MPU6050: Accel X:236 Y:64 Z:15892[0m
+[0;32mI (4248) MPU6050: Accel X:248 Y:120 Z:15864[0m
+[0;32mI (4448) MPU6050: Accel X:232 Y:84 Z:15896[0m
+[0;32mI (4648) MPU6050: Accel X:-244 Y:48 Z:15752[0m
+[0;32mI (4848) MPU6050: Accel X:-656 Y:-600 Z:15676[0m
+[0;32mI (5048) MPU6050: Accel X:1116 Y:-148 Z:15676[0m
+[0;32mI (5248) MPU6050: Accel X:1288 Y:300 Z:15864[0m
+[0;32mI (5448) MPU6050: Accel X:1920 Y:-300 Z:15960[0m
+[0;32mI (5648) MPU6050: Accel X:1932 Y:68 Z:15716[0m
+[0;32mI (5848) MPU6050: Accel X:-1988 Y:280 Z:15788[0m
+[0;32mI (6048) MPU6050: Accel X:-3472 Y:-332 Z:15972[0m
+[0;32mI (6248) MPU6050: Accel X:-132 Y:-76 Z:16292[0m
+[0;32mI (6448) MPU6050: Accel X:2972 Y:-120 Z:16308[0m
+[0;32mI (6648) MPU6050: Accel X:232 Y:108 Z:15864[0m
+[0;32mI (6848) MPU6050: Accel X:176 Y:84 Z:15964[0m
+[0;32mI (7048) MPU6050: Accel X:188 Y:60 Z:15980[0m
+[0;32mI (7248) MPU6050: Accel X:152 Y:64 Z:15896[0m
+[0;32mI (7448) MPU6050: Accel X:280 Y:-16 Z:15920[0m
+[0;32mI (7648) MPU6050: Accel X:184 Y:184 Z:15788[0m
+[0;32mI (7848) MPU6050: Accel X:160 Y:104 Z:15972[0m
+[0;32mI (8048) MPU6050: Accel X:336 Y:116 Z:15736[0m
+[0;32mI (8248) MPU6050: Accel X:248 Y:160 Z:15936[0m
+[0;32mI (8448) MPU6050: Accel X:148 Y:8 Z:15792[0m
+[0;32mI (8648) MPU6050: Accel X:92 Y:192 Z:15968[0m
+[0;32mI (8848) MPU6050: Accel X:148 Y:100 Z:15988[0m
+[0;32mI (9048) MPU6050: Accel X:148 Y:84 Z:15912[0m
+[0;32mI (9248) MPU6050: Accel X:224 Y:92 Z:16036[0m
+[0;32mI (9448) MPU6050: Accel X:104 Y:40 Z:15892[0m
+[0;32mI (9648) MPU6050: Accel X:172 Y:20 Z:16040[0m
+[0;32mI (9848) MPU6050: Accel X:104 Y:-8 Z:15924[0m
+[0;32mI (10048) MPU6050: Accel X:52 Y:116 Z:16024[0m
+[0;32mI (10248) MPU6050: Accel X:200 Y:212 Z:16004[0m
+[0;32mI (10448) MPU6050: Accel X:164 Y:128 Z:16028[0m
+[0;32mI (10648) MPU6050: Accel X:140 Y:204 Z:15836[0m
+[0;32mI (10848) MPU6050: Accel X:96 Y:104 Z:15908[0m
+[0;32mI (11048) MPU6050: Accel X:136 Y:128 Z:15940[0m
+[0;32mI (11248) MPU6050: Accel X:224 Y:48 Z:15968[0m
+[0;32mI (11448) MPU6050: Accel X:8772 Y:-2020 Z:15000[0m
+[0;32mI (11648) MPU6050: Accel X:-10316 Y:-1644 Z:15548[0m
+[0;32mI (11848) MPU6050: Accel X:17368 Y:1472 Z:14408[0m
+[0;32mI (12048) MPU6050: Accel X:-17476 Y:-2644 Z:15188[0m
+[0;32mI (12248) MPU6050: Accel X:15560 Y:-1520 Z:14740[0m
+[0;32mI (12448) MPU6050: Accel X:-908 Y:-888 Z:16564[0m
+[0;32mI (12648) MPU6050: Accel X:-14632 Y:-5024 Z:15944[0m
+[0;32mI (12848) MPU6050: Accel X:8648 Y:2500 Z:16472[0m
+[0;32mI (13048) MPU6050: Accel X:-15420 Y:-3588 Z:16484[0m
+[0;32mI (13248) MPU6050: Accel X:-152 Y:-3476 Z:16140[0m
+[0;32mI (13448) MPU6050: Accel X:19040 Y:1136 Z:15976[0m
+[0;32mI (13648) MPU6050: Accel X:-12148 Y:1352 Z:15968[0m
+[0;32mI (13848) MPU6050: Accel X:20708 Y:456 Z:14056[0m
+[0;32mI (14048) MPU6050: Accel X:-8244 Y:-3384 Z:15428[0m
+[0;32mI (14248) MPU6050: Accel X:-4112 Y:-6288 Z:15512[0m
+[0;32mI (14448) MPU6050: Accel X:20884 Y:976 Z:16260[0m
+[0;32mI (14648) MPU6050: Accel X:-21904 Y:-4600 Z:15132[0m
+[0;32mI (14848) MPU6050: Accel X:26476 Y:-260 Z:15448[0m
+[0;32mI (15048) MPU6050: Accel X:-12384 Y:-3896 Z:16860[0m
+[0;32mI (15248) MPU6050: Accel X:-1316 Y:-6660 Z:15724[0m
+[0;32mI (15448) MPU6050: Accel X:20252 Y:76 Z:16296[0m
+[0;32mI (15648) MPU6050: Accel X:-12288 Y:3884 Z:16388[0m
+[0;32mI (15848) MPU6050: Accel X:24076 Y:-3116 Z:17752[0m
+[0;32mI (16048) MPU6050: Accel X:-6032 Y:-4496 Z:14236[0m
+[0;32mI (16248) MPU6050: Accel X:-1520 Y:-6696 Z:19092[0m
+[0;32mI (16448) MPU6050: Accel X:112 Y:168 Z:15884[0m
+[0;32mI (16648) MPU6050: Accel X:204 Y:160 Z:15860[0m
+[0;32mI (16848) MPU6050: Accel X:208 Y:228 Z:15872[0m
+[0;32mI (17048) MPU6050: Accel X:196 Y:124 Z:15904[0m
+[0;32mI (17248) MPU6050: Accel X:188 Y:60 Z:15844[0m
+[0;32mI (17448) MPU6050: Accel X:64 Y:92 Z:15880[0m
+[0;32mI (17648) MPU6050: Accel X:-44 Y:8 Z:15720[0m
+[0;32mI (17848) MPU6050: Accel X:13936 Y:3640 Z:14388[0m
+[0;32mI (18048) MPU6050: Accel X:-12440 Y:-4364 Z:15284[0m
+[0;32mI (18248) MPU6050: Accel X:21360 Y:-2524 Z:15072[0m
+[0;32mI (18448) MPU6050: Accel X:-7528 Y:-1776 Z:14688[0m
+[0;32mI (18648) MPU6050: Accel X:-4964 Y:-5824 Z:16124[0m
+[0;32mI (18848) MPU6050: Accel X:24076 Y:1752 Z:16124[0m
+[0;32mI (19048) MPU6050: Accel X:-10588 Y:3392 Z:16804[0m
+[0;32mI (19248) MPU6050: Accel X:27320 Y:-7272 Z:15708[0m
+[0;32mI (19448) MPU6050: Accel X:-4024 Y:-3476 Z:16780[0m
+[0;32mI (19648) MPU6050: Accel X:-13164 Y:-6536 Z:15980[0m
+[0;32mI (19848) MPU6050: Accel X:14160 Y:208 Z:16992[0m
+[0;32mI (20048) MPU6050: Accel X:-25980 Y:-4452 Z:16832[0m
+[0;32mI (20248) MPU6050: Accel X:5340 Y:-696 Z:25148[0m
+[0;32mI (20448) MPU6050: Accel X:1200 Y:6740 Z:14744[0m
+[0;32mI (20648) MPU6050: Accel X:2572 Y:2288 Z:13472[0m
+[0;32mI (20848) MPU6050: Accel X:10396 Y:2616 Z:6280[0m
+[0;32mI (21048) MPU6050: Accel X:-9256 Y:-3672 Z:23168[0m
+[0;32mI (21248) MPU6050: Accel X:12660 Y:12 Z:11664[0m
+[0;32mI (21448) MPU6050: Accel X:-5172 Y:-876 Z:14508[0m
+[0;32mI (21648) MPU6050: Accel X:-2680 Y:-1924 Z:24172[0m
+[0;32mI (21848) MPU6050: Accel X:3340 Y:1256 Z:11216[0m
+[0;32mI (22048) MPU6050: Accel X:-5072 Y:2884 Z:-928[0m
+[0;32mI (22248) MPU6050: Accel X:184 Y:152 Z:16088[0m
+[0;32mI (22448) MPU6050: Accel X:208 Y:136 Z:15884[0m
+[0;32mI (22648) MPU6050: Accel X:212 Y:64 Z:15904[0m
+[0;32mI (22848) MPU6050: Accel X:356 Y:40 Z:15748[0m
+[0;32mI (23048) MPU6050: Accel X:308 Y:56 Z:15872[0m
+[0;32mI (23248) MPU6050: Accel X:316 Y:96 Z:15884[0m
+[0;32mI (23448) MPU6050: Accel X:268 Y:104 Z:15856[0m
+[0;32mI (23648) MPU6050: Accel X:436 Y:36 Z:15712[0m
+[0;32mI (23848) MPU6050: Accel X:184 Y:24 Z:15768[0m
+[0;32mI (24048) MPU6050: Accel X:276 Y:64 Z:16000[0m
+[0;32mI (24248) MPU6050: Accel X:284 Y:172 Z:15880[0m
+[0;32mI (24448) MPU6050: Accel X:232 Y:160 Z:15992[0m
+[0;32mI (24648) MPU6050: Accel X:284 Y:128 Z:15944[0m
+[0;32mI (24848) MPU6050: Accel X:252 Y:136 Z:15924[0m
+[0;32mI (25048) MPU6050: Accel X:300 Y:212 Z:15832[0m
+[0;32mI (25248) MPU6050: Accel X:316 Y:188 Z:15868[0m
+[0;32mI (25448) MPU6050: Accel X:232 Y:104 Z:16024[0m
+[0;32mI (25648) MPU6050: Accel X:268 Y:128 Z:15832[0m
+[0;32mI (25848) MPU6050: Accel X:116 Y:60 Z:16000[0m
+[0;32mI (26048) MPU6050: Accel X:260 Y:144 Z:15808[0m
+[0;32mI (26248) MPU6050: Accel X:260 Y:184 Z:15876[0m
+[0;32mI (26448) MPU6050: Accel X:348 Y:60 Z:15908[0m
+[0;32mI (26648) MPU6050: Accel X:312 Y:56 Z:15988[0m
+[0;32mI (26848) MPU6050: Accel X:244 Y:120 Z:15996[0m
+[0;32mI (27048) MPU6050: Accel X:100 Y:128 Z:15988[0m
+[0;32mI (27248) MPU6050: Accel X:252 Y:36 Z:15832[0m
+[0;32mI (27448) MPU6050: Accel X:308 Y:84 Z:15888[0m
+[0;32mI (27648) MPU6050: Accel X:308 Y:136 Z:15852[0m
+[0;32mI (27848) MPU6050: Accel X:304 Y:108 Z:15992[0m
+[0;32mI (28048) MPU6050: Accel X:268 Y:80 Z:15928[0m
+[0;32mI (28248) MPU6050: Accel X:176 Y:116 Z:15808[0m
+[0;32mI (28448) MPU6050: Accel X:364 Y:120 Z:15880[0m
+[0;32mI (28648) MPU6050: Accel X:236 Y:220 Z:15928[0m
+[0;32mI (28848) MPU6050: Accel X:232 Y:140 Z:15916[0m
+[0;32mI (29048) MPU6050: Accel X:324 Y:112 Z:15836[0m
+[0;32mI (29248) MPU6050: Accel X:308 Y:76 Z:15848[0m
+[0;32mI (29448) MPU6050: Accel X:148 Y:116 Z:15880[0m
+[0;32mI (29648) MPU6050: Accel X:264 Y:176 Z:15804[0m
+[0;32mI (29848) MPU6050: Accel X:288 Y:96 Z:15940[0m
+[0;32mI (30048) MPU6050: Accel X:208 Y:112 Z:15916[0m
+[0;32mI (30248) MPU6050: Accel X:224 Y:116 Z:15796[0m
+[0;32mI (30448) MPU6050: Accel X:120 Y:204 Z:15916[0m
+[0;32mI (30648) MPU6050: Accel X:276 Y:96 Z:15768[0m
+[0;32mI (30848) MPU6050: Accel X:152 Y:148 Z:15824[0m
+[0;32mI (31048) MPU6050: Accel X:240 Y:216 Z:15820[0m
+[0;32mI (31248) MPU6050: Accel X:284 Y:80 Z:15956[0m
+[0;32mI (31448) MPU6050: Accel X:104 Y:100 Z:15892[0m
+[0;32mI (31648) MPU6050: Accel X:228 Y:80 Z:16028[0m
+[0;32mI (31848) MPU6050: Accel X:188 Y:12 Z:15876[0m
+[0;32mI (32048) MPU6050: Accel X:248 Y:120 Z:15800[0m
+[0;32mI (32248) MPU6050: Accel X:280 Y:160 Z:15888[0m
+[0;32mI (32448) MPU6050: Accel X:244 Y:132 Z:15852[0m
+[0;32mI (32648) MPU6050: Accel X:252 Y:92 Z:15780[0m
+[0;32mI (32848) MPU6050: Accel X:288 Y:76 Z:15932[0m
+[0;32mI (33048) MPU6050: Accel X:216 Y:56 Z:15836[0m
+[0;32mI (33248) MPU6050: Accel X:272 Y:120 Z:15872[0m
+[0;32mI (33448) MPU6050: Accel X:220 Y:88 Z:15908[0m
+[0;32mI (33648) MPU6050: Accel X:272 Y:196 Z:15804[0m
+[0;32mI (33848) MPU6050: Accel X:224 Y:112 Z:15848[0m
+[0;32mI (34048) MPU6050: Accel X:328 Y:148 Z:15820[0m
+[0;32mI (34248) MPU6050: Accel X:400 Y:152 Z:15848[0m
+[0;32mI (34448) MPU6050: Accel X:228 Y:192 Z:15784[0m
+[0;32mI (34648) MPU6050: Accel X:196 Y:64 Z:15972[0m
+[0;32mI (34848) MPU6050: Accel X:288 Y:56 Z:15888[0m
+[0;32mI (35048) MPU6050: Accel X:140 Y:40 Z:15948[0m
+[0;32mI (35248) MPU6050: Accel X:260 Y:84 Z:16024[0m
+[0;32mI (35448) MPU6050: Accel X:368 Y:136 Z:15900[0m
+[0;32mI (35648) MPU6050: Accel X:256 Y:184 Z:15988[0m
+[0;32mI (35848) MPU6050: Accel X:144 Y:120 Z:15908[0m
+[0;32mI (36048) MPU6050: Accel X:252 Y:128 Z:15872[0m
+[0;32mI (36248) MPU6050: Accel X:188 Y:96 Z:15828[0m
+[0;32mI (36448) MPU6050: Accel X:268 Y:136 Z:15964[0m
+[0;32mI (36648) MPU6050: Accel X:232 Y:100 Z:15784[0m
+[0;32mI (36848) MPU6050: Accel X:196 Y:100 Z:15904[0m
+[0;32mI (37048) MPU6050: Accel X:172 Y:84 Z:15948[0m
+[0;32mI (37248) MPU6050: Accel X:268 Y:192 Z:15996[0m
+[0;32mI (37448) MPU6050: Accel X:324 Y:152 Z:15772[0m
+[0;32mI (37648) MPU6050: Accel X:148 Y:168 Z:15888[0m
+[0;32mI (37848) MPU6050: Accel X:240 Y:164 Z:15960[0m
+[0;32mI (38048) MPU6050: Accel X:216 Y:80 Z:15976[0m
+[0;32mI (38248) MPU6050: Accel X:236 Y:64 Z:15856[0m
+[0;32mI (38448) MPU6050: Accel X:304 Y:68 Z:15780[0m
+[0;32mI (38648) MPU6050: Accel X:280 Y:220 Z:15940[0m
+[0;32mI (38848) MPU6050: Accel X:268 Y:136 Z:15900[0m
+[0;32mI (39048) MPU6050: Accel X:248 Y:140 Z:15856[0m
+[0;32mI (39248) MPU6050: Accel X:212 Y:84 Z:15872[0m
+[0;32mI (39448) MPU6050: Accel X:228 Y:108 Z:15876[0m
+[0;32mI (39648) MPU6050: Accel X:268 Y:116 Z:15960[0m
+[0;32mI (39848) MPU6050: Accel X:236 Y:40 Z:15964[0m
+[0;32mI (40048) MPU6050: Accel X:108 Y:280 Z:15904[0m
+[0;32mI (40248) MPU6050: Accel X:232 Y:52 Z:15932[0m
+[0;32mI (40448) MPU6050: Accel X:4 Y:108 Z:15996[0m
+[0;32mI (40648) MPU6050: Accel X:316 Y:172 Z:16024[0m
+[0;32mI (40848) MPU6050: Accel X:352 Y:192 Z:15840[0m
+[0;32mI (41048) MPU6050: Accel X:172 Y:200 Z:15956[0m
+[0;32mI (41248) MPU6050: Accel X:280 Y:188 Z:15948[0m
+[0;32mI (41448) MPU6050: Accel X:220 Y:140 Z:15956[0m
+[0;32mI (41648) MPU6050: Accel X:252 Y:192 Z:15868[0m
+[0;32mI (41848) MPU6050: Accel X:312 Y:104 Z:15820[0m
+[0;32mI (42048) MPU6050: Accel X:284 Y:140 Z:15904[0m
+[0;32mI (42248) MPU6050: Accel X:208 Y:144 Z:15864[0m
+[0;32mI (42448) MPU6050: Accel X:236 Y:148 Z:15940[0m
+[0;32mI (42648) MPU6050: Accel X:312 Y:32 Z:15904[0m
+[0;32mI (42848) MPU6050: Accel X:268 Y:124 Z:15772[0m
+[0;32mI (43048) MPU6050: Accel X:340 Y:152 Z:15984[0m
+[0;32mI (43248) MPU6050: Accel X:180 Y:68 Z:15808[0m
+[0;32mI (43448) MPU6050: Accel X:308 Y:56 Z:15916[0m
+[0;32mI (43648) MPU6050: Accel X:200 Y:80 Z:15924[0m
+[0;32mI (43848) MPU6050: Accel X:300 Y:144 Z:15988[0m
+[0;32mI (44048) MPU6050: Accel X:268 Y:168 Z:15960[0m
+[0;32mI (44248) MPU6050: Accel X:160 Y:12 Z:15856[0m
+[0;32mI (44448) MPU6050: Accel X:176 Y:152 Z:15856[0m
+[0;32mI (44648) MPU6050: Accel X:208 Y:92 Z:15824[0m
+[0;32mI (44848) MPU6050: Accel X:292 Y:116 Z:15908[0m
+[0;32mI (45048) MPU6050: Accel X:232 Y:200 Z:15856[0m
+[0;32mI (45248) MPU6050: Accel X:252 Y:96 Z:15808[0m
+[0;32mI (45448) MPU6050: Accel X:200 Y:136 Z:15768[0m
+[0;32mI (45648) MPU6050: Accel X:248 Y:108 Z:15912[0m
+[0;32mI (45848) MPU6050: Accel X:180 Y:-8 Z:15892[0m
+[0;32mI (46048) MPU6050: Accel X:180 Y:104 Z:15968[0m
+[0;32mI (46248) MPU6050: Accel X:252 Y:72 Z:15808[0m
+[0;32mI (46448) MPU6050: Accel X:348 Y:144 Z:15764[0m
+[0;32mI (46648) MPU6050: Accel X:312 Y:52 Z:15828[0m
+[0;32mI (46848) MPU6050: Accel X:328 Y:96 Z:15888[0m
+[0;32mI (47048) MPU6050: Accel X:352 Y:56 Z:15988[0m
+[0;32mI (47248) MPU6050: Accel X:244 Y:84 Z:15884[0m
+[0;32mI (47448) MPU6050: Accel X:364 Y:56 Z:15936[0m
+[0;32mI (47648) MPU6050: Accel X:244 Y:64 Z:15952[0m
+[0;32mI (47848) MPU6050: Accel X:212 Y:184 Z:15920[0m
+[0;32mI (48048) MPU6050: Accel X:244 Y:32 Z:15932[0m
+[0;32mI (48248) MPU6050: Accel X:188 Y:140 Z:15908[0m
+[0;32mI (48448) MPU6050: Accel X:264 Y:120 Z:15976[0m
+[0;32mI (48648) MPU6050: Accel X:260 Y:140 Z:15936[0m
+[0;32mI (48848) MPU6050: Accel X:236 Y:112 Z:15800[0m
+[0;32mI (49048) MPU6050: Accel X:188 Y:28 Z:15864[0m
+[0;32mI (49248) MPU6050: Accel X:332 Y:132 Z:15848[0m
+[0;32mI (49448) MPU6050: Accel X:260 Y:68 Z:15892[0m
+[0;32mI (49648) MPU6050: Accel X:140 Y:48 Z:15808[0m
+[0;32mI (49848) MPU6050: Accel X:188 Y:176 Z:15768[0m
+[0;32mI (50048) MPU6050: Accel X:172 Y:148 Z:15948[0m
+[0;32mI (50248) MPU6050: Accel X:276 Y:188 Z:15864[0m
+[0;32mI (50448) MPU6050: Accel X:320 Y:100 Z:15912[0m
+[0;32mI (50648) MPU6050: Accel X:168 Y:108 Z:15952[0m
+[0;32mI (50848) MPU6050: Accel X:380 Y:220 Z:15880[0m
+[0;32mI (51048) MPU6050: Accel X:240 Y:88 Z:15956[0m
+[0;32mI (51248) MPU6050: Accel X:292 Y:56 Z:15956[0m
+[0;32mI (51448) MPU6050: Accel X:168 Y:76 Z:15820[0m
+[0;32mI (51648) MPU6050: Accel X:304 Y:64 Z:15964[0m
+[0;32mI (51848) MPU6050: Accel X:216 Y:208 Z:15976[0m
+[0;32mI (52048) MPU6050: Accel X:272 Y:52 Z:15876[0m
+[0;32mI (52248) MPU6050: Accel X:128 Y:232 Z:15892[0m
+[0;32mI (52448) MPU6050: Accel X:120 Y:76 Z:15924[0m
+[0;32mI (52648) MPU6050: Accel X:332 Y:116 Z:16012[0m
+[0;32mI (52848) MPU6050: Accel X:92 Y:-4 Z:15908[0m
+[0;32mI (53048) MPU6050: Accel X:348 Y:116 Z:15884[0m
+[0;32mI (53248) MPU6050: Accel X:240 Y:160 Z:15948[0m
+[0;32mI (53448) MPU6050: Accel X:132 Y:156 Z:15872[0m
+[0;32mI (53648) MPU6050: Accel X:152 Y:100 Z:15788[0m
+[0;32mI (53848) MPU6050: Accel X:264 Y:132 Z:16000[0m
+[0;32mI (54048) MPU6050: Accel X:188 Y:52 Z:15968[0m
+[0;32mI (54248) MPU6050: Accel X:212 Y:124 Z:15748[0m
+[0;32mI (54448) MPU6050: Accel X:268 Y:192 Z:15880[0m
+[0;32mI (54648) MPU6050: Accel X:252 Y:36 Z:15928[0m
+[0;32mI (54848) MPU6050: Accel X:212 Y:80 Z:15956[0m
+[0;32mI (55048) MPU6050: Accel X:184 Y:24 Z:15832[0m
+[0;32mI (55248) MPU6050: Accel X:240 Y:148 Z:15904[0m
+[0;32mI (55448) MPU6050: Accel X:348 Y:100 Z:15900[0m
+[0;32mI (55648) MPU6050: Accel X:328 Y:240 Z:16008[0m
+[0;32mI (55848) MPU6050: Accel X:212 Y:164 Z:15820[0m
+[0;32mI (56048) MPU6050: Accel X:336 Y:152 Z:16056[0m
+[0;32mI (56248) MPU6050: Accel X:304 Y:148 Z:15800[0m
+[0;32mI (56448) MPU6050: Accel X:344 Y:60 Z:15996[0m
+[0;32mI (56648) MPU6050: Accel X:304 Y:92 Z:15912[0m
+[0;32mI (56848) MPU6050: Accel X:316 Y:88 Z:15892[0m
+[0;32mI (57048) MPU6050: Accel X:220 Y:104 Z:15968[0m
+[0;32mI (57248) MPU6050: Accel X:236 Y:48 Z:15972[0m
+[0;32mI (57448) MPU6050: Accel X:264 Y:120 Z:15848[0m
+[0;32mI (57648) MPU6050: Accel X:232 Y:60 Z:16028[0m
+[0;32mI (57848) MPU6050: Accel X:176 Y:172 Z:15820[0m
+[0;32mI (58048) MPU6050: Accel X:332 Y:52 Z:15972[0m
+[0;32mI (58248) MPU6050: Accel X:280 Y:96 Z:15960[0m
+[0;32mI (58448) MPU6050: Accel X:196 Y:40 Z:15880[0m
+[0;32mI (58648) MPU6050: Accel X:360 Y:92 Z:15976[0m
+[0;32mI (58848) MPU6050: Accel X:220 Y:92 Z:15916[0m
+[0;32mI (59048) MPU6050: Accel X:308 Y:200 Z:15892[0m
+[0;32mI (59248) MPU6050: Accel X:284 Y:136 Z:15816[0m
+[0;32mI (59448) MPU6050: Accel X:268 Y:40 Z:15788[0m
+[0;32mI (59648) MPU6050: Accel X:260 Y:152 Z:15952[0m
+[0;32mI (59848) MPU6050: Accel X:-60 Y:156 Z:16272[0m
+[0;32mI (60048) MPU6050: Accel X:216 Y:128 Z:16020[0m
+[0;32mI (60248) MPU6050: Accel X:104 Y:16 Z:15932[0m
+[0;32mI (60448) MPU6050: Accel X:276 Y:132 Z:15736[0m
+[0;32mI (60648) MPU6050: Accel X:180 Y:108 Z:15828[0m
+[0;32mI (60848) MPU6050: Accel X:188 Y:64 Z:15876[0m
+[0;32mI (61048) MPU6050: Accel X:200 Y:16 Z:15916[0m
+[0;32mI (61248) MPU6050: Accel X:268 Y:172 Z:15944[0m
+[0;32mI (61448) MPU6050: Accel X:172 Y:64 Z:15828[0m
+[0;32mI (61648) MPU6050: Accel X:200 Y:100 Z:15948[0m
+[0;32mI (61848) MPU6050: Accel X:180 Y:128 Z:15952[0m
+[0;32mI (62048) MPU6050: Accel X:320 Y:116 Z:15860[0m
+[0;32mI (62248) MPU6050: Accel X:152 Y:64 Z:15892[0m
+[0;32mI (62448) MPU6050: Accel X:220 Y:140 Z:15864[0m
+[0;32mI (62648) MPU6050: Accel X:296 Y:180 Z:15868[0m
+[0;32mI (62848) MPU6050: Accel X:232 Y:192 Z:15920[0m
+[0;32mI (63048) MPU6050: Accel X:276 Y:16 Z:15728[0m
+[0;32mI (63248) MPU6050: Accel X:296 Y:176 Z:15892[0m
+[0;32mI (63448) MPU6050: Accel X:252 Y:72 Z:15896[0m
+[0;32mI (63648) MPU6050: Accel X:184 Y:80 Z:15780[0m
+[0;32mI (63848) MPU6050: Accel X:196 Y:216 Z:15936[0m
+[0;32mI (64048) MPU6050: Accel X:232 Y:132 Z:15984[0m
+[0;32mI (64248) MPU6050: Accel X:356 Y:152 Z:15900[0m
+[0;32mI (64448) MPU6050: Accel X:328 Y:72 Z:15912[0m
+[0;32mI (64648) MPU6050: Accel X:328 Y:52 Z:15844[0m
+[0;32mI (64848) MPU6050: Accel X:140 Y:76 Z:15856[0m
+[0;32mI (65048) MPU6050: Accel X:276 Y:-8 Z:15876[0m
+[0;32mI (65248) MPU6050: Accel X:164 Y:240 Z:15976[0m
+[0;32mI (65448) MPU6050: Accel X:224 Y:108 Z:15948[0m
+[0;32mI (65648) MPU6050: Accel X:196 Y:156 Z:15884[0m
+[0;32mI (65848) MPU6050: Accel X:368 Y:156 Z:15856[0m
+[0;32mI (66048) MPU6050: Accel X:252 Y:92 Z:16028[0m
+[0;32mI (66248) MPU6050: Accel X:232 Y:112 Z:15796[0m
+[0;32mI (66448) MPU6050: Accel X:148 Y:60 Z:16056[0m
+[0;32mI (66648) MPU6050: Accel X:176 Y:52 Z:15888[0m
+[0;32mI (66848) MPU6050: Accel X:268 Y:88 Z:15988[0m
+[0;32mI (67048) MPU6050: Accel X:308 Y:76 Z:15820[0m
+[0;32mI (67248) MPU6050: Accel X:236 Y:140 Z:15768[0m
+[0;32mI (67448) MPU6050: Accel X:200 Y:160 Z:15916[0m
+[0;32mI (67648) MPU6050: Accel X:328 Y:108 Z:15884[0m
+[0;32mI (67848) MPU6050: Accel X:272 Y:92 Z:15736[0m
+[0;32mI (68048) MPU6050: Accel X:320 Y:96 Z:15852[0m
+[0;32mI (68248) MPU6050: Accel X:244 Y:84 Z:15912[0m
+[0;32mI (68448) MPU6050: Accel X:236 Y:84 Z:15916[0m
+[0;32mI (68648) MPU6050: Accel X:328 Y:144 Z:15848[0m
+[0;32mI (68848) MPU6050: Accel X:140 Y:132 Z:15860[0m
+[0;32mI (69048) MPU6050: Accel X:268 Y:76 Z:15708[0m
+[0;32mI (69248) MPU6050: Accel X:244 Y:196 Z:15728[0m
+[0;32mI (69448) MPU6050: Accel X:308 Y:212 Z:15824[0m
+[0;32mI (69648) MPU6050: Accel X:196 Y:108 Z:15740[0m
+[0;32mI (69848) MPU6050: Accel X:176 Y:140 Z:15656[0m
+[0;32mI (70048) MPU6050: Accel X:268 Y:84 Z:15896[0m
+[0;32mI (70248) MPU6050: Accel X:264 Y:120 Z:15816[0m
+[0;32mI (70448) MPU6050: Accel X:268 Y:100 Z:16024[0m
+[0;32mI (70648) MPU6050: Accel X:296 Y:104 Z:15868[0m
+[0;32mI (70848) MPU6050: Accel X:180 Y:92 Z:15840[0m
+[0;32mI (71048) MPU6050: Accel X:312 Y:24 Z:15968[0m
+[0;32mI (71248) MPU6050: Accel X:240 Y:172 Z:16040[0m
+[0;32mI (71448) MPU6050: Accel X:208 Y:44 Z:15944[0m
+[0;32mI (71648) MPU6050: Accel X:180 Y:112 Z:15920[0m
+[0;32mI (71848) MPU6050: Accel X:300 Y:116 Z:15920[0m
+[0;32mI (72048) MPU6050: Accel X:68 Y:20 Z:16008[0m
+[0;32mI (72248) MPU6050: Accel X:148 Y:28 Z:15924[0m
+[0;32mI (72448) MPU6050: Accel X:232 Y:80 Z:15920[0m
+[0;32mI (72648) MPU6050: Accel X:164 Y:52 Z:15884[0m
+[0;32mI (72848) MPU6050: Accel X:224 Y:80 Z:15912[0m
+[0;32mI (73048) MPU6050: Accel X:260 Y:-4 Z:15996[0m
+[0;32mI (73248) MPU6050: Accel X:240 Y:216 Z:15836[0m
+[0;32mI (73448) MPU6050: Accel X:260 Y:120 Z:15856[0m
+[0;32mI (73648) MPU6050: Accel X:240 Y:216 Z:15876[0m
+[0;32mI (73848) MPU6050: Accel X:120 Y:24 Z:15928[0m
+[0;32mI (74048) MPU6050: Accel X:364 Y:112 Z:16088[0m
+[0;32mI (74248) MPU6050: Accel X:136 Y:180 Z:15852[0m
+[0;32mI (74448) MPU6050: Accel X:240 Y:92 Z:15948[0m
+[0;32mI (74648) MPU6050: Accel X:236 Y:88 Z:15796[0m
+[0;32mI (74848) MPU6050: Accel X:384 Y:184 Z:15976[0m
+[0;32mI (75048) MPU6050: Accel X:180 Y:112 Z:15836[0m
+[0;32mI (75248) MPU6050: Accel X:320 Y:152 Z:15780[0m
+[0;32mI (75448) MPU6050: Accel X:240 Y:172 Z:15908[0m
+[0;32mI (75648) MPU6050: Accel X:188 Y:144 Z:15944[0m
+[0;32mI (75848) MPU6050: Accel X:312 Y:184 Z:15796[0m
+[0;32mI (76048) MPU6050: Accel X:228 Y:96 Z:15864[0m
+[0;32mI (76248) MPU6050: Accel X:220 Y:-16 Z:15912[0m
+[0;32mI (76448) MPU6050: Accel X:332 Y:116 Z:15832[0m
+[0;32mI (76648) MPU6050: Accel X:192 Y:172 Z:15920[0m
+[0;32mI (76848) MPU6050: Accel X:220 Y:48 Z:15912[0m
+[0;32mI (77048) MPU6050: Accel X:228 Y:112 Z:15960[0m
+[0;32mI (77248) MPU6050: Accel X:268 Y:140 Z:15948[0m
+[0;32mI (77448) MPU6050: Accel X:252 Y:148 Z:15756[0m
+[0;32mI (77648) MPU6050: Accel X:184 Y:32 Z:16016[0m
+[0;32mI (77848) MPU6050: Accel X:160 Y:108 Z:15960[0m
+[0;32mI (78048) MPU6050: Accel X:188 Y:92 Z:15936[0m
+[0;32mI (78248) MPU6050: Accel X:248 Y:88 Z:15872[0m
+[0;32mI (78448) MPU6050: Accel X:272 Y:60 Z:15940[0m
+[0;32mI (78648) MPU6050: Accel X:316 Y:148 Z:15832[0m
+[0;32mI (78848) MPU6050: Accel X:228 Y:144 Z:15800[0m
+[0;32mI (79048) MPU6050: Accel X:176 Y:60 Z:15916[0m
+[0;32mI (79248) MPU6050: Accel X:388 Y:112 Z:15868[0m
+[0;32mI (79448) MPU6050: Accel X:228 Y:68 Z:15904[0m
+[0;32mI (79648) MPU6050: Accel X:216 Y:96 Z:15872[0m
+[0;32mI (79848) MPU6050: Accel X:248 Y:28 Z:15908[0m
+[0;32mI (80048) MPU6050: Accel X:324 Y:76 Z:15860[0m
+[0;32mI (80248) MPU6050: Accel X:268 Y:100 Z:15888[0m
+[0;32mI (80448) MPU6050: Accel X:240 Y:184 Z:15932[0m
+[0;32mI (80648) MPU6050: Accel X:344 Y:80 Z:15848[0m
+[0;32mI (80848) MPU6050: Accel X:332 Y:96 Z:15932[0m
+[0;32mI (81048) MPU6050: Accel X:92 Y:144 Z:15848[0m
+[0;32mI (81248) MPU6050: Accel X:220 Y:160 Z:15916[0m
+[0;32mI (81448) MPU6050: Accel X:300 Y:112 Z:15908[0m
+[0;32mI (81648) MPU6050: Accel X:156 Y:100 Z:15760[0m
+[0;32mI (81848) MPU6050: Accel X:408 Y:60 Z:15840[0m
+[0;32mI (82048) MPU6050: Accel X:292 Y:136 Z:15756[0m
+[0;32mI (82248) MPU6050: Accel X:228 Y:168 Z:15824[0m
+[0;32mI (82448) MPU6050: Accel X:216 Y:136 Z:15840[0m
+[0;32mI (82648) MPU6050: Accel X:200 Y:116 Z:15892[0m
+[0;32mI (82848) MPU6050: Accel X:208 Y:100 Z:15872[0m
+[0;32mI (83048) MPU6050: Accel X:176 Y:24 Z:15892[0m
+[0;32mI (83248) MPU6050: Accel X:172 Y:156 Z:15844[0m
+[0;32mI (83448) MPU6050: Accel X:276 Y:16 Z:15852[0m
+[0;32mI (83648) MPU6050: Accel X:320 Y:120 Z:15892[0m
+[0;32mI (83848) MPU6050: Accel X:212 Y:60 Z:15976[0m
+[0;32mI (84048) MPU6050: Accel X:232 Y:36 Z:15912[0m
+[0;32mI (84248) MPU6050: Accel X:224 Y:196 Z:15792[0m
+[0;32mI (84448) MPU6050: Accel X:196 Y:244 Z:15872[0m
+[0;32mI (84648) MPU6050: Accel X:268 Y:120 Z:15976[0m
+[0;32mI (84848) MPU6050: Accel X:332 Y:144 Z:15792[0m
+[0;32mI (85048) MPU6050: Accel X:332 Y:32 Z:15856[0m
+[0;32mI (85248) MPU6050: Accel X:208 Y:144 Z:15940[0m
+[0;32mI (85448) MPU6050: Accel X:428 Y:156 Z:15932[0m
+[0;32mI (85648) MPU6050: Accel X:168 Y:-12 Z:15824[0m
+[0;32mI (85848) MPU6050: Accel X:216 Y:76 Z:15960[0m
+[0;32mI (86048) MPU6050: Accel X:200 Y:132 Z:15948[0m
+[0;32mI (86248) MPU6050: Accel X:240 Y:104 Z:15804[0m
+[0;32mI (86448) MPU6050: Accel X:188 Y:24 Z:15820[0m
+[0;32mI (86648) MPU6050: Accel X:328 Y:124 Z:15940[0m
+[0;32mI (86848) MPU6050: Accel X:272 Y:52 Z:15952[0m
+[0;32mI (87048) MPU6050: Accel X:200 Y:80 Z:15944[0m
+[0;32mI (87248) MPU6050: Accel X:276 Y:124 Z:15980[0m
+[0;32mI (87448) MPU6050: Accel X:224 Y:104 Z:15800[0m
+[0;32mI (87648) MPU6050: Accel X:232 Y:128 Z:15724[0m
+[0;32mI (87848) MPU6050: Accel X:296 Y:100 Z:15932[0m
+[0;32mI (88048) MPU6050: Accel X:296 Y:68 Z:15816[0m
+[0;32mI (88248) MPU6050: Accel X:148 Y:104 Z:15836[0m
+[0;32mI (88448) MPU6050: Accel X:268 Y:108 Z:15872[0m
+[0;32mI (88648) MPU6050: Accel X:108 Y:68 Z:15932[0m
+[0;32mI (88848) MPU6050: Accel X:260 Y:180 Z:15912[0m
+[0;32mI (89048) MPU6050: Accel X:180 Y:192 Z:15760[0m
+[0;32mI (89248) MPU6050: Accel X:260 Y:140 Z:15848[0m
+[0;32mI (89448) MPU6050: Accel X:284 Y:164 Z:15820[0m
+[0;32mI (89648) MPU6050: Accel X:188 Y:180 Z:15904[0m
+[0;32mI (89848) MPU6050: Accel X:164 Y:88 Z:16016[0m
+[0;32mI (90048) MPU6050: Accel X:268 Y:-12 Z:15912[0m
+[0;32mI (90248) MPU6050: Accel X:296 Y:84 Z:15784[0m
+[0;32mI (90448) MPU6050: Accel X:136 Y:20 Z:15780[0m
+[0;32mI (90648) MPU6050: Accel X:276 Y:40 Z:15956[0m
+[0;32mI (90848) MPU6050: Accel X:148 Y:60 Z:15924[0m
+[0;32mI (91048) MPU6050: Accel X:124 Y:72 Z:15924[0m
+[0;32mI (91248) MPU6050: Accel X:264 Y:20 Z:15900[0m
+[0;32mI (91448) MPU6050: Accel X:244 Y:-24 Z:15996[0m
+[0;32mI (91648) MPU6050: Accel X:308 Y:88 Z:15992[0m
+[0;32mI (91848) MPU6050: Accel X:164 Y:92 Z:15856[0m
+[0;32mI (92048) MPU6050: Accel X:208 Y:172 Z:15928[0m
+[0;32mI (92248) MPU6050: Accel X:308 Y:188 Z:15864[0m
+[0;32mI (92448) MPU6050: Accel X:240 Y:76 Z:15892[0m
+[0;32mI (92648) MPU6050: Accel X:156 Y:188 Z:15872[0m
+[0;32mI (92848) MPU6050: Accel X:344 Y:96 Z:15948[0m
+[0;32mI (93048) MPU6050: Accel X:316 Y:80 Z:16012[0m
+[0;32mI (93248) MPU6050: Accel X:196 Y:152 Z:15864[0m
+[0;32mI (93448) MPU6050: Accel X:288 Y:116 Z:15984[0m
+[0;32mI (93648) MPU6050: Accel X:260 Y:96 Z:15836[0m
+[0;32mI (93848) MPU6050: Accel X:76 Y:96 Z:15944[0m
+[0;32mI (94048) MPU6050: Accel X:260 Y:144 Z:15912[0m
+[0;32mI (94248) MPU6050: Accel X:140 Y:184 Z:15936[0m
+[0;32mI (94448) MPU6050: Accel X:240 Y:152 Z:15976[0m
+[0;32mI (94648) MPU6050: Accel X:116 Y:132 Z:15748[0m
+[0;32mI (94848) MPU6050: Accel X:164 Y:248 Z:15856[0m
+[0;32mI (95048) MPU6050: Accel X:288 Y:76 Z:15884[0m
+[0;32mI (95248) MPU6050: Accel X:196 Y:140 Z:15916[0m
+[0;32mI (95448) MPU6050: Accel X:200 Y:148 Z:15920[0m
+[0;32mI (95648) MPU6050: Accel X:252 Y:100 Z:15852[0m
+[0;32mI (95848) MPU6050: Accel X:380 Y:96 Z:15944[0m
+[0;32mI (96048) MPU6050: Accel X:208 Y:204 Z:15900[0m
+[0;32mI (96248) MPU6050: Accel X:224 Y:136 Z:15936[0m
+[0;32mI (96448) MPU6050: Accel X:120 Y:128 Z:15892[0m
+[0;32mI (96648) MPU6050: Accel X:232 Y:68 Z:15832[0m
+[0;32mI (96848) MPU6050: Accel X:184 Y:100 Z:15904[0m
+[0;32mI (97048) MPU6050: Accel X:260 Y:140 Z:15940[0m
+[0;32mI (97248) MPU6050: Accel X:392 Y:192 Z:15840[0m
+[0;32mI (97448) MPU6050: Accel X:256 Y:100 Z:16012[0m
+[0;32mI (97648) MPU6050: Accel X:236 Y:44 Z:15868[0m
+[0;32mI (97848) MPU6050: Accel X:268 Y:116 Z:15928[0m
+[0;32mI (98048) MPU6050: Accel X:176 Y:160 Z:15900[0m
+[0;32mI (98248) MPU6050: Accel X:156 Y:204 Z:15824[0m
+[0;32mI (98448) MPU6050: Accel X:328 Y:0 Z:15868[0m
+[0;32mI (98648) MPU6050: Accel X:124 Y:164 Z:15844[0m
+[0;32mI (98848) MPU6050: Accel X:84 Y:136 Z:15800[0m
+[0;32mI (99048) MPU6050: Accel X:224 Y:156 Z:15784[0m
+[0;32mI (99248) MPU6050: Accel X:216 Y:56 Z:16012[0m
+[0;32mI (99448) MPU6050: Accel X:140 Y:108 Z:15932[0m
+[0;32mI (99648) MPU6050: Accel X:216 Y:48 Z:15780[0m
+[0;32mI (99848) MPU6050: Accel X:128 Y:128 Z:15768[0m
+[0;32mI (100048) MPU6050: Accel X:216 Y:132 Z:15912[0m
+[0;32mI (100248) MPU6050: Accel X:204 Y:168 Z:15980[0m
+[0;32mI (100448) MPU6050: Accel X:272 Y:-4 Z:15936[0m
+[0;32mI (100648) MPU6050: Accel X:404 Y:84 Z:16016[0m
+[0;32mI (100848) MPU6050: Accel X:268 Y:60 Z:15856[0m
+[0;32mI (101048) MPU6050: Accel X:308 Y:0 Z:15792[0m
+[0;32mI (101248) MPU6050: Accel X:296 Y:160 Z:16008[0m
+[0;32mI (101448) MPU6050: Accel X:264 Y:140 Z:15824[0m
+[0;32mI (101648) MPU6050: Accel X:332 Y:124 Z:15720[0m
+[0;32mI (101848) MPU6050: Accel X:320 Y:144 Z:15848[0m
+[0;32mI (102048) MPU6050: Accel X:296 Y:120 Z:15884[0m
+[0;32mI (102248) MPU6050: Accel X:208 Y:112 Z:15860[0m
+[0;32mI (102448) MPU6050: Accel X:160 Y:152 Z:15804[0m
+[0;32mI (102648) MPU6050: Accel X:296 Y:168 Z:15968[0m
+[0;32mI (102848) MPU6050: Accel X:284 Y:72 Z:15980[0m
+[0;32mI (103048) MPU6050: Accel X:284 Y:28 Z:15896[0m
+[0;32mI (103248) MPU6050: Accel X:368 Y:40 Z:15764[0m
+[0;32mI (103448) MPU6050: Accel X:228 Y:116 Z:15896[0m
+[0;32mI (103648) MPU6050: Accel X:268 Y:8 Z:15868[0m
+[0;32mI (103848) MPU6050: Accel X:240 Y:172 Z:15936[0m
+[0;32mI (104048) MPU6050: Accel X:300 Y:168 Z:15768[0m
+[0;32mI (104248) MPU6050: Accel X:408 Y:72 Z:15876[0m
+[0;32mI (104448) MPU6050: Accel X:388 Y:172 Z:15752[0m
+[0;32mI (104648) MPU6050: Accel X:56 Y:20 Z:15836[0m
+[0;32mI (104848) MPU6050: Accel X:160 Y:44 Z:15784[0m
+[0;32mI (105048) MPU6050: Accel X:288 Y:176 Z:15932[0m
+[0;32mI (105248) MPU6050: Accel X:276 Y:56 Z:15896[0m
+[0;32mI (105448) MPU6050: Accel X:172 Y:100 Z:15852[0m
+[0;32mI (105648) MPU6050: Accel X:172 Y:36 Z:15852[0m
+[0;32mI (105848) MPU6050: Accel X:260 Y:80 Z:15828[0m
+[0;32mI (106048) MPU6050: Accel X:364 Y:240 Z:15832[0m
+[0;32mI (106248) MPU6050: Accel X:232 Y:-116 Z:15748[0m
+[0;32mI (106448) MPU6050: Accel X:124 Y:-8 Z:15856[0m
+[0;32mI (106648) MPU6050: Accel X:392 Y:96 Z:15788[0m
+[0;32mI (106848) MPU6050: Accel X:368 Y:200 Z:15884[0m
+[0;32mI (107048) MPU6050: Accel X:232 Y:72 Z:15844[0m
+[0;32mI (107248) MPU6050: Accel X:288 Y:188 Z:15988[0m
+[0;32mI (107448) MPU6050: Accel X:148 Y:48 Z:15876[0m
+[0;32mI (107648) MPU6050: Accel X:308 Y:132 Z:15976[0m
+[0;32mI (107848) MPU6050: Accel X:260 Y:136 Z:15836[0m
+[0;32mI (108048) MPU6050: Accel X:296 Y:192 Z:15976[0m
+[0;32mI (108248) MPU6050: Accel X:172 Y:104 Z:16064[0m
+[0;32mI (108448) MPU6050: Accel X:220 Y:24 Z:15856[0m
+[0;32mI (108648) MPU6050: Accel X:240 Y:32 Z:16000[0m
+[0;32mI (108848) MPU6050: Accel X:324 Y:116 Z:15932[0m
+[0;32mI (109048) MPU6050: Accel X:252 Y:152 Z:15824[0m
+[0;32mI (109248) MPU6050: Accel X:232 Y:112 Z:15940[0m
+[0;32mI (109448) MPU6050: Accel X:216 Y:104 Z:15888[0m
+[0;32mI (109648) MPU6050: Accel X:336 Y:40 Z:15864[0m
+[0;32mI (109848) MPU6050: Accel X:128 Y:148 Z:15784[0m
+[0;32mI (110048) MPU6050: Accel X:216 Y:88 Z:15940[0m
+[0;32mI (110248) MPU6050: Accel X:192 Y:136 Z:15832[0m
+[0;32mI (110448) MPU6050: Accel X:136 Y:96 Z:15996[0m
+[0;32mI (110648) MPU6050: Accel X:200 Y:88 Z:15972[0m
+[0;32mI (110848) MPU6050: Accel X:128 Y:116 Z:15892[0m
+[0;32mI (111048) MPU6050: Accel X:356 Y:152 Z:15920[0m
+[0;32mI (111248) MPU6050: Accel X:252 Y:100 Z:16020[0m
+[0;32mI (111448) MPU6050: Accel X:180 Y:76 Z:15784[0m
+[0;32mI (111648) MPU6050: Accel X:212 Y:60 Z:15948[0m
+[0;32mI (111848) MPU6050: Accel X:244 Y:92 Z:15724[0m
+[0;32mI (112048) MPU6050: Accel X:320 Y:104 Z:15920[0m
+[0;32mI (112248) MPU6050: Accel X:244 Y:140 Z:15912[0m
+[0;32mI (112448) MPU6050: Accel X:344 Y:-4 Z:15932[0m
+[0;32mI (112648) MPU6050: Accel X:300 Y:112 Z:15848[0m
+[0;32mI (112848) MPU6050: Accel X:236 Y:44 Z:15752[0m
+[0;32mI (113048) MPU6050: Accel X:220 Y:168 Z:15932[0m
+[0;32mI (113248) MPU6050: Accel X:224 Y:76 Z:15900[0m
+[0;32mI (113448) MPU6050: Accel X:336 Y:128 Z:15880[0m
+[0;32mI (113648) MPU6050: Accel X:368 Y:108 Z:15884[0m
+[0;32mI (113848) MPU6050: Accel X:276 Y:76 Z:15720[0m
+[0;32mI (114048) MPU6050: Accel X:148 Y:0 Z:15896[0m
+[0;32mI (114248) MPU6050: Accel X:236 Y:80 Z:15976[0m
+[0;32mI (114448) MPU6050: Accel X:336 Y:76 Z:15964[0m
+[0;32mI (114648) MPU6050: Accel X:280 Y:132 Z:15900[0m
+[0;32mI (114848) MPU6050: Accel X:200 Y:88 Z:15876[0m
+[0;32mI (115048) MPU6050: Accel X:272 Y:16 Z:15792[0m
+[0;32mI (115248) MPU6050: Accel X:332 Y:76 Z:15948[0m
+[0;32mI (115448) MPU6050: Accel X:312 Y:-28 Z:15844[0m
+[0;32mI (115648) MPU6050: Accel X:352 Y:200 Z:15816[0m
+[0;32mI (115848) MPU6050: Accel X:172 Y:84 Z:15868[0m
+[0;32mI (116048) MPU6050: Accel X:136 Y:148 Z:15964[0m
+[0;32mI (116248) MPU6050: Accel X:216 Y:60 Z:15840[0m
+[0;32mI (116448) MPU6050: Accel X:136 Y:12 Z:15856[0m
+[0;32mI (116648) MPU6050: Accel X:348 Y:204 Z:15736[0m
+[0;32mI (116848) MPU6050: Accel X:144 Y:96 Z:15808[0m
+[0;32mI (117048) MPU6050: Accel X:356 Y:204 Z:15816[0m
+[0;32mI (117248) MPU6050: Accel X:192 Y:108 Z:15948[0m
+[0;32mI (117448) MPU6050: Accel X:244 Y:80 Z:15900[0m
+[0;32mI (117648) MPU6050: Accel X:196 Y:140 Z:15840[0m
+[0;32mI (117848) MPU6050: Accel X:324 Y:192 Z:15780[0m
+[0;32mI (118048) MPU6050: Accel X:172 Y:88 Z:15900[0m
+[0;32mI (118248) MPU6050: Accel X:192 Y:84 Z:15920[0m
+[0;32mI (118448) MPU6050: Accel X:188 Y:64 Z:15848[0m
+[0;32mI (118648) MPU6050: Accel X:268 Y:108 Z:15944[0m
+[0;32mI (118848) MPU6050: Accel X:400 Y:92 Z:15900[0m
+[0;32mI (119048) MPU6050: Accel X:332 Y:160 Z:15744[0m
+[0;32mI (119248) MPU6050: Accel X:332 Y:40 Z:15808[0m
+[0;32mI (119448) MPU6050: Accel X:200 Y:88 Z:15712[0m
+[0;32mI (119648) MPU6050: Accel X:372 Y:208 Z:15852[0m
+[0;32mI (119848) MPU6050: Accel X:240 Y:112 Z:15848[0m
+[0;32mI (120048) MPU6050: Accel X:332 Y:120 Z:15780[0m
+[0;32mI (120248) MPU6050: Accel X:280 Y:136 Z:15876[0m
+[0;32mI (120448) MPU6050: Accel X:152 Y:136 Z:15912[0m
+[0;32mI (120648) MPU6050: Accel X:240 Y:256 Z:15872[0m
+[0;32mI (120848) MPU6050: Accel X:68 Y:24 Z:15856[0m
+[0;32mI (121048) MPU6050: Accel X:204 Y:220 Z:15852[0m
+[0;32mI (121248) MPU6050: Accel X:276 Y:120 Z:15796[0m
+[0;32mI (121448) MPU6050: Accel X:296 Y:208 Z:15908[0m
+[0;32mI (121648) MPU6050: Accel X:196 Y:224 Z:15936[0m
+[0;32mI (121848) MPU6050: Accel X:264 Y:76 Z:15816[0m
+[0;32mI (122048) MPU6050: Accel X:288 Y:132 Z:15948[0m
+[0;32mI (122248) MPU6050: Accel X:348 Y:68 Z:15912[0m
+[0;32mI (122448) MPU6050: Accel X:244 Y:112 Z:15984[0m
+[0;32mI (122648) MPU6050: Accel X:224 Y:92 Z:15948[0m
+[0;32mI (122848) MPU6050: Accel X:216 Y:108 Z:16064[0m
+[0;32mI (123048) MPU6050: Accel X:224 Y:52 Z:16008[0m
+[0;32mI (123248) MPU6050: Accel X:312 Y:72 Z:15836[0m
+[0;32mI (123448) MPU6050: Accel X:336 Y:140 Z:15816[0m
+[0;32mI (123648) MPU6050: Accel X:244 Y:68 Z:15848[0m
+[0;32mI (123848) MPU6050: Accel X:248 Y:176 Z:15860[0m
+[0;32mI (124048) MPU6050: Accel X:252 Y:116 Z:15816[0m
+[0;32mI (124248) MPU6050: Accel X:260 Y:56 Z:15816[0m
+[0;32mI (124448) MPU6050: Accel X:300 Y:104 Z:15952[0m
+[0;32mI (124648) MPU6050: Accel X:224 Y:60 Z:15852[0m
+[0;32mI (124848) MPU6050: Accel X:320 Y:152 Z:16008[0m
+[0;32mI (125048) MPU6050: Accel X:180 Y:48 Z:15884[0m
+[0;32mI (125248) MPU6050: Accel X:332 Y:196 Z:15852[0m
+[0;32mI (125448) MPU6050: Accel X:284 Y:-40 Z:15828[0m
+[0;32mI (125648) MPU6050: Accel X:216 Y:20 Z:15788[0m
+[0;32mI (125848) MPU6050: Accel X:152 Y:12 Z:15944[0m
+[0;32mI (126048) MPU6050: Accel X:276 Y:84 Z:16000[0m
+[0;32mI (126248) MPU6050: Accel X:160 Y:4 Z:15752[0m
+[0;32mI (126448) MPU6050: Accel X:156 Y:128 Z:15836[0m
+[0;32mI (126648) MPU6050: Accel X:248 Y:148 Z:15792[0m
+[0;32mI (126848) MPU6050: Accel X:276 Y:216 Z:15848[0m
+[0;32mI (127048) MPU6050: Accel X:328 Y:20 Z:16084[0m
+[0;32mI (127248) MPU6050: Accel X:276 Y:52 Z:15920[0m
+[0;32mI (127448) MPU6050: Accel X:136 Y:116 Z:16000[0m
+[0;32mI (127648) MPU6050: Accel X:256 Y:180 Z:15916[0m
+[0;32mI (127848) MPU6050: Accel X:256 Y:160 Z:15844[0m
+[0;32mI (128048) MPU6050: Accel X:224 Y:100 Z:15928[0m
+[0;32mI (128248) MPU6050: Accel X:260 Y:8 Z:15828[0m
+[0;32mI (128448) MPU6050: Accel X:140 Y:72 Z:15868[0m
+[0;32mI (128648) MPU6050: Accel X:220 Y:140 Z:15916[0m
+[0;32mI (128848) MPU6050: Accel X:256 Y:184 Z:15928[0m
+[0;32mI (129048) MPU6050: Accel X:280 Y:168 Z:15872[0m
+[0;32mI (129248) MPU6050: Accel X:316 Y:92 Z:15876[0m
+[0;32mI (129448) MPU6050: Accel X:304 Y:64 Z:15932[0m
+[0;32mI (129648) MPU6050: Accel X:240 Y:292 Z:15936[0m
+[0;32mI (129848) MPU6050: Accel X:192 Y:92 Z:15856[0m
+[0;32mI (130048) MPU6050: Accel X:324 Y:76 Z:15912[0m
+[0;32mI (130248) MPU6050: Accel X:148 Y:96 Z:15868[0m
+[0;32mI (130448) MPU6050: Accel X:316 Y:52 Z:15784[0m
+[0;32mI (130648) MPU6050: Accel X:320 Y:108 Z:15784[0m
+[0;32mI (130848) MPU6050: Accel X:240 Y:76 Z:15936[0m
+[0;32mI (131048) MPU6050: Accel X:176 Y:92 Z:16040[0m
+[0;32mI (131248) MPU6050: Accel X:284 Y:52 Z:15820[0m
+[0;32mI (131448) MPU6050: Accel X:320 Y:92 Z:15832[0m
+[0;32mI (131648) MPU6050: Accel X:132 Y:116 Z:15840[0m
+[0;32mI (131848) MPU6050: Accel X:232 Y:116 Z:15892[0m
+[0;32mI (132048) MPU6050: Accel X:188 Y:112 Z:15944[0m
+[0;32mI (132248) MPU6050: Accel X:328 Y:68 Z:15804[0m
+[0;32mI (132448) MPU6050: Accel X:208 Y:88 Z:15936[0m
+[0;32mI (132648) MPU6050: Accel X:160 Y:32 Z:15956[0m
+[0;32mI (132848) MPU6050: Accel X:160 Y:108 Z:15972[0m
+[0;32mI (133048) MPU6050: Accel X:212 Y:60 Z:16000[0m
+[0;32mI (133248) MPU6050: Accel X:276 Y:112 Z:15956[0m
+[0;32mI (133448) MPU6050: Accel X:244 Y:132 Z:15880[0m
+[0;32mI (133648) MPU6050: Accel X:260 Y:100 Z:15984[0m
+[0;32mI (133848) MPU6050: Accel X:388 Y:80 Z:15856[0m
+[0;32mI (134048) MPU6050: Accel X:244 Y:84 Z:15812[0m
+[0;32mI (134248) MPU6050: Accel X:196 Y:144 Z:15820[0m
+[0;32mI (134448) MPU6050: Accel X:204 Y:112 Z:15872[0m
+[0;32mI (134648) MPU6050: Accel X:216 Y:156 Z:15948[0m
+[0;32mI (134848) MPU6050: Accel X:168 Y:120 Z:15704[0m
+[0;32mI (135048) MPU6050: Accel X:244 Y:96 Z:15756[0m
+[0;32mI (135248) MPU6050: Accel X:344 Y:-8 Z:15916[0m
+[0;32mI (135448) MPU6050: Accel X:196 Y:88 Z:15808[0m
+[0;32mI (135648) MPU6050: Accel X:284 Y:216 Z:15940[0m
+[0;32mI (135848) MPU6050: Accel X:216 Y:100 Z:15892[0m
+[0;32mI (136048) MPU6050: Accel X:312 Y:124 Z:15976[0m
+[0;32mI (136248) MPU6050: Accel X:228 Y:108 Z:15880[0m
+[0;32mI (136448) MPU6050: Accel X:212 Y:84 Z:15832[0m
+[0;32mI (136648) MPU6050: Accel X:180 Y:216 Z:15948[0m
+[0;32mI (136848) MPU6050: Accel X:260 Y:120 Z:15864[0m
+[0;32mI (137048) MPU6050: Accel X:276 Y:20 Z:15940[0m
+[0;32mI (137248) MPU6050: Accel X:168 Y:120 Z:15792[0m
+[0;32mI (137448) MPU6050: Accel X:224 Y:132 Z:15884[0m
+[0;32mI (137648) MPU6050: Accel X:216 Y:20 Z:15860[0m
+[0;32mI (137848) MPU6050: Accel X:284 Y:44 Z:15980[0m
+[0;32mI (138048) MPU6050: Accel X:152 Y:-4 Z:15960[0m
+[0;32mI (138248) MPU6050: Accel X:168 Y:64 Z:15896[0m
+[0;32mI (138448) MPU6050: Accel X:316 Y:108 Z:15920[0m
+[0;32mI (138648) MPU6050: Accel X:140 Y:104 Z:15732[0m
+[0;32mI (138848) MPU6050: Accel X:164 Y:12 Z:15932[0m
+[0;32mI (139048) MPU6050: Accel X:244 Y:92 Z:15816[0m
+[0;32mI (139248) MPU6050: Accel X:232 Y:52 Z:16004[0m
+[0;32mI (139448) MPU6050: Accel X:48 Y:204 Z:15872[0m
+[0;32mI (139648) MPU6050: Accel X:140 Y:200 Z:15780[0m
+[0;32mI (139848) MPU6050: Accel X:64 Y:84 Z:15716[0m
+[0;32mI (140048) MPU6050: Accel X:188 Y:116 Z:15884[0m
+[0;32mI (140248) MPU6050: Accel X:312 Y:232 Z:16012[0m
+[0;32mI (140448) MPU6050: Accel X:120 Y:8 Z:15676[0m
+[0;32mI (140648) MPU6050: Accel X:292 Y:200 Z:15852[0m
+[0;32mI (140848) MPU6050: Accel X:300 Y:152 Z:15920[0m
+[0;32mI (141048) MPU6050: Accel X:228 Y:160 Z:15976[0m
+[0;32mI (141248) MPU6050: Accel X:352 Y:8 Z:16040[0m
+[0;32mI (141448) MPU6050: Accel X:208 Y:0 Z:16012[0m
+[0;32mI (141648) MPU6050: Accel X:168 Y:56 Z:15952[0m
+[0;32mI (141848) MPU6050: Accel X:204 Y:232 Z:15980[0m
+[0;32mI (142048) MPU6050: Accel X:232 Y:96 Z:15924[0m
+[0;32mI (142248) MPU6050: Accel X:296 Y:152 Z:15852[0m
+[0;32mI (142448) MPU6050: Accel X:200 Y:212 Z:15976[0m
+[0;32mI (142648) MPU6050: Accel X:260 Y:136 Z:15896[0m
+[0;32mI (142848) MPU6050: Accel X:48 Y:0 Z:15688[0m
+[0;32mI (143048) MPU6050: Accel X:348 Y:-68 Z:15820[0m
+[0;32mI (143248) MPU6050: Accel X:208 Y:0 Z:15812[0m
+[0;32mI (143448) MPU6050: Accel X:272 Y:288 Z:15928[0m
+[0;32mI (143648) MPU6050: Accel X:332 Y:24 Z:15892[0m
+[0;32mI (143848) MPU6050: Accel X:232 Y:56 Z:15576[0m
+[0;32mI (144048) MPU6050: Accel X:260 Y:52 Z:15712[0m
+[0;32mI (144248) MPU6050: Accel X:276 Y:248 Z:16168[0m
+[0;32mI (144448) MPU6050: Accel X:116 Y:240 Z:16004[0m
+[0;32mI (144648) MPU6050: Accel X:260 Y:92 Z:15952[0m
+[0;32mI (144848) MPU6050: Accel X:240 Y:72 Z:15832[0m
+[0;32mI (145048) MPU6050: Accel X:220 Y:140 Z:15852[0m
+[0;32mI (145248) MPU6050: Accel X:316 Y:128 Z:15940[0m
+[0;32mI (145448) MPU6050: Accel X:336 Y:212 Z:15916[0m
+[0;32mI (145648) MPU6050: Accel X:276 Y:80 Z:15916[0m
+[0;32mI (145848) MPU6050: Accel X:312 Y:180 Z:15792[0m
+[0;32mI (146048) MPU6050: Accel X:156 Y:136 Z:15924[0m
+[0;32mI (146248) MPU6050: Accel X:316 Y:120 Z:15864[0m
+[0;32mI (146448) MPU6050: Accel X:144 Y:88 Z:15944[0m
+[0;32mI (146648) MPU6050: Accel X:216 Y:124 Z:15824[0m
+[0;32mI (146848) MPU6050: Accel X:272 Y:84 Z:16008[0m
+[0;32mI (147048) MPU6050: Accel X:292 Y:84 Z:15872[0m
+[0;32mI (147248) MPU6050: Accel X:204 Y:68 Z:15840[0m
+[0;32mI (147448) MPU6050: Accel X:160 Y:64 Z:15784[0m
+[0;32mI (147648) MPU6050: Accel X:112 Y:36 Z:16000[0m
+[0;32mI (147848) MPU6050: Accel X:432 Y:152 Z:15960[0m
+[0;32mI (148048) MPU6050: Accel X:164 Y:84 Z:15864[0m
+[0;32mI (148248) MPU6050: Accel X:208 Y:172 Z:15964[0m
+[0;32mI (148448) MPU6050: Accel X:248 Y:116 Z:15952[0m
+[0;32mI (148648) MPU6050: Accel X:232 Y:152 Z:15832[0m
+[0;32mI (148848) MPU6050: Accel X:232 Y:96 Z:15900[0m
+[0;32mI (149048) MPU6050: Accel X:216 Y:96 Z:15896[0m
+[0;32mI (149248) MPU6050: Accel X:116 Y:116 Z:15872[0m
+[0;32mI (149448) MPU6050: Accel X:272 Y:44 Z:15900[0m
+[0;32mI (149648) MPU6050: Accel X:264 Y:132 Z:15828[0m
+[0;32mI (149848) MPU6050: Accel X:276 Y:12 Z:15880[0m
+[0;32mI (150048) MPU6050: Accel X:220 Y:68 Z:15844[0m
+[0;32mI (150248) MPU6050: Accel X:252 Y:220 Z:15836[0m
+[0;32mI (150448) MPU6050: Accel X:272 Y:52 Z:15848[0m
+[0;32mI (150648) MPU6050: Accel X:232 Y:152 Z:16052[0m
+[0;32mI (150848) MPU6050: Accel X:128 Y:60 Z:15772[0m
+[0;32mI (151048) MPU6050: Accel X:252 Y:188 Z:15816[0m
+[0;32mI (151248) MPU6050: Accel X:296 Y:104 Z:15928[0m
+[0;32mI (151448) MPU6050: Accel X:312 Y:152 Z:15832[0m
+[0;32mI (151648) MPU6050: Accel X:296 Y:196 Z:15808[0m
+[0;32mI (151848) MPU6050: Accel X:200 Y:92 Z:15764[0m
+[0;32mI (152048) MPU6050: Accel X:268 Y:140 Z:15872[0m
+[0;32mI (152248) MPU6050: Accel X:364 Y:280 Z:15864[0m
+[0;32mI (152448) MPU6050: Accel X:144 Y:76 Z:15976[0m
+[0;32mI (152648) MPU6050: Accel X:224 Y:76 Z:15844[0m
+[0;32mI (152848) MPU6050: Accel X:316 Y:180 Z:15900[0m
+[0;32mI (153048) MPU6050: Accel X:276 Y:152 Z:15868[0m
+[0;32mI (153248) MPU6050: Accel X:168 Y:140 Z:15920[0m
+[0;32mI (153448) MPU6050: Accel X:188 Y:28 Z:15856[0m
+[0;32mI (153648) MPU6050: Accel X:184 Y:56 Z:15736[0m
+[0;32mI (153848) MPU6050: Accel X:172 Y:100 Z:15788[0m
+[0;32mI (154048) MPU6050: Accel X:240 Y:144 Z:15912[0m
+[0;32mI (154248) MPU6050: Accel X:228 Y:116 Z:15920[0m
+[0;32mI (154448) MPU6050: Accel X:312 Y:40 Z:15928[0m
+[0;32mI (154648) MPU6050: Accel X:256 Y:100 Z:15852[0m
+[0;32mI (154848) MPU6050: Accel X:264 Y:152 Z:15876[0m
+[0;32mI (155048) MPU6050: Accel X:236 Y:12 Z:15972[0m
+[0;32mI (155248) MPU6050: Accel X:228 Y:68 Z:15860[0m
+[0;32mI (155448) MPU6050: Accel X:140 Y:84 Z:15968[0m
+[0;32mI (155648) MPU6050: Accel X:288 Y:168 Z:15892[0m
+[0;32mI (155848) MPU6050: Accel X:200 Y:48 Z:15840[0m
+[0;32mI (156048) MPU6050: Accel X:284 Y:8 Z:15768[0m
+[0;32mI (156248) MPU6050: Accel X:192 Y:136 Z:15864[0m
+[0;32mI (156448) MPU6050: Accel X:172 Y:92 Z:16008[0m
+[0;32mI (156648) MPU6050: Accel X:352 Y:76 Z:15812[0m
+[0;32mI (156848) MPU6050: Accel X:228 Y:28 Z:15900[0m
+[0;32mI (157048) MPU6050: Accel X:268 Y:164 Z:15844[0m
+[0;32mI (157248) MPU6050: Accel X:284 Y:92 Z:15924[0m
+[0;32mI (157448) MPU6050: Accel X:224 Y:52 Z:15876[0m
+[0;32mI (157648) MPU6050: Accel X:264 Y:96 Z:15972[0m
+[0;32mI (157848) MPU6050: Accel X:280 Y:20 Z:15888[0m
+[0;32mI (158048) MPU6050: Accel X:252 Y:108 Z:15808[0m
+[0;32mI (158248) MPU6050: Accel X:236 Y:136 Z:15928[0m
+[0;32mI (158448) MPU6050: Accel X:364 Y:68 Z:15688[0m
+[0;32mI (158648) MPU6050: Accel X:148 Y:160 Z:15824[0m
+[0;32mI (158848) MPU6050: Accel X:252 Y:216 Z:15960[0m
+[0;32mI (159048) MPU6050: Accel X:268 Y:116 Z:15860[0m
+[0;32mI (159248) MPU6050: Accel X:216 Y:36 Z:16452[0m
+[0;32mI (159448) MPU6050: Accel X:172 Y:260 Z:15904[0m
+[0;32mI (159648) MPU6050: Accel X:332 Y:88 Z:15996[0m
+[0;32mI (159848) MPU6050: Accel X:232 Y:-28 Z:15864[0m
+[0;32mI (160048) MPU6050: Accel X:160 Y:56 Z:15960[0m
+[0;32mI (160248) MPU6050: Accel X:232 Y:204 Z:15956[0m
+[0;32mI (160448) MPU6050: Accel X:304 Y:4 Z:15952[0m
+[0;32mI (160648) MPU6050: Accel X:292 Y:80 Z:15940[0m
+[0;32mI (160848) MPU6050: Accel X:160 Y:72 Z:15768[0m
+[0;32mI (161048) MPU6050: Accel X:188 Y:152 Z:15992[0m
+[0;32mI (161248) MPU6050: Accel X:284 Y:232 Z:15960[0m
+[0;32mI (161448) MPU6050: Accel X:324 Y:236 Z:15852[0m
+[0;32mI (161648) MPU6050: Accel X:280 Y:64 Z:15896[0m
+[0;32mI (161848) MPU6050: Accel X:176 Y:16 Z:15796[0m
+[0;32mI (162048) MPU6050: Accel X:132 Y:180 Z:15852[0m
+[0;32mI (162248) MPU6050: Accel X:256 Y:112 Z:15960[0m
+[0;32mI (162448) MPU6050: Accel X:224 Y:192 Z:15784[0m
+[0;32mI (162648) MPU6050: Accel X:312 Y:12 Z:15760[0m
+[0;32mI (162848) MPU6050: Accel X:228 Y:72 Z:15848[0m
+[0;32mI (163048) MPU6050: Accel X:292 Y:168 Z:15816[0m
+[0;32mI (163248) MPU6050: Accel X:296 Y:60 Z:16036[0m
+[0;32mI (163448) MPU6050: Accel X:228 Y:72 Z:15828[0m
+[0;32mI (163648) MPU6050: Accel X:180 Y:84 Z:15972[0m
+[0;32mI (163848) MPU6050: Accel X:208 Y:92 Z:15928[0m
+[0;32mI (164048) MPU6050: Accel X:264 Y:160 Z:15932[0m
+[0;32mI (164248) MPU6050: Accel X:364 Y:128 Z:15792[0m
+[0;32mI (164448) MPU6050: Accel X:236 Y:48 Z:16036[0m
+[0;32mI (164648) MPU6050: Accel X:144 Y:40 Z:15852[0m
+[0;32mI (164848) MPU6050: Accel X:312 Y:64 Z:15824[0m
+[0;32mI (165048) MPU6050: Accel X:248 Y:28 Z:15888[0m
+[0;32mI (165248) MPU6050: Accel X:140 Y:76 Z:15804[0m
+[0;32mI (165448) MPU6050: Accel X:284 Y:72 Z:15840[0m
+[0;32mI (165648) MPU6050: Accel X:200 Y:136 Z:15860[0m
+[0;32mI (165848) MPU6050: Accel X:312 Y:152 Z:15904[0m
+[0;32mI (166048) MPU6050: Accel X:196 Y:24 Z:15848[0m
