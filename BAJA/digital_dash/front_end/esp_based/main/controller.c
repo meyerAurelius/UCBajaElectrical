@@ -13,7 +13,6 @@
 #include "driver/gpio.h"
 
 static const int RX_BUF_SIZE = 1024;
-extern bool request_screen_switch;
 
           
 #define RXD_PIN (CONFIG_EXAMPLE_UART_RXD)           //GPIO27
@@ -63,7 +62,11 @@ static void rx_task(void *arg)
                 switch(button) {
 
                     case 1:
-                        request_screen_switch = true;
+                        requested_screen = SCREEN_ENDURANCE;
+                        break;
+
+                    case 5:
+                        requested_screen = SCREEN_DRIVER;
                         break;
 
                     default:
@@ -86,8 +89,8 @@ static void rx_task(void *arg)
     
         } 
 
-        }
     }
+}
     free(data);                     //deallocates dynamically allocated memory
 }
 

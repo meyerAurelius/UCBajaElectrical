@@ -33,13 +33,10 @@
 
 #include "controller.h"
 
-/* typedef enum {                  //set up screen switching
-    ENDURANCE_SCREEN
-    DRIVER_SCREEN
-} screen_t; */
-
 // image declaration
 LV_IMAGE_DECLARE(engine_temp_light);
+LV_IMAGE_DECLARE(pressure_icon);
+LV_IMAGE_DECLARE(flag_icon);
 
 static lv_obj_t *lbl_counter = NULL;
 static lv_obj_t *temp_label = NULL;
@@ -52,7 +49,8 @@ static lv_obj_t *title_1 = NULL;
 static lv_obj_t *endurance_screen = NULL;
 static lv_obj_t *driver_screen = NULL;
 int current_screen = 0;
-bool request_screen_switch = false;
+volatile screen_t requested_screen = SCREEN_NONE;
+
 
 // thermistor esp mac 94:A9:90:0B:2A:04
 static uint8_t s_peer_mac[6] =  { 0x94, 0xA9, 0x90, 0x0B, 0x2A, 0x04 };
@@ -127,7 +125,7 @@ static lv_obj_t *endurance_display(void)                     //gps speed + tempe
     lv_obj_t * arc_1 = lv_arc_create(lv_obj_0);           
 
 	lv_obj_set_x(arc_1, 155);
-    lv_obj_set_y(arc_1, 55); //from 45
+    lv_obj_set_y(arc_1, 55); 
     lv_obj_set_width(arc_1, 150);
     lv_obj_set_height(arc_1, 142);
 
@@ -200,34 +198,43 @@ static lv_obj_t *driver_display(void)                //lap number, race time, br
     lv_obj_set_height(lv_obj_1, lv_pct(100));
 
     lv_obj_set_style_bg_color(lv_obj_1, lv_color_white(), 0);
+
+    //brake pressure icon
+    lv_obj_t *brake_icon = lv_image_create(lv_obj_1);
+    lv_image_set_src(brake_icon, &pressure_icon);
+    lv_obj_align(brake_icon, LV_ALIGN_BOTTOM_RIGHT, -90, -55);
+   
+    //lap number icon
+    lv_obj_t *lap_icon = lv_image_create(lv_obj_1);
+    lv_image_set_src(lap_icon, &flag_icon);
+    lv_obj_align(lap_icon, LV_ALIGN_BOTTOM_LEFT, 60, -30);
     
-    //lap time labels
+    //race time labels
     lv_obj_t *title_1 = lv_label_create(lv_obj_1);
     lv_label_set_text(title_1, "TIME:");
     lv_obj_align(title_1, LV_ALIGN_TOP_MID, 0, 35);
     lv_obj_set_style_text_font(title_1, &lv_font_montserrat_14, 0);
     lv_obj_set_style_text_color(title_1, lv_color_black(), LV_PART_MAIN);
 
-
     //race time
     lap_time = lv_label_create(lv_obj_1);             
     lv_label_set_text(lap_time, "00:00");
     lv_obj_align(lap_time, LV_ALIGN_TOP_MID, 0, 60);
-    lv_obj_set_style_text_font(lap_time, &lv_font_montserrat_26, 0);
+    lv_obj_set_style_text_font(lap_time, &lv_font_montserrat_30, 0);
     lv_obj_set_style_text_color(lap_time, lv_color_black(), LV_PART_MAIN);
 
     //lap number label
     lv_obj_t *title_2 = lv_label_create(lv_obj_1);
     lv_label_set_text(title_2, "LAP:");
-    lv_obj_align(title_2, LV_ALIGN_BOTTOM_LEFT, 30, -90);
+    lv_obj_align(title_2, LV_ALIGN_BOTTOM_LEFT, 30, -60);
     lv_obj_set_style_text_font(title_2, &lv_font_montserrat_14, 0);
     lv_obj_set_style_text_color(title_2, lv_color_black(), LV_PART_MAIN);
 
 
-    //lap tracking
+    //lap number
     lap_num = lv_label_create(lv_obj_1);                  
     lv_label_set_text(lap_num, "lap #");                //add actual lap tracking
-    lv_obj_align(lap_num, LV_ALIGN_BOTTOM_LEFT, 30, -60);
+    lv_obj_align(lap_num, LV_ALIGN_BOTTOM_LEFT, 30, -30);
     lv_obj_set_style_text_font(lap_num, &lv_font_montserrat_22, 0);
     lv_obj_set_style_text_color(lap_num, lv_color_black(), LV_PART_MAIN);
 
@@ -235,33 +242,19 @@ static lv_obj_t *driver_display(void)                //lap number, race time, br
     //brake pressure label
     lv_obj_t *title_3 = lv_label_create(lv_obj_1);
     lv_label_set_text(title_3, "BRAKE:");
-    lv_obj_align(title_3, LV_ALIGN_BOTTOM_RIGHT, -30, -90);
+    lv_obj_align(title_3, LV_ALIGN_BOTTOM_RIGHT, -30, -60);
     lv_obj_set_style_text_font(title_3, &lv_font_montserrat_14, 0);
     lv_obj_set_style_text_color(title_3, lv_color_black(), LV_PART_MAIN);
 
     //brake pressure
     brake_pressure = lv_label_create(lv_obj_1);      
     lv_label_set_text(brake_pressure, "0000.00 PSI");
-    lv_obj_align(brake_pressure, LV_ALIGN_BOTTOM_RIGHT, -30, -60);
+    lv_obj_align(brake_pressure, LV_ALIGN_BOTTOM_RIGHT, -30, -30);
     lv_obj_set_style_text_font(brake_pressure, &lv_font_montserrat_22, 0);    
     lv_obj_set_style_text_color(brake_pressure, lv_color_black(), LV_PART_MAIN);  
     
     return lv_obj_1;
 
-}
-
-void switch_screens(void)               //switching between two screens
-{
-    if (current_screen == 0) {
-
-        lv_screen_load(driver_screen);
-        current_screen = 1;
-
-    } else {
-
-        lv_screen_load(endurance_screen);
-        current_screen = 0;
-    }
 }
 
 
@@ -334,10 +327,25 @@ static void gui_task(void* )
             // code related to update must be inside here to be threadsafe
             // watchdog timer triggers otherwise 
 
-            if (request_screen_switch) {
-                switch_screens();
-                request_screen_switch = false;
-            }
+            if (requested_screen != SCREEN_NONE && requested_screen != current_screen) {
+
+                switch (requested_screen) {
+
+                    case SCREEN_ENDURANCE:
+                        lv_screen_load(endurance_screen);
+                        break;
+
+                    case SCREEN_DRIVER:
+                        lv_screen_load(driver_screen);
+                        break;
+
+                    case SCREEN_NONE:
+                        break;
+    }
+
+                current_screen = requested_screen;
+                requested_screen = SCREEN_NONE;
+}
 
             if (current_screen == 0 && temp_label != NULL) {                //update endurance display only
 

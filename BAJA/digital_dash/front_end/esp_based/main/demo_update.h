@@ -1,7 +1,10 @@
 #pragma once
-#include <stdbool.h>
 
-extern bool request_screen_switch;
-extern int current_screen;
+typedef enum {
+    SCREEN_NONE = -1,
+    SCREEN_ENDURANCE = 0,
+    SCREEN_DRIVER = 1
+} screen_t;
 
+extern volatile screen_t requested_screen;
 
