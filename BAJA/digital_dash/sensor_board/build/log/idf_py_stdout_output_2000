@@ -1,0 +1,1135 @@
+Command: C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:\Espressif\frameworks\esp-idf-v5.5.3\tools/idf_monitor.py -p COM6 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 C:\Users\marcu\baja\repos\UCBajaElectrical\BAJA\digital_dash\sensor_board\build\thermistor_data.elf C:\Users\marcu\baja\repos\UCBajaElectrical\BAJA\digital_dash\sensor_board\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'C:\Espressif\frameworks\esp-idf-v5.5.3\tools\idf.py'
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6280
+load:0x40078000,len:15864
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v5.5.3 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time May 22 2026 16:19:03[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v3.1[0m
+[0;32mI (32) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (35) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (62) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (75) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1bb48h (113480) map[0m
+[0;32mI (125) esp_image: segment 1: paddr=0002bb70 vaddr=3ffb0000 size=04378h ( 17272) load[0m
+[0;32mI (132) esp_image: segment 2: paddr=0002fef0 vaddr=40080000 size=00128h (   296) load[0m
+[0;32mI (132) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=9135ch (594780) map[0m
+[0;32mI (340) esp_image: segment 4: paddr=000c1384 vaddr=40080128 size=18df8h (101880) load[0m
+[0;32mI (379) esp_image: segment 5: paddr=000da184 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (392) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (392) boot: Disabling RNG early entropy source...[0m
+[0;32mI (402) cpu_start: Multicore app[0m
+[0;32mI (411) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (411) cpu_start: Pro cpu start user code[0m
+[0;32mI (411) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (413) app_init: Application information:[0m
+[0;32mI (417) app_init: Project name:     thermistor_data[0m
+[0;32mI (421) app_init: App version:      b4134ea4-dirty[0m
+[0;32mI (426) app_init: Compile time:     May 22 2026 16:18:47[0m
+[0;32mI (431) app_init: ELF file SHA256:  8252210c2...[0m
+[0;32mI (435) app_init: ESP-IDF:          v5.5.3[0m
+[0;32mI (439) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (443) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (447) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (451) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (457) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (462) heap_init: At 3FFB9730 len 000268D0 (154 KiB): DRAM[0m
+[0;32mI (467) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (473) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (478) heap_init: At 40098F20 len 000070E0 (28 KiB): IRAM[0m
+[0;32mI (485) spi_flash: detected chip: generic[0m
+[0;32mI (487) spi_flash: flash io: dio[0m
+[0;33mW (490) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (503) main_task: Started on CPU0[0m
+[0;32mI (513) main_task: Calling app_main()[0m
+STA MAC Address: 78:42:1C:8D:EF:C4
+STA MAC Address: 78:42:1C:8D:EF:C4
+[0;32mI (543) wifi:wifi driver task: 3ffc1868, prio:23, stack:6656, core=0[0m
+[0;32mI (553) wifi:wifi firmware version: 4df78f2[0m
+[0;32mI (553) wifi:wifi certification version: v7.0[0m
+[0;32mI (553) wifi:config NVS flash: enabled[0m
+[0;32mI (553) wifi:config nano formatting: disabled[0m
+[0;32mI (553) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (563) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (563) wifi:Init management short buffer num: 32[0m
+[0;32mI (573) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (573) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (583) wifi:Init static rx buffer num: 10[0m
+[0;32mI (583) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (583) wifi_init: rx ba win: 6[0m
+[0;32mI (593) wifi_init: accept mbox: 6[0m
+[0;32mI (593) wifi_init: tcpip mbox: 32[0m
+[0;32mI (593) wifi_init: udp mbox: 6[0m
+[0;32mI (603) wifi_init: tcp mbox: 6[0m
+[0;32mI (603) wifi_init: tcp tx win: 5760[0m
+[0;32mI (603) wifi_init: tcp rx win: 5760[0m
+[0;32mI (603) wifi_init: tcp mss: 1440[0m
+[0;32mI (613) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (613) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (623) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (693) wifi:mode : sta (78:42:1c:8d:ef:c4)[0m
+[0;32mI (693) wifi:enable tsf[0m
+[0;32mI (703) wifi station: wifi_init_sta finished.[0m
+[0;32mI (713) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (713) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (783) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (823) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (863) wifi:connected with Droid, aid = 9, channel 11, BW20, bssid = aa:6b:0b:48:89:e7[0m
+[0;32mI (863) wifi:security: WPA2-PSK, phy: bgn, rssi: -37[0m
+[0;32mI (863) wifi:pm start, type: 1[0m
+
+[0;32mI (863) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (933) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (933) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (1933) esp_netif_handlers: sta ip: 10.34.124.22, mask: 255.255.255.0, gw: 10.34.124.212[0m
+[0;32mI (1933) wifi station: got ip:10.34.124.22[0m
+[0;32mI (1933) wifi station: connected to ap SSID:Droid password:password123[0m
+[0;32mI (1933) ESPNOW: espnow [version: 2.0] init[0m
+			Started GPS...
+[0;32mI (1943) http_post_json: JSON payload:[0m
+{"Logging_Event":"test_log_one","session_id":"test_log_one","ticks_reference":1464,"Logging_Data":[{"timestamp":"","tickstamp":1462,"type":"gps","device_id":"gps_1","data":[0,0,0,0,0,0]},{"timestamp":"","tickstamp":1463,"type":"temp","device_id":"eng_temp_1","data":[0]}]}
+ADC= 1670 Voltage= 1.346 V Resistance=14521.0 ohms Temp16.72 C 
+[0;32mI (2073) wifi:<ba-add>idx:0 (ifx:0, aa:6b:0b:48:89:e7), tid:0, ssn:3, winSize:64[0m
+[0;32mI (2073) http_post_json: DNS lookup succeeded. IP=107.174.131.30[0m
+[0;32mI (2383) http_post_json: POST sent successfully[0m
+HTTP/1.1 200 OK
+Server: openresty
+Date: Tue, 26 May 2026 04:26:00 GMT
+Content-Type: application/json
+Content-Length: 65
+X-Served-By: telemetry-api.ucbaja.ca
+Connection: close
+
+{"success":true,"number_entries":2,"session_name":"test_log_one"}I (2683) http_post_json: Done reading response. Last read=0 errno=128
+ADC= 1670 Voltage= 1.346 V Resistance=14521.0 ohms Temp16.72 C 
+ADC= 1670 Voltage= 1.346 V Resistance=14521.0 ohms Temp16.72 C 
+ADC= 1665 Voltage= 1.342 V Resistance=14594.6 ohms Temp16.61 C 
+ADC= 1668 Voltage= 1.344 V Resistance=14550.4 ohms Temp16.67 C 
+[0;32mI (6943) espnow_example: Start sending broadcast data[0m
+[1;31mE (6943) ESPNOW: Peer channel is not equal to the home channel, send fail![0m
+[1;31mE (6943) espnow_example: Send error[0m
+[0;32mI (6943) ESPNOW: espnow [version: 2.0] deinit[0m
+ADC= 1676 Voltage= 1.351 V Resistance=14433.2 ohms Temp16.85 C 
+ADC= 1671 Voltage= 1.347 V Resistance=14506.3 ohms Temp16.74 C 
+[0;32mI (7983) GPS_MODULE: $GPRMC,042601.00,V,,,,,,,260526,,,N*79[0m
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042601.00,,,,,0,04,2.27,,,,,,*54
+$GPGSA,A,1,31,03,04,09,,,,,,,,,4.66,2.27,4.07*0C
+$GPGSV,2,1,08,03,61,193,20,04,62,290,23,07,02,233,13,09,27,286,32*71
+$GPGSV,2,2,08,11,05,341,14,16,31,142,22,29,03,045,,31,51,063,30*7C
+$GPGLL,,,,,042601.00,V,N*4B
+$GPRMC,042602.00,V,,,,,,,260526,,,N*7A
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042602.00,,,,,0,04,2.27,,,,,,*57
+$GPGSA,A,1,31,03,04,09,,,,,,,,,4.66,2.27,4.07*0C
+$GPGSV,2,1,08,03,61,193,20,04,62,290,22,07,02,233,12,09,27,286,31*72
+$GPGSV,2,2,08,11,05,341,13,16,31,142,22,29,04,045,,31,51,063,30*7C
+$GPGLL,,,,,042602.00,V,N*48
+$GPRMC,042603.00,V,,,,,,,260526,,,N*7B
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042603.00,,,,,0,04,2.27,,,,,,*56
+$GPGSA,A,1,31,03,04,09,,,,,,,,,4.66,2.27,4.07*0C
+$GPGSV,2,1,08,03,61,193,20,04,62,290,22,07,02,233,14,09,27,286,32*77
+$GPGSV,2,2,08,11,05,341,11,16,31,142,22,29,04,045,,31,51,063,30*7E
+$GPGLL,,,,,042603.00,V,N*49
+$GPRMC,042604.00,A,5104.86595,N,11407.90372,W,0.703,,260526,,,A*6C
+$GPVTG,,T,,M,0.703,N,1.302,K,A*27
+$GPGGA,042604.00,5104.86595,N,11407.90372,W,1,04,2.27,1123.2,M,-17.5,M,,*5F
+$GPGSA,A,3,31,03,04,09,,,,,,,,,4.66,2.27,4.07*0E
+$GPGSV,2,1,08,03,61,193,20,04,62,290,22,07,02,233,14,09,27,286,32*77
+$GPGSV,2,2,08,11,05,341,12,16,31,142,23,29,04,045,,31,50,062,30*7C
+$GPGLL,5104.86595,N,11407.90372,W,042604.00,A,A*74
+$GPRMC,042605.00,A,5104.86762,N,11407.90412,W,2.328,,260526,,,A*69
+$GPVTG,,T,,M,2.328,N,4.311,K,A*2F
+$GPGGA,042605.00,5104.86762,N,11407.90412,W,1,04,2.27,1124.5,M,-17.5,M,,*55
+$GPGSA,A,3,31,03,04,09,,,,,,,,,4.66,2.27,4.07*0E
+$GPGSV,2,1,08,03,61,193,19,04,62,290,21,07,02,233,14,09,27,286,31*7D
+$GPGSV,2,2,08,11,05,341,13,16,31,142,23,29,04,045,,31,50,062,30*7D
+$GPGLL,5104.86762,N,11407.90412,W,042605.00,A,A*7E
+$GPRMC,042606.00,A,5104.86847,N,11407.90444,W,1.698,,260526,,,A*6C
+$GPVTG,,T,,M,1.698,N,3.145,K,A*26
+$GPGGA,042606.00,5104.86847,N,11407.90444,W,1,04,2.27,1125.8,M,-17.5,M,,*51
+$GPGSA,A,3,31,03,04,09,,,,,,,,,4.66,2.27,4.07*0E
+$GPGSV,2,1,08,03,61,1
+[0;32mI (8153) GPS_MODULE: 0,0.000000,0.000000,0.000000,0.000000,0.000000,0,0,0.000000,0.000000,2000-00-00T04:26:01-00:00[0m
+ADC= 1669 Voltage= 1.345 V Resistance=14535.7 ohms Temp16.70 C 
+ADC= 1671 Voltage= 1.347 V Resistance=14506.3 ohms Temp16.74 C 
+ADC= 1665 Voltage= 1.342 V Resistance=14594.6 ohms Temp16.61 C 
+ADC= 1666 Voltage= 1.343 V Resistance=14579.8 ohms Temp16.63 C 
+[0;32mI (12703) http_post_json: JSON payload:[0m
+{"Logging_Event":"test_log_one","session_id":"test_log_one","ticks_reference":12220,"Logging_Data":[{"timestamp":"2000-00-00T04:26:01-00:00","tickstamp":12219,"type":"gps","device_id":"gps_1","data":[0,0,0,0,0,0]},{"timestamp":"2000-00-00T04:26:01-00:00","tickstamp":12220,"type":"temp","device_id":"eng_temp_1","data":[17]}]}
+[0;32mI (12723) http_post_json: DNS lookup succeeded. IP=107.174.131.30[0m
+[0;32mI (12823) http_post_json: POST sent successfully[0m
+[0;32mI (12853) GPS_MODULE: $GPRMC,042607.00,A,5104.86843,N,11407.90444,W,0.224,,260526,,,A*6B[0m
+$GPVTG,,T,,M,0.224,N,0.416,K,A*24
+$GPGGA,042607.00,5104.86843,N,11407.90444,W,1,04,2.27,1125.8,M,-17.5,M,,*54
+$GPGSA,A,3,31,03,04,09,,,,,,,,,4.66,2.27,4.07*0E
+$GPGSV,2,1,08,03,61,193,19,04,62,290,21,07,02,233,15,09,27,286,31*7C
+$GPGSV,2,2,08,11,05,341,13,16,31,142,22,29,04,045,,31,50,062,30*7C
+$GPGLL,5104.86843,N,11407.90444,W,042607.00,A,A*73
+$GPRMC,042608.00,A,5104.86791,N,11407.90446,W,1.550,,260526,,,A*63
+$GPVTG,,T,,M,1.550,N,2.870,K,A*2F
+$GPGGA,042608.00,5104.86791,N,11407.90446,W,1,04,2.27,1125.7,M,-17.5,M,,*56
+$GPGSA,A,3,31,03,04,09,,,,,,,,,4.66,2.27,4.07*0E
+$GPGSV,2,1,08,03,61,193,20,04,62,290,21,07,02,233,14,09,27,286,31*77
+$GPGSV,2,2,08,11,05,341,,16,31,142,22,29,04,045,,31,50,062,30*7E
+$GPGLL,5104.86791,N,11407.90446,W,042608.00,A,A*7E
+$GPRMC,042609.00,A,5104.86759,N,11407.90469,W,1.682,,260526,,,A*67
+$GPVTG,,T,,M,1.682,N,3.115,K,A*28
+$GPGGA,042609.00,5104.86759,N,11407.90469,W,1,04,2.27,1125.5,M,-17.5,M,,*5C
+$GPGSA,A,3,31,03,04,09,,,,,,,,,4.66,2.27,4.07*0E
+$GPGSV,2,1,08,03,61,193,19,04,62,290,21,07,02,233,15,09,27,286,31*7C
+$GPGSV,2,2,08,11,05,341,25,16,31,142,22,29,04,045,,31,50,062,30*79
+$GPGLL,5104.86759,N,11407.90469,W,042609.00,A,A*76
+$GPRMC,042610.00,A,5104.86740,N,11407.90499,W,1.928,,260526,,,A*67
+$GPVTG,,T,,M,1.928,N,3.570,K,A*20
+$GPGGA,042610.00,5104.86740,N,11407.90499,W,1,04,2.27,1125.4,M,-17.5,M,*52
+$GPGSA,A,3,1,03,04,09,,,,,,,,,4.66,2.27,4.07*0E
+$GPGSV,2,1,08,03,61,193,19,04,62,290,21,07,02,233,15,09,27,286,31*7C
+$GPGSV,2,2,08,11,05,341,21,16,31,142,22,29,04,045,,31,50,062,30*7D
+$GPGLL,5104.86740,N,11407.90499,W,042610.00,A,A*79
+$GPRMC,042611.00,A,5104.86915,N,11407.90511,W,2.230,,260526,,,A*68
+$GPVTG,,T,,M,2.230,N,4.130,K,A*26
+$GPGGA,042611.00,5104.86915,N,11407.90511,W,1,04,2.27,1125.3,M,-17.5,M,,*5B
+$GPGSA,A,3,31,03,04,0
+ADC= 1670 Voltage= 1.346 V Resistance=14521.0 ohms Temp16.72 C 
+[0;32mI (13013) GPS_MODULE: 1,51.081139,-114.131744,1125.800049,0.414848,0.000000,4,1,2.270000,17.025000,2000-00-00T04:26:07-00:00[0m
+HTTP/1.1 200 OK
+Server: openresty
+Date: Tue, 26 May 2026 04:26:11 GMT
+Content-Type: application/json
+Content-Length: 65
+X-Served-By: telemetry-api.ucbaja.ca
+Connection: close
+
+{"success":true,"number_entries":2,"session_name":"test_log_one"}I (13073) http_post_json: Done reading response. Last read=0 errno=128
+ADC= 1667 Voltage= 1.343 V Resistance=14565.1 ohms Temp16.65 C 
+ADC= 1669 Voltage= 1.345 V Resistance=14535.7 ohms Temp16.70 C 
+ADC= 1670 Voltage= 1.346 V Resistance=14521.0 ohms Temp16.72 C 
+ADC= 1668 Voltage= 1.344 V Resistance=14550.4 ohms Temp16.67 C 
+[0;32mI (17853) GPS_MODULE: $GPRMC,042612.00,A,5104.87177,N,11407.90508,W,5.720,,260526,,,A*6D[0m
+$GPVTG,,T,,M,5.720,N,10.593,K,A*1D
+$GPGGA,042612.00,5104.87177,N,11407.90508,W,1,04,2.27,1125.4,M,-17.5,M,,*5A
+$GPGSA,A,3,31,03,04,09,,,,,,,,,4.66,2.27,4.07*0E
+$GPGSV,2,1,08,03,61,193,17,04,62,290,21,07,02,233,14,09,27,286,32*70
+$GPGSV,2,2,08,11,05,341,16,16,31,142,22,29,04,045,,31,50,062,30*79
+$GPGLL,5104.87177,N,11407.90508,W,042612.00,A,A*71
+$GPRMC,042613.00,A,5104.87241,N,11407.90510,W,3.779,,260526,,,A*69
+$GPVTG,,T,,M,3.779,N,6.998,K,A*27
+$GPGGA,042613.00,5104.87241,N,11407.90510,W,1,04,2.27,1125.6,M,-17.5,M,,*56
+$GPGSA,A,3,31,03,04,09,,,,,,,,,4.66,2.27,4.07*0E
+$GPGSV,2,1,08,03,61,193,17,04,62,290,21,07,02,233,13,09,27,286,32*77
+$GPGSV,2,2,08,11,05,341,14,16,31,142,23,29,04,045,,31,50,062,30*7A
+$GPGLL,5104.87241,N,11407.90510,W,042613.00,A,A*7F
+$GPRMC,042614.00,A,5104.87274,N,11407.90502,W,2.494,,260526,,,A*6A
+$GPVTG,,T,,M,2.494,N,4.619,K,A*22
+$GPGGA,042614.00,5104.87274,N,11407.90502,W,1,04,2.27,1125.7,M,-17.5,M,,*55
+$GPGSA,A,3,31,03,04,09,,,,,,,,,4.66,2.27,4.07*0E
+$GPGSV,2,1,08,03,61,193,17,04,62,290,20,07,02,233,14,09,27,286,31*72
+$GPGSV,2,2,08,11,05,341,12,16,31,142,22,29,04,045,21,31,50,062,30*7E
+$GPGLL,5104.87274,N,11407.90502,W,042614.00,A,A*7D
+$GPRMC,042615.00,A,5104.87192,N,11407.90453,W,0.658,,260526,,,A*65
+$GPVTG,,T,,M,0.658,N,1.219,K,A*23
+$GPGGA,042615.00,5104.87192,N,11407.90453,W,1,04,2.26,1125.5,M,-17.5,M,,*59
+$GPGSA,A,3,31,03,04,09,,,,,,,,,4.66,2.26,4.07*0F
+$GPGSV,2,1,08,03,61,193,17,04,62,290,20,07,02,233,13,09,27,286,31*75
+$GPGSV,2,2,08,11,05,341,14,16,31,142,22,29,04,045,19,31,50,062,30*73
+$GPGLL,5104.87192,N,11407.90453,W,042615.00,A,A*72
+$GPRMC,042616.00,A,5104.87118,N,11407.90451,W,1.326,,260526,,,A*6B
+$GPVTG,,T,,M,1.326,N,2.455,K,A*23
+$GPGGA,042616.00,5104.87118,N,11407.90451
+[0;32mI (18003) GPS_MODULE: 2,51.081196,-114.131752,1125.400024,10.53440,0.000004,1,2.270000,17.025000,2000-00-00T04:26:12-00:00[0m
+ADC= 1670 Voltage= 1.346 V Resistance=14521.0 ohms Temp16.72 C 
+ADC= 1667 Voltage= 1.343 V Resistance=14565.1 ohms Temp16.65 C 
+ADC= 1668 Voltage= 1.344 V Resistance=14550.4 ohms Temp16.67 C 
+ADC= 1671 Voltage= 1.347 V Resistance=14506.3 ohms Temp16.74 C 
+ADC= 1668 Voltage= 1.344 V Resistance=14550.4 ohms Temp16.67 C 
+[0;32mI (22723) GPS_MODULE: $GPRMC,042617.00,A,5104.87089,N,11407.90464,W,1.143,,260526,,,A*64[0m
+$GPVTG,,T,,M,1.143,N,2.117,K,A*21
+$GPGGA,042617.00,5104.87089,N,11407.90464,W,1,04,2.26,1125.1,M,-17.5,M,,*50
+$GPGSA,A,3,31,03,04,09,,,,,,,,,4.65,2.26,4.07*0C
+$GPGSV,2,1,08,03,61,193,19,04,62,290,20,07,02,233,14,09,27,286,31*7C
+$GPGSV,2,2,08,11,05,341,14,16,31,142,21,29,04,045,15,31,50,062,30*7C
+$GPGLL,5104.87089,N,11407.90464,W,042617.00,A,A*7F
+$GPRMC,042618.00,A,5104.87232,N,11407.90487,W,2.057,,260526,,,A*63
+$GPVTG,,T,,M,2.057,N,3.810,K,A*29
+$GPGGA,042618.00,5104.87232,N,11407.90487,W,1,04,2.26,1125.1,M,-17.5,M,,*50
+$GPGSA,A,3,31,03,04,09,,,,,,,,,4.65,2.26,4.07*0C
+$GPGSV,2,1,08,03,61,193,18,04,62,290,19,07,02,233,15,09,27,286,31*76
+$GPGSV,2,2,08,11,05,341,14,16,31,142,21,29,04,045,15,31,50,062,29*74
+$GPGLL,5104.87232,N,11407.90487,W,042618.00,A,A*7F
+$GPRMC,042619.00,A,5104.87245,N,11407.90511,W,1.082,,260526,,,A*67
+$GPVTG,,T,,M,1.082,N,2.005,K,A*2F
+$GPGGA,042619.00,5104.87245,N,11407.90511,W,1,04,2.26,1125.3,M,-17.5,M,,*5D
+$GPGSA,A,3,31,03,04,09,,,,,,,,,4.65,2.26,4.07*0C
+$GPGSV,2,1,08,03,61,193,17,04,62,290,18,07,02,233,15,09,27,286,31*78
+$GPGSV,2,2,08,11,05,341,14,16,31,142,21,29,04,045,13,31,50,062,29*72
+$GPGLL,5104.87245,N,11407.90511,W,042619.00,A,A*70
+$GPRMC,042620.00,A,5104.87331,N,11407.90518,W,1.789,,260526,,,A*6A
+$GPVTG,,T,,M,1.789,N,3.313,K,A*26
+$GPGGA,042620.00,5104.87331,N,11407.90518,W,1,04,2.26,1125.6,M,-17.5,M,,*59
+$GPGSA,A,3,31,03,04,09,,,,,,,,,4.65,2.26,4.07*0C
+$GPGSV,2,1,08,03,61,193,18,04,62,290,19,07,02,233,15,09,27,286,31*76
+$GPGSV,2,2,08,11,05,341,13,16,31,142,21,29,04,045,10,31,50,062,29*76
+$GPGLL,5104.87331,N,11407.90518,W,042620.00,A,A*71
+$GPRMC,042621.00,A,5104.87315,N,11407.90558,W,0.805,,260526,,,A*63
+$GPVTG,,T,,M,0
+[0;32mI (22873) GPS_MODULE: 3,51.081181,-114.131744,1125.099976,2.116836,0.000000,4,1,2.260000,16.950001,2000-00-00T04:26:17-00:00[0m
+ADC= 1664 Voltage= 1.341 V Resistance=14609.4 ohms Temp16.59 C 
+[0;32mI (23083) http_post_json: JSON payload:[0m
+{"Logging_Event":"test_log_one","session_id":"test_log_one","ticks_reference":22600,"Logging_Data":[{"timestamp":"2000-00-00T04:26:17-00:00","tickstamp":22599,"type":"gps","device_id":"gps_1","data":[51.081180572509766,-114.13174438476562,1125.0999755859375,2.1168360710144043,4,16.950000762939453]},{"timestamp":"2000-00-00T04:26:17-00:00","tickstamp":22600,"type":"temp","device_id":"eng_temp_1","data":[17]}]}
+[0;32mI (23113) http_post_json: DNS lookup succeeded. IP=107.174.131.30[0m
+[0;32mI (23273) http_post_json: POST sent successfully[0m
+HTTP/1.1 200 OK
+Server: openresty
+Date: Tue, 26 May 2026 04:26:21 GMT
+Content-Type: application/json
+Content-Length: 65
+X-Served-By: telemetry-api.ucbaja.ca
+Connection: close
+
+{"success":true,"number_entries":2,"session_name":"test_log_one"}I (23683) http_post_json: Done reading response. Last read=0 errno=128
+ADC= 1671 Voltage= 1.347 V Resistance=14506.3 ohms Temp16.74 C 
+ADC= 1669 Voltage= 1.345 V Resistance=14535.7 ohms Temp16.70 C 
+ADC= 1670 Voltage= 1.346 V Resistance=14521.0 ohms Temp16.72 C 
+ADC= 1670 Voltage= 1.346 V Resistance=14521.0 ohms Temp16.72 C 
+[0;32mI (27723) GPS_MODULE: $GPRMC,042622.00,A,5104.87292,N,11407.90563,W,0.401,,260526,,,A*6E[0m
+$GPVTG,,T,,M,0.401,N,0.743,K,A*26
+$GPGGA,042622.00,5104.87292,N,11407.90563,W,1,04,2.26,1126.6,M,-17.5,M,,*5C
+$GPGSA,A,3,31,03,04,09,,,,,,,,,4.65,2.26,4.07*0C
+$GPGSV,2,1,08,03,61,193,17,04,62,290,18,07,02,233,15,09,27,286,31*78
+$GPGSV,2,2,08,11,05,341,13,16,31,142,21,29,04,045,,31,50,062,29*77
+$GPGLL,5104.87292,N,11407.90563,W,042622.00,A,A*77
+$GPRMC,042623.00,A,5104.87350,N,11407.90552,W,0.710,,260526,,,A*61
+$GPVTG,,T,,M,0.710,N,1.314,K,A*22
+$GPGGA,042623.00,5104.87350,N,11407.90552,W,1,04,2.26,1127.0,M,-17.5,M,,*57
+$GPGSA,A,3,31,03,04,09,,,,,,,,,4.65,2.26,4.07*0C
+$GPGSV,2,1,08,03,61,193,17,04,62,290,18,07,02,233,15,09,27,286,31*78
+$GPGSV,2,2,08,11,05,341,15,16,31,142,20,29,04,045,,31,50,062,29*70
+$GPGLL,5104.87350,N,11407.90552,W,042623.00,A,A*7B
+$GPRMC,042624.00,A,5104.87357,N,11407.90536,W,0.640,,260526,,,A*67
+$GPVTG,,T,,M,0.640,N,1.185,K,A*2C
+$GPGGA,042624.00,5104.87357,N,11407.90536,W,1,04,13.58,1126.9,M,-17.5,M,,*64
+$GPGSA,A,2,31,03,04,09,,,,,,,,,13.61,13.58,1.00*04
+$GPGSV,2,1,08,03,61,193,15,04,62,290,17,07,02,233,13,09,27,286,30*72
+$GPGSV,2,2,08,11,05,341,15,16,31,142,20,29,04,045,,31,50,062,28*71
+$GPGLL,5104.87357,N,11407.90536,W,042624.00,A,A*79
+$GPRMC,042625.00,A,5104.87327,N,11407.90538,W,0.221,,260526,,,A*6C
+$GPVTG,,T,,M,0.221,N,0.409,K,A*2F
+$GPGGA,042625.00,5104.87327,N,11407.90538,W,1,04,13.57,1126.7,M,-17.5,M,,*6D
+$GPGSA,A,2,31,03,04,09,,,,,,,,,13.61,13.57,1.00*0B
+$GPGSV,2,1,08,03,61,193,15,04,62,290,18,07,02,233,12,09,27,286,31*7D
+$GPGSV,2,2,08,11,05,341,15,16,31,142,20,29,04,045,,31,50,062,29*70
+$GPGLL,5104.87327,N,11407.90538,W,042625.00,A,A*71
+$GPRMC,042626.00,A,510
+[0;32mI (27873) GPS_MODULE: 4,51.081215,-114.131760,1126.199951,0.742652,0.000000,4,1,2.260000,16.950001,2000-00-00T04:26:22-00:00[0m
+ADC= 1676 Voltage= 1.351 V Resistance=14433.2 ohms Temp16.85 C 
+ADC= 1669 Voltage= 1.345 V Resistance=14535.7 ohms Temp16.70 C 
+ADC= 1668 Voltage= 1.344 V Resistance=14550.4 ohms Temp16.67 C 
+ADC= 1673 Voltage= 1.348 V Resistance=14477.0 ohms Temp16.78 C 
+ADC= 1666 Voltage= 1.343 V Resistance=14579.8 ohms Temp16.63 C 
+[0;32mI (32053) GPS_MODULE: $GPRMC,042627.00,A,5104.87327,N,11407.90497,W,0.753,,260526,,,A*6A[0m
+$GPVTG,,T,,M,0.753,N,1.395,K,A*2C
+$GPGGA,042627.00,5104.87327,N,11407.90497,W,1,04,13.56,1126.8,M,-17.5,M,,*65
+$GPGSA,A,2,31,03,04,09,,,,,,,,,13.60,13.56,1.00*0B
+$GPGSV,2,1,08,03,61,193,17,04,62,290,17,07,02,233,14,09,27,286,31*76
+$GPGSV,2,2,08,11,05,341,16,16,31,142,21,29,04,045,,31,50,062,29*72
+$GPGLL,5104.87327,N,11407.90497,W,042627.00,A,A*77
+$GPRMC,042628.00,A,5104.87448,N,11407.90448,W,1.530,,260526,,,A*6F
+$GPVTG,,T,,M,1.530,N,2.834,K,A*29
+$GPGGA,042628.00,5104.87448,N,11407.90448,W,1,04,13.55,1126.3,M,-17.5,M,,*6E
+$GPGSA,A,2,31,03,04,09,,,,,,,,,13.59,13.55,1.00*02
+$GPGSV,2,1,08,03,61,193,16,04,62,290,16,07,02,233,14,09,27,286,30*77
+$GPGSV,2,2,08,11,05,341,15,16,31,142,20,29,04,045,,31,50,062,29*70
+$GPGLL,5104.87448,N,11407.90448,W,042628.00,A,A*74
+$GPRMC,042629.00,A,5104.87132,N,11407.90430,W,1.867,,260526,,,A*66
+$GPVTG,,T,,M,1.867,N,3.458,K,A*21
+$GPGGA,042629.00,5104.87132,N,11407.90430,W,1,04,13.55,1125.8,M,-17.5,M,,*60
+$GPGSA,A,2,31,03,04,09,,,,,,,,,13.58,13.55,1.00*03
+$GPGSV,2,1,08,03,61,193,16,04,62,290,17,07,02,233,15,09,27,286,31*76
+$GPGSV,2,2,08,11,05,341,15,16,31,142,20,29,04,045,,31,50,062,29*70
+$GPGLL,5104.87132,N,11407.90430,W,042629.00,A,A*72
+$GPRMC,042630.00,A,5104.87504,N,11407.90425,W,1.820,,260526,,,A*68
+$GPVTG,,T,,M,1.820,N,3.370,K,A*2F
+$GPGGA,042630.00,5104.87504,N,11407.90425,W,1,04,13.54,1125.7,M,-17.5,M,,*63
+$GPGSA,A,2,31,03,04,09,,,,,,,,,13.58,13.54,1.00*02
+$GPGSV,2,1,08,03,61,193,16,04,62,290,18,07,02,233,16,09,27,286,30*7B
+$GPGSV,2,2,08,11,05,341,14,16,31,142,19,29,04,045,19,31,50,062,29*73
+$GPGL
+[0;32mI (32193) GPS_MODULE: 5,51.081223,-114.131752,1126.699951,1.394556,0.000000,4,1,13.570000,101.774994,2000-00-00T04:26:27-00:00[0m
+ADC= 1667 Voltage= 1.343 V Resistance=14565.1 ohms Temp16.65 C 
+[0;32mI (33693) http_post_json: JSON payload:[0m
+{"Logging_Event":"test_log_one","session_id":"test_log_one","ticks_reference":33210,"Logging_Data":[{"timestamp":"2000-00-00T04:26:27-00:00","tickstamp":33209,"type":"gps","device_id":"gps_1","data":[51.081222534179688,-114.13175201416016,1126.699951171875,1.3945560455322266,4,101.77499389648438]},{"timestamp":"2000-00-00T04:26:27-00:00","tickstamp":33210,"type":"temp","device_id":"eng_temp_1","data":[17]}]}
+[0;32mI (33723) http_post_json: DNS lookup succeeded. IP=107.174.131.30[0m
+[0;32mI (33943) http_post_json: POST sent successfully[0m
+ADC= 1669 Voltage= 1.345 V Resistance=14535.7 ohms Temp16.70 C 
+HTTP/1.1 200 OK
+Server: openresty
+Date: Tue, 26 May 2026 04:26:32 GMT
+Content-Type: application/json
+Content-Length: 65
+X-Served-By: telemetry-api.ucbaja.ca
+Connection: close
+
+{"success":true,"number_entries":2,"session_name":"test_log_one"}I (34333) http_post_json: Done reading response. Last read=0 errno=128
+ADC= 1671 Voltage= 1.347 V Resistance=14506.3 ohms Temp16.74 C 
+ADC= 1670 Voltage= 1.346 V Resistance=14521.0 ohms Temp16.72 C 
+ADC= 1668 Voltage= 1.344 V Resistance=14550.4 ohms Temp16.67 C 
+[0;32mI (37723) GPS_MODULE: $GPRMC,042631.00,A,5104.87546,N,11407.90464,W,1.673,,260526,,,A*62[0m
+$GPVTG,,T,,M,1.673,N,3.099,K,A*23
+$GPGGA,042631.00,5104.87546,N,11407.90464,W,1,04,13.53,1125.3,M,-17.5,M,,*62
+$GPGSA,A,2,31,03,04,09,,,,,,,,,13.57,13.53,1.00*0A
+$GPGSV,2,1,08,03,61,193,15,04,62,290,17,07,02,233,13,09,27,286,30*72
+$GPGSV,2,2,08,11,05,341,13,16,31,142,19,29,04,045,16,31,50,062,28*7A
+$GPGLL,5104.87546,N,11407.90464,W,042631.00,A,A*7D
+$GPRMC,042632.00,A,5104.87634,N,11407.90454,W,2.055,,260526,,,A*65
+$GPVTG,,T,,M,2.055,N,3.806,K,A*2C
+$GPGGA,042632.00,5104.87634,N,11407.90454,W,1,04,13.53,1124.8,M,-17.5,M,,*6E
+$GPGSA,A,2,31,03,04,09,,,,,,,,,13.56,13.53,1.00*0B
+$GPGSV,2,1,08,03,61,193,14,04,62,290,16,07,02,233,12,09,27,286,30*73
+$GPGSV,2,2,08,11,05,341,11,16,31,142,19,29,04,045,13,31,50,062,29*7C
+$GPGLL,5104.87634,N,11407.90454,W,042632.00,A,A*7B
+$GPRMC,042633.00,A,5104.87483,N,11407.90439,W,0.800,,260526,,,A*6B
+$GPVTG,,T,,M,0.800,N,1.481,K,A*27
+$GPGGA,042633.00,5104.87483,N,11407.90439,W,1,04,13.52,1124.3,M,-17.5,M,,*60
+$GPGSA,A,2,31,03,04,09,,,,,,,,,13.56,13.52,1.00*0A
+$GPGSV,2,1,08,03,61,193,14,04,62,290,17,07,02,233,12,09,27,286,30*72
+$GPGSV,2,2,08,11,05,341,11,16,31,142,19,29,04,045,13,31,50,062,29*7C
+$GPGLL,5104.87483,N,11407.90439,W,042633.00,A,A*7F
+$GPRMC,042634.00,V,,,,,,,260526,,,N*7F
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042634.00,,,,,0,04,13.51,,,,,,*63
+$GPGSA,A,1,31,03,04,09,,,,,,,,,13.55,13.51,1.00*09
+$GPGSV,2,1,08,03,61,193,15,04,62,290,17,07,02,233,13,09,27,286,30*72
+$GPGSV,2,2,08,11,05,341,11,16,31,142,20,29,04,045,14,31,50,062,29*71
+$GPGLL,,,,,042634.00,V,N*4D
+$GPRMC,042635.00,V,,,,,,,260526,,,N*7E
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042635.00,,,,,0,04,13.51,,,,,,*62
+$GPGSA,A,1,31,03,04,09,,,,,,,,,13.54,13.51,1.00*08
+$GPGSV,2,1,08,03,61,193,16,04,62,290,18,07,02,233,13,09,27,286,31*7F
+$GPGSV,2,2,08,11,05,341,13,16,31,142,20,29,04,045,14,31,50,062,29*73
+$GPGLL,,,,,042635.00,V,N*4C
+$GPRMC,042636.00,V,,,,,,,260526,,,N*7D
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042636.00,
+[0;32mI (37893) GPS_MODULE: 6,51.081257,-114.131744,1125.300049,3.098396,0.000000,4,1,13.530000,101.474998,2000-00-00T04:26:31-00:00[0m
+ADC= 1672 Voltage= 1.347 V Resistance=14491.6 ohms Temp16.76 C 
+ADC= 1672 Voltage= 1.347 V Resistance=14491.6 ohms Temp16.76 C 
+ADC= 1673 Voltage= 1.348 V Resistance=14477.0 ohms Temp16.78 C 
+ADC= 1671 Voltage= 1.347 V Resistance=14506.3 ohms Temp16.74 C 
+ADC= 1671 Voltage= 1.347 V Resistance=14506.3 ohms Temp16.74 C 
+ADC= 1671 Voltage= 1.347 V Resistance=14506.3 ohms Temp16.74 C 
+[0;32mI (43853) GPS_MODULE: $GPRMC,042637.00,V,,,,,,,260526,,,N*7C[0m
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042637.00,,,,,0,04,13.49,,,,,,*69
+$GPGSA,A,1,31,03,04,09,,,,,,,,,13.53,13.49,1.00*06
+$GPGSV,2,1,08,03,61,193,17,04,62,290,17,07,02,233,16,09,27,286,30*75
+$GPGSV,2,2,08,11,05,341,13,16,31,142,20,29,04,045,14,31,50,062,29*73
+$GPGLL,,,,,042637.00,V,N*4E
+$GPRMC,042638.00,V,,,,,,,260526,,,N*73
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042638.00,,,,,0,04,13.49,,,,,,*66
+$GPGSA,A,1,31,03,04,09,,,,,,,,,13.52,13.49,1.00*07
+$GPGSV,2,1,08,03,61,193,18,04,62,290,17,07,02,233,14,09,27,286,30*78
+$GPGSV,2,2,08,11,05,341,,16,31,142,20,29,04,045,12,31,50,062,29*77
+$GPGLL,,,,,042638.00,V,N*41
+$GPRMC,042639.00,V,,,,,,,260526,,,N*72
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042639.00,,,,,0,04,13.48,,,,,,*66
+$GPGSA,A,1,31,03,04,09,,,,,,,,,13.52,13.48,1.00*06
+$GPGSV,2,1,08,03,61,193,17,04,62,290,18,07,02,233,13,09,27,286,30*7F
+$GPGSV,2,2,08,11,05,341,,16,31,142,20,29,04,045,12,31,50,062,29*77
+$GPGLL,,,,,042639.00,V,N*40
+$GPRMC,042640.00,V,,,,,,,260526,,,N*7C
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042640.00,,,,,0,04,13.48,,,,,,*68
+$GPGSA,A,1,31,03,04,09,,,,,,,,,13.51,13.48,1.00*05
+$GPGSV,2,1,08,03,61,193,16,04,62,290,20,07,02,233,13,09,27,286,30*75
+$GPGSV,2,2,08,11,05,341,,16,31,142,19,29,04,045,11,31,50,062,29*7E
+$GPGLL,,,,,042640.00,V,N*4E
+$GPRMC,042641.00,V,,,,,,,260526,,,N*7D
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042641.00,,,,,0,04,13.47,,,,,,*66
+$GPGSA,A,1,31,03,04,09,,,,,,,,,13.51,13.47,1.00*0A
+$GPGSV,2,1,08,03,61,193,17,04,62,290,21,07,02,233,12,09,27,286,30*74
+$GPGSV,2,2,08,11,05,341,21,16,31,142,18,29,04,045,11,31,50,062,28*7D
+$GPGLL,,,,,042641.00,V,N*4F
+$GPRMC,042642.00,V,,,,,,,260526,,,N*7E
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042642.00,,,,,0,04,13.46,,,,,,*64
+$GPGSA,A,1,31,03,04,09,,,,,,,,,13.50,13.46,1.00*0A
+$GPGSV,2,1,08,03,61,193,17,04,62,
+[0;32mI (44003) GPS_MODULE: 7,51.081257,-114.131744,1125.300049,3.098396,0.000000,4,1,13.530000,101.474998,2000-00-00T04:26:37-00:00[0m
+ADC= 1668 Voltage= 1.344 V Resistance=14550.4 ohms Temp16.67 C 
+[0;32mI (44343) http_post_json: JSON payload:[0m
+{"Logging_Event":"test_log_one","session_id":"test_log_one","ticks_reference":43860,"Logging_Data":[{"timestamp":"2000-00-00T04:26:37-00:00","tickstamp":43859,"type":"gps","device_id":"gps_1","data":[51.081256866455078,-114.13174438476562,1125.300048828125,3.0983960628509521,4,101.47499847412109]},{"timestamp":"2000-00-00T04:26:37-00:00","tickstamp":43860,"type":"temp","device_id":"eng_temp_1","data":[17]}]}
+[0;32mI (44373) http_post_json: DNS lookup succeeded. IP=107.174.131.30[0m
+[0;32mI (44563) http_post_json: POST sent successfully[0m
+HTTP/1.1 200 OK
+Server: openresty
+Date: Tue, 26 May 2026 04:26:43 GMT
+Content-Type: application/json
+Content-Length: 65
+X-Served-By: telemetry-api.ucbaja.ca
+Connection: close
+
+{"success":true,"number_entries":2,"session_name":"test_log_one"}I (44983) http_post_json: Done reading response. Last read=0 errno=128
+ADC= 1665 Voltage= 1.342 V Resistance=14594.6 ohms Temp16.61 C 
+ADC= 1665 Voltage= 1.342 V Resistance=14594.6 ohms Temp16.61 C 
+ADC= 1669 Voltage= 1.345 V Resistance=14535.7 ohms Temp16.70 C 
+ADC= 1670 Voltage= 1.346 V Resistance=14521.0 ohms Temp16.72 C 
+ADC= 1672 Voltage= 1.347 V Resistance=14491.6 ohms Temp16.76 C 
+[0;32mI (49943) GPS_MODULE: $GPRMC,042643.00,V,,,,,,,260526,,,N*7F[0m
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042643.00,,,,,0,04,13.46,,,,,,*65
+$GPGSA,A,1,31,03,04,09,,,,,,,,,13.49,13.46,1.00*02
+$GPGSV,2,1,08,03,61,193,18,04,62,290,21,07,02,233,13,09,27,286,30*7A
+$GPGSV,2,2,08,11,05,341,16,16,31,142,21,29,04,045,14,31,50,062,29*77
+$GPGLL,,,,,042643.00,V,N*4D
+$GPRMC,042644.00,V,,,,,,,260526,,,N*78
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042644.00,,,,,0,04,13.45,,,,,,*61
+$GPGSA,A,1,31,03,04,09,,,,,,,,,13.49,13.45,1.00*01
+$GPGSV,2,1,08,03,61,193,17,04,62,290,20,07,02,233,11,09,27,286,30*76
+$GPGSV,2,2,08,11,05,341,13,16,31,142,21,29,04,045,15,31,50,062,29*73
+$GPGLL,,,,,042644.00,V,N*4A
+$GPRMC,042645.00,V,,,,,,,260526,,,N*79
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042645.00,,,,,0,03,13.44,,,,,,*66
+$GPGSA,A,1,31,04,09,,,,,,,,,,13.48,13.44,1.00*02
+$GPGSV,2,1,08,03,61,193,,04,62,290,20,07,02,233,20,09,27,286,30*72
+$GPGSV,2,2,08,11,05,341,12,6,31,142,21,29,04,045,13,31,50,062,29*74
+$GPGLL,,,,,042645.00,V,N*4B
+$GPRMC,042646.00,V,,,,,,,260526,,,N*7A
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042646.00,,,,,0,04,13.44,,,,,,*62
+$GPGSA,A,1,31,03,04,09,,,,,,,,,13.47,13.44,1.00*0E
+$GPGSV,2,1,08,03,61,193,19,04,62,290,21,07,02,233,19,09,27,286,30*71
+$GPGSV,2,2,08,11,05,341,13,16,31,142,20,29,04,045,13,31,50,062,29*74
+$GPGLL,,,,,042646.00,V,N*48
+$GPRMC,042647.00,V,,,,,,,260526,,,N*7B
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042647.00,,,,,0,03,13.43,,,,,,*63
+$GPGSA,A,1,31,04,09,,,,,,,,,,13.47,13.43,1.00*0A
+$GPGSV,2,1,08,03,61,193,18,04,62,290,21,07,02,233,17,09,27,286,30*7E
+$GPGSV,2,2,08,11,05,341,13,16,31,142,20,29,04,045,14,31,50,062,29*73
+$GPGLL,,,,,042647.00,V,N*49
+$GPRMC,042648.00,V,,,,,,,260526,,,N*74
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042648.00,,,,,0,03,13.42,,,,,,*6D
+$GPGSA,A,1,31,04,09,,,,,,,,,,13.46,13.42,1.00*0A
+$GPGSV,2,1,08,03,61,193,16,04,62,290,22,07,02,233,15,09,27,286,30*71
+$GPGSV,2,2,08,11,05,341,15,16,31,142,21,29,04,045,15,31,50,062,30*7D
+$GPGL
+ADC= 1669 Voltage= 1.345 V Resistance=14535.7 ohms Temp16.70 C 
+[0;32mI (50113) GPS_MODULE: 8,51.081257,-114.131744,1125.300049,3.098396,0.000000,4,1,13.530000,101.474998,2000-00-00T04:26:43-00:00[0m
+ADC= 1667 Voltage= 1.343 V Resistance=14565.1 ohms Temp16.65 C 
+ADC= 1672 Voltage= 1.347 V Resistance=14491.6 ohms Temp16.76 C 
+ADC= 1673 Voltage= 1.348 V Resistance=14477.0 ohms Temp16.78 C 
+ADC= 1670 Voltage= 1.346 V Resistance=14521.0 ohms Temp16.72 C 
+[0;32mI (54993) http_post_json: JSON payload:[0m
+{"Logging_Event":"test_log_one","session_id":"test_log_one","ticks_reference":54510,"Logging_Data":[{"timestamp":"2000-00-00T04:26:43-00:00","tickstamp":54509,"type":"gps","device_id":"gps_1","data":[51.081256866455078,-114.13174438476562,1125.300048828125,3.0983960628509521,4,101.47499847412109]},{"timestamp":"2000-00-00T04:26:43-00:00","tickstamp":54510,"type":"temp","device_id":"eng_temp_1","data":[17]}]}
+[0;32mI (55023) http_post_json: DNS lookup succeeded. IP=107.174.131.30[0m
+[0;32mI (55083) http_post_json: POST sent successfully[0m
+ADC= 1663 Voltage= 1.340 V Resistance=14624.2 ohms Temp16.56 C 
+HTTP/1.1 200 OK
+Server: openresty
+Date: Tue, 26 May 2026 04:26:53 GMT
+Content-Type: application/json
+Content-Length: 65
+X-Served-By: telemetry-api.ucbaja.ca
+Connection: close
+
+{"success":true,"number_entries":2,"session_name":"test_log_one"}I (55593) http_post_json: Done reading response. Last read=0 errno=128
+[0;32mI (55853) GPS_MODULE: $GPRMC,042649.00,V,,,,,,,260526,,,N*75[0m
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042649.00,,,,,0,04,13.42,,,,,,*6B
+$GPGSA,A,1,31,03,04,09,,,,,,,,,13.46,13.42,1.00*09
+$GPGSV,3,1,10,03,61,193,17,04,62,290,23,07,02,233,16,09,27,286,30*7A
+$GPGSV,3,2,10,11,05,341,14,16,31,142,20,24,,,25,25,,,26*7D
+$GPGSV,3,3,10,29,04,045,15,31,50,062,30*72
+$GPGLL,,,,,042649.00,V,N*47
+$GPRMC,042650.00,V,,,,,,,260526,,,N*7D
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042650.00,,,,,0,04,13.41,,,,,,*60
+$GPGSA,A,1,31,03,04,09,,,,,,,,,13.45,13.41,1.00*09
+$GPGSV,3,1,10,03,61,193,16,04,62,290,23,07,02,233,15,09,27,286,30*78
+$GPGSV,3,2,10,11,05,341,14,16,31,142,20,24,,,24,25,,,24*7E
+$GPGSV,3,3,10,29,04,045,15,31,50,062,29*7A
+$GPGLL,,,,,042650.00,V,N*4F
+$GPRMC,042651.00,V,,,,,,,260526,,,N*7C
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042651.00,,,,,0,03,13.41,,,,,,*66
+$GPGSA,A,1,31,04,09,,,,,,,,,,13.44,13.41,1.00*0B
+$GPGSV,3,1,11,03,61,193,,04,62,290,23,07,02,233,16,09,27,286,30*7D
+$GPGSV,3,2,11,11,05,341,14,16,31,142,20,24,,,23,25,,,24*78
+$GPGSV,3,3,11,28,,,25,29,04,045,15,31,50,062,30*7E
+$GPGLL,,,,,042651.00,V,N*4E
+$GPRMC,042652.00,V,,,,,,,260526,,,N*7F
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042652.00,,,,,0,03,13.40,,,,,,*64
+$GPGSA,A,1,04,31,09,,,,,,,,,,13.44,13.40,1.00*0A
+$GPGSV,3,1,11,03,61,193,19,04,62,290,24,07,02,233,17,09,27,286,30*73
+$GPGSV,3,2,11,11,05,341,15,16,31,142,21,24,,,23,25,,,23*7F
+$GPGSV,3,3,11,28,,,22,29,04,045,15,31,50,062,30*79
+$GPGLL,,,,,042652.00,V,N*4D
+$GPRMC,042653.00,V,,,,,,,260526,,,N*7E
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042653.00,,,,,0,03,13.39,,,,,,*6B
+$GPGSA,A,1,04,31,09,,,,,,,,,,13.43,13.39,1.00*03
+$GPGSV,3,1,12,02,,,26,03,61,193,17,04,62,290,24,07,02,233,17*4B
+$GPGSV,3,2,12,09,28,286,29,11,05,341,15,16,31,142,20,24,,,23*4F
+$GPGSV,3,3,12,25,,,23,28,,,17,29,04,045,15,31,50,062,30*7A
+$GPGLL,,,,,042653.00,V,N*4C
+$GPRMC,042654.00,V,,,,,,,260526,,,N*79
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042654.00,,,,,0,04,13.39,,,,,,*6B
+$GPGSA,A,1,03,04,31,09,,,,,,,,,13.42,13.39,1.00*01
+$GPGSV,3,1,12,02,,,24,03,61,193,15,04,62,290,24,07,02,2
+[0;32mI (56023) GPS_MODULE: 9,51.081257,-114.131744,1125.300049,3.098396,0.000000,4,1,13.530000,101.474998,2000-00-00T04:26:49-00:00[0m
+ADC= 1668 Voltage= 1.344 V Resistance=14550.4 ohms Temp16.67 C 
+ADC= 1674 Voltage= 1.349 V Resistance=14462.4 ohms Temp16.80 C 
+ADC= 1669 Voltage= 1.345 V Resistance=14535.7 ohms Temp16.70 C 
+ADC= 1671 Voltage= 1.347 V Resistance=14506.3 ohms Temp16.74 C 
+ADC= 1674 Voltage= 1.349 V Resistance=14462.4 ohms Temp16.80 C 
+[0;32mI (61003) GPS_MODULE: $GPRMC,042655.00,V,,,,,,,260526,,,N*78[0m
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042655.00,,,,,0,03,13.38,,,,,,*6C
+$GPGSA,A,1,04,31,09,,,,,,,,,,13.42,13.38,1.00*03
+$GPGSV,3,1,12,02,,,24,03,61,193,15,04,62,290,23,07,02,233,18*43
+$GPGSV,3,2,12,09,28,286,29,11,05,340,17,16,31,142,19,24,,,23*46
+$GPGSV,3,3,12,25,,,22,28,,,14,29,04,045,15,31,50,062,29*70
+$GPGLL,,,,,042655.00,V,N*4A
+$GPRMC,042656.00,V,,,,,,,260526,,,N*7B
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042656.00,,,,,0,04,13.37,,,,,,*67
+$GPGSA,A,1,03,04,31,09,,,,,,,,,13.41,13.37,1.00*0C
+$GPGSV,3,1,12,02,,,23,03,61,193,16,04,62,290,23,07,02,233,17*48
+$GPGSV,3,2,12,09,28,286,29,11,05,340,16,16,31,142,20,24,,,23*4D
+$GPGSV,3,3,12,25,,,23,28,,,15,29,04,045,15,31,50,062,30*78
+$GPGLL,,,,,042656.00,V,N*49
+$GPRMC,042657.00,V,,,,,,,260526,,,N*7A
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042657.00,,,,,0,04,13.37,,,,,,*66
+$GPGSA,A,1,03,04,31,09,,,,,,,,,13.40,13.37,1.00*0D
+$GPGSV,3,1,12,02,,,23,03,61,193,15,04,62,290,23,07,02,233,17*4B
+$GPGSV,3,2,12,09,28,286,29,11,05,340,14,16,31,142,20,24,,,23*4F
+$GPGSV,3,3,12,25,,,22,28,,,16,29,04,045,17,31,50,062,29*70
+$GPGLL,,,,,042657.00,V,N*48
+$GPRMC,042658.00,V,,,,,,,260526,,,N*75
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042658.00,,,,,0,04,13.36,,,,,,*68
+$GPGSA,A,1,03,04,31,09,,,,,,,,,13.40,13.36,1.00*0C
+$GPGSV,4,1,13,02,,,22,03,61,193,24,04,62,20,23,07,0,233,15*4C
+$GPGSV,4,2,13,09,28,286,29,11,05,340,14,12,,,28,16,31,142,20*47
+$GPGSV,4,3,13,24,,,22,25,,,22,28,,,15,29,04,045,17*4B
+$GPGSV,4,4,13,31,50,062,29*43
+$GPGLL,,,,,042658.00,V,N*47
+$GPRMC,042659.00,V,,,,,,,260526,,,N*74
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042659.00,,,,,0,04,13.36,,,,,,*69
+$GPGSA,A,1,03,04,31,09,,,,,,,,,13.39,13.36,1.00*02
+$GPGSV,3,1,12,02,,,22,03,61,193,21,04,62,290,23,07,02,233,15*4F
+$GPGSV,3,2,12,09,28,286,28,11,05,340,14,16,31,142,19,24,,,21*46
+$GPGSV,3,3,12,25,,,19,28,,,15,29,04,045,16,31,50,062,29*7A
+$GPGLL,,,,,042659.0
+ADC= 1669 Voltage= 1.345 V Resistance=14535.7 ohms Temp16.70 C 
+[0;32mI (61163) GPS_MODULE: 10,51.081257,-114.131744,1125.300049,3.098396,0.000000,4,1,13.530000,101.474998,2000-00-00T04:26:55-00:00[0m
+ADC= 1670 Voltage= 1.346 V Resistance=14521.0 ohms Temp16.72 C 
+ADC= 1665 Voltage= 1.342 V Resistance=14594.6 ohms Temp16.61 C 
+ADC= 1671 Voltage= 1.347 V Resistance=14506.3 ohms Temp16.74 C 
+ADC= 1668 Voltage= 1.344 V Resistance=14550.4 ohms Temp16.67 C 
+[0;32mI (65603) http_post_json: JSON payload:[0m
+{"Logging_Event":"test_log_one","session_id":"test_log_one","ticks_reference":65120,"Logging_Data":[{"timestamp":"2000-00-00T04:26:55-00:00","tickstamp":65119,"type":"gps","device_id":"gps_1","data":[51.081256866455078,-114.13174438476562,1125.300048828125,3.0983960628509521,4,101.47499847412109]},{"timestamp":"2000-00-00T04:26:55-00:00","tickstamp":65120,"type":"temp","device_id":"eng_temp_1","data":[17]}]}
+[0;32mI (65633) http_post_json: DNS lookup succeeded. IP=107.174.131.30[0m
+[0;32mI (66033) http_post_json: POST sent successfully[0m
+ADC= 1673 Voltage= 1.348 V Resistance=14477.0 ohms Temp16.78 C 
+HTTP/1.1 200 OK
+Server: openresty
+Date: Tue, 26 May 2026 04:27:04 GMT
+Content-Type: application/json
+Content-Length: 65
+X-Served-By: telemetry-api.ucbaja.ca
+Connection: close
+
+{"success":true,"number_entries":2,"session_name":"test_log_one"}I (66283) http_post_json: Done reading response. Last read=0 errno=128
+[0;32mI (66853) GPS_MODULE: $GPRMC,042700.00,V,,,,,,,260526,,,N*79[0m
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042700.00,,,,,0,03,13.35,,,,,,*60
+$GPGSA,A,1,04,31,09,,,,,,,,,,13.39,13.35,1.00*02
+$GPGSV,3,1,12,02,,,22,03,61,193,16,04,62,290,23,07,02,233,15*4B
+$GPGSV,3,2,12,09,28,286,28,11,05,340,15,16,32,142,20,24,,,19*45
+$GPGSV,3,3,12,25,,,15,28,,,15,29,04,045,15,31,50,062,29*75
+$GPGLL,,,,,042700.00,V,N*4B
+$GPRMC,042701.00,V,,,,,,,260526,,,N*78
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042701.00,,,,,0,03,13.34,,,,,,*60
+$GPGSA,A,1,04,31,09,,,,,,,,,,13.38,13.34,1.00*02
+$GPGSV,3,1,12,02,,,22,03,61,193,16,04,62,290,23,07,02,233,15*4B
+$GPGSV,3,2,12,09,28,286,28,11,05,340,14,16,32,142,20,24,,,16*4B
+$GPGSV,3,3,12,25,,,13,28,,,14,29,04,045,15,31,50,062,29*72
+$GPGLL,,,,,042701.00,V,N*4A
+$GPRMC,042702.00,V,,,,,,,260526,,,N*7B
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042702.00,,,,,0,04,13.34,,,,,,*64
+$GPGSA,A,1,03,04,31,09,,,,,,,,,13.37,13.34,1.00*0E
+$GPGSV,3,1,12,02,,,19,03,61,193,16,04,62,290,23,07,02,233,15*43
+$GPGSV,3,2,12,09,28,286,28,11,05,340,12,16,32,142,20,24,,,15*4E
+$GPGSV,3,3,12,25,,,12,28,,,14,29,04,045,14,31,50,062,29*72
+$GPGLL,,,,,042702.00,V,N*49
+$GPRMC,042703.00,V,,,,,,,260526,,,N*7A
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042703.00,,,,,0,04,13.33,,,,,,*62
+$GPGSA,A,1,03,04,31,09,,,,,,,,,13.37,13.33,1.00*09
+$GPGSV,3,1,12,02,,,17,03,61,193,17,04,62,290,24,07,02,233,15*4B
+$GPGSV,3,2,12,09,28,286,28,11,05,340,12,16,32,142,19,24,,,14*45
+$GPGSV,3,3,12,25,,,13,28,,,15,29,04,045,13,31,50,062,29*75
+$GPGLL,,,,,042703.00,V,N*48
+$GPRMC,042704.00,V,,,,,,,260526,,,N*7D
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042704.00,,,,,0,04,13.32,,,,,,*64
+$GPGSA,A,1,03,04,31,09,,,,,,,,,13.36,13.32,1.00*09
+$GPGSV,4,1,14,02,,,14,03,61,193,17,04,62,290,23,07,02,233,16*4D
+$GPGSV,4,2,14,09,28,286,28,11,05,340,12,16,32,142,19,21,,,22*44
+$GPGSV,4,3,14,22,,,25,24,,,13,25,,,15,28,,,15*75
+$GPGSV,4,4,14,29,04,045,13,31,50,062,29*78
+$GPGLL,,,,,042704.00,V,N*4F
+$GPRMC,042705.00,V,,,,,,,260526,,,N*7C
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042705.00,,,,,0,04,13.32,,,,,,*65
+$GPGSA,A,1,03,04,31,09,,,,,,,,,13.3
+[0;32mI (67023) GPS_MODULE: 11,51.081257,-114.131744,1125.300049,3.098396,0.000000,4,1,13.530000,101.474998,2000-00-00T04:27:00-00:00[0m
+ADC= 1671 Voltage= 1.347 V Resistance=14506.3 ohms Temp16.74 C 
+ADC= 1673 Voltage= 1.348 V Resistance=14477.0 ohms Temp16.78 C 
+ADC= 1671 Voltage= 1.347 V Resistance=14506.3 ohms Temp16.74 C 
+ADC= 1664 Voltage= 1.341 V Resistance=14609.4 ohms Temp16.59 C 
+ADC= 1669 Voltage= 1.345 V Resistance=14535.7 ohms Temp16.70 C 
+[0;32mI (71853) GPS_MODULE: $GPRMC,042706.00,V,,,,,,,260526,,,N*7F[0m
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042706.00,,,,,0,04,13.31,,,,,,*65
+$GPGSA,A,1,03,04,31,09,,,,,,,,,13.35,13.31,1.00*09
+$GPGSV,4,1,14,02,,,14,03,61,193,17,04,62,290,23,07,02,233,16*4D
+$GPGSV,4,2,14,09,28,286,28,11,05,340,12,16,32,142,19,21,,,20*46
+$GPGSV,4,3,14,22,,,20,24,,,24,25,,,14,28,,,14*74
+$GPGSV,4,4,14,29,04,045,14,31,50,062,29*7F
+$GPGLL,,,,,042706.00,V,N*4D
+$GPRMC,042707.00,V,,,,,,,260526,,,N*7E
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042707.00,,,,,0,04,13.30,,,,,,*65
+$GPGSA,A,1,03,04,31,09,,,,,,,,,13.34,13.30,1.00*09
+$GPGSV,4,1,14,02,,,13,03,61,193,18,04,62,290,23,07,02,233,15*46
+$GPGSV,4,2,14,09,28,286,28,11,05,340,13,16,32,142,18,21,,,16*43
+$GPGSV,4,3,14,22,,,17,24,,,21,25,,,12,28,,,14*73
+$GPGSV,4,4,14,29,04,045,15,31,50,062,29*7E
+$GPGLL,,,,,042707.00,V,N*4C
+$GPRMC,042708.00,V,,,,,,,260526,,,N*71
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042708.00,,,,,0,04,13.30,,,,,,*6A
+$GPGSA,A,1,03,04,31,09,,,,,,,,,13.34,13.30,1.00*09
+$GPGSV,4,1,14,02,,,14,03,61,193,18,04,62,290,23,07,02,233,15*41
+$GPGSV,4,2,14,09,28,286,28,11,05,340,14,16,32,142,19,21,,,14*47
+$GPGSV,4,3,14,22,,,14,24,,,18,25,,,13,28,,,15*7A
+$GPGSV,4,4,14,29,04,045,15,31,50,062,28*7F
+$GPGLL,,,,,042708.00,V,N*43
+$GPRMC,042709.00,V,,,,,,,260526,,,N*70
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042709.00,,,,,0,04,13.29,,,,,,*63
+$GPGSA,A,1,03,04,31,09,,,,,,,,,13.33,13.29,1.00*06
+$GPGSV,3,1,12,02,,,12,03,61,193,18,04,62,290,24,07,02,233,14*40
+$GPGSV,3,2,12,09,28,286,27,11,05,340,14,16,32,142,19,21,,,13*4E
+$GPGSV,3,3,12,24,,,13,25,,,12,29,04,045,14,31,50,062,28*78
+$GPGLL,,,,,042709.00,V,N*42
+$GPRMC,042710.00,V,,,,,,,260526,,,N*78
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042710.00,,,,,0,04,13.29,,,,,,*6B
+$GPGSA,A,1,03,04,31,09,,,,,,,,,13.32,13.29,1.00*07
+$GPGSV,3,1,12,01,,,26,02,
+[0;32mI (72003) GPS_MODULE: 12,51.081257,-114.131744,1125.300049,3.098396,0.000000,4,1,13.530000,101.474998,2000-00-00T04:27:06-00:00[0m
+ADC= 1667 Voltage= 1.343 V Resistance=14565.1 ohms Temp16.65 C 
+ADC= 1668 Voltage= 1.344 V Resistance=14550.4 ohms Temp16.67 C 
+ADC= 1673 Voltage= 1.348 V Resistance=14477.0 ohms Temp16.78 C 
+ADC= 1672 Voltage= 1.347 V Resistance=14491.6 ohms Temp16.76 C 
+ADC= 1674 Voltage= 1.349 V Resistance=14462.4 ohms Temp16.80 C 
+[0;32mI (76293) http_post_json: JSON payload:[0m
+{"Logging_Event":"test_log_one","session_id":"test_log_one","ticks_reference":75810,"Logging_Data":[{"timestamp":"2000-00-00T04:27:06-00:00","tickstamp":75809,"type":"gps","device_id":"gps_1","data":[51.081256866455078,-114.13174438476562,1125.300048828125,3.0983960628509521,4,101.47499847412109]},{"timestamp":"2000-00-00T04:27:06-00:00","tickstamp":75810,"type":"temp","device_id":"eng_temp_1","data":[17]}]}
+[0;32mI (76323) http_post_json: DNS lookup succeeded. IP=107.174.131.30[0m
+[0;32mI (76363) http_post_json: POST sent successfully[0m
+HTTP/1.1 200 OK
+Server: openresty
+Date: Tue, 26 May 2026 04:27:14 GMT
+Content-Type: application/json
+Content-Length: 65
+X-Served-By: telemetry-api.ucbaja.ca
+Connection: close
+
+{"success":true,"number_entries":2,"session_name":"test_log_one"}I (76623) http_post_json: Done reading response. Last read=0 errno=128
+[0;32mI (76973) GPS_MODULE: $GPRMC,042711.00,V,,,,,,,260526,,,N*79[0m
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042711.00,,,,,0,04,13.28,,,,,,*6B
+$GPGSA,A,1,03,04,31,09,,,,,,,,,13.32,13.28,1.00*06
+$GPGSV,3,1,12,01,,,25,02,,,13,03,61,193,17,04,62,290,24*7A
+$GPGSV,3,2,12,07,02,233,16,09,28,286,27,11,05,340,13,16,32,142,18*79
+$GPGSV,3,3,12,21,,,13,24,,,13,29,04,045,14,31,50,062,29*7C
+$GPGLL,,,,,042711.00,V,N*4B
+$GPRMC,042712.00,V,,,,,,,260526,,,N*7A
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042712.00,,,,,0,04,13.27,,,,,,*67
+$GPGSA,A,1,03,04,31,09,,,,,,,,,13.31,13.27,1.00*0A
+$GPGSV,3,1,12,01,,,23,02,,,14,03,61,193,17,04,62,290,24*7B
+$GPGSV,3,2,12,07,02,233,,09,28,286,27,11,05,340,13,16,32,142,19*7F
+$GPGSV,3,3,12,21,,,13,24,,,14,29,04,045,15,31,50,062,29*7A
+$GPGLL,,,,,042712.00,V,N*48
+$GPRMC,042713.00,V,,,,,,,260526,,,N*7B
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042713.00,,,,,0,04,13.27,,,,,,*66
+$GPGSA,A,1,03,04,31,09,,,,,,,,,13.31,13.27,1.00*0A
+$GPGSV,3,1,12,01,,,21,02,,,14,03,61,193,17,04,62,290,23*7E
+$GPGSV,3,2,12,07,02,233,24,09,28,286,27,11,05,340,13,16,32,142,19*79
+$GPGSV,3,3,12,21,,,14,24,,,14,29,04,044,15,31,50,062,29*7C
+$GPGLL,,,,,042713.00,V,N*49
+$GPRMC,042714.00,V,,,,,,,260526,,,N*7C
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042714.00,,,,,0,04,13.26,,,,,,*60
+$GPGSA,A,1,03,04,31,09,,,,,,,,,13.30,13.26,1.00*0A
+$GPGSV,3,1,12,01,,,19,02,,,13,03,61,193,18,04,62,290,23*7D
+$GPGSV,3,2,12,07,02,233,21,09,28,286,27,11,05,340,15,16,32,142,19*7A
+$GPGSV,3,3,12,21,,,15,24,,,14,29,04,044,16,31,50,062,28*7F
+$GPGLL,,,,,042714.00,V,N*4E
+$GPRMC,042715.00,V,,,,,,,260526,,,N*7D
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042715.00,,,,,0,04,13.26,,,,,,*61
+$GPGSA,A,1,03,04,31,09,,,,,,,,,13.29,13.26,1.00*02
+$GPGSV,3,1,12,01,,,15,02,,,13,03,61,193,16,04,62,290,22*7E
+$GPGSV,3,2,12,07,02,233,18,09,28,286,27,11,05,340,14,16,32,142,17*7F
+$GPGSV,3,3,12,21,,,15,24,,,13,29,04,044,15,31,50,062,28*7B
+$GPGLL,,,,,0427
+[0;32mI (77133) GPS_MODULE: 13,51.081257,-114.131744,1125.300049,3.098396,0.000000,4,1,13.530000,101.474998,2000-00-00T04:27:11-00:00[0m
+ADC= 1672 Voltage= 1.347 V Resistance=14491.6 ohms Temp16.76 C 
+ADC= 1668 Voltage= 1.344 V Resistance=14550.4 ohms Temp16.67 C 
+ADC= 1670 Voltage= 1.346 V Resistance=14521.0 ohms Temp16.72 C 
+ADC= 1670 Voltage= 1.346 V Resistance=14521.0 ohms Temp16.72 C 
+ADC= 1671 Voltage= 1.347 V Resistance=14506.3 ohms Temp16.74 C 
+ADC= 1670 Voltage= 1.346 V Resistance=14521.0 ohms Temp16.72 C 
+[0;32mI (82853) GPS_MODULE: $GPRMC,042716.00,V,,,,,,,260526,,,N*7E[0m
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042716.00,,,,,0,04,13.25,,,,,,*61
+$GPGSA,A,1,03,04,31,09,,,,,,,,,13.29,13.25,1.00*01
+$GPGSV,3,1,12,01,,,13,02,,,13,03,61,193,16,04,62,290,23*79
+$GPGSV,3,2,12,07,02,233,15,09,28,286,27,11,05,340,14,16,32,142,18*7D
+$GPGSV,3,3,12,21,,,15,24,,,11,29,04,044,15,31,50,062,28*79
+$GPGLL,,,,,042716.00,V,N*4C
+$GPRMC,042717.00,V,,,,,,,260526,,,N*7F
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042717.00,,,,,0,04,13.24,,,,,,*61
+$GPGSA,A,1,03,04,31,09,,,,,,,,,13.28,13.24,1.00*01
+$GPGSV,3,1,12,01,,,11,02,,,13,03,61,193,17,04,62,290,23*7A
+$GPGSV,3,2,12,07,02,233,14,09,28,286,27,11,05,340,13,16,32,142,18*7B
+$GPGSV,3,3,12,21,,,15,24,,,11,29,04,044,16,31,50,062,28*7A
+$GPGLL,,,,,042717.00,V,N*4D
+$GPRMC,042718.00,V,,,,,,,260526,,,N*70
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042718.00,,,,,0,04,13.24,,,,,,*6E
+$GPGSA,A,1,03,04,31,09,,,,,,,,,13.27,13.24,1.00*0E
+$GPGSV,3,1,12,01,,,11,02,,,15,03,61,193,19,04,62,290,24*75
+$GPGSV,3,2,12,07,02,233,16,09,28,286,27,11,05,340,15,16,32,142,19*7E
+$GPGSV,3,3,12,21,,,16,24,,,13,29,04,044,15,31,50,062,28*78
+$GPGLL,,,,,042718.00,V,N*42
+$GPRMC,042719.00,V,,,,,,,260526,,,N*71
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042719.00,,,,,0,04,13.23,,,,,,*68
+$GPGSA,A,1,03,04,31,09,,,,,,,,,13.27,13.23,1.00*09
+$GPGSV,3,1,11,02,,,15,03,61,193,19,04,62,290,24,07,02,233,16*47
+$GPGSV,3,2,11,09,28,286,26,11,05,340,15,16,32,142,19,21,,,15*4B
+$GPGSV,3,3,11,24,,,14,29,04,044,15,31,50,062,29*79
+$GPGLL,,,,,042719.00,V,N*43
+$GPRMC,042720.00,V,,,,,,,260526,,,N*7B
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042720.00,,,,,0,04,13.22,,,,,,*63
+$GPGSA,A,1,03,04,31,09,,,,,,,,,13.26,13.22,1.00*09
+$GPGSV,3,1,11,02,,,15,03,61,193,19,04,62,290,23,07,02,233,16*40
+$GPGSV,3,2,11,09,28,286,26,11,05,340,15,16,32,142,19,21,,,14*4A
+$GPGSV,3,3,11,24,,,14,29,04,044,15,31,50,062,29*79
+$GPGLL,,,,,042720.00,V,N*49
+$GPRMC,042721.00,V,,,,,,,260526,,,N*7A
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042721.00,,,,,0,04,13.22,,,,,,*62
+$GPGSA,A,1,03,04,31,09,,,,,,,,,13.26,13.22,1.00*09
+$GPGSV,3,1,12,02,,,15,03,
+[0;32mI (83023) GPS_MODULE: 14,51.081257,-114.131744,1125.300049,3.098396,0.000000,4,1,13.530000,101.474998,2000-00-00T04:27:16-00:00[0m
+ADC= 1668 Voltage= 1.344 V Resistance=14550.4 ohms Temp16.67 C 
+ADC= 1666 Voltage= 1.343 V Resistance=14579.8 ohms Temp16.63 C 
+ADC= 1672 Voltage= 1.347 V Resistance=14491.6 ohms Temp16.76 C 
+ADC= 1668 Voltage= 1.344 V Resistance=14550.4 ohms Temp16.67 C 
+[0;32mI (86643) http_post_json: JSON payload:[0m
+{"Logging_Event":"test_log_one","session_id":"test_log_one","ticks_reference":86160,"Logging_Data":[{"timestamp":"2000-00-00T04:27:16-00:00","tickstamp":86159,"type":"gps","device_id":"gps_1","data":[51.081256866455078,-114.13174438476562,1125.300048828125,3.0983960628509521,4,101.47499847412109]},{"timestamp":"2000-00-00T04:27:16-00:00","tickstamp":86160,"type":"temp","device_id":"eng_temp_1","data":[17]}]}
+[0;32mI (86673) http_post_json: DNS lookup succeeded. IP=107.174.131.30[0m
+[0;32mI (86703) http_post_json: POST sent successfully[0m
+HTTP/1.1 200 OK
+Server: openresty
+Date: Tue, 26 May 2026 04:27:25 GMT
+Content-Type: application/json
+Content-Length: 65
+X-Served-By: telemetry-api.ucbaja.ca
+Connection: close
+
+{"success":true,"number_entries":2,"session_name":"test_log_one"}I (86963) http_post_json: Done reading response. Last read=0 errno=128
+ADC= 1671 Voltage= 1.347 V Resistance=14506.3 ohms Temp16.74 C 
+[0;32mI (87973) GPS_MODULE: $GPRMC,042722.00,V,,,,,,,260526,,,N*79[0m
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042722.00,,,,,0,04,13.21,,,,,,*62
+$GPGSA,A,1,03,04,31,09,,,,,,,,,13.25,13.21,1.00*09
+$GPGSV,4,1,13,02,,,14,03,61,193,19,04,62,290,23,07,02,233,16*44
+$GPGSV,4,2,13,09,28,286,26,11,05,340,14,16,32,142,18,21,,,14*4F
+$GPGSV,4,3,13,23,,,27,24,,,24,26,,,22,29,04,044,16*44
+$GPGSV,4,4,13,31,50,062,28*42
+$GPGLL,,,,,042722.00,V,N*4B
+$GPRMC,042723.00,V,,,,,,,260526,,,N*78
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042723.00,,,,,0,04,13.21,,,,,,*63
+$GPGSA,A,1,03,04,31,09,,,,,,,,,13.24,13.21,1.00*08
+$GPGSV,4,1,13,02,,,13,03,61,193,18,04,62,290,23,07,02,233,15*41
+$GPGSV,4,2,13,09,28,286,26,11,05,340,15,16,32,142,17,21,,,14*41
+$GPGSV,4,3,13,23,,,25,24,,,23,26,,,19,29,04,044,16*49
+$GPGSV,4,4,13,31,50,062,29*43
+$GPGLL,,,,,042723.00,V,N*4A
+$GPRMC,042724.00,V,,,,,,,260526,,,N*7F
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042724.00,,,,,0,04,13.20,,,,,,*65
+$GPGSA,A,1,03,04,31,09,,,,,,,,,13.24,13.20,1.00*09
+$GPGSV,4,1,13,02,,,11,03,61,193,18,04,62,290,23,07,02,233,15*43
+$GPGSV,4,2,13,09,28,286,26,11,05,340,15,16,32,142,18,21,,,15*4F
+$GPGSV,4,3,13,23,,,23,24,,,23,26,,,13,29,04,044,15*46
+$GPGSV,4,4,13,31,50,062,29*43
+$GPGLL,,,,,042724.00,V,N*4D
+$GPRMC,042725.00,V,,,,,,,260526,,,N*7E
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042725.00,,,,,0,04,13.19,,,,,,*6E
+$GPGSA,A,1,03,04,31,09,,,,,,,,,13.23,13.19,1.00*04
+$GPGSV,4,1,14,01,,,25,02,,,11,03,61,193,18,04,62,290,22*70
+$GPGSV,4,2,14,07,02,233,14,09,28,286,25,11,05,340,14,16,32,142,17*70
+$GPGSV,4,3,14,21,,,14,23,,,19,24,,,22,26,,,11*76
+$GPGSV,4,4,14,29,04,044,14,31,50,062,28*7F
+$GPGLL,,,,,042725.00,V,N*4C
+$GPRMC,042726.00,V,,,,,,,260526,,,N*7D
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042726.00,,,,,0,04,13.19,,,,,,*6D
+$GPGSA,A,1,03,04,31,09,,,,,,,,,13.23,13.19,1.00*04
+$GPGSV,4,1,14,01,,,21,02,,,12,03,61,193,17,04,62,290,22*78
+$GPGSV,4,2,14,07,02,233,12,09,2
+[0;32mI (88133) GPS_MODULE: 15,51.081257,-114.131744,1125.300049,3.098396,0.000000,4,1,13.530000,101.474998,2000-00-00T04:27:22-00:00[0m
+ADC= 1669 Voltage= 1.345 V Resistance=14535.7 ohms Temp16.70 C 
+ADC= 1667 Voltage= 1.343 V Resistance=14565.1 ohms Temp16.65 C 
+ADC= 1668 Voltage= 1.344 V Resistance=14550.4 ohms Temp16.67 C 
+ADC= 1670 Voltage= 1.346 V Resistance=14521.0 ohms Temp16.72 C 
+ADC= 1672 Voltage= 1.347 V Resistance=14491.6 ohms Temp16.76 C 
+[0;32mI (92853) GPS_MODULE: $GPRMC,042727.00,V,,,,,,,260526,,,N*7C[0m
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042727.00,,,,,0,04,13.18,,,,,,*6D
+$GPGSA,A,1,03,04,31,09,,,,,,,,,13.22,13.18,1.00*04
+$GPGSV,4,1,15,01,,,16,02,,,13,03,61,193,18,04,62,290,22*73
+$GPGSV,4,2,15,07,02,233,14,08,,,29,09,28,286,25,11,05,340,*40
+$GPGSV,4,3,15,16,32,142,18,21,,,14,23,,,13,24,,,17*47
+$GPGSV,4,4,15,26,,,12,29,04,044,11,31,50,062,28*7C
+$GPGLL,,,,,042727.00,V,N*4E
+$GPRMC,042728.00,V,,,,,,,260526,,,N*73
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042728.00,,,,,0,04,13.17,,,,,,*6D
+$GPGSA,A,1,03,04,31,09,,,,,,,,,13.21,13.17,1.00*08
+$GPGSV,4,1,14,01,,,14,02,,,12,03,61,193,19,04,62,290,22*70
+$GPGSV,4,2,14,07,02,233,14,09,28,286,24,11,05,340,,16,32,142,18*7B
+$GPGSV,4,3,14,21,,,14,23,,,13,24,,,15,26,,,12*7B
+$GPGSV,4,4,14,29,04,044,10,31,50,062,28*7B
+$GPGLL,,,,,042728.00,V,N*41
+$GPRMC,042729.00,V,,,,,,,260526,,,N*72
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042729.00,,,,,0,04,13.17,,,,,,*6C
+$GPGSA,A,1,03,04,31,09,,,,,,,,,13.21,13.17,1.00*08
+$GPGSV,4,1,15,01,,,14,02,,,13,03,61,193,19,04,62,290,22*70
+$GPGSV,4,2,15,06,,,24,07,02,233,13,09,28,286,25,11,05,340,*44
+$GPGSV,4,3,15,16,32,142,17,21,,,14,23,,,12,24,,,14*4A
+$GPGSV,4,4,15,26,,,12,29,04,044,11,31,50,062,28*7C
+$GPGLL,,,,,042729.00,V,N*40
+$GPRMC,042730.00,V,,,,,,,260526,,,N*7A
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042730.00,,,,,0,04,13.16,,,,,,*65
+$GPGSA,A,1,03,04,31,09,,,,,,,,,13.20,13.16,1.00*08
+$GPGSV,4,1,16,01,,,13,02,,,13,03,61,193,19,04,62,290,22*74
+$GPGSV,4,2,16,06,,,21,07,02,233,13,09,28,286,25,11,05,340,*42
+$GPGSV,4,3,16,14,,,28,16,32,142,17,21,,,14,23,,,12*45
+$GPGSV,4,4,16,24,,,14,26,,,11,29,04,044,13,31,50,062,28*7D
+$GPGLL,,,,,042730.00,V,N*48
+$GPRMC,042731.00,V,,,,,,,260526,,,N*7B
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042731.00,,,,,0,04,13.16,,,,,,*64
+$GPGSA,A,1,03,04,31,09,,,,,,,,,13.19,13.16,1.00*02
+$GPGSV,4,1,14,01,,,13,02,,,12,03,61,193,19,04,62,290,22*77
+$GPGSV,4,2,14,0
+[0;32mI (93013) GPS_MODULE: 16,51.081257,-114.131744,1125.300049,3.098396,0.000000,4,1,13.530000,101.474998,2000-00-00T04:27:27-00:00[0m
+ADC= 1670 Voltage= 1.346 V Resistance=14521.0 ohms Temp16.72 C 
+ADC= 1668 Voltage= 1.344 V Resistance=14550.4 ohms Temp16.67 C 
+ADC= 1672 Voltage= 1.347 V Resistance=14491.6 ohms Temp16.76 C 
+ADC= 1668 Voltage= 1.344 V Resistance=14550.4 ohms Temp16.67 C 
+[0;32mI (96973) http_post_json: JSON payload:[0m
+{"Logging_Event":"test_log_one","session_id":"test_log_one","ticks_reference":96491,"Logging_Data":[{"timestamp":"2000-00-00T04:27:27-00:00","tickstamp":96490,"type":"gps","device_id":"gps_1","data":[51.081256866455078,-114.13174438476562,1125.300048828125,3.0983960628509521,4,101.47499847412109]},{"timestamp":"2000-00-00T04:27:27-00:00","tickstamp":96490,"type":"temp","device_id":"eng_temp_1","data":[17]}]}
+[0;32mI (97003) http_post_json: DNS lookup succeeded. IP=107.174.131.30[0m
+[0;32mI (97043) http_post_json: POST sent successfully[0m
+ADC= 1673 Voltage= 1.348 V Resistance=14477.0 ohms Temp16.78 C 
+HTTP/1.1 200 OK
+Server: openresty
+Date: Tue, 26 May 2026 04:27:35 GMT
+Content-Type: application/json
+Content-Length: 65
+X-Served-By: telemetry-api.ucbaja.ca
+Connection: close
+
+{"success":true,"number_entries":2,"session_name":"test_log_one"}I (97443) http_post_json: Done reading response. Last read=0 errno=128
+[0;32mI (97853) GPS_MODULE: $GPRMC,042732.00,V,,,,,,,260526,,,N*78[0m
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042732.00,,,,,0,04,13.15,,,,,,*64
+$GPGSA,A,1,03,04,31,09,,,,,,,,,13.19,13.15,1.00*01
+$GPGSV,4,1,13,01,,,13,02,,,13,03,61,193,18,04,62,290,22*70
+$GPGSV,4,2,13,06,,,14,07,02,233,13,09,28,286,24,11,05,340,*40
+$GPGSV,4,3,13,16,32,142,17,21,,,15,24,,,13,29,04,044,13*75
+$GPGSV,4,4,13,31,50,062,28*42
+$GPGLL,,,,,042732.00,V,N*4A
+$GPRMC,042733.00,V,,,,,,,260526,,,N*79
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042733.00,,,,,0,04,2.21,,,,,,*52
+$GPGSA,A,1,03,04,31,09,,,,,,,,,4.62,2.21,4.06*0F
+$GPGSV,3,1,12,01,,,13,03,61,193,19,04,62,290,22,06,,,11*71
+$GPGSV,3,2,12,07,02,233,14,09,28,286,24,11,05,340,,16,32,142,17*75
+$GPGSV,3,3,12,21,,,15,24,,,13,29,04,044,13,31,50,062,28*7D
+$GPGLL,,,,,042733.00,V,N*4B
+$GPRMC,042734.00,A,5104.88014,N,11407.90674,W,1.821,,260526,,,A*61
+$GPVTG,,T,,M,1.821,N,3.373,K,A*2D
+$GPGGA,042734.00,5104.88014,N,11407.90674,W,1,04,2.21,1116.0,M,-17.5,M,,*5E
+$GPGSA,A,3,03,04,31,09,,,,,,,,,4.62,2.21,4.06*0D
+$GPGSV,3,1,10,01,,,14,03,61,193,20,04,62,290,22,07,02,233,15*4B
+$GPGSV,3,2,10,09,28,286,24,11,05,340,,16,32,142,17,21,,,14*43
+$GPGSV,3,3,10,29,04,044,14,31,50,062,28*7B
+$GPGLL,5104.88014,N,11407.90674,W,042734.00,A,A*77
+$GPRMC,042735.00,A,5104.88199,N,11407.90669,W,0.814,,260526,,,A*6F
+$GPVTG,,T,,M,0.814,N,1.507,K,A*2D
+$GPGGA,042735.00,5104.88199,N,11407.90669,W,1,04,2.21,1116.8,M,-17.5,M,,*5F
+$GPGSA,A,3,03,04,31,09,,,,,,,,,4.62,2.21,4.06*0D
+$GPGSV,3,1,10,01,,,13,03,61,193,20,04,62,290,22,07,02,233,14*4D
+$GPGSV,3,2,10,09,28,286,25,11,05,340,,16,32,142,17,21,,,14*42
+$GPGSV,3,3,10,29,04,044,14,31,50,062,28*7B
+$GPGLL,5104.88199,N,11407.90669,W,042735.00,A,A*7E
+$GPRMC,042736.00,A,5104.88317,N,11407.90710,W,0.292,,260526,,,A*63
+$GPVTG,,T,,M,0.292,N,0.541,K,A*2A
+$GPGGA,042736.00,5104.88317,N,11407.90710,W,1,04,2.21,1117.2,M,-17.5,M,,*5C
+$GPGSA,A,3,03,04,
+[0;32mI (98013) GPS_MODULE: 17,51.081257,-114.131744,1125.300049,3.098396,0.000000,4,1,13.530000,101.474998,2000-00-00T04:27:32-00:00[0m
+ADC= 1672 Voltage= 1.347 V Resistance=14491.6 ohms Temp16.76 C 
+ADC= 1673 Voltage= 1.348 V Resistance=14477.0 ohms Temp16.78 C 
+ADC= 1664 Voltage= 1.341 V Resistance=14609.4 ohms Temp16.59 C 
+ADC= 1670 Voltage= 1.346 V Resistance=14521.0 ohms Temp16.72 C 
+[0;32mI (101973) GPS_MODULE: $GPRMC,042737.00,A,5104.88290,N,11407.90719,W,0.338,,260526,,,A*64[0m
+$GPVTG,,T,,M,0.338,N,0.626,K,A*29
+$GPGGA,042737.00,5104.88290,N,11407.90719,W,1,04,13.12,1116.7,M,-17.5,M,,*6E
+$GPGSA,A,2,03,04,31,09,,,,,,,,,13.16,13.12,1.00*0A
+$GPGSV,3,1,12,01,,,16,03,61,193,21,04,62,290,23,07,02,233,15*4B
+$GPGSV,3,2,12,09,28,286,25,11,05,340,20,16,32,142,18,21,,,16*4F
+$GPGSV,3,3,12,24,,,24,26,,,26,29,04,044,16,31,50,062,29*7A
+$GPGLL,5104.88290,N,11407.90719,W,042737.00,A,A*70
+$GPRMC,042738.00,A,5104.88279,N,11407.90717,W,0.453,,260526,,,A*68
+$GPVTG,,T,,M,0.453,N,0.839,K,A*23
+$GPGGA,042738.00,5104.88279,N,11407.90717,W,1,04,13.11,1116.5,M,-17.5,M,,*69
+$GPGSA,A,2,03,04,31,09,,,,,,,,,13.15,13.11,1.00*0A
+$GPGSV,3,1,12,01,,,16,03,61,193,21,04,62,290,23,07,02,233,15*4B
+$GPGSV,3,2,12,09,28,286,24,11,05,340,18,16,32,142,17,21,,,16*4A
+$GPGSV,3,3,12,24,,,23,26,,,25,29,04,044,15,31,50,062,29*7D
+$GPGLL,5104.88279,N,11407.90717,W,042738.00,A,A*76
+$GPRMC,042739.00,A,5104.88287,N,11407.90704,W,0.675,,260526,,,A*6C
+$GPVTG,,T,,M,0.675,N,1.251,K,A*20
+$GPGGA,042739.00,5104.88287,N,11407.90704,W,1,04,13.11,1116.5,M,-17.5,M,,*6B
+$GPGSA,A,2,03,04,31,09,,,,,,,,,13.15,13.11,1.00*0A
+$GPGSV,3,1,12,01,,,14,03,61,193,21,04,62,290,22,07,02,233,15*48
+$GPGSV,3,2,12,09,28,286,24,11,05,340,16,16,32,142,17,21,,,16*44
+$GPGSV,3,3,12,24,,,23,26,,,23,29,04,044,15,31,50,062,29*7B
+$GPGLL,5104.88287,N,11407.90704,W,042739.00,A,A*74
+$GPRMC,042740.00,A,5104.88263,N,11407.90778,W,1.245,,260526,,,A*65
+$GPVTG,,T,,M,1.245,N,2.305,K,A*25
+$GPGGA,042740.00,5104.88263,N,11407.90778,W,1,04,13.10,1116.4,M,-17.5,M,,*64
+$GPGSA,A,2,03,04,31,09,,,,,,,,,13.14,13.10,1.00*0A
+$GPGSV,3,1,12,01,,,14,03,61,193,20,04,62,290,21,07,02,233,16*49
+$GPGSV,3,2,12,09,28,286,23,11,05,340,16,16,32,142,17,21,,,14
+[0;32mI (102123) GPS_MODULE: 18,51.081383,-114.131790,1116.699951,0.625976,0.000000,4,1,13.120000,98.400002,2000-00-00T04:27:37-00:00[0m
+ADC= 1667 Voltage= 1.343 V Resistance=14565.1 ohms Temp16.65 C 
+ADC= 1667 Voltage= 1.343 V Resistance=14565.1 ohms Temp16.65 C 
+ADC= 1669 Voltage= 1.345 V Resistance=14535.7 ohms Temp16.70 C 
+ADC= 1671 Voltage= 1.347 V Resistance=14506.3 ohms Temp16.74 C 
+ADC= 1673 Voltage= 1.348 V Resistance=14477.0 ohms Temp16.78 C 
+ADC= 1669 Voltage= 1.345 V Resistance=14535.7 ohms Temp16.70 C 
+[0;32mI (107453) http_post_json: JSON payload:[0m
+{"Logging_Event":"test_log_one","session_id":"test_log_one","ticks_reference":106970,"Logging_Data":[{"timestamp":"2000-00-00T04:27:37-00:00","tickstamp":106969,"type":"gps","device_id":"gps_1","data":[51.081382751464844,-114.13179016113281,1116.699951171875,0.625976026058197,4,98.4000015258789]},{"timestamp":"2000-00-00T04:27:37-00:00","tickstamp":106970,"type":"temp","device_id":"eng_temp_1","data":[17]}]}
+[0;32mI (107483) http_post_json: DNS lookup succeeded. IP=107.174.131.30[0m
+[0;32mI (107523) http_post_json: POST sent successfully[0m
+[0;32mI (107733) GPS_MODULE: $GPRMC,042741.00,A,5104.88318,N,11407.90797,W,0.780,,260526,,,A*65[0m
+$GPVTG,,T,,M,0.780,N,1.444,K,A*29
+$GPGGA,042741.00,5104.88318,N,11407.90797,W,1,04,13.10,1116.2,M,-17.5,M,,*6F
+$GPGSA,A,2,03,04,31,09,,,,,,,,,13.13,13.10,1.00*0D
+$GPGSV,3,1,12,01,,,15,03,61,193,20,04,62,290,21,07,02,233,16*48
+$GPGSV,3,2,12,09,28,286,23,11,05,340,15,16,32,142,17,21,,,14*42
+$GPGSV,3,3,12,24,,,19,26,,,22,29,04,044,14,31,50,062,29*72
+$GPGLL,5104.88318,N,11407.90797,W,042741.00,A,A*76
+$GPRMC,042742.00,V,,,,,,,260526,,,N*7F
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042742.00,,,,,0,00,99.99,,,,,,*61
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,3,1,12,01,,,14,03,61,193,18,04,62,290,21,07,02,233,16*42
+$GPGSV,3,2,12,09,28,286,23,11,05,340,14,16,32,142,17,21,,,14*43
+$GPGSV,3,3,12,24,,,16,26,,,22,29,04,044,15,31,50,062,28*7D
+$GPGLL,,,,,042742.00,V,N*4D
+$GPRMC,042743.00,V,,,,,,,260526,,,N*7E
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042743.00,,,,,0,00,99.99,,,,,,*60
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,3,1,12,01,,,14,03,61,193,,04,62,290,,07,02,233,15*4B
+$GPGSV,3,2,12,09,28,286,23,11,05,340,14,16,32,142,19,21,,,15*4C
+$GPGSV,3,3,12,24,,,15,26,,,22,29,04,044,15,31,50,062,28*7E
+$GPGLL,,,,,042743.00,V,N*4C
+$GPRMC,042744.00,V,,,,,,,260526,,,N*79
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042744.00,,,,,0,00,99.99,,,,,,*67
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,3,1,11,01,,,14,03,61,193,21,04,62,290,21,07,02,233,16*4B
+$GPGSV,3,2,11,09,28,286,23,11,05,340,14,16,32,142,18,24,,,15*4B
+$GPGSV,3,3,11,26,,,21,29,04,044,16,31,50,062,28*7F
+$GPGLL,,,,,042744.00,V,N*4B
+$GPRMC,042745.00,V,,,,,,,260526,,,N*78
+$GPVTG,,,,,,,,,N*30
+$GPGGA,042745.00,,,,,0,00,99.99,,,,,,*66
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,3,1,11,01,,,14,03,61,193,21,04,62,290,20,07,02,233,15*49
+$GPGSV,3,2,11,09,28,286,23,11,05,340,15,16,32,142,17,24,,,14*44
+$GPGSV,3,3,11,26,,,18,29,04,044,15,31,50,062,29*77
+$GPGLL,,,,,042745.00,V,N*4A
+$GPRMC,0
+HTTP/1.1 200 OK
+Server: openresty
+Date: Tue, 26 May 2026 04:27:46 GMT
+Content-Type: application/json
+Content-Length: 65
+X-Served-By: telemetry-api.ucbaja.ca
+Connection: close
+
+{"success":true,"number_entries":2,"session_name":"test_log_one"}I (107893) GPS_MODULE: 19,51.081387,-114.131798,1116.199951,1.444560,0.000000,4,1,13.100000,98.250000,2000-00-00T04:27:41-00:00
+[0;32mI (107913) http_post_json: Done reading response. Last read=0 errno=128[0m
+ADC= 1672 Voltage= 1.347 V Resistance=14491.6 ohms Temp16.76 C 
+ADC= 1669 Voltage= 1.345 V Resistance=14535.7 ohms Temp16.70 C 

@@ -1,0 +1,174 @@
+Command: C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:\Espressif\frameworks\esp-idf-v5.5.3\tools/idf_monitor.py -p COM5 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 C:\Users\marcu\baja\repos\UCBajaElectrical\BAJA\digital_dash\sensor_board\build\thermistor_data.elf C:\Users\marcu\baja\repos\UCBajaElectrical\BAJA\digital_dash\sensor_board\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'C:\Espressif\frameworks\esp-idf-v5.5.3\tools\idf.py'
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6280
+load:0x40078000,len:15864
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v5.5.3 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time May 22 2026 16:19:03[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v3.1[0m
+[0;32mI (32) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (35) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (62) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (75) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1bb08h (113416) map[0m
+[0;32mI (125) esp_image: segment 1: paddr=0002bb30 vaddr=3ffb0000 size=04378h ( 17272) load[0m
+[0;32mI (132) esp_image: segment 2: paddr=0002feb0 vaddr=40080000 size=00168h (   360) load[0m
+[0;32mI (132) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=91370h (594800) map[0m
+[0;32mI (340) esp_image: segment 4: paddr=000c1398 vaddr=40080168 size=18db8h (101816) load[0m
+[0;32mI (379) esp_image: segment 5: paddr=000da158 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (392) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (392) boot: Disabling RNG early entropy source...[0m
+[0;32mI (402) cpu_start: Multicore app[0m
+[0;32mI (411) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (411) cpu_start: Pro cpu start user code[0m
+[0;32mI (411) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (413) app_init: Application information:[0m
+[0;32mI (417) app_init: Project name:     thermistor_data[0m
+[0;32mI (421) app_init: App version:      b4134ea4-dirty[0m
+[0;32mI (426) app_init: Compile time:     May 22 2026 16:18:47[0m
+[0;32mI (431) app_init: ELF file SHA256:  c30da3530...[0m
+[0;32mI (435) app_init: ESP-IDF:          v5.5.3[0m
+[0;32mI (439) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (443) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (447) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (451) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (457) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (462) heap_init: At 3FFB9730 len 000268D0 (154 KiB): DRAM[0m
+[0;32mI (467) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (473) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (478) heap_init: At 40098F20 len 000070E0 (28 KiB): IRAM[0m
+[0;32mI (485) spi_flash: detected chip: generic[0m
+[0;32mI (487) spi_flash: flash io: dio[0m
+[0;33mW (490) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (503) main_task: Started on CPU0[0m
+[0;32mI (513) main_task: Calling app_main()[0m
+STA MAC Address: 78:42:1C:8D:EF:C4
+STA MAC Address: 78:42:1C:8D:EF:C4
+[0;32mI (543) wifi:wifi driver task: 3ffc17e4, prio:23, stack:6656, core=0[0m
+[0;32mI (553) wifi:wifi firmware version: 4df78f2[0m
+[0;32mI (553) wifi:wifi certification version: v7.0[0m
+[0;32mI (553) wifi:config NVS flash: enabled[0m
+[0;32mI (553) wifi:config nano formatting: disabled[0m
+[0;32mI (553) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (563) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (563) wifi:Init management short buffer num: 32[0m
+[0;32mI (573) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (573) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (583) wifi:Init static rx buffer num: 10[0m
+[0;32mI (583) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (583) wifi_init: rx ba win: 6[0m
+[0;32mI (593) wifi_init: accept mbox: 6[0m
+[0;32mI (593) wifi_init: tcpip mbox: 32[0m
+[0;32mI (593) wifi_init: udp mbox: 6[0m
+[0;32mI (603) wifi_init: tcp mbox: 6[0m
+[0;32mI (603) wifi_init: tcp tx win: 5760[0m
+[0;32mI (603) wifi_init: tcp rx win: 5760[0m
+[0;32mI (603) wifi_init: tcp mss: 1440[0m
+[0;32mI (613) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (613) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (623) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (693) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (743) wifi:mode : sta (78:42:1c:8d:ef:c4)[0m
+[0;32mI (743) wifi:enable tsf[0m
+[0;32mI (753) wifi station: wifi_init_sta finished.[0m
+[0;32mI (763) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (763) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1763) wifi:state: auth -> init (0x200)[0m
+[0;32mI (1773) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1773) wifi station: retry to connect to the AP[0m
+[0;32mI (1773) wifi station: connect to the AP fail[0m
+[0;32mI (4193) wifi station: retry to connect to the AP[0m
+[0;32mI (4193) wifi station: connect to the AP fail[0m
+[0;32mI (4193) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (4193) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (4263) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (4303) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (4333) wifi:connected with Droid, aid = 5, channel 11, BW20, bssid = ea:3c:43:c6:58:72[0m
+[0;32mI (4333) wifi:security: WPA2-PSK, phy: bgn, rssi: -11[0m
+[0;32mI (4343) wifi:pm start, type: 1[0m
+
+[0;32mI (4343) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (4403) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (4403) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (5423) esp_netif_handlers: sta ip: 10.34.124.22, mask: 255.255.255.0, gw: 10.34.124.212[0m
+[0;32mI (5423) wifi station: got ip:10.34.124.22[0m
+[0;32mI (5423) wifi station: connected to ap SSID:Droid password:password123[0m
+[0;32mI (5433) ESPNOW: espnow [version: 2.0] init[0m
+[0;32mI (5433) http_post_json: JSON payload:[0m
+{"Logging_Event":"test_log_one","session_id":"test_log_one","ticks_reference":4954,"Logging_Data":[{"timestamp":"","tickstamp":4953,"type":"gps","device_id":"gps_1","data":[0,0,0,0,0,0]},{"timestamp":"","tickstamp":4954,"type":"temp","device_id":"eng_temp_1","data":[0]}]}
+ADC= 1720 Voltage= 1.386 V Resistance=13808.1 ofms Temp17.81 C 
+[0;32mI (5563) wifi:<ba-add>idx:0 (ifx:0, ea:3c:43:c6:58:72), tid:0, ssn:3, winSize:64[0m
+[0;32mI (5563) http_post_json: DNS lookup succeeded. IP=107.173.181.183[0m
+[0;32mI (5833) http_post_json: POST sent successfully[0m
+HTTP/1.1 200 OK
+Date: Mon, 25 May 2026 20:57:02 GMT
+Server: uvicorn
+content-length: 65
+content-type: application/json
+Connection: close
+
+{"success":true,"number_entries":2,"session_name":"test_log_one"}I (6053) http_post_json: Done reading response. Last read=0 errno=128
+ADC= 1718 Voltage= 1.384 V Resistance=13835.9 ofms Temp17.76 C 
+ADC= 1715 Voltage= 1.382 V Resistance=13877.6 ofms Temp17.70 C 
+ADC= 1716 Voltage= 1.383 V Resistance=13863.6 ofms Temp17.72 C 
+ADC= 1720 Voltage= 1.386 V Resistance=13808.1 ofms Temp17.81 C 
+[0;32mI (10433) espnow_example: Start sending broadcast data[0m
+[1;31mE (10433) ESPNOW: Peer channel is not equal to the home channel, send fail![0m
+[1;31mE (10433) espnow_example: Send error[0m
+[0;32mI (10433) ESPNOW: espnow [version: 2.0] deinit[0m
+ADC= 1724 Voltage= 1.389 V Resistance=13752.9 ofms Temp17.90 C 
+ADC= 1718 Voltage= 1.384 V Resistance=13835.9 ofms Temp17.76 C 
+ADC= 1719 Voltage= 1.385 V Resistance=13822.0 ofms Temp17.79 C 
+ADC= 1713 Voltage= 1.380 V Resistance=13905.4 ofms Temp17.66 C 
+ADC= 1718 Voltage= 1.384 V Resistance=13835.9 ofms Temp17.76 C 
+ADC= 1719 Voltage= 1.385 V Resistance=13822.0 ofms Temp17.79 C 
+[0;32mI (16073) http_post_json: JSON payload:[0m
+{"Logging_Event":"test_log_one","session_id":"test_log_one","ticks_reference":15591,"Logging_Data":[{"timestamp":"","tickstamp":15590,"type":"gps","device_id":"gps_1","data":[0,0,0,0,0,0]},{"timestamp":"","tickstamp":15590,"type":"temp","device_id":"eng_temp_1","data":[17.790000915527344]}]}
+[0;32mI (16093) http_post_json: DNS lookup succeeded. IP=107.173.181.183[0m
+[0;32mI (16283) http_post_json: POST sent successfully[0m
+ADC= 1716 Voltage= 1.383 V Resistance=13863.6 ofms Temp17.72 C 
+HTTP/1.1 200 OK
+Date: Mon, 25 May 2026 20:57:13 GMT
+Server: uvicorn
+content-length: 65
+content-type: application/json
+Connection: close
+
+{"success":true,"number_entries":2,"session_name":"test_log_one"}I (16513) http_post_json: Done reading response. Last read=0 errno=128
+ADC= 1720 Voltage= 1.386 V Resistance=13808.1 ofms Temp17.81 C 
+ADC= 1718 Voltage= 1.384 V Resistance=13835.9 ofms Temp17.76 C 
+ADC= 1719 Voltage= 1.385 V Resistance=13822.0 ofms Temp17.79 C 
+ADC= 1717 Voltage= 1.384 V Resistance=13849.7 ofms Temp17.74 C 
+ADC= 1714 Voltage= 1.381 V Resistance=13891.5 ofms Temp17.68 C 
+ADC= 1724 Voltage= 1.389 V Resistance=13752.9 ofms Temp17.90 C 
+ADC= 1718 Voltage= 1.384 V Resistance=13835.9 ofms Temp17.76 C 
+ADC= 1721 Voltage= 1.387 V Resistance=13794.3 ofms Temp17.83 C 
+ADC= 1719 Voltage= 1.385 V Resistance=13822.0 ofms Temp17.79 C 
+ADC= 1717 Voltage= 1.384 V Resistance=13849.7 ofms Temp17.74 C 
+[0;32mI (26523) http_post_json: JSON payload:[0m
+{"Logging_Event":"test_log_one","session_id":"test_log_one","ticks_reference":26040,"Logging_Data":[{"timestamp":"","tickstamp":26039,"type":"gps","device_id":"gps_1","data":[0,0,0,0,0,0]},{"timestamp":"","tickstamp":26040,"type":"temp","device_id":"eng_temp_1","data":[17.739999771118164]}]}
+[0;32mI (26543) http_post_json: DNS lookup succeeded. IP=107.173.181.183[0m
+[0;32mI (26723) http_post_json: POST sent successfully[0m
+HTTP/1.1 200 OK
+Date: Mon, 25 May 2026 20:57:24 GMT
+Server: uvicorn
+content-length: 65
+content-type: application/json
+Connection: close
+
+{"success":true,"number_entries":2,"session_name":"test_log_one"}I (26933) http_post_json: Done reading response. Last read=0 errno=128
+ADC= 1718 Voltage= 1.384 V Resistance=13835.9 ofms Temp17.76 C 
+ADC= 1717 Voltage= 1.384 V Resistance=13849.7 ofms Temp17.74 C 

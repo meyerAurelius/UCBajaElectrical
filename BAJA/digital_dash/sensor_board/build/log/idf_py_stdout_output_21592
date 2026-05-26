@@ -1,0 +1,416 @@
+Command: C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:\Espressif\frameworks\esp-idf-v5.5.3\tools/idf_monitor.py -p COM5 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 C:\Users\marcu\baja\repos\UCBajaElectrical\BAJA\digital_dash\sensor_board\build\thermistor_data.elf C:\Users\marcu\baja\repos\UCBajaElectrical\BAJA\digital_dash\sensor_board\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'C:\Espressif\frameworks\esp-idf-v5.5.3\tools\idf.py'
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6280
+load:0x40078000,len:15864
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v5.5.3 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time May 22 2026 16:19:03[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v3.1[0m
+[0;32mI (32) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (35) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (62) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (75) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1bb08h (113416) map[0m
+I (125) esp_image: segment 1: paddr=0002bb30 vaddr=3ffb0000 size=04378h ( 17272) load
+[0;32mI (132) esp_image: segment 2: paddr=0002feb0 vaddr=40080000 size=00168h (   360) load[0m
+[0;32mI (132) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=91350h (594768) map[0m
+[0;32mI (340) esp_image: segment 4: paddr=000c1378 vaddr=40080168 size=18db8h (101816) load[0m
+[0;32mI (379) esp_image: segment 5: paddr=000da138 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (392) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (392) boot: Disabling RNG early entropy source...[0m
+[0;32mI (402) cpu_start: Multicore app[0m
+[0;32mI (411) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (411) cpu_start: Pro cpu start user code[0m
+[0;32mI (411) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (413) app_init: Application information:[0m
+[0;32mI (417) app_init: Project name:     thermistor_data[0m
+[0;32mI (421) app_init: App version:      b4134ea4-dirty[0m
+[0;32mI (426) app_init: Compile time:     May 22 2026 16:18:47[0m
+[0;32mI (431) app_init: ELF file SHA256:  b6d85c259...[0m
+[0;32mI (435) app_init: ESP-IDF:          v5.5.3[0m
+[0;32mI (439) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (443) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (447) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (451) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (457) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (462) heap_init: At 3FFB9730 len 000268D0 (154 KiB): DRAM[0m
+[0;32mI (467) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (473) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (478) heap_init: At 40098F20 len 000070E0 (28 KiB): IRAM[0m
+[0;32mI (485) spi_flash: detected chip: generic[0m
+[0;32mI (487) spi_flash: flash io: dio[0m
+[0;33mW (490) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (503) main_task: Started on CPU0[0m
+[0;32mI (513) main_task: Calling app_main()[0m
+STA MAC Address: 78:42:1C:8D:EF:C4
+STA MAC Address: 78:42:1C:8D:EF:C4
+[0;32mI (543) wifi:wifi driver task: 3ffc1868, prio:23, stack:6656, core=0[0m
+[0;32mI (553) wifi:wifi firmware version: 4df78f2[0m
+[0;32mI (553) wifi:wifi certification version: v7.0[0m
+[0;32mI (553) wifi:config NVS flash: enabled[0m
+[0;32mI (553) wifi:config nano formatting: disabled[0m
+[0;32mI (553) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (563) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (563) wifi:Init management short buffer num: 32[0m
+[0;32mI (573) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (573) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (583) wifi:Init static rx buffer num: 10[0m
+[0;32mI (583) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (583) wifi_init: rx ba win: 6[0m
+[0;32mI (593) wifi_init: accept mbox: 6[0m
+[0;32mI (593) wifi_init: tcpip mbox: 32[0m
+[0;32mI (593) wifi_init: udp mbox: 6[0m
+[0;32mI (603) wifi_init: tcp mbox: 6[0m
+[0;32mI (603) wifi_init: tcp tx win: 5760[0m
+[0;32mI (603) wifi_init: tcp rx win: 5760[0m
+[0;32mI (603) wifi_init: tcp mss: 1440[0m
+[0;32mI (613) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (613) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (623) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (703) wifi:mode : sta (78:42:1c:8d:ef:c4)[0m
+[0;32mI (703) wifi:enable tsf[0m
+[0;32mI (703) wifi station: wifi_init_sta finished.[0m
+[0;32mI (723) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (723) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1723) wifi:state: auth -> init (0x200)[0m
+[0;32mI (1733) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1733) wifi station: retry to connect to the AP[0m
+[0;32mI (1733) wifi station: connect to the AP fail[0m
+[0;32mI (4153) wifi station: retry to connect to the AP[0m
+[0;32mI (4153) wifi station: connect to the AP fail[0m
+[0;32mI (4153) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (4153) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (5173) wifi:state: auth -> init (0x200)[0m
+[0;32mI (5183) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (5183) wifi station: retry to connect to the AP[0m
+[0;32mI (5183) wifi station: connect to the AP fail[0m
+[0;32mI (7603) wifi station: retry to connect to the AP[0m
+[0;32mI (7603) wifi station: connect to the AP fail[0m
+[0;32mI (7603) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (7603) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (8623) wifi:state: auth -> init (0x200)[0m
+[0;32mI (8633) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (8633) wifi station: retry to connect to the AP[0m
+[0;32mI (8633) wifi station: connect to the AP fail[0m
+[0;32mI (11043) wifi station: connect to the AP fail[0m
+[0;32mI (11043) wifi station: Failed to connect to SSID:Droid, password:password123[0m
+[0;32mI (11053) ESPNOW: espnow [version: 2.0] init[0m
+[0;32mI (11053) http_post_json: JSON payload:[0m
+{"Logging_Event":"test_log_one","session_id":"test_log_one","ticks_reference":10575,"Logging_Data":[{"timestamp":"","tickstamp":10573,"type":"gps","device_id":"gps_1","data":[0,0,0,0,0,0]},{"timestamp":"","tickstamp":10574,"type":"temp","device_id":"eng_temp_1","data":[0]}]}
+[1;31mE (11083) http_post_json: DNS lookup failed err=202 res=0x0[0m
+[1;31mE (11083) http_post_json: POST request failed[0m
+ADC= 1738 Voltage= 1.401 V Resistance=13561.6 ofms Temp18.20 C 
+ADC= 1740 Voltage= 1.402 V Resistance=13534.5 ofms Temp18.24 C 
+ADC= 1739 Voltage= 1.401 V Resistance=13548.0 ofms Temp18.22 C 
+ADC= 1740 Voltage= 1.402 V Resistance=13534.5 ofms Temp18.24 C 
+ADC= 1741 Voltage= 1.403 V Resistance=13521.0 ofms Temp18.27 C 
+[0;32mI (16053) espnow_example: Start sending broadcast data[0m
+[1;31mE (16053) ESPNOW: Peer channel is not equal to the home channel, send fail![0m
+[1;31mE (16053) espnow_example: Send error[0m
+[0;32mI (16053) ESPNOW: espnow [version: 2.0] deinit[0m
+ADC= 1748 Voltage= 1.409 V Resistance=13426.8 ofms Temp18.42 C 
+ADC= 1749 Voltage= 1.409 V Resistance=13413.4 ofms Temp18.44 C 
+ADC= 1750 Voltage= 1.410 V Resistance=13400.0 ofms Temp18.46 C 
+ADC= 1753 Voltage= 1.413 V Resistance=13360.0 ofms Temp18.53 C 
+ADC= 1750 Voltage= 1.410 V Resistance=13400.0 ofms Temp18.46 C 
+[0;32mI (21093) http_post_json: JSON payload:[0m
+{"Logging_Event":"test_log_one","session_id":"test_log_one","ticks_reference":20610,"Logging_Data":[{"timestamp":"","tickstamp":20609,"type":"gps","device_id":"gps_1","data":[0,0,0,0,0,0]},{"timestamp":"","tickstamp":20610,"type":"temp","device_id":"eng_temp_1","data":[18]}]}
+[1;31mE (21103) http_post_json: DNS lookup failed err=202 res=0x0[0m
+[1;31mE (21113) http_post_json: POST request failed[0m
+ADC= 1758 Voltage= 1.417 V Resistance=13293.5 ofms Temp18.64 C 
+ADC= 1761 Voltage= 1.419 V Resistance=13253.8 ofms Temp18.70 C 
+ADC= 1761 Voltage= 1.419 V Resistance=13253.8 ofms Temp18.70 C 
+ADC= 1764 Voltage= 1.422 V Resistance=13214.3 ofms Temp18.77 C 
+ADC= 1764 Voltage= 1.422 V Resistance=13214.3 ofms Temp18.77 C 
+ADC= 1766 Voltage= 1.423 V Resistance=13188.0 ofms Temp18.81 C 
+ADC= 1771 Voltage= 1.427 V Resistance=13122.5 ofms Temp18.92 C 
+ADC= 1770 Voltage= 1.426 V Resistance=13135.6 ofms Temp18.90 C 
+ADC= 1769 Voltage= 1.426 V Resistance=13148.7 ofms Temp18.88 C 
+ADC= 1768 Voltage= 1.425 V Resistance=13161.8 ofms Temp18.85 C 
+[0;32mI (31113) http_post_json: JSON payload:[0m
+{"Logging_Event":"test_log_one","session_id":"test_log_one","ticks_reference":30630,"Logging_Data":[{"timestamp":"","tickstamp":30629,"type":"gps","device_id":"gps_1","data":[0,0,0,0,0,0]},{"timestamp":"","tickstamp":30630,"type":"temp","device_id":"eng_temp_1","data":[19]}]}
+[1;31mE (31123) http_post_json: DNS lookup failed err=202 res=0x0[0m
+[1;31mE (31133) http_post_json: POST request failed[0m
+ADC= 1772 Voltage= 1.428 V Resistance=13109.5 ofms Temp18.94 C 
+ADC= 1781 Voltage= 1.435 V Resistance=12992.7 ofms Temp19.14 C 
+ADC= 1814 Voltage= 1.462 V Resistance=12574.4 ofms Temp19.86 C 
+ADC= 1846 Voltage= 1.488 V Resistance=12183.1 ofms Temp20.56 C 
+ADC= 1892 Voltage= 1.525 V Resistance=11643.8 ofms Temp21.56 C 
+ADC= 1923 Voltage= 1.550 V Resistance=11294.9 ofms Temp22.24 C 
+ADC= 1946 Voltage= 1.568 V Resistance=11043.2 ofms Temp22.75 C 
+ADC= 1967 Voltage= 1.585 V Resistance=10818.5 ofms Temp23.21 C 
+ADC= 1987 Voltage= 1.601 V Resistance=10609.0 ofms Temp23.66 C 
+ADC= 2000 Voltage= 1.612 V Resistance=10475.0 ofms Temp23.94 C 
+[0;32mI (41133) http_post_json: JSON payload:[0m
+{"Logging_Event":"test_log_one","session_id":"test_log_one","ticks_reference":40650,"Logging_Data":[{"timestamp":"","tickstamp":40649,"type":"gps","device_id":"gps_1","data":[0,0,0,0,0,0]},{"timestamp":"","tickstamp":40650,"type":"temp","device_id":"eng_temp_1","data":[24]}]}
+[1;31mE (41143) http_post_json: DNS lookup failed err=202 res=0x0[0m
+[1;31mE (41153) http_post_json: POST request failed[0m
+ADC= 2021 Voltage= 1.629 V Resistance=10262.2 ofms Temp24.41 C 
+ADC= 2026 Voltage= 1.633 V Resistance=10212.2 ofms Temp24.52 C 
+ADC= 2051 Voltage= 1.653 V Resistance=9965.9 ofms Temp25.08 C 
+ADC= 2049 Voltage= 1.651 V Resistance=9985.4 ofms Temp25.03 C 
+ADC= 2051 Voltage= 1.653 V Resistance=9965.9 ofms Temp25.08 C 
+ADC= 2049 Voltage= 1.651 V Resistance=9985.4 ofms Temp25.03 C 
+ADC= 2043 Voltage= 1.646 V Resistance=10044.1 ofms Temp24.90 C 
+ADC= 2035 Voltage= 1.640 V Resistance=10122.9 ofms Temp24.72 C 
+ADC= 2030 Voltage= 1.636 V Resistance=10172.4 ofms Temp24.61 C 
+ADC= 2026 Voltage= 1.633 V Resistance=10212.2 ofms Temp24.52 C 
+[0;32mI (51153) http_post_json: JSON payload:[0m
+{"Logging_Event":"test_log_one","session_id":"test_log_one","ticks_reference":50670,"Logging_Data":[{"timestamp":"","tickstamp":50669,"type":"gps","device_id":"gps_1","data":[0,0,0,0,0,0]},{"timestamp":"","tickstamp":50670,"type":"temp","device_id":"eng_temp_1","data":[25]}]}
+[1;31mE (51163) http_post_json: DNS lookup failed err=202 res=0x0[0m
+[1;31mE (51173) http_post_json: POST request failed[0m
+ADC= 2015 Voltage= 1.624 V Resistance=10322.6 ofms Temp24.28 C 
+ADC= 2021 Voltage= 1.629 V Resistance=10262.2 ofms Temp24.41 C 
+ADC= 2009 Voltage= 1.619 V Resistance=10383.3 ofms Temp24.14 C 
+ADC= 2008 Voltage= 1.618 V Resistance=10393.4 ofms Temp24.12 C 
+ADC= 2006 Voltage= 1.617 V Resistance=10413.8 ofms Temp24.08 C 
+ADC= 1999 Voltage= 1.611 V Resistance=10485.2 ofms Temp23.92 C 
+ADC= 1993 Voltage= 1.606 V Resistance=10546.9 ofms Temp23.79 C 
+ADC= 1988 Voltage= 1.602 V Resistance=10598.6 ofms Temp23.68 C 
+ADC= 1989 Voltage= 1.603 V Resistance=10588.2 ofms Temp23.70 C 
+ADC= 1983 Voltage= 1.598 V Resistance=10650.5 ofms Temp23.57 C 
+[0;32mI (61173) http_post_json: JSON payload:[0m
+{"Logging_Event":"test_log_one","session_id":"test_log_one","ticks_reference":60690,"Logging_Data":[{"timestamp":"","tickstamp":60689,"type":"gps","device_id":"gps_1","data":[0,0,0,0,0,0]},{"timestamp":"","tickstamp":60690,"type":"temp","device_id":"eng_temp_1","data":[24]}]}
+[1;31mE (61183) http_post_json: DNS lookup failed err=202 res=0x0[0m
+[1;31mE (61193) http_post_json: POST request failed[0m
+ADC= 1981 Voltage= 1.596 V Resistance=10671.4 ofms Temp23.52 C 
+ADC= 1982 Voltage= 1.597 V Resistance=10660.9 ofms Temp23.55 C 
+ADC= 1974 Voltage= 1.591 V Resistance=10744.7 ofms Temp23.37 C 
+ADC= 1974 Voltage= 1.591 V Resistance=10744.7 ofms Temp23.37 C 
+ADC= 1968 Voltage= 1.586 V Resistance=10807.9 ofms Temp23.24 C 
+ADC= 1968 Voltage= 1.586 V Resistance=10807.9 ofms Temp23.24 C 
+ADC= 1963 Voltage= 1.582 V Resistance=10860.9 ofms Temp23.13 C 
+ADC= 1960 Voltage= 1.579 V Resistance=10892.9 ofms Temp23.06 C 
+ADC= 1952 Voltage= 1.573 V Resistance=10978.5 ofms Temp22.88 C 
+ADC= 1950 Voltage= 1.571 V Resistance=11000.0 ofms Temp22.84 C 
+[0;32mI (71193) http_post_json: JSON payload:[0m
+{"Logging_Event":"test_log_one","session_id":"test_log_one","ticks_reference":70710,"Logging_Data":[{"timestamp":"","tickstamp":70709,"type":"gps","device_id":"gps_1","data":[0,0,0,0,0,0]},{"timestamp":"","tickstamp":70710,"type":"temp","device_id":"eng_temp_1","data":[23]}]}
+[1;31mE (71203) http_post_json: DNS lookup failed err=202 res=0x0[0m
+[1;31mE (71213) http_post_json: POST request failed[0m
+ADC= 1943 Voltage= 1.566 V Resistance=11075.7 ofms Temp22.68 C 
+ADC= 1948 Voltage= 1.570 V Resistance=11021.6 ofms Temp22.79 C 
+ADC= 1945 Voltage= 1.567 V Resistance=11054.0 ofms Temp22.73 C 
+ADC= 1943 Voltage= 1.566 V Resistance=11075.7 ofms Temp22.68 C 
+ADC= 1938 Voltage= 1.562 V Resistance=11130.0 ofms Temp22.57 C 
+ADC= 1939 Voltage= 1.563 V Resistance=11119.1 ofms Temp22.60 C 
+ADC= 1936 Voltage= 1.560 V Resistance=11151.9 ofms Temp22.53 C 
+ADC= 1931 Voltage= 1.556 V Resistance=11206.6 ofms Temp22.42 C 
+ADC= 1925 Voltage= 1.551 V Resistance=11272.7 ofms Temp22.29 C 
+ADC= 1928 Voltage= 1.554 V Resistance=11239.6 ofms Temp22.35 C 
+[0;32mI (81213) http_post_json: JSON payload:[0m
+{"Logging_Event":"test_log_one","session_id":"test_log_one","ticks_reference":80730,"Logging_Data":[{"timestamp":"","tickstamp":80729,"type":"gps","device_id":"gps_1","data":[0,0,0,0,0,0]},{"timestamp":"","tickstamp":80730,"type":"temp","device_id":"eng_temp_1","data":[22]}]}
+[1;31mE (81223) http_post_json: DNS lookup failed err=202 res=0x0[0m
+[1;31mE (81233) http_post_json: POST request failed[0m
+ADC= 1922 Voltage= 1.549 V Resistance=11305.9 ofms Temp22.22 C 
+ADC= 1925 Voltage= 1.551 V Resistance=11272.7 ofms Temp22.29 C 
+ADC= 1923 Voltage= 1.550 V Resistance=11294.9 ofms Temp22.24 C 
+ADC= 1919 Voltage= 1.546 V Resistance=11339.2 ofms Temp22.16 C 
+ADC= 1913 Voltage= 1.542 V Resistance=11406.2 ofms Temp22.02 C 
+ADC= 1914 Voltage= 1.542 V Resistance=11395.0 ofms Temp22.05 C 
+ADC= 1909 Voltage= 1.538 V Resistance=11451.0 ofms Temp21.94 C 
+ADC= 1908 Voltage= 1.538 V Resistance=11462.3 ofms Temp21.92 C 
+ADC= 1905 Voltage= 1.535 V Resistance=11496.1 ofms Temp21.85 C 
+ADC= 1896 Voltage= 1.528 V Resistance=11598.1 ofms Temp21.65 C 
+[0;32mI (91233) http_post_json: JSON payload:[0m
+{"Logging_Event":"test_log_one","session_id":"test_log_one","ticks_reference":90750,"Logging_Data":[{"timestamp":"","tickstamp":90749,"type":"gps","device_id":"gps_1","data":[0,0,0,0,0,0]},{"timestamp":"","tickstamp":90750,"type":"temp","device_id":"eng_temp_1","data":[22]}]}
+[1;31mE (91243) http_post_json: DNS lookup failed err=202 res=0x0[0m
+[1;31mE (91253) http_post_json: POST request failed[0m
+ADC= 1899 Voltage= 1.530 V Resistance=11564.0 ofms Temp21.72 C 
+ADC= 1901 Voltage= 1.532 V Resistance=11541.3 ofms Temp21.76 C 
+ADC= 1899 Voltage= 1.530 V Resistance=11564.0 ofms Temp21.72 C 
+ADC= 1895 Voltage= 1.527 V Resistance=11609.5 ofms Temp21.63 C 
+ADC= 1893 Voltage= 1.525 V Resistance=11632.3 ofms Temp21.59 C 
+ADC= 1892 Voltage= 1.525 V Resistance=11643.8 ofms Temp21.56 C 
+ADC= 1891 Voltage= 1.524 V Resistance=11655.2 ofms Temp21.54 C 
+ADC= 1887 Voltage= 1.521 V Resistance=11701.1 ofms Temp21.45 C 
+ADC= 1882 Voltage= 1.517 V Resistance=11758.8 ofms Temp21.34 C 
+ADC= 1884 Voltage= 1.518 V Resistance=11735.7 ofms Temp21.39 C 
+[0;32mI (101253) http_post_json: JSON payload:[0m
+{"Logging_Event":"test_log_one","session_id":"test_log_one","ticks_reference":100770,"Logging_Data":[{"timestamp":"","tickstamp":100769,"type":"gps","device_id":"gps_1","data":[0,0,0,0,0,0]},{"timestamp":"","tickstamp":100770,"type":"temp","device_id":"eng_temp_1","data":[21]}]}
+[1;31mE (101263) http_post_json: DNS lookup failed err=202 res=0x0[0m
+[1;31mE (101273) http_post_json: POST request failed[0m
+ADC= 1883 Voltage= 1.517 V Resistance=11747.2 ofms Temp21.37 C 
+ADC= 1881 Voltage= 1.516 V Resistance=11770.3 ofms Temp21.32 C 
+ADC= 1876 Voltage= 1.512 V Resistance=11828.4 ofms Temp21.21 C 
+ADC= 1877 Voltage= 1.513 V Resistance=11816.7 ofms Temp21.24 C 
+ADC= 1876 Voltage= 1.512 V Resistance=11828.4 ofms Temp21.21 C 
+ADC= 1872 Voltage= 1.509 V Resistance=11875.0 ofms Temp21.13 C 
+ADC= 1874 Voltage= 1.510 V Resistance=11851.7 ofms Temp21.17 C 
+ADC= 1869 Voltage= 1.506 V Resistance=11910.1 ofms Temp21.06 C 
+ADC= 1867 Voltage= 1.505 V Resistance=11933.6 ofms Temp21.02 C 
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+[0;32mI (111273) http_post_json: JSON payload:[0m
+{"Logging_Event":"test_log_one","session_id":"test_log_one","ticks_reference":110790,"Logging_Data":[{"timestamp":"","tickstamp":110789,"type":"gps","device_id":"gps_1","data":[0,0,0,0,0,0]},{"timestamp":"","tickstamp":110790,"type":"temp","device_id":"eng_temp_1","data":[21]}]}
+[1;31mE (111283) http_post_json: DNS lookup failed err=202 res=0x0[0m
+[1;31mE (111293) http_post_json: POST request failed[0m
+ADC= 1861 Voltage= 1.500 V Resistance=12004.3 ofms Temp20.89 C 
+ADC= 1858 Voltage= 1.497 V Resistance=12039.8 ofms Temp20.82 C 
+ADC= 1861 Voltage= 1.500 V Resistance=12004.3 ofms Temp20.89 C 
+ADC= 1856 Voltage= 1.496 V Resistance=12063.6 ofms Temp20.78 C 
+ADC= 1861 Voltage= 1.500 V Resistance=12004.3 ofms Temp20.89 C 
+ADC= 1863 Voltage= 1.501 V Resistance=11980.7 ofms Temp20.93 C 
+ADC= 1855 Voltage= 1.495 V Resistance=12075.5 ofms Temp20.75 C 
+ADC= 1852 Voltage= 1.492 V Resistance=12111.2 ofms Temp20.69 C 
+�侭Y+����5
+[0;32mI (553) wifi:config nano formatting: disabled[0m
+[0;32mI (553) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (563) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (563) wifi:Init management short buffer num: 32[0m
+[0;32mI (573) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (573) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (583) wifi:Init static rx buffer num: 10[0m
+[0;32mI (583) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (583) wifi_init: rx ba win: 6[0m
+[0;32mI (593) wifi_init: accept mbox: 6[0m
+[0;32mI (593) wifi_init: tcpip mbox: 32[0m
+[0;32mI (593) wifi_init: udp mbox: 6[0m
+[0;32mI (603) wifi_init: tcp mbox: 6[0m
+[0;32mI (603) wifi_init: tcp tx win: 5760[0m
+[0;32mI (603) wifi_init: tcp rx win: 5760[0m
+[0;32mI (603) wifi_init: tcp mss: 1440[0m
+[0;32mI (613) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (613) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (623) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (693) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (743) wifi:mode : sta (78:42:1c:8d:ef:c4)[0m
+[0;32mI (743) wifi:enable tsf[0m
+[0;32mI (753) wifi station: wifi_init_sta finished.[0m
+[0;32mI (763) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (763) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (773) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (783) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (873) wifi:connected with Droid, aid = 8, channel 11, BW20, bssid = ea:3c:43:c6:58:72[0m
+[0;32mI (873) wifi:security: WPA2-PSK, phy: bgn, rssi: -21[0m
+[0;32mI (873) wifi:pm start, type: 1[0m
+
+[0;32mI (873) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (933) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (933) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (1943) esp_netif_handlers: sta ip: 10.34.124.22, mask: 255.255.255.0, gw: 10.34.124.212[0m
+[0;32mI (1943) wifi station: got ip:10.34.124.22[0m
+[0;32mI (1943) wifi station: connected to ap SSID:Droid password:password123[0m
+[0;32mI (1943) ESPNOW: espnow [version: 2.0] init[0m
+[0;32mI (1953) http_post_json: JSON payload:[0m
+{"Logging_Event":"test_log_one","session_id":"test_log_one","ticks_reference":1474,"Logging_Data":[{"timestamp":"","tickstamp":1472,"type":"gps","device_id":"gps_1","data":[0,0,0,0,0,0]},{"timestamp":"","tickstamp":1473,"type":"temp","device_id":"eng_temp_1","data":[0]}]}
+ADC= 1849 Voltage= 1.490 V Resistance=12147.1 ofms Temp20.62 C 
+[0;32mI (1993) wifi:<ba-add>idx:0 (ifx:0, ea:3c:43:c6:58:72), tid:0, ssn:3, winSize:64[0m
+[0;32mI (1993) http_post_json: DNS lookup succeeded. IP=107.173.181.183[0m
+[0;32mI (2033) http_post_json: POST sent successfully[0m
+HTTP/1.1 200 OK
+Date: Mon, 25 May 2026 21:01:27 GMT
+Server: uvicorn
+content-length: 65
+content-type: application/json
+Connection: close
+
+{"success":true,"number_entries":2,"session_name":"test_log_one"}I (2273) http_post_json: Done reading response. Last read=0 errno=128
+ADC= 1849 Voltage= 1.490 V Resistance=12147.1 ofms Temp20.62 C 
+ADC= 1846 Voltage= 1.488 V Resistance=12183.1 ofms Temp20.56 C 
+ADC= 1845 Voltage= 1.487 V Resistance=12195.1 ofms Temp20.54 C 
+ADC= 1843 Voltage= 1.485 V Resistance=12219.2 ofms Temp20.49 C 
+[0;32mI (6953) espnow_example: Start sending broadcast data[0m
+[1;31mE (6953) ESPNOW: Peer channel is not equal to the home channel, send fail![0m
+[1;31mE (6953) espnow_example: Send error[0m
+[0;32mI (6953) ESPNOW: espnow [version: 2.0] deinit[0m
+ADC= 1839 Voltage= 1.482 V Resistance=12267.5 ofms Temp20.40 C 
+ADC= 1844 Voltage= 1.486 V Resistance=12207.2 ofms Temp20.51 C 
+ADC= 1839 Voltage= 1.482 V Resistance=12267.5 ofms Temp20.40 C 
+ADC= 1838 Voltage= 1.481 V Resistance=12279.7 ofms Temp20.38 C 
+ADC= 1839 Voltage= 1.482 V Resistance=12267.5 ofms Temp20.40 C 
+ADC= 1837 Voltage= 1.480 V Resistance=12291.8 ofms Temp20.36 C 
+[0;32mI (12283) http_post_json: JSON payload:[0m
+{"Logging_Event":"test_log_one","session_id":"test_log_one","ticks_reference":11800,"Logging_Data":[{"timestamp":"","tickstamp":11799,"type":"gps","device_id":"gps_1","data":[0,0,0,0,0,0]},{"timestamp":"","tickstamp":11800,"type":"temp","device_id":"eng_temp_1","data":[20]}]}
+[0;32mI (12303) http_post_json: DNS lookup succeeded. IP=107.173.181.183[0m
+[0;32mI (12353) http_post_json: POST sent successfully[0m
+HTTP/1.1 200 OK
+Date: Mon, 25 May 2026 21:01:37 GMT
+Server: uvicorn
+content-length: 65
+content-type: application/json
+Connection: close
+
+{"success":true,"number_entries":2,"session_name":"test_log_one"}I (12513) http_post_json: Done reading response. Last read=0 errno=128
+ADC= 1836 Voltage= 1.480 V Resistance=12303.9 ofms Temp20.34 C 
+ADC= 1834 Voltage= 1.478 V Resistance=12328.2 ofms Temp20.29 C 
+ADC= 1832 Voltage= 1.476 V Resistance=12352.6 ofms Temp20.25 C 
+ADC= 1832 Voltage= 1.476 V Resistance=12352.6 ofms Temp20.25 C 
+ADC= 1831 Voltage= 1.476 V Resistance=12364.8 ofms Temp20.23 C 
+ADC= 1827 Voltage= 1.472 V Resistance=12413.8 ofms Temp20.14 C 
+ADC= 1834 Voltage= 1.478 V Resistance=12328.2 ofms Temp20.29 C 
+ADC= 1825 Voltage= 1.471 V Resistance=12438.4 ofms Temp20.10 C 
+ADC= 1826 Voltage= 1.472 V Resistance=12426.1 ofms Temp20.12 C 
+ADC= 1826 Voltage= 1.472 V Resistance=12426.1 ofms Temp20.12 C 
+[0;32mI (22523) http_post_json: JSON payload:[0m
+{"Logging_Event":"test_log_one","session_id":"test_log_one","ticks_reference":22040,"Logging_Data":[{"timestamp":"","tickstamp":22039,"type":"gps","device_id":"gps_1","data":[0,0,0,0,0,0]},{"timestamp":"","tickstamp":22040,"type":"temp","device_id":"eng_temp_1","data":[20]}]}
+[0;32mI (22543) http_post_json: DNS lookup succeeded. IP=107.173.181.183[0m
+[0;32mI (22783) http_post_json: POST sent successfully[0m
+HTTP/1.1 200 OK
+Date: Mon, 25 May 2026 21:01:47 GMT
+Server: uvicorn
+content-length: 65
+content-type: application/json
+Connection: close
+
+{"success":true,"number_entries":2,"session_name":"test_log_one"}I (22973) http_post_json: Done reading response. Last read=0 errno=128
+ADC= 1827 Voltage= 1.472 V Resistance=12413.8 ofms Temp20.14 C 
+ADC= 1823 Voltage= 1.469 V Resistance=12463.0 ofms Temp20.05 C 
+ADC= 1818 Voltage= 1.465 V Resistance=12524.8 ofms Temp19.95 C 
+ADC= 1818 Voltage= 1.465 V Resistance=12524.8 ofms Temp19.95 C 
+ADC= 1819 Voltage= 1.466 V Resistance=12512.4 ofms Temp19.97 C 
+ADC= 1822 Voltage= 1.468 V Resistance=12475.3 ofms Temp20.03 C 
+ADC= 1820 Voltage= 1.467 V Resistance=12500.0 ofms Temp19.99 C 
+ADC= 1817 Voltage= 1.464 V Resistance=12537.1 ofms Temp19.92 C 
+ADC= 1815 Voltage= 1.463 V Resistance=12562.0 ofms Temp19.88 C 
+ADC= 1813 Voltage= 1.461 V Resistance=12586.9 ofms Temp19.84 C 
+[0;32mI (32993) http_post_json: JSON payload:[0m
+{"Logging_Event":"test_log_one","session_id":"test_log_one","ticks_reference":32510,"Logging_Data":[{"timestamp":"","tickstamp":32509,"type":"gps","device_id":"gps_1","data":[0,0,0,0,0,0]},{"timestamp":"","tickstamp":32510,"type":"temp","device_id":"eng_temp_1","data":[20]}]}
+[0;32mI (33013) http_post_json: DNS lookup succeeded. IP=107.173.181.183[0m
+ADC= 1813 Voltage= 1.461 V Resistance=12586.9 ofms Temp19.84 C 
+[0;32mI (33063) http_post_json: POST sent successfully[0m
+HTTP/1.1 200 OK
+Date: Mon, 25 May 2026 21:01:58 GMT
+Server: uvicorn
+content-length: 65
+content-type: application/json
+Connection: close
+
+{"success":true,"number_entries":2,"session_name":"test_log_one"}I (33403) http_post_json: Done reading response. Last read=0 errno=128
+ADC= 1812 Voltage= 1.460 V Resistance=12599.3 ofms Temp19.81 C 
+ADC= 1811 Voltage= 1.459 V Resistance=12611.8 ofms Temp19.79 C 
+ADC= 1813 Voltage= 1.461 V Resistance=12586.9 ofms Temp19.84 C 
+ADC= 1809 Voltage= 1.458 V Resistance=12636.8 ofms Temp19.75 C 
+ADC= 1807 Voltage= 1.456 V Resistance=12661.9 ofms Temp19.71 C 
+ADC= 1810 Voltage= 1.459 V Resistance=12624.3 ofms Temp19.77 C 
+ADC= 1805 Voltage= 1.455 V Resistance=12687.0 ofms Temp19.66 C 
+ADC= 1809 Voltage= 1.458 V Resistance=12636.8 ofms Temp19.75 C 
+ADC= 1800 Voltage= 1.451 V Resistance=12750.0 ofms Temp19.55 C 
+ADC= 1799 Voltage= 1.450 V Resistance=12762.6 ofms Temp19.53 C 
+[0;32mI (43413) http_post_json: JSON payload:[0m
+{"Logging_Event":"test_log_one","session_id":"test_log_one","ticks_reference":42930,"Logging_Data":[{"timestamp":"","tickstamp":42929,"type":"gps","device_id":"gps_1","data":[0,0,0,0,0,0]},{"timestamp":"","tickstamp":42930,"type":"temp","device_id":"eng_temp_1","data":[20]}]}
+[0;32mI (43433) http_post_json: DNS lookup succeeded. IP=107.173.181.183[0m
+[0;32mI (43643) http_post_json: POST sent successfully[0m
+HTTP/1.1 200 OK
+Date: Mon, 25 May 2026 21:02:08 GMT
+Server: uvicorn
+content-length: 65
+content-type: application/json
+Connection: close
+
+{"success":true,"number_entries":2,"session_name":"test_log_one"}I (43843) http_post_json: Done reading response. Last read=0 errno=128
+ADC= 1802 Voltage= 1.452 V Resistance=12724.8 ofms Temp19.60 C 
+ADC= 1802 Voltage= 1.452 V Resistance=12724.8 ofms Temp19.60 C 
+ADC= 1805 Voltage= 1.455 V Resistance=12687.0 ofms Temp19.66 C 
+ADC= 1805 Voltage= 1.455 V Resistance=12687.0 ofms Temp19.66 C 

@@ -1,0 +1,50 @@
+Command: C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:\Espressif\frameworks\esp-idf-v5.5.3\tools/idf_monitor.py -p COM5 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 C:\Users\marcu\baja\repos\UCBajaElectrical\BAJA\digital_dash\sensor_board\build\thermistor_data.elf C:\Users\marcu\baja\repos\UCBajaElectrical\BAJA\digital_dash\sensor_board\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'C:\Espressif\frameworks\esp-idf-v5.5.3\tools\idf.py'
+[0;33m--- Warning: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM5 instead...[0m
+[0;33m--- esp-idf-monitor 1.9.0 on \\.\COM5 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0m--- 0x40080400: [0;33m_invalid_pc_placeholder[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m2235[0m
+[0m--- 0x40080644: [0;33mcall_start_cpu0[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x4008995d: [0;33mpanic_abort[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/esp_system/panic.c[0m[0m:[1;31m477[0m
+[0m--- 0x40089925: [0;33mesp_system_abort[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/esp_system/port/esp_system_chip.c[0m[0m:[1;31m87[0m
+[0m--- 0x40091945: [0;33m__assert_func[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/newlib/src/assert.c[0m[0m:[1;31m80[0m
+[0m--- 0x4008f2b4: [0;33mblock_trim_free[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/heap/tlsf/tlsf_control_functions.h[0m[0m:[1;31m548[0m
+[0m--- (inlined by) [0;33mblock_prepare_used[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/heap/tlsf/tlsf_control_functions.h[0m[0m:[1;31m631[0m
+[0m--- (inlined by) [0;33mtlsf_malloc[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/heap/tlsf/tlsf.c[0m[0m:[1;31m445[0m
+[0m--- 0x4008ebf5: [0;33mmulti_heap_malloc_impl[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/heap/multi_heap.c[0m[0m:[1;31m216[0m
+[0m--- 0x40081f59: [0;33maligned_or_unaligned_alloc[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/heap/heap_caps_base.c[0m[0m:[1;31m93[0m
+[0m--- 0x4008207d: [0;33mheap_caps_aligned_alloc_base[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/heap/heap_caps_base.c[0m[0m:[1;31m175[0m
+[0m--- 0x400820ad: [0;33mheap_caps_malloc_base[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/heap/heap_caps_base.c[0m[0m:[1;31m202[0m
+[0m--- 0x40081cb4: [0;33mheap_caps_malloc[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/heap/heap_caps.c[0m[0m:[1;31m84[0m
+[0m--- 0x4008ac99: [0;33mpvPortMalloc[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/heap_idf.c[0m[0m:[1;31m55[0m
+[0m--- 0x4008d1dd: [0;33mxTaskCreatePinnedToCore[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/esp_additions/freertos_tasks_c_additions.h[0m[0m:[1;31m231[0m
+[0m--- 0x400db287: [0;33mxTaskCreate[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/include/freertos/task.h[0m[0m:[1;31m394[0m
+[0m--- (inlined by) [0;33mexample_espnow_init[0m[0m at [0;32mC:/Users/marcu/baja/repos/UCBajaElectrical/BAJA/digital_dash/sensor_board/main/espnow_example_main.c[0m[0m:[1;31m375[0m
+[0m--- 0x400dba70: [0;33mapp_main[0m[0m at [0;32mC:/Users/marcu/baja/repos/UCBajaElectrical/BAJA/digital_dash/sensor_board/main/thermistor_data.c[0m[0m:[1;31m80[0m
+[0m--- 0x4015f440: [0;33mmain_task[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/app_startup.c[0m[0m:[1;31m208[0m
+[0m--- 0x4008a655: [0;33mvPortTaskWrapper[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40080400: [0;33m_invalid_pc_placeholder[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m2235[0m
+[0m--- 0x40080644: [0;33mcall_start_cpu0[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x4008995d: [0;33mpanic_abort[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/esp_system/panic.c[0m[0m:[1;31m477[0m
+[0m--- 0x40089925: [0;33mesp_system_abort[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/esp_system/port/esp_system_chip.c[0m[0m:[1;31m87[0m
+[0m--- 0x40091945: [0;33m__assert_func[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/newlib/src/assert.c[0m[0m:[1;31m80[0m
+[0m--- 0x4008f2b4: [0;33mblock_trim_free[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/heap/tlsf/tlsf_control_functions.h[0m[0m:[1;31m548[0m
+[0m--- (inlined by) [0;33mblock_prepare_used[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/heap/tlsf/tlsf_control_functions.h[0m[0m:[1;31m631[0m
+[0m--- (inlined by) [0;33mtlsf_malloc[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/heap/tlsf/tlsf.c[0m[0m:[1;31m445[0m
+[0m--- 0x4008ebf5: [0;33mmulti_heap_malloc_impl[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/heap/multi_heap.c[0m[0m:[1;31m216[0m
+[0m--- 0x40081f59: [0;33maligned_or_unaligned_alloc[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/heap/heap_caps_base.c[0m[0m:[1;31m93[0m
+[0m--- 0x4008207d: [0;33mheap_caps_aligned_alloc_base[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/heap/heap_caps_base.c[0m[0m:[1;31m175[0m
+[0m--- 0x400820ad: [0;33mheap_caps_malloc_base[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/heap/heap_caps_base.c[0m[0m:[1;31m202[0m
+[0m--- 0x40081cb4: [0;33mheap_caps_malloc[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/heap/heap_caps.c[0m[0m:[1;31m84[0m
+[0m--- 0x4008ac99: [0;33mpvPortMalloc[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/heap_idf.c[0m[0m:[1;31m55[0m
+[0m--- 0x4008d1e8: [0;33mxTaskCreatePinnedToCore[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/esp_additions/freertos_tasks_c_additions.h[0m[0m:[1;31m236[0m
+[0m--- 0x400db287: [0;33mxTaskCreate[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/include/freertos/task.h[0m[0m:[1;31m394[0m
+[0m--- (inlined by) [0;33mexample_espnow_init[0m[0m at [0;32mC:/Users/marcu/baja/repos/UCBajaElectrical/BAJA/digital_dash/sensor_board/main/espnow_example_main.c[0m[0m:[1;31m375[0m
+[0m--- 0x400dba70: [0;33mapp_main[0m[0m at [0;32mC:/Users/marcu/baja/repos/UCBajaElectrical/BAJA/digital_dash/sensor_board/main/thermistor_data.c[0m[0m:[1;31m80[0m
+[0m--- 0x4015f440: [0;33mmain_task[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/app_startup.c[0m[0m:[1;31m208[0m
+[0m--- 0x4008a655: [0;33mvPortTaskWrapper[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40080400: [0;33m_invalid_pc_placeholder[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m2235[0m
+[0m--- 0x40080644: [0;33mcall_start_cpu0[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[1;31m--- Error: GetOverlappedResult failed (PermissionError(13, 'Access is denied.', None, 5))[0m
+[0;33m--- Waiting for the device to reconnect[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m[0m
+[0m
