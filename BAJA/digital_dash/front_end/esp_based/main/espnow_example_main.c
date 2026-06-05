@@ -42,10 +42,13 @@
 
 #include "espnow_example.h"
 
+#include <errno.h>
 
 #define ESPNOW_MAXDELAY 512
 
 static const char *TAG = "espnow_example";
+
+static bool s_espnow_sd_logger_started = false;
 
 static QueueHandle_t s_example_espnow_queue = NULL;
 
@@ -63,7 +66,7 @@ static void example_espnow_deinit(example_espnow_send_param_t *send_param);
 /* -------------------------------------------------------------------------- */
 
 #define MOUNT_POINT "/sdcard"
-#define CSV_PATH    MOUNT_POINT "/espnow_log.csv"
+#define CSV_PATH    MOUNT_POINT "/LOG.CSV"
 
 /*
  * ESP32-2432S028 / CYD built-in microSD slot pins.
@@ -82,6 +85,11 @@ static void example_espnow_deinit(example_espnow_send_param_t *send_param);
 
 static sdmmc_card_t *s_sd_card = NULL;
 static bool s_sd_mounted = false;
+/*
+ * The LCD driver also initializes an SPI bus.  We keep the SDSPI default
+ * initializer, but force the SD card to SPI3_HOST inside sd_card_mount()
+ * so it does not collide with the LCD bus.
+ */
 static sdmmc_host_t s_sd_host = SDSPI_HOST_DEFAULT();
 
 static bool file_exists(const char *path)
@@ -92,12 +100,18 @@ static bool file_exists(const char *path)
 
 static esp_err_t sd_card_mount(void)
 {
-    ESP_LOGI(TAG, "Initializing SD card over SPI...");
+    /*
+     * Avoid colliding with the LCD SPI bus.
+     * If your LCD code uses SPI3_HOST, change this to SPI2_HOST instead.
+     */
+    s_sd_host.slot = SPI3_HOST;
+
+    ESP_LOGI(TAG, "Initializing SD card over SPI host %d...", s_sd_host.slot);
 
     esp_vfs_fat_sdmmc_mount_config_t mount_config = {
         .format_if_mount_failed = false,
-        .max_files = 5,
-        .allocation_unit_size = 16 * 1024,
+        .max_files = 1,
+        .allocation_unit_size = 4 * 1024,
     };
 
     spi_bus_config_t bus_cfg = {
@@ -160,18 +174,29 @@ static void sd_card_unmount(void)
     spi_bus_free(s_sd_host.slot);
 }
 
+
+static bool s_csv_ready = false;
+
 static esp_err_t csv_logger_init(void)
 {
     if (!s_sd_mounted) {
         ESP_LOGE(TAG, "SD card is not mounted");
+        s_csv_ready = false;
         return ESP_FAIL;
     }
 
     bool exists = file_exists(CSV_PATH);
 
     FILE *f = fopen(CSV_PATH, "a");
+
     if (f == NULL) {
-        ESP_LOGE(TAG, "Failed to open CSV file for init");
+        ESP_LOGE(
+            TAG,
+            "Failed to open CSV file for append: path=%s errno=%d (%s)",
+            CSV_PATH,
+            errno,
+            strerror(errno)
+        );
         return ESP_FAIL;
     }
 
@@ -188,8 +213,13 @@ static esp_err_t csv_logger_init(void)
     }
 
     fclose(f);
+
+    s_csv_ready = true;
+    ESP_LOGI(TAG, "CSV logger ready: %s", CSV_PATH);
+
     return ESP_OK;
 }
+
 
 static esp_err_t csv_logger_append_espnow(
     const uint8_t *mac_addr,
@@ -199,14 +229,20 @@ static esp_err_t csv_logger_append_espnow(
     float speed
 )
 {
-    if (!s_sd_mounted) {
-        ESP_LOGW(TAG, "SD card not mounted, skipping log");
+    if (!s_sd_mounted || !s_csv_ready) {
+        ESP_LOGW(TAG, "CSV logger not ready, skipping log");
         return ESP_FAIL;
     }
 
     FILE *f = fopen(CSV_PATH, "a");
     if (f == NULL) {
-        ESP_LOGE(TAG, "Failed to open CSV file for append");
+        ESP_LOGE(
+            TAG,
+            "Failed to open CSV file for append: path=%s errno=%d (%s)",
+            CSV_PATH,
+            errno,
+            strerror(errno)
+        );
         return ESP_FAIL;
     }
 
@@ -243,18 +279,57 @@ static esp_err_t csv_logger_append_espnow(
 /*                                  WIFI INIT                                 */
 /* -------------------------------------------------------------------------- */
 
-/* WiFi should start before using ESPNOW */
 static void example_wifi_init(void)
 {
-    ESP_ERROR_CHECK(esp_netif_init());
-    ESP_ERROR_CHECK(esp_event_loop_create_default());
+    esp_err_t ret;
+
+    /*
+     * esp_netif_init() may already have been called elsewhere.
+     * ESP_ERR_INVALID_STATE means it was already initialized, which is OK.
+     */
+    ret = esp_netif_init();
+    if (ret != ESP_OK && ret != ESP_ERR_INVALID_STATE) {
+        ESP_ERROR_CHECK(ret);
+    }
+
+    /*
+     * The default event loop can only be created once.
+     * If it already exists, continue.
+     */
+    ret = esp_event_loop_create_default();
+    if (ret != ESP_OK && ret != ESP_ERR_INVALID_STATE) {
+        ESP_ERROR_CHECK(ret);
+    }
 
     wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
 
-    ESP_ERROR_CHECK(esp_wifi_init(&cfg));
+    /*
+     * Wi-Fi may already be initialized by another part of your project.
+     */
+    ret = esp_wifi_init(&cfg);
+    if (ret != ESP_OK && ret != ESP_ERR_WIFI_INIT_STATE) {
+        ESP_ERROR_CHECK(ret);
+    }
+
     ESP_ERROR_CHECK(esp_wifi_set_storage(WIFI_STORAGE_RAM));
+
+    /*
+     * This is safe if you are only using ESP-NOW.
+     * If another part of your app needs APSTA or STA with internet,
+     * use WIFI_MODE_APSTA or keep the existing mode instead.
+     */
     ESP_ERROR_CHECK(esp_wifi_set_mode(ESPNOW_WIFI_MODE));
-    ESP_ERROR_CHECK(esp_wifi_start());
+
+    /*
+     * esp_wifi_start() returns ESP_ERR_WIFI_NOT_INIT if init failed,
+     * but if Wi-Fi is already started this may return ESP_ERR_WIFI_CONN.
+     * Usually ESP_OK is expected here.
+     */
+    ret = esp_wifi_start();
+    if (ret != ESP_OK && ret != ESP_ERR_WIFI_CONN) {
+        ESP_ERROR_CHECK(ret);
+    }
+
     ESP_ERROR_CHECK(esp_wifi_set_channel(
         CONFIG_ESPNOW_CHANNEL,
         WIFI_SECOND_CHAN_NONE
@@ -267,7 +342,6 @@ static void example_wifi_init(void)
     ));
 #endif
 }
-
 
 /* -------------------------------------------------------------------------- */
 /*                              ESPNOW CALLBACKS                              */
@@ -552,18 +626,35 @@ static void example_espnow_task(void *pvParameter)
                             vTaskDelete(NULL);
                         }
 
+                        
                         memset(peer, 0, sizeof(esp_now_peer_info_t));
                         peer->channel = CONFIG_ESPNOW_CHANNEL;
                         peer->ifidx = ESPNOW_WIFI_IF;
                         peer->encrypt = true;
                         memcpy(peer->lmk, CONFIG_ESPNOW_LMK, ESP_NOW_KEY_LEN);
-                        memcpy(
-                            peer->peer_addr,
-                            recv_cb->mac_addr,
-                            ESP_NOW_ETH_ALEN
-                        );
+                        memcpy(peer->peer_addr, recv_cb->mac_addr, ESP_NOW_ETH_ALEN);
 
-                        ESP_ERROR_CHECK(esp_now_add_peer(peer));
+                        ret = esp_now_add_peer(peer);
+
+                        if (ret == ESP_ERR_ESPNOW_EXIST) {
+                            ESP_LOGW(
+                                TAG,
+                                "Peer already exists: " MACSTR,
+                                MAC2STR(recv_cb->mac_addr)
+                            );
+                        } else if (ret != ESP_OK) {
+                            ESP_LOGE(
+                                TAG,
+                                "Failed to add peer " MACSTR ": %s",
+                                MAC2STR(recv_cb->mac_addr),
+                                esp_err_to_name(ret)
+                            );
+
+                            free(peer);
+                            example_espnow_deinit(send_param);
+                            vTaskDelete(NULL);
+                        }
+
                         free(peer);
                     }
 
@@ -656,7 +747,13 @@ static void example_espnow_task(void *pvParameter)
 
 static esp_err_t example_espnow_init(void)
 {
+    esp_err_t ret;
     example_espnow_send_param_t *send_param;
+
+    if (s_example_espnow_queue != NULL) {
+        ESP_LOGW(TAG, "ESP-NOW queue already exists, logger task likely already started");
+        return ESP_OK;
+    }
 
     s_example_espnow_queue = xQueueCreate(
         ESPNOW_QUEUE_SIZE,
@@ -668,21 +765,53 @@ static esp_err_t example_espnow_init(void)
         return ESP_FAIL;
     }
 
-    ESP_ERROR_CHECK(esp_now_init());
-    ESP_ERROR_CHECK(esp_now_register_send_cb(example_espnow_send_cb));
-    ESP_ERROR_CHECK(esp_now_register_recv_cb(example_espnow_recv_cb));
+    /*
+     * ESP-NOW may already have been initialized by another part of the app.
+     * Do not abort on duplicate initialization.
+     */
+    ret = esp_now_init();
+    if (ret == ESP_OK) {
+        ESP_LOGI(TAG, "ESP-NOW initialized");
+    } else {
+        ESP_LOGW(TAG, "esp_now_init returned %s, continuing", esp_err_to_name(ret));
+    }
+
+    ret = esp_now_register_send_cb(example_espnow_send_cb);
+    if (ret != ESP_OK) {
+        ESP_LOGW(TAG, "esp_now_register_send_cb returned %s", esp_err_to_name(ret));
+    }
+
+    ret = esp_now_register_recv_cb(example_espnow_recv_cb);
+    if (ret != ESP_OK) {
+        ESP_LOGW(TAG, "esp_now_register_recv_cb returned %s", esp_err_to_name(ret));
+    }
 
 #if CONFIG_ESPNOW_ENABLE_POWER_SAVE
-    ESP_ERROR_CHECK(esp_now_set_wake_window(CONFIG_ESPNOW_WAKE_WINDOW));
-    ESP_ERROR_CHECK(esp_wifi_connectionless_module_set_wake_interval(
+    ret = esp_now_set_wake_window(CONFIG_ESPNOW_WAKE_WINDOW);
+    if (ret != ESP_OK) {
+        ESP_LOGW(TAG, "esp_now_set_wake_window returned %s", esp_err_to_name(ret));
+    }
+
+    ret = esp_wifi_connectionless_module_set_wake_interval(
         CONFIG_ESPNOW_WAKE_INTERVAL
-    ));
+    );
+    if (ret != ESP_OK) {
+        ESP_LOGW(
+            TAG,
+            "esp_wifi_connectionless_module_set_wake_interval returned %s",
+            esp_err_to_name(ret)
+        );
+    }
 #endif
 
-    ESP_ERROR_CHECK(esp_now_set_pmk((uint8_t *)CONFIG_ESPNOW_PMK));
+    ret = esp_now_set_pmk((uint8_t *)CONFIG_ESPNOW_PMK);
+    if (ret != ESP_OK) {
+        ESP_LOGW(TAG, "esp_now_set_pmk returned %s", esp_err_to_name(ret));
+    }
 
     /*
      * Add broadcast peer information to peer list.
+     * Tolerate duplicates because another module may already have added it.
      */
     esp_now_peer_info_t *peer = malloc(sizeof(esp_now_peer_info_t));
 
@@ -690,7 +819,6 @@ static esp_err_t example_espnow_init(void)
         ESP_LOGE(TAG, "Malloc peer information fail");
         vQueueDelete(s_example_espnow_queue);
         s_example_espnow_queue = NULL;
-        esp_now_deinit();
         return ESP_FAIL;
     }
 
@@ -700,7 +828,27 @@ static esp_err_t example_espnow_init(void)
     peer->encrypt = false;
     memcpy(peer->peer_addr, s_example_broadcast_mac, ESP_NOW_ETH_ALEN);
 
-    ESP_ERROR_CHECK(esp_now_add_peer(peer));
+    if (esp_now_is_peer_exist(s_example_broadcast_mac)) {
+        ESP_LOGW(TAG, "Broadcast peer already exists, skipping add");
+    } else {
+        ret = esp_now_add_peer(peer);
+
+        if (ret == ESP_ERR_ESPNOW_EXIST) {
+            ESP_LOGW(TAG, "Broadcast peer already exists");
+        } else if (ret != ESP_OK) {
+            ESP_LOGE(
+                TAG,
+                "Failed to add broadcast peer: %s",
+                esp_err_to_name(ret)
+            );
+
+            free(peer);
+            vQueueDelete(s_example_espnow_queue);
+            s_example_espnow_queue = NULL;
+            return ret;
+        }
+    }
+
     free(peer);
 
     /*
@@ -712,7 +860,6 @@ static esp_err_t example_espnow_init(void)
         ESP_LOGE(TAG, "Malloc send parameter fail");
         vQueueDelete(s_example_espnow_queue);
         s_example_espnow_queue = NULL;
-        esp_now_deinit();
         return ESP_FAIL;
     }
 
@@ -733,14 +880,13 @@ static esp_err_t example_espnow_init(void)
         free(send_param);
         vQueueDelete(s_example_espnow_queue);
         s_example_espnow_queue = NULL;
-        esp_now_deinit();
         return ESP_FAIL;
     }
 
     memcpy(send_param->dest_mac, s_example_broadcast_mac, ESP_NOW_ETH_ALEN);
     example_espnow_data_prepare(send_param);
 
-    xTaskCreate(
+    BaseType_t task_ret = xTaskCreate(
         example_espnow_task,
         "example_espnow_task",
         4096,
@@ -748,6 +894,15 @@ static esp_err_t example_espnow_init(void)
         4,
         NULL
     );
+
+    if (task_ret != pdPASS) {
+        ESP_LOGE(TAG, "Failed to create ESP-NOW task");
+        free(send_param->buffer);
+        free(send_param);
+        vQueueDelete(s_example_espnow_queue);
+        s_example_espnow_queue = NULL;
+        return ESP_FAIL;
+    }
 
     return ESP_OK;
 }
@@ -770,11 +925,17 @@ static void example_espnow_deinit(example_espnow_send_param_t *send_param)
 
 esp_err_t espnow_sd_logger_start(void)
 {
-    printf("------------------------- SD Card Start -------------------------");
+    esp_err_t ret;
+
+    if (s_espnow_sd_logger_started) {
+        ESP_LOGW(TAG, "ESP-NOW SD logger already started");
+        return ESP_OK;
+    }
+
     /*
-     * Initialize NVS.
+     * NVS may already be initialized by the main app.
      */
-    esp_err_t ret = nvs_flash_init();
+    ret = nvs_flash_init();
 
     if (ret == ESP_ERR_NVS_NO_FREE_PAGES ||
         ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {
@@ -782,20 +943,20 @@ esp_err_t espnow_sd_logger_start(void)
         ret = nvs_flash_init();
     }
 
-    if (ret != ESP_OK) {
+    if (ret != ESP_OK && ret != ESP_ERR_INVALID_STATE) {
         ESP_LOGE(TAG, "Failed to initialize NVS: %s", esp_err_to_name(ret));
         return ret;
     }
 
     /*
-     * Wi-Fi must be initialized before ESP-NOW.
+     * Wi-Fi must exist before ESP-NOW.
+     * This version tolerates repeated esp_netif/event loop/Wi-Fi init.
      */
     example_wifi_init();
 
     /*
      * Mount SD card before ESP-NOW starts receiving.
-     *
-     * If the SD card fails, continue without CSV logging.
+     * If SD fails, continue without CSV logging.
      */
     ret = sd_card_mount();
 
@@ -803,11 +964,13 @@ esp_err_t espnow_sd_logger_start(void)
         ret = csv_logger_init();
 
         if (ret != ESP_OK) {
-            ESP_LOGE(TAG, "Failed to initialize CSV logger: %s", esp_err_to_name(ret));
-            return ret;
+            ESP_LOGE(TAG, "Failed to initialize CSV logger. Continuing without CSV logging.");
+            s_csv_ready = false;
         }
     } else {
         ESP_LOGE(TAG, "SD card unavailable. Continuing without CSV logging.");
+        s_sd_mounted = false;
+        s_csv_ready = false;
     }
 
     /*
@@ -819,6 +982,8 @@ esp_err_t espnow_sd_logger_start(void)
         ESP_LOGE(TAG, "Failed to initialize ESP-NOW: %s", esp_err_to_name(ret));
         return ret;
     }
+
+    s_espnow_sd_logger_started = true;
 
     ESP_LOGI(TAG, "ESP-NOW SD logger started");
 

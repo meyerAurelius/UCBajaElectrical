@@ -411,5 +411,7 @@ void app_main(void)
     comms_task();
     controller_start();
 
+    ESP_ERROR_CHECK(espnow_sd_logger_start());
+
     xTaskCreatePinnedToCore(gui_task, "gui_task", 32768, NULL, 5, NULL, 1);
 }

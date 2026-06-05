@@ -298,7 +298,7 @@ void app_main(void)
 
 
 
-    xTaskCreatePinnedToCore(gui_task, "gui_task", 16384, NULL, 5, NULL, 1);
+    xTaskCreatePinnedToCore(gui_task, "gui_task", 12384, NULL, 5, NULL, 1);
 
 
 
