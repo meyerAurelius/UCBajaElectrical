@@ -1,0 +1,250 @@
+Command: C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:\Espressif\frameworks\esp-idf-v5.5.3\tools/idf_monitor.py -p COM6 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 C:\Users\marcu\baja\repos\UCBajaElectrical\BAJA\digital_dash\sensor_board\build\thermistor_data.elf C:\Users\marcu\baja\repos\UCBajaElectrical\BAJA\digital_dash\sensor_board\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'C:\Espressif\frameworks\esp-idf-v5.5.3\tools\idf.py'
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6280
+load:0x40078000,len:15864
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v5.5.3 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Jun  4 2026 17:36:07[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v3.1[0m
+[0;32mI (32) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (35) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (62) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (75) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=3a938h (239928) map[0m
+[0;32mI (168) esp_image: segment 1: paddr=0004a960 vaddr=3ffb0000 size=047f8h ( 18424) load[0m
+[0;32mI (175) esp_image: segment 2: paddr=0004f160 vaddr=40080000 size=00eb8h (  3768) load[0m
+[0;32mI (177) esp_image: segment 3: paddr=00050020 vaddr=400d0020 size=cd1cch (840140) map[0m
+[0;32mI (467) esp_image: segment 4: paddr=0011d1f4 vaddr=40080eb8 size=1aebch (110268) load[0m
+[0;32mI (510) esp_image: segment 5: paddr=001380b8 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (523) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (523) boot: Disabling RNG early entropy source...[0m
+[0;32mI (534) cpu_start: Multicore app[0m
+[0;32mI (543) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (543) cpu_start: Pro cpu start user code[0m
+[0;32mI (543) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (545) app_init: Application information:[0m
+[0;32mI (549) app_init: Project name:     esp32-2432S028R[0m
+[0;32mI (553) app_init: App version:      dffbc787-dirty[0m
+[0;32mI (558) app_init: Compile time:     Jun  4 2026 18:45:10[0m
+[0;32mI (563) app_init: ELF file SHA256:  60f6233e1...[0m
+[0;32mI (567) app_init: ESP-IDF:          v5.5.3[0m
+[0;32mI (571) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (575) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (579) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (583) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (589) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (594) heap_init: At 3FFC8F78 len 00017088 (92 KiB): DRAM[0m
+[0;32mI (599) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (604) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (610) heap_init: At 4009BD74 len 0000428C (16 KiB): IRAM[0m
+[0;33mW (617) spi_flash: Detected boya flash chip but using generic driver. For optimal functionality, enable `SPI_FLASH_SUPPORT_BOYA_CHIP` in menuconfig[0m
+[0;32mI (628) spi_flash: detected chip: generic[0m
+[0;32mI (632) spi_flash: flash io: dio[0m
+[0;32mI (636) main_task: Started on CPU0[0m
+[0;32mI (646) main_task: Calling app_main()[0m
+STA MAC Address: EC:E3:34:D6:2B:AC
+STA MAC Address: EC:E3:34:D6:2B:AC
+[0;32mI (666) wifi:wifi driver task: 3ffd146c, prio:23, stack:6656, core=0[0m
+[0;32mI (666) wifi:wifi firmware version: 4df78f2[0m
+[0;32mI (666) wifi:wifi certification version: v7.0[0m
+[0;32mI (666) wifi:config NVS flash: enabled[0m
+[0;32mI (666) wifi:config nano formatting: disabled[0m
+[0;32mI (676) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (676) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (686) wifi:Init management short buffer num: 32[0m
+[0;32mI (686) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (696) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (696) wifi:Init static rx buffer num: 10[0m
+[0;32mI (696) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (706) wifi_init: rx ba win: 6[0m
+[0;32mI (706) wifi_init: accept mbox: 6[0m
+[0;32mI (706) wifi_init: tcpip mbox: 32[0m
+[0;32mI (716) wifi_init: udp mbox: 6[0m
+[0;32mI (716) wifi_init: tcp mbox: 6[0m
+[0;32mI (716) wifi_init: tcp tx win: 5760[0m
+[0;32mI (726) wifi_init: tcp rx win: 5760[0m
+[0;32mI (726) wifi_init: tcp mss: 1440[0m
+[0;32mI (726) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (736) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (736) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (816) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (886) wifi:mode : sta (ec:e3:34:d6:2b:ac)[0m
+[0;32mI (886) wifi:enable tsf[0m
+[0;32mI (886) ESPNOW: espnow [version: 2.0] init[0m
+[0;32mI (896) main_task: Returned from app_main()[0m
+[0;32mI (1016) LVGL: Starting LVGL task[0m
+[0;32mI (1066) lcd: Setting LCD backlight: 100%[0m
+[0;32mI (5896) espnow_example: Start sending broadcast data[0m
+[0;32mI (6936) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (7976) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (9026) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (10076) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (11116) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (12156) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (13196) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (14226) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (15276) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (16326) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (17356) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (18396) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (19436) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (20466) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (21506) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (22546) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (23596) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (24636) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (25666) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (26696) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (27736) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (28776) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (29816) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (30856) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (31886) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (32926) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (33956) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (34986) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (36026) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (37056) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (38096) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (39136) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (40176) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (41216) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (42256) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (43286) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (44316) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (45356) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (46396) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (47446) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (48476) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (49506) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (50546) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (51576) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (52606) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (53646) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (54686) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (55726) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (56766) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (57806) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (58836) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (59866) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (60896) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (61926) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (62956) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (63986) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (65036) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (66076) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (67116) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (68156) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (69196) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (70236) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (71276) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (72316) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (73356) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (74396) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (75426) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6280
+load:0x40078000,len:15864
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v5.5.3 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Jun  4 2026 17:36:07[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v3.1[0m
+[0;32mI (32) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (35) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (62) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (75) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=3a938h (239928) map[0m
+[0;32mI (168) esp_image: segment 1: paddr=0004a960 vaddr=3ffb0000 size=047f8h ( 18424) load[0m
+[0;32mI (175) esp_image: segment 2: paddr=0004f160 vaddr=40080000 size=00eb8h (  3768) load[0m
+[0;32mI (177) esp_image: segment 3: paddr=00050020 vaddr=400d0020 size=cd1cch (840140) map[0m
+[0;32mI (467) esp_image: segment 4: paddr=0011d1f4 vaddr=40080eb8 size=1aebch (110268) load[0m
+[0;32mI (510) esp_image: segment 5: paddr=001380b8 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (523) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (523) boot: Disabling RNG early entropy source...[0m
+[0;32mI (534) cpu_start: Multicore app[0m
+[0;32mI (543) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (543) cpu_start: Pro cpu start user code[0m
+[0;32mI (543) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (545) app_init: Application information:[0m
+[0;32mI (549) app_init: Project name:     esp32-2432S028R[0m
+[0;32mI (553) app_init: App version:      dffbc787-dirty[0m
+[0;32mI (558) app_init: Compile time:     Jun  4 2026 18:45:10[0m
+[0;32mI (563) app_init: ELF file SHA256:  60f6233e1...[0m
+[0;32mI (567) app_init: ESP-IDF:          v5.5.3[0m
+[0;32mI (571) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (575) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (579) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (583) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (589) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (594) heap_init: At 3FFC8F78 len 00017088 (92 KiB): DRAM[0m
+[0;32mI (599) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (604) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (610) heap_init: At 4009BD74 len 0000428C (16 KiB): IRAM[0m
+[0;33mW (617) spi_flash: Detected boya flash chip but using generic driver. For optimal functionality, enable `SPI_FLASH_SUPPORT_BOYA_CHIP` in menuconfig[0m
+[0;32mI (628) spi_flash: detected chip: generic[0m
+[0;32mI (632) spi_flash: flash io: dio[0m
+[0;32mI (636) main_task: Started on CPU0[0m
+[0;32mI (646) main_task: Calling app_main()[0m
+STA MAC Address: EC:E3:34:D6:2B:AC
+STA MAC Address: EC:E3:34:D6:2B:AC
+[0;32mI (666) wifi:wifi driver task: 3ffd146c, prio:23, stack:6656, core=0[0m
+[0;32mI (666) wifi:wifi firmware version: 4df78f2[0m
+[0;32mI (666) wifi:wifi certification version: v7.0[0m
+[0;32mI (666) wifi:config NVS flash: enabled[0m
+[0;32mI (666) wifi:config nano formatting: disabled[0m
+[0;32mI (676) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (676) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (686) wifi:Init management short buffer num: 32[0m
+[0;32mI (686) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (696) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (696) wifi:Init static rx buffer num: 10[0m
+[0;32mI (696) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (706) wifi_init: rx ba win: 6[0m
+[0;32mI (706) wifi_init: accept mbox: 6[0m
+[0;32mI (706) wifi_init: tcpip mbox: 32[0m
+[0;32mI (716) wifi_init: udp mbox: 6[0m
+[0;32mI (716) wifi_init: tcp mbox: 6[0m
+[0;32mI (716) wifi_init: tcp tx win: 5760[0m
+[0;32mI (726) wifi_init: tcp rx win: 5760[0m
+[0;32mI (726) wifi_init: tcp mss: 1440[0m
+[0;32mI (726) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (736) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (736) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (826) wifi:mode : sta (ec:e3:34:d6:2b:ac)[0m
+[0;32mI (826) wifi:enable tsf[0m
+[0;32mI (826) ESPNOW: espnow [version: 2.0] init[0m
+[0;32mI (826) main_task: Returned from app_main()[0m
+[0;32mI (956) LVGL: Starting LVGL task[0m
+[0;32mI (1006) lcd: Setting LCD backlight: 100%[0m
+[0;32mI (5826) espnow_example: Start sending broadcast data[0m
+[0;32mI (6866) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (7896) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (8926) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (9956) espnow_example: send data to 94:a9:90:0b:2a:04[0m
+[0;32mI (10996) espnow_example: send data to 94:a9:90:0b:2a:04[0m

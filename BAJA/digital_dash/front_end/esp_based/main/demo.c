@@ -152,7 +152,7 @@ static esp_err_t app_lvgl_main(void)
     
     temp_label = lv_label_create(lv_obj_0);
     char temp_val[12];
-    snprintf(temp_val, sizeof(temp_val), "%.2f", recv_temp[0]);
+    snprintf(temp_val, sizeof(temp_val), "%.2f", recv_arr[0]);
     strcat(temp_val, " °C");
     lv_label_set_text(temp_label, temp_val);
     lv_obj_set_style_text_color(temp_label, lv_color_black(), LV_PART_MAIN);
@@ -244,18 +244,18 @@ static void gui_task(void* ){
                 lv_label_set_text(lbl_counter, buf);
             }
             
-            // accessing recv_temp should be accessed in a threadsafe way (todo)
-            if (recv_temp[0] == -1.0){
+            // accessing recv_arr should be accessed in a threadsafe way (todo)
+            if (recv_arr[0] == -1.0){
                 lv_label_set_text(temp_label, "NOT CONNECTED!");
                 lv_obj_set_style_text_font(temp_label, &lv_font_montserrat_14, 0);
             } else{
                 char temp_val[12];
-                snprintf(temp_val, sizeof(temp_val), "%d", (int)recv_temp[0]);
+                snprintf(temp_val, sizeof(temp_val), "%d", (int)recv_arr[0]);
                 strcat(temp_val, " °C");
                 lv_label_set_text(temp_label, temp_val);
                 lv_obj_set_style_text_font(temp_label, &lv_font_montserrat_30, 0);
 
-                lv_slider_set_value(temp_slide, (int)recv_temp[0], LV_ANIM_ON);
+                lv_slider_set_value(temp_slide, (int)recv_arr[0], LV_ANIM_ON);
             }
         
 
@@ -292,9 +292,11 @@ void app_main(void)
 
 
 
-
+    ESP_ERROR_CHECK(espnow_sd_logger_start());
     
     comms_task();
+
+
 
     xTaskCreatePinnedToCore(gui_task, "gui_task", 16384, NULL, 5, NULL, 1);
 

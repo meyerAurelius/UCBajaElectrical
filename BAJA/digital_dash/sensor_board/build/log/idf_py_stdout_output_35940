@@ -1,0 +1,412 @@
+Command: C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:\Espressif\frameworks\esp-idf-v5.5.3\tools/idf_monitor.py -p COM5 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 C:\Users\marcu\baja\repos\UCBajaElectrical\BAJA\digital_dash\sensor_board\build\thermistor_data.elf C:\Users\marcu\baja\repos\UCBajaElectrical\BAJA\digital_dash\sensor_board\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'C:\Espressif\frameworks\esp-idf-v5.5.3\tools\idf.py'
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6280
+load:0x40078000,len:15864
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v5.5.3 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time May 22 2026 16:19:03[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v3.1[0m
+[0;32mI (32) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (35) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (62) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (75) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1bb48h (113480) map[0m
+[0;32mI (125) esp_image: segment 1: paddr=0002bb70 vaddr=3ffb0000 size=04378h ( 17272) load[0m
+[0;32mI (132) esp_image: segment 2: paddr=0002fef0 vaddr=40080000 size=00128h (   296) load[0m
+[0;32mI (132) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=9135ch (594780) map[0m
+[0;32mI (340) esp_image: segment 4: paddr=000c1384 vaddr=40080128 size=18df8h (101880) load[0m
+[0;32mI (379) esp_image: segment 5: paddr=000da184 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (392) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (392) boot: Disabling RNG early entropy source...[0m
+[0;32mI (402) cpu_start: Multicore app[0m
+[0;32mI (411) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (411) cpu_start: Pro cpu start user code[0m
+[0;32mI (411) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (413) app_init: Application information:[0m
+[0;32mI (417) app_init: Project name:     thermistor_data[0m
+[0;32mI (421) app_init: App version:      dffbc787-dirty[0m
+[0;32mI (426) app_init: Compile time:     Jun  4 2026 19:02:28[0m
+[0;32mI (431) app_init: ELF file SHA256:  b125b82dd...[0m
+[0;32mI (435) app_init: ESP-IDF:          v5.5.3[0m
+[0;32mI (439) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (443) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (447) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (451) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (457) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (462) heap_init: At 3FFB9730 len 000268D0 (154 KiB): DRAM[0m
+[0;32mI (467) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (473) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (478) heap_init: At 40098F20 len 000070E0 (28 KiB): IRAM[0m
+[0;32mI (485) spi_flash: detected chip: generic[0m
+[0;32mI (487) spi_flash: flash io: dio[0m
+[0;33mW (490) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (503) main_task: Started on CPU0[0m
+[0;32mI (513) main_task: Calling app_main()[0m
+STA MAC Address: 78:42:1C:8D:EF:C4
+STA MAC Address: 78:42:1C:8D:EF:C4
+[0;32mI (543) wifi:wifi driver task: 3ffc1868, prio:23, stack:6656, core=0[0m
+[0;32mI (553) wifi:wifi firmware version: 4df78f2[0m
+[0;32mI (553) wifi:wifi certification version: v7.0[0m
+[0;32mI (553) wifi:config NVS flash: enabled[0m
+[0;32mI (553) wifi:config nano formatting: disabled[0m
+[0;32mI (553) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (563) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (563) wifi:Init management short buffer num: 32[0m
+[0;32mI (573) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (573) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (583) wifi:Init static rx buffer num: 10[0m
+[0;32mI (583) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (583) wifi_init: rx ba win: 6[0m
+[0;32mI (593) wifi_init: accept mbox: 6[0m
+[0;32mI (593) wifi_init: tcpip mbox: 32[0m
+[0;32mI (593) wifi_init: udp mbox: 6[0m
+[0;32mI (603) wifi_init: tcp mbox: 6[0m
+[0;32mI (603) wifi_init: tcp tx win: 5760[0m
+[0;32mI (603) wifi_init: tcp rx win: 5760[0m
+[0;32mI (603) wifi_init: tcp mss: 1440[0m
+[0;32mI (613) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (613) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (623) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (703) wifi:mode : sta (78:42:1c:8d:ef:c4)[0m
+[0;32mI (703) wifi:enable tsf[0m
+[0;32mI (703) wifi station: wifi_init_sta finished.[0m
+[0;32mI (713) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (723) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (2213) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (2213) wifi:Association refused temporarily time 1464, comeback time 1564 (TUs)[0m
+[0;32mI (3813) wifi:state: assoc -> auth (0xb0)[0m
+[0;32mI (5193) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (5203) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (5253) wifi:connected with Droid, aid = 1, channel 11, BW20, bssid = 0a:78:4a:b8:77:c0[0m
+[0;32mI (5253) wifi:security: WPA3-SAE, phy: bgn, rssi: -25[0m
+[0;32mI (5263) wifi:pm start, type: 1[0m
+
+[0;32mI (5263) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (5333) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (5333) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (6303) esp_netif_handlers: sta ip: 10.71.159.22, mask: 255.255.255.0, gw: 10.71.159.191[0m
+[0;32mI (6303) wifi station: got ip:10.71.159.22[0m
+[0;32mI (6303) wifi station: connected to ap SSID:Droid password:password123[0m
+[0;32mI (6303) ESPNOW: espnow [version: 2.0] init[0m
+			Started GPS...
+[0;32mI (6313) http_post_json: JSON payload:[0m
+{"Logging_Event":"test_log_one","session_id":"test_log_one","ticks_reference":5834,"Logging_Data":[{"timestamp":"","tickstamp":5832,"type":"gps","device_id":"gps_1","data":[0,0,0,0,0,0]},{"timestamp":"","tickstamp":5833,"type":"temp","device_id":"eng_temp_1","data":[0]}]}
+[0;32mI (6343) wifi:<ba-add>idx:0 (ifx:0, 0a:78:4a:b8:77:c0), tid:0, ssn:545, winSize:64[0m
+ADC= 1690 Voltage= 1.362 V Resistance=14230.8 ohms Temp17.15 C 
+[0;32mI (6373) http_post_json: DNS lookup succeeded. IP=107.174.131.30[0m
+[0;32mI (6533) http_post_json: POST sent successfully[0m
+ADC= 1689 Voltage= 1.361 V Resistance=14245.1 ohms Temp17.13 C 
+HTTP/1.1 200 OK
+Server: openresty
+Date: Fri, 05 Jun 2026 01:20:00 GMT
+Content-Type: application/json
+Content-Length: 65
+Connection: close
+X-Served-By: telemetry-api.ucbaja.ca
+
+{"success":true,"number_entries":2,"session_name":"test_log_one"}I (7543) http_post_json: Done reading response. Last read=0 errno=128
+ADC= 1686 Voltage= 1.359 V Resistance=14288.3 ohms Temp17.07 C 
+ADC= 1684 Voltage= 1.357 V Resistance=14317.1 ohms Temp17.02 C 
+ADC= 1690 Voltage= 1.362 V Resistance=14230.8 ohms Temp17.15 C 
+[0;32mI (11313) espnow_example: Start sending broadcast data[0m
+[1;31mE (11313) ESPNOW: Peer channel is not equal to the home channel, send fail![0m
+[1;31mE (11313) espnow_example: Send error[0m
+[0;32mI (11313) ESPNOW: espnow [version: 2.0] deinit[0m
+ADC= 1691 Voltage= 1.363 V Resistance=14216.4 ohms Temp17.18 C 
+ADC= 1689 Voltage= 1.361 V Resistance=14245.1 ohms Temp17.13 C 
+ADC= 1691 Voltage= 1.363 V Resistance=14216.4 ohms Temp17.18 C 
+ADC= 1690 Voltage= 1.362 V Resistance=14230.8 ohms Temp17.15 C 
+ADC= 1689 Voltage= 1.361 V Resistance=14245.1 ohms Temp17.13 C 
+ADC= 1689 Voltage= 1.361 V Resistance=14245.1 ohms Temp17.13 C 
+ADC= 1689 Voltage= 1.361 V Resistance=14245.1 ohms Temp17.13 C 
+[0;32mI (17553) http_post_json: JSON payload:[0m
+{"Logging_Event":"test_log_one","session_id":"test_log_one","ticks_reference":17070,"Logging_Data":[{"timestamp":"","tickstamp":17069,"type":"gps","device_id":"gps_1","data":[0,0,0,0,0,0]},{"timestamp":"","tickstamp":17070,"type":"temp","device_id":"eng_temp_1","data":[17]}]}
+[0;32mI (17573) http_post_json: DNS lookup succeeded. IP=107.174.131.30[0m
+ADC= 1687 Voltage= 1.359 V Resistance=14273.9 ohms Temp17.09 C 
+[0;32mI (18883) GPS_MODULE: $GPRMC,,V,,,,,,,,,,N*53[0m
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,01,16,,,21*7C
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,01,16,,,21*7C
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,01,16,,,21*7C
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,01,16,,,20*7D
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,01,16,,,21*7C
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,01,16,,,21*7C
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,01,16,,,22*7F
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,01,16,,,21*7C
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,01,16,,,21*7C
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,01,16,,,21*7C
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,01,16,,,21*7C
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,01,16,,,20*7D
+$GPGLL,,,,,,V,N*64
+$GPRMC,,
+[0;32mI (19063) GPS_MODULE: 0,0.000000,0.000000,0.000000,0.000000,0.000000,0,0,0.000000,0.000000,2000-00-00T00:00:00-00:00[0m
+[0;32mI (19083) http_post_json: POST sent successfully[0m
+HTTP/1.1 200 OK
+Server: openresty
+Date: Fri, 05 Jun 2026 01:20:13 GMT
+Content-Type: application/json
+Content-Length: 65
+Connection: close
+X-Served-By: telemetry-api.ucbaja.ca
+
+{"success":true,"number_entries":2,"session_name":"test_log_one"}I (19213) http_post_json: Done reading response. Last read=0 errno=128
+ADC= 1691 Voltage= 1.363 V Resistance=14216.4 ohms Temp17.18 C 
+ADC= 1691 Voltage= 1.363 V Resistance=14216.4 ohms Temp17.18 C 
+ADC= 1692 Voltage= 1.364 V Resistance=14202.1 ohms Temp17.20 C 
+ADC= 1690 Voltage= 1.362 V Resistance=14230.8 ohms Temp17.15 C 
+ADC= 1689 Voltage= 1.361 V Resistance=14245.1 ohms Temp17.13 C 
+ADC= 1691 Voltage= 1.363 V Resistance=14216.4 ohms Temp17.18 C 
+ADC= 1691 Voltage= 1.363 V Resistance=14216.4 ohms Temp17.18 C 
+ADC= 1687 Voltage= 1.359 V Resistance=14273.9 ohms Temp17.09 C 
+ADC= 1692 Voltage= 1.364 V Resistance=14202.1 ohms Temp17.20 C 
+ADC= 1691 Voltage= 1.363 V Resistance=14216.4 ohms Temp17.18 C 
+[0;32mI (29223) http_post_json: JSON payload:[0m
+{"Logging_Event":"test_log_one","session_id":"test_log_one","ticks_reference":28740,"Logging_Data":[{"timestamp":"2000-00-00T00:00:00-00:00","tickstamp":28739,"type":"gps","device_id":"gps_1","data":[0,0,0,0,0,0]},{"timestamp":"2000-00-00T00:00:00-00:00","tickstamp":28740,"type":"temp","device_id":"eng_temp_1","data":[17]}]}
+[0;32mI (29243) http_post_json: DNS lookup succeeded. IP=107.174.131.30[0m
+ADC= 1687 Voltage= 1.359 V Resistance=14273.9 ohms Temp17.09 C 
+ADC= 1691 Voltage= 1.363 V Resistance=14216.4 ohms Temp17.18 C 
+[0;32mI (30503) http_post_json: POST sent successfully[0m
+HTTP/1.1 200 OK
+Server: openresty
+Date: Fri, 05 Jun 2026 01:20:24 GMT
+Content-Type: application/json
+Content-Length: 65
+Connection: close
+X-Served-By: telemetry-api.ucbaja.ca
+
+{"success":true,"number_entries":2,"session_name":"test_log_one"}I (30623) http_post_json: Done reading response. Last read=0 errno=128
+[0;32mI (30883) GPS_MODULE: $GPRMC,,V,,,,,,,,,,N*53[0m
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,01,16,,,21*7C
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,02,16,,,21,28,,,28*7F
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,01,16,,,21*7C
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,01,16,,,21*7C
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,01,16,,,21*7C
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,01,16,,,21*7C
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,01,16,,,21*7C
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,01,16,,,21*7C
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,01,16,,,21*7C
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,01,16,,,21*7C
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,01,16,,,21*7C
+$GPGLL,,,,,,V,N*64
+$GPRMC,,
+[0;32mI (31043) GPS_MODULE: 1,0.000000,0.000000,0.000000,0.000000,0.000000,0,0,0.000000,0.000000,2000-00-00T00:00:00-00:00[0m
+ADC= 1690 Voltage= 1.362 V Resistance=14230.8 ohms Temp17.15 C 
+ADC= 1689 Voltage= 1.361 V Resistance=14245.1 ohms Temp17.13 C 
+ADC= 1689 Voltage= 1.361 V Resistance=14245.1 ohms Temp17.13 C 
+ADC= 1686 Voltage= 1.359 V Resistance=14288.3 ohms Temp17.07 C 
+ADC= 1688 Voltage= 1.360 V Resistance=14259.5 ohms Temp17.11 C 
+ADC= 1688 Voltage= 1.360 V Resistance=14259.5 ohms Temp17.11 C 
+ADC= 1687 Voltage= 1.359 V Resistance=14273.9 ohms Temp17.09 C 
+ADC= 1686 Voltage= 1.359 V Resistance=14288.3 ohms Temp17.07 C 
+ADC= 1687 Voltage= 1.359 V Resistance=14273.9 ohms Temp17.09 C 
+ADC= 1690 Voltage= 1.362 V Resistance=14230.8 ohms Temp17.15 C 
+[0;32mI (40643) http_post_json: JSON payload:[0m
+{"Logging_Event":"test_log_one","session_id":"test_log_one","ticks_reference":40160,"Logging_Data":[{"timestamp":"2000-00-00T00:00:00-00:00","tickstamp":40159,"type":"gps","device_id":"gps_1","data":[0,0,0,0,0,0]},{"timestamp":"2000-00-00T00:00:00-00:00","tickstamp":40160,"type":"temp","device_id":"eng_temp_1","data":[17]}]}
+[0;32mI (40663) http_post_json: DNS lookup succeeded. IP=107.174.131.30[0m
+ADC= 1688 Voltage= 1.360 V Resistance=14259.5 ohms Temp17.11 C 
+[0;32mI (41923) http_post_json: POST sent successfully[0m
+HTTP/1.1 200 OK
+Server: openresty
+Date: Fri, 05 Jun 2026 01:20:36 GMT
+Content-Type: application/json
+Content-Length: 65
+Connection: close
+X-Served-By: telemetry-api.ucbaja.ca
+
+{"success":true,"number_entries":2,"session_name":"test_log_one"}I (42043) http_post_json: Done reading response. Last read=0 errno=128
+ADC= 1692 Voltage= 1.364 V Resistance=14202.1 ohms Temp17.20 C 
+[0;32mI (42883) GPS_MODULE: $GPRMC,,V,,,,,,,,,,N*53[0m
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,01,16,,,21*7C
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,01,16,,,21*7C
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,01,16,,,21*7C
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,01,16,,,21*7C
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,01,16,,,21*7C
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,01,16,,,21*7C
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,01,16,,,21*7C
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,01,16,,,21*7C
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,01,16,,,21*7C
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,01,16,,,21*7C
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,01,16,,,20*7D
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,
+[0;32mI (43043) GPS_MODULE: 2,0.000000,0.000000,0.000000,0.000000,0.000000,0,0,0.000000,0.000000,2000-00-00T00:00:00-00:00[0m
+ADC= 1687 Voltage= 1.359 V Resistance=14273.9 ohms Temp17.09 C 
+ADC= 1690 Voltage= 1.362 V Resistance=14230.8 ohms Temp17.15 C 
+ADC= 1688 Voltage= 1.360 V Resistance=14259.5 ohms Temp17.11 C 
+ADC= 1689 Voltage= 1.361 V Resistance=14245.1 ohms Temp17.13 C 

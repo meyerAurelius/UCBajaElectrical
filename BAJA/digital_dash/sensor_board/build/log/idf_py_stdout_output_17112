@@ -1,0 +1,618 @@
+Command: C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:\Espressif\frameworks\esp-idf-v5.5.3\tools/idf_monitor.py -p COM5 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 C:\Users\marcu\baja\repos\UCBajaElectrical\BAJA\digital_dash\sensor_board\build\thermistor_data.elf C:\Users\marcu\baja\repos\UCBajaElectrical\BAJA\digital_dash\sensor_board\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'C:\Espressif\frameworks\esp-idf-v5.5.3\tools\idf.py'
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6280
+load:0x40078000,len:15864
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v5.5.3 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time May 22 2026 16:19:03[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v3.1[0m
+[0;32mI (32) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (35) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (62) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (75) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1a8d0h (108752) map[0m
+[0;32mI (123) esp_image: segment 1: paddr=0002a8f8 vaddr=3ffb0000 size=04378h ( 17272) load[0m
+[0;32mI (130) esp_image: segment 2: paddr=0002ec78 vaddr=40080000 size=013a0h (  5024) load[0m
+[0;32mI (132) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=8c1bch (573884) map[0m
+[0;32mI (331) esp_image: segment 4: paddr=000bc1e4 vaddr=400813a0 size=17b24h ( 97060) load[0m
+[0;32mI (369) esp_image: segment 5: paddr=000d3d10 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (381) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (381) boot: Disabling RNG early entropy source...[0m
+[0;32mI (392) cpu_start: Multicore app[0m
+[0;32mI (400) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (400) cpu_start: Pro cpu start user code[0m
+[0;32mI (400) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (402) app_init: Application information:[0m
+[0;32mI (406) app_init: Project name:     thermistor_data[0m
+[0;32mI (411) app_init: App version:      dffbc787-dirty[0m
+[0;32mI (415) app_init: Compile time:     Jun  4 2026 19:02:28[0m
+[0;32mI (420) app_init: ELF file SHA256:  e97d1268e...[0m
+[0;32mI (424) app_init: ESP-IDF:          v5.5.3[0m
+[0;32mI (428) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (432) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (436) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (440) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (446) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (451) heap_init: At 3FFB96F0 len 00026910 (154 KiB): DRAM[0m
+[0;32mI (457) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (462) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (468) heap_init: At 40098EC4 len 0000713C (28 KiB): IRAM[0m
+[0;32mI (474) spi_flash: detected chip: generic[0m
+[0;32mI (476) spi_flash: flash io: dio[0m
+[0;33mW (479) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (493) main_task: Started on CPU0[0m
+[0;32mI (503) main_task: Calling app_main()[0m
+STA MAC Address: 78:42:1C:8D:EF:C4
+STA MAC Address: 78:42:1C:8D:EF:C4
+[0;32mI (533) wifi:wifi driver task: 3ffc1490, prio:23, stack:6656, core=0[0m
+[0;32mI (543) wifi:wifi firmware version: 4df78f2[0m
+[0;32mI (543) wifi:wifi certification version: v7.0[0m
+[0;32mI (543) wifi:config NVS flash: enabled[0m
+[0;32mI (543) wifi:config nano formatting: disabled[0m
+[0;32mI (553) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (553) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (553) wifi:Init management short buffer num: 32[0m
+[0;32mI (563) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (563) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (573) wifi:Init static rx buffer num: 10[0m
+[0;32mI (573) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (583) wifi_init: rx ba win: 6[0m
+[0;32mI (583) wifi_init: accept mbox: 6[0m
+[0;32mI (583) wifi_init: tcpip mbox: 32[0m
+[0;32mI (583) wifi_init: udp mbox: 6[0m
+[0;32mI (593) wifi_init: tcp mbox: 6[0m
+[0;32mI (593) wifi_init: tcp tx win: 5760[0m
+[0;32mI (593) wifi_init: tcp rx win: 5760[0m
+[0;32mI (593) wifi_init: tcp mss: 1440[0m
+[0;32mI (603) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (603) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (613) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (693) wifi:mode : sta (78:42:1c:8d:ef:c4)[0m
+[0;32mI (693) wifi:enable tsf[0m
+[0;32mI (693) ESPNOW: espnow [version: 2.0] init[0m
+			Started GPS...
+[0;32mI (703) http_post_json: JSON payload:[0m
+{"Logging_Event":"test_log_one","session_id":"test_log_one","ticks_reference":230,"Logging_Data":[{"timestamp":"","tickstamp":229,"type":"gps","device_id":"gps_1","data":[0,0,0,0,0,0]},{"timestamp":"","tickstamp":230,"type":"temp","device_id":"eng_temp_1","data":[0]}]}
+[1;31mE (723) http_post_json: DNS lookup failed err=202 res=0x0[0m
+[1;31mE (723) http_post_json: POST request failed[0m
+ADC= 1680 Voltage= 1.354 V Resistance=14375.0 ohms Temp16.94 C 
+ADC= 1683 Voltage= 1.356 V Resistance=14331.6 ohms Temp17.00 C 
+ADC= 1680 Voltage= 1.354 V Resistance=14375.0 ohms Temp16.94 C 
+ADC= 1680 Voltage= 1.354 V Resistance=14375.0 ohms Temp16.94 C 
+ADC= 1681 Voltage= 1.355 V Resistance=14360.5 ohms Temp16.96 C 
+[0;32mI (5693) espnow_example: Start sending broadcast data[0m
+ADC= 1685 Voltage= 1.358 V Resistance=14302.7 ohms Temp17.04 C 
+[0;32mI (6693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+ADC= 1682 Voltage= 1.355 V Resistance=14346.0 ohms Temp16.98 C 
+[0;32mI (7693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+ADC= 1686 Voltage= 1.359 V Resistance=14288.3 ohms Temp17.07 C 
+[0;32mI (8693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+ADC= 1686 Voltage= 1.359 V Resistance=14288.3 ohms Temp17.07 C 
+[0;32mI (9693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+ADC= 1685 Voltage= 1.358 V Resistance=14302.7 ohms Temp17.04 C 
+[0;32mI (10693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+[0;32mI (10733) http_post_json: JSON payload:[0m
+{"Logging_Event":"test_log_one","session_id":"test_log_one","ticks_reference":10260,"Logging_Data":[{"timestamp":"","tickstamp":10259,"type":"gps","device_id":"gps_1","data":[0,0,0,0,0,0]},{"timestamp":"","tickstamp":10260,"type":"temp","device_id":"eng_temp_1","data":[17]}]}
+[1;31mE (10743) http_post_json: DNS lookup failed err=202 res=0x0[0m
+[1;31mE (10753) http_post_json: POST request failed[0m
+ADC= 1683 Voltage= 1.356 V Resistance=14331.6 ohms Temp17.00 C 
+[0;32mI (11693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+ADC= 1683 Voltage= 1.356 V Resistance=14331.6 ohms Temp17.00 C 
+[0;32mI (12693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+ADC= 1681 Voltage= 1.355 V Resistance=14360.5 ohms Temp16.96 C 
+[0;32mI (13303) GPS_MODULE: $GPRMC,,V,,,,,,,,,,N*53[0m
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,00*79
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,00*79
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,00*79
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,00*79
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,00*79
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,00*79
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,00*79
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,00*79
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,00*79
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,00*79
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,01,28,,,28*78
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,01,27,,,25*7A
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,
+[0;32mI (13483) GPS_MODULE: 0,0.000000,0.000000,0.000000,0.000000,0.000000,0,0,0.000000,0.000000,2000-00-00T00:00:00-00:00[0m
+[0;32mI (13693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+ADC= 1686 Voltage= 1.359 V Resistance=14288.3 ohms Temp17.07 C 
+[0;32mI (14693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+ADC= 1685 Voltage= 1.358 V Resistance=14302.7 ohms Temp17.04 C 
+[0;32mI (15693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+ADC= 1685 Voltage= 1.358 V Resistance=14302.7 ohms Temp17.04 C 
+[0;32mI (16693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+ADC= 1683 Voltage= 1.356 V Resistance=14331.6 ohms Temp17.00 C 
+[0;32mI (17693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+ADC= 1683 Voltage= 1.356 V Resistance=14331.6 ohms Temp17.00 C 
+[0;32mI (18693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+ADC= 1685 Voltage= 1.358 V Resistance=14302.7 ohms Temp17.04 C 
+[0;32mI (19693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+ADC= 1682 Voltage= 1.355 V Resistance=14346.0 ohms Temp16.98 C 
+[0;32mI (20693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+[0;32mI (20753) http_post_json: JSON payload:[0m
+{"Logging_Event":"test_log_one","session_id":"test_log_one","ticks_reference":20280,"Logging_Data":[{"timestamp":"2000-00-00T00:00:00-00:00","tickstamp":20279,"type":"gps","device_id":"gps_1","data":[0,0,0,0,0,0]},{"timestamp":"2000-00-00T00:00:00-00:00","tickstamp":20280,"type":"temp","device_id":"eng_temp_1","data":[17]}]}
+[1;31mE (20773) http_post_json: DNS lookup failed err=202 res=0x0[0m
+[1;31mE (20773) http_post_json: POST request failed[0m
+ADC= 1682 Voltage= 1.355 V Resistance=14346.0 ohms Temp16.98 C 
+[0;32mI (21693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+ADC= 1687 Voltage= 1.359 V Resistance=14273.9 ohms Temp17.09 C 
+[0;32mI (22693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+ADC= 1684 Voltage= 1.357 V Resistance=14317.1 ohms Temp17.02 C 
+[0;32mI (23693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+ADC= 1682 Voltage= 1.355 V Resistance=14346.0 ohms Temp16.98 C 
+[0;32mI (24693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+ADC= 1685 Voltage= 1.358 V Resistance=14302.7 ohms Temp17.04 C 
+[0;32mI (25693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+ADC= 1681 Voltage= 1.355 V Resistance=14360.5 ohms Temp16.96 C 
+[0;32mI (26313) GPS_MODULE: $GPRMC,,V,,,,,,,,,,N*53[0m
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,00*79
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,00*79
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,00*79
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,00*79
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,00*79
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,00*79
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,00*79
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,00*79
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,00*79
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,00*79
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,00*79
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,00*79
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*5
+[0;32mI (26483) GPS_MODULE: 1,0.000000,0.000000,0.000000,0.000000,0.000000,0,0,0.000000,0.000000,2000-00-00T00:00:00-00:00[0m
+[0;32mI (26693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+ADC= 1682 Voltage= 1.355 V Resistance=14346.0 ohms Temp16.98 C 
+[0;32mI (27693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+ADC= 1683 Voltage= 1.356 V Resistance=14331.6 ohms Temp17.00 C 
+[0;32mI (28693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+ADC= 1680 Voltage= 1.354 V Resistance=14375.0 ohms Temp16.94 C 
+[0;32mI (29693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+ADC= 1684 Voltage= 1.357 V Resistance=14317.1 ohms Temp17.02 C 
+[0;32mI (30693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+[0;32mI (30783) http_post_json: JSON payload:[0m
+{"Logging_Event":"test_log_one","session_id":"test_log_one","ticks_reference":30310,"Logging_Data":[{"timestamp":"2000-00-00T00:00:00-00:00","tickstamp":30309,"type":"gps","device_id":"gps_1","data":[0,0,0,0,0,0]},{"timestamp":"2000-00-00T00:00:00-00:00","tickstamp":30310,"type":"temp","device_id":"eng_temp_1","data":[17]}]}
+[1;31mE (30803) http_post_json: DNS lookup failed err=202 res=0x0[0m
+[1;31mE (30803) http_post_json: POST request failed[0m
+ADC= 1683 Voltage= 1.356 V Resistance=14331.6 ohms Temp17.00 C 
+[0;32mI (31693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+ADC= 1684 Voltage= 1.357 V Resistance=14317.1 ohms Temp17.02 C 
+[0;32mI (32693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+ADC= 1682 Voltage= 1.355 V Resistance=14346.0 ohms Temp16.98 C 
+[0;32mI (33693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+ADC= 1681 Voltage= 1.355 V Resistance=14360.5 ohms Temp16.96 C 
+[0;32mI (34693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+ADC= 1683 Voltage= 1.356 V Resistance=14331.6 ohms Temp17.00 C 
+[0;32mI (35693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+ADC= 1682 Voltage= 1.355 V Resistance=14346.0 ohms Temp16.98 C 
+[0;32mI (36693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+ADC= 1683 Voltage= 1.356 V Resistance=14331.6 ohms Temp17.00 C 
+[0;32mI (37693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+ADC= 1680 Voltage= 1.354 V Resistance=14375.0 ohms Temp16.94 C 
+[0;32mI (38363) GPS_MODULE: $GPRMC,,V,,,,,,,,,,N*53[0m
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,00*79
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,00*79
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,00*79
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,00*79
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,00*79
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,00*79
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,00*79
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,00*79
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,00*79
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,00*79
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,00*79
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$G!
+[0;32mI (38533) GPS_MODULE: 2,0.000000,0.000000,0.000000,0.000000,0.000000,0,0,0.000000,0.000000,2000-00-00T00:00:00-00:00[0m
+[0;32mI (38693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+ADC= 1687 Voltage= 1.359 V Resistance=14273.9 ohms Temp17.09 C 
+[0;32mI (39693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+ADC= 1683 Voltage= 1.356 V Resistance=14331.6 ohms Temp17.00 C 
+[0;32mI (40693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+[0;32mI (40813) http_post_json: JSON payload:[0m
+{"Logging_Event":"test_log_one","session_id":"test_log_one","ticks_reference":40340,"Logging_Data":[{"timestamp":"2000-00-00T00:00:00-00:00","tickstamp":40339,"type":"gps","device_id":"gps_1","data":[0,0,0,0,0,0]},{"timestamp":"2000-00-00T00:00:00-00:00","tickstamp":40340,"type":"temp","device_id":"eng_temp_1","data":[17]}]}
+[1;31mE (40833) http_post_json: DNS lookup failed err=202 res=0x0[0m
+[1;31mE (40833) http_post_json: POST request failed[0m
+ADC= 1686 Voltage= 1.359 V Resistance=14288.3 ohms Temp17.07 C 
+[0;32mI (41693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+ADC= 1683 Voltage= 1.356 V Resistance=14331.6 ohms Temp17.00 C 
+[0;32mI (42693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+ADC= 1680 Voltage= 1.354 V Resistance=14375.0 ohms Temp16.94 C 
+[0;32mI (43693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+ADC= 1684 Voltage= 1.357 V Resistance=14317.1 ohms Temp17.02 C 
+[0;32mI (44693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+ADC= 1680 Voltage= 1.354 V Resistance=14375.0 ohms Temp16.94 C 
+[0;32mI (45693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+ADC= 1680 Voltage= 1.354 V Resistance=14375.0 ohms Temp16.94 C 
+[0;32mI (46693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+ADC= 1682 Voltage= 1.355 V Resistance=14346.0 ohms Temp16.98 C 
+[0;32mI (47693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+ADC= 1680 Voltage= 1.354 V Resistance=14375.0 ohms Temp16.94 C 
+[0;32mI (48693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+ADC= 1682 Voltage= 1.355 V Resistance=14346.0 ohms Temp16.98 C 
+[0;32mI (49693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+ADC= 1684 Voltage= 1.357 V Resistance=14317.1 ohms Temp17.02 C 
+[0;32mI (50693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+[0;32mI (50843) http_post_json: JSON payload:[0m
+{"Logging_Event":"test_log_one","session_id":"test_log_one","ticks_reference":50370,"Logging_Data":[{"timestamp":"2000-00-00T00:00:00-00:00","tickstamp":50369,"type":"gps","device_id":"gps_1","data":[0,0,0,0,0,0]},{"timestamp":"2000-00-00T00:00:00-00:00","tickstamp":50370,"type":"temp","device_id":"eng_temp_1","data":[17]}]}
+[1;31mE (50863) http_post_json: DNS lookup failed err=202 res=0x0[0m
+[1;31mE (50863) http_post_json: POST request failed[0m
+ADC= 1684 Voltage= 1.357 V Resistance=14317.1 ohms Temp17.02 C 
+[0;32mI (51303) GPS_MODULE: $GPRMC,,V,,,,,,,,,,N*53[0m
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,00*79
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,00*79
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,00*79
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,00*79
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,00*79
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,00*79
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,00*79
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,00*79
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,00*79
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,00*79
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,00*79
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,00*79
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99.
+[0;32mI (51473) GPS_MODULE: 3,0.000000,0.000000,0.000000,0.000000,0.000000,0,0,0.000000,0.000000,2000-00-00T00:00:00-00:00[0m
+[0;32mI (51693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+ADC= 1689 Voltage= 1.361 V Resistance=14245.1 ohms Temp17.13 C 
+[0;32mI (52693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+ADC= 1715 Voltage= 1.382 V Resistance=13877.6 ohms Temp17.70 C 
+[0;32mI (53693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+ADC= 1775 Voltage= 1.430 V Resistance=13070.4 ohms Temp19.01 C 
+[0;32mI (54693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+ADC= 1830 Voltage= 1.475 V Resistance=12377.0 ohms Temp20.21 C 
+[0;32mI (55693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+ADC= 1878 Voltage= 1.513 V Resistance=11805.1 ohms Temp21.26 C 
+[0;32mI (56693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+ADC= 1919 Voltage= 1.546 V Resistance=11339.2 ohms Temp22.16 C 
+[0;32mI (57693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+ADC= 1946 Voltage= 1.568 V Resistance=11043.2 ohms Temp22.75 C 
+[0;32mI (58693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+ADC= 1968 Voltage= 1.586 V Resistance=10807.9 ohms Temp23.24 C 
+[0;32mI (59693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+ADC= 1976 Voltage= 1.592 V Resistance=10723.7 ohms Temp23.41 C 
+[0;32mI (60693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+[0;32mI (60873) http_post_json: JSON payload:[0m
+{"Logging_Event":"test_log_one","session_id":"test_log_one","ticks_reference":60400,"Logging_Data":[{"timestamp":"2000-00-00T00:00:00-00:00","tickstamp":60399,"type":"gps","device_id":"gps_1","data":[0,0,0,0,0,0]},{"timestamp":"2000-00-00T00:00:00-00:00","tickstamp":60400,"type":"temp","device_id":"eng_temp_1","data":[23]}]}
+[1;31mE (60893) http_post_json: DNS lookup failed err=202 res=0x0[0m
+[1;31mE (60893) http_post_json: POST request failed[0m
+ADC= 1976 Voltage= 1.592 V Resistance=10723.7 ohms Temp23.41 C 
+[0;32mI (61693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+ADC= 1973 Voltage= 1.590 V Resistance=10755.2 ohms Temp23.35 C 
+[0;32mI (62693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+ADC= 1973 Voltage= 1.590 V Resistance=10755.2 ohms Temp23.35 C 
+[0;32mI (63693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+ADC= 1967 Voltage= 1.585 V Resistance=10818.5 ohms Temp23.21 C 
+[0;32mI (64303) GPS_MODULE: $GPRMC,,V,,,,,,,,,,N*53[0m
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,00*79
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,00*79
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,00*79
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,00*79
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,00*79
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,00*79
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,00*79
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,00*79
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,00*79
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,00*79
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,00*79
+$GPGLL,,,,,,V,N*64
+$GPRMC,,V,,,,,,,,,,N*53
+$GPVTG,,,,,,,,,N*30
+$GPGGA,,,,,,0,00,99.99,,,,,,*48
+$GPGSA,A,1,,,,,,,,,,,,,99.99,99.99,99.99*30
+$GPGSV,1,1,01,08,,,28*7A
+$GPGLL,,,,,,V,N*64
+$G;
+[0;32mI (64473) GPS_MODULE: 4,0.000000,0.000000,0.000000,0.000000,0.000000,0,0,0.000000,0.000000,2000-00-00T00:00:00-00:00[0m
+[0;32mI (64693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+ADC= 1964 Voltage= 1.583 V Resistance=10850.3 ohms Temp23.15 C 
+[0;32mI (65693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+ADC= 1962 Voltage= 1.581 V Resistance=10871.6 ohms Temp23.10 C 
+[0;32mI (66693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+ADC= 1953 Voltage= 1.574 V Resistance=10967.7 ohms Temp22.91 C 
+[0;32mI (67693) espnow_example: send data to ff:ff:ff:ff:ff:ff[0m
+ADC= 1950 Voltage= 1.571 V Resistance=11000.0 ohms Temp22.84 C 

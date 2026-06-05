@@ -256,6 +256,7 @@ void get_tick_timestamp_string(char *buffer, size_t len)
  * Sample JSON Generator using payload system
  */
 double tempC;
+double gps_speed;
 
 static char *build_sample_json_payload(void)
 {
@@ -321,6 +322,8 @@ static char *build_sample_json_payload(void)
 	gps_entry.speed = kmhr;
 	gps_entry.satellites = satCount;
 	gps_entry.accuracy = accuracy;
+
+	gps_speed = kmhr;
 
 	if (!json_payload_add_data(&payload, (const telemetry_payload_item_t *)&gps_entry))
 	{

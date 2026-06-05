@@ -74,9 +74,9 @@ void app_main(void){
     }
     ESP_ERROR_CHECK( ret );
 
-    wifi_init_sta();
+    //wifi_init_sta();
 
-    //example_wifi_init();
+    example_wifi_init();
     
     example_espnow_init();
     
@@ -120,6 +120,8 @@ void app_main(void){
 
         
         send_arr[0] = tempC;
+        send_arr[1] = gps_speed;
+        
         //espnow_float_tx_send_array(val_arr, sizeof(val_arr));
 
         vTaskDelay(pdMS_TO_TICKS(1000));
