@@ -13,7 +13,7 @@
 #include <esp_lvgl_port.h>
 
 #include "lcd.h"
-#include "touch.h"
+//#include "touch.h"
 #include "nvs_flash.h"
 
 #include "esp_system.h"
@@ -203,8 +203,8 @@ static void gui_task(void* ){
         
         esp_lcd_panel_io_handle_t lcd_io = NULL;
         esp_lcd_panel_handle_t lcd_panel = NULL;
-        esp_lcd_touch_handle_t tp = NULL;
-        lvgl_port_touch_cfg_t touch_cfg = {0};
+        //esp_lcd_touch_handle_t tp = NULL;
+        //lvgl_port_touch_cfg_t touch_cfg = {0};
         lv_display_t *lvgl_display = NULL;
 
         char buf[16];
@@ -220,11 +220,11 @@ static void gui_task(void* ){
             esp_restart();
         }
 
-        ESP_ERROR_CHECK(touch_init(&tp));
+        //ESP_ERROR_CHECK(touch_init(&tp));
 
-        touch_cfg.disp = lvgl_display;
-        touch_cfg.handle = tp;
-        lvgl_port_add_touch(&touch_cfg);
+        //touch_cfg.disp = lvgl_display;
+        //touch_cfg.handle = tp;
+        //lvgl_port_add_touch(&touch_cfg);
 
         ESP_ERROR_CHECK(lcd_display_brightness_set(100));
         ESP_ERROR_CHECK(lcd_display_rotate(lvgl_display, LV_DISPLAY_ROTATION_90));
