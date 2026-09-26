@@ -1,3 +1,4 @@
 {
-	"idf.currentSetup": "C:/Espressif/frameworks/esp-idf-v5.5.1/"
+	"idf.currentSetup": "C:/Espressif/frameworks/esp-idf-v5.5.1/",
+	"cmake.sourceDirectory": "C:/Git/Baja/UCBajaElectrical/gps/gps_module"
 }

@@ -1,13 +1,73 @@
 {
-    "warningTiers": {
-                        "0": "Green, System message. Used for peer to peer anouncements or system notifications",
-                        "1": "yellow, Alert. Used for minor warnings, addressable after race or with minor driving alterations",
-                        "2": "orange, Warn. Used for moderate warnings, address at next avalible stop or alter driving immediately",
-                        "3": "Red, Emergency. Used for major warnings, stop and address immediately"
-                    },
-    "voltage":  {  
-                "Dead Battery": {"range": [0,1], "tier": "1", "message": "Battery is below minimum threshold. Charge or replace"}
-
-                }  
-
+    "tiers": {
+        "0": "System (green). Peer-to-peer announcements and system notifications.",
+        "1": "Alert (yellow). Minor issue; address after the race or with small driving changes.",
+        "2": "Warning (orange). Moderate issue; address at the next stop or change driving now.",
+        "3": "Emergency (red). Major issue; stop and address immediately."
+    },
+    "rules": [
+        {
+            "id": "VOLT_DEAD",
+            "channel": "voltage",
+            "range": [0, 1],
+            "tier": 3,
+            "title": "Dead battery",
+            "message": "Battery is below the minimum threshold. Charge or replace."
+        },
+        {
+            "id": "VOLT_LOW",
+            "channel": "voltage",
+            "range": [1, 11.8],
+            "hysteresis": 0.1,
+            "tier": 1,
+            "title": "Low battery",
+            "message": "Battery voltage is dropping. Swap or charge at the next stop."
+        },
+        {
+            "id": "TRANS_HOT",
+            "channel": "transTemp",
+            "range": [95, 115],
+            "hysteresis": 3,
+            "tier": 2,
+            "title": "Transmission hot",
+            "message": "Ease off and plan a cool-down at the next stop."
+        },
+        {
+            "id": "TRANS_CRITICAL",
+            "channel": "transTemp",
+            "range": [115, null],
+            "hysteresis": 3,
+            "tier": 3,
+            "title": "Transmission overheating",
+            "message": "Stop and let the transmission cool before continuing."
+        },
+        {
+            "id": "RPM_OVERREV",
+            "channel": "primaryRpm",
+            "range": [3900, null],
+            "hysteresis": 100,
+            "tier": 1,
+            "title": "Engine over-rev",
+            "message": "Primary RPM is above the governed limit. Check CVT tuning."
+        },
+        {
+            "id": "TIP_NEAR",
+            "channel": "tipRisk",
+            "range": [75, 95],
+            "hysteresis": 5,
+            "peak": true,
+            "tier": 2,
+            "title": "Close to tipping",
+            "message": "Car came near its rollover limit. Check the driver's line and speed through that section."
+        },
+        {
+            "id": "TIP_OVER",
+            "channel": "tipRisk",
+            "range": [95, null],
+            "peak": true,
+            "tier": 3,
+            "title": "Possible rollover",
+            "message": "Car reached its tipping point or is on its side. Check on the driver now."
+        }
+    ]
 }
