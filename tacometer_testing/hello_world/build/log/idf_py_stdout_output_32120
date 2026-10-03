@@ -1,0 +1,162 @@
+Command: C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:\Espressif\frameworks\esp-idf-v5.5.3\tools/idf_monitor.py -p COM10 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 C:\Users\marcu\baja\repos\UCBajaElectrical\tacometer_testing\hello_world\build\hello_world.elf C:\Users\marcu\baja\repos\UCBajaElectrical\tacometer_testing\hello_world\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'C:\Espressif\frameworks\esp-idf-v5.5.3\tools\idf.py'
+[0;32mI (12779) tachometer: RPM=0 sparks=189 baseline=1608 threshold=1ESP-ROM:esp32s3-20210327[0m
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x28 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40377d22
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x14f0
+load:0x403c8700,len:0xd24
+load:0x403cb700,len:0x2ef0
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5.3 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Oct  3 2026 15:20:07[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (31) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (35) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (62) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (76) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=09b04h ( 39684) map[0m
+[0;32mI (93) esp_image: segment 1: paddr=00019b2c vaddr=3fc93700 size=02db4h ( 11700) load[0m
+[0;32mI (96) esp_image: segment 2: paddr=0001c8e8 vaddr=40374000 size=03730h ( 14128) load[0m
+[0;32mI (104) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=1431ch ( 82716) map[0m
+[0;32mI (123) esp_image: segment 4: paddr=00034344 vaddr=40377730 size=0bf08h ( 48904) load[0m
+[0;32mI (134) esp_image: segment 5: paddr=00040254 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (141) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (141) boot: Disabling RNG early entropy source...[0m
+[0;32mI (152) cpu_start: Multicore app[0m
+[0;32mI (160) cpu_start: GPIO 44 and 43 are used as console UART I/O pins[0m
+[0;32mI (161) cpu_start: Pro cpu start user code[0m
+[0;32mI (161) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (163) app_init: Application information:[0m
+[0;32mI (166) app_init: Project name:     hello_world[0m
+[0;32mI (171) app_init: App version:      95a64daf-dirty[0m
+[0;32mI (175) app_init: Compile time:     Oct  3 2026 15:19:59[0m
+[0;32mI (180) app_init: ELF file SHA256:  099e62a40...[0m
+[0;32mI (185) app_init: ESP-IDF:          v5.5.3[0m
+[0;32mI (188) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (192) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (196) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (200) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (206) heap_init: At 3FC96D68 len 000529A8 (330 KiB): RAM[0m
+[0;32mI (212) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (217) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (222) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (228) spi_flash: detected chip: gd[0m
+[0;32mI (230) spi_flash: flash io: dio[0m
+[0;33mW (233) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (246) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (252) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (259) main_task: Started on CPU0[0m
+[0;32mI (269) main_task: Calling app_main()[0m
+[0;32mI (269) tachometer: ADC1 GPIO1 at 10000 samples/s; 2 spark(s)/rev[0m
+[0;32mI (779) tachometer: RPM=0 sparks=0 baseline=0 threshold=12 clipped=5000[0m
+[0;32mI (1279) tachometer: RPM=0 sparks=0 baseline=0 threshold=12 clipped=5000[0m
+[0;32mI (1779) tachometer: RPM=0 sparks=0 baseline=0 threshold=12 clipped=5000[0m
+[0;32mI (2279) tachometer: RPM=0 sparks=1 baseline=0 threshold=12 clipped=2191[0m
+[0;32mI (2779) tachometer: RPM=0 sparks=1 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (3279) tachometer: RPM=0 sparks=1 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (3779) tachometer: RPM=0 sparks=1 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (4279) tachometer: RPM=0 sparks=1 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (4779) tachometer: RPM=0 sparks=1 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (5279) tachometer: RPM=0 sparks=1 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (5779) tachometer: RPM=0 sparks=1 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (6269) tachometer: RPM=0 sparks=1 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (6769) tachometer: RPM=0 sparks=1 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (7269) tachometer: RPM=0 sparks=1 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (7769) tachometer: RPM=0 sparks=1 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (8269) tachometer: RPM=0 sparks=1 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (8779) tachometer: RPM=0 sparks=1 baseline=0 threshold=12 clipped=4386[0m
+[0;32mI (9279) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=4136[0m
+[0;32mI (9779) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (10279) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (10779) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (11279) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (11779) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (12279) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (12779) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (13279) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (13779) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (14269) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (14769) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (15269) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (15769) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (16269) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (16779) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (17279) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (17779) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (18279) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (18779) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (19279) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (19779) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (20279) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (20779) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (21279) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (21779) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (22269) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (22769) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (23269) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (23769) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (24269) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (24779) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (25279) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (25779) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (26279) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (26779) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (27279) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (27779) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (28279) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (28779) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (29279) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (29779) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (30269) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (30769) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (31269) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (31769) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (32269) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (32779) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (33279) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (33779) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (34279) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (34779) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (35279) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (35779) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (36279) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (36779) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (37279) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (37779) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (38269) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (38769) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (39269) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (39769) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (40269) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (40779) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (41279) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (41779) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (42279) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (42779) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (43279) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (43779) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (44279) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (44779) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (45279) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (45779) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (46269) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (46769) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (47269) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (47769) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (48269) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (48779) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (49279) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (49779) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (50279) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (50779) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m
+[0;32mI (51279) tachometer: RPM=0 sparks=2 baseline=0 threshold=12 clipped=0[0m

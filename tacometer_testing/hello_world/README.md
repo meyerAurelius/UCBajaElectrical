@@ -1,53 +1,65 @@
-| Supported Targets | ESP32 | ESP32-C2 | ESP32-C3 | ESP32-C5 | ESP32-C6 | ESP32-C61 | ESP32-H2 | ESP32-H21 | ESP32-H4 | ESP32-P4 | ESP32-S2 | ESP32-S3 | Linux |
-| ----------------- | ----- | -------- | -------- | -------- | -------- | --------- | -------- | --------- | -------- | -------- | -------- | -------- | ----- |
+# Stamp-S3 ignition tachometer test
 
-# Hello World Example
+This ESP-IDF project reads the conditioned induction-coil output on **Stamp-S3 G1
+(GPIO1, ADC1 channel 0)**. Connect the circuit output to G1 and its reference
+ground to the Stamp-S3 ground. The program uses the ESP32-S3 ADC continuous
+driver at **10,000 samples/s**, matching the 100 µs spacing in `../scope_7.csv`.
 
-Starts a FreeRTOS task to print "Hello World".
+The detector keeps a slowly moving average of normal ADC samples as its
+baseline. It measures absolute deviation, so either positive or negative
+spikes can trigger. The trigger level is the larger of 12 ADC counts and five
+times the measured normal deviation. It waits for the signal to return near
+the baseline, then ignores additional triggers for 15 ms so ignition ringing
+is counted once. RPM uses the mean of the most recent four spark intervals and
+goes to zero after 500 ms without a spark.
 
-(See the README.md file in the upper level 'examples' directory for more information about examples.)
+The scope file spans 200 ms and has prominent disturbances about 33–35 ms
+apart. With this engine's **two sparks per revolution**, that suggests roughly
+**850–900 RPM**. This is an estimate from the capture, not a calibration of the ADC
+input. The recorded voltage is only millivolts, and actual ADC counts depend
+on the gain and bias of your circuit. The firmware starts with a 12-count
+minimum threshold; tune it using the live `ADC`, `baseline`, and `threshold`
+log values.
 
-## How to use example
+## Build and run
 
-Follow detailed instructions provided specifically for this example.
+From this directory in an ESP-IDF 5.5 shell:
 
-Select the instructions depending on Espressif chip installed on your development board:
-
-- [ESP32 Getting Started Guide](https://docs.espressif.com/projects/esp-idf/en/stable/get-started/index.html)
-- [ESP32-S2 Getting Started Guide](https://docs.espressif.com/projects/esp-idf/en/latest/esp32s2/get-started/index.html)
-
-
-## Example folder contents
-
-The project **hello_world** contains one source file in C language [hello_world_main.c](main/hello_world_main.c). The file is located in folder [main](main).
-
-ESP-IDF projects are built using CMake. The project build configuration is contained in `CMakeLists.txt` files that provide set of directives and instructions describing the project's source files and targets (executable, library, or both).
-
-Below is short explanation of remaining files in the project folder.
-
-```
-├── CMakeLists.txt
-├── pytest_hello_world.py      Python script used for automated testing
-├── main
-│   ├── CMakeLists.txt
-│   └── hello_world_main.c
-└── README.md                  This is the file you are currently reading
+```text
+idf.py set-target esp32s3
+idf.py build
+idf.py -p COM_PORT flash monitor
 ```
 
-For more information on structure and contents of ESP-IDF projects, please refer to Section [Build System](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/build-system.html) of the ESP-IDF Programming Guide.
+The project already has an `esp32s3` sdkconfig, so `set-target` is only needed
+if that changes. Replace `COM_PORT` with the board's serial port.
 
-## Troubleshooting
+The serial log prints each accepted spark and a summary every 0.5 s:
 
-* Program upload failure
+```text
+I (...) tachometer: spark #3      ADC=... baseline=... threshold=...
+I (...) tachometer: RPM=... sparks=... baseline=... threshold=... clipped=...
+```
 
-    * Hardware connection is not correct: run `idf.py -p PORT monitor`, and reboot your board to see if there are any output logs.
-    * The baud rate for downloading is too high: lower your baud rate in the `menuconfig` menu, and try again.
+`clipped` counts samples at ADC code 0 or 4095 during that report interval.
+Frequent clipping means one polarity may be invisible or the peak may be
+truncated. An ADC buffer overflow resets the detector because the sample
+interval is no longer trustworthy.
 
-## Technical support and feedback
+## Tuning
 
-Please use the following feedback channels:
+- `ADC_GPIO`, `SAMPLE_RATE_HZ`, and `SPARKS_PER_REV` are at the top of
+  `main/hello_world_main.c`. `SPARKS_PER_REV` is set to 2 for this engine.
+- `MIN_THRESHOLD_COUNTS` and `NOISE_MULTIPLIER` are in
+  `main/spark_detector.c`. Increase the minimum if ordinary noise causes false
+  sparks; lower it if real transients stay below `threshold`. The reported
+  `ADC` value at a spark should differ clearly from `baseline`.
+- `MIN_SPARK_SAMPLES` is the 15 ms ringing holdoff at 10 kHz. Reduce it if
+  true spark intervals are shorter than 15 ms. `STOP_SAMPLES` controls the
+  no-spark timeout.
+- ADC attenuation is set to `ADC_ATTEN_DB_12` in
+  `main/hello_world_main.c`. Change it if your conditioned voltage range
+  calls for a different ADC range.
 
-* For technical queries, go to the [esp32.com](https://esp32.com/) forum
-* For a feature request or bug report, create a [GitHub issue](https://github.com/espressif/esp-idf/issues)
-
-We will get back to you as soon as possible.
+Pin availability is documented in the [M5Stack Stamp-S3 pin map](https://docs.m5stack.com/en/core/Stamp-S3).
+The sampling API is the [Espressif ADC continuous driver](https://docs.espressif.com/projects/esp-idf/en/stable/esp32s3/api-reference/peripherals/adc/adc_continuous.html).
