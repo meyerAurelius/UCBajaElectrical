@@ -5,7 +5,7 @@
 #define MIN_THRESHOLD_COUNTS 8      // Tune for the ADC counts at your input
 #define NOISE_MULTIPLIER     5
 #define WARMUP_SAMPLES       200     // 20 ms at 10 ksample/s
-#define MIN_SPARK_SAMPLES    150     // 15 ms; rejects ringing around a spark
+#define MIN_SPARK_SAMPLES    50      // 5 ms at 10 kHz; allows 2 sparks/rev up to 6000 RPM
 #define STOP_SAMPLES         5000    // Report zero after 500 ms without a spark
 
 void spark_detector_reset(spark_detector_t *detector)

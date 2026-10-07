@@ -1,6 +1,6 @@
 Command: ninja flash
 [1/5] cmd.exe /C "cd /D C:\Users\marcu\baja\repos\UCBajaElectrical\tacometer_testing\hello_world\build\esp-idf\esptool_py && C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:/Espressif/frameworks/esp-idf-v5.5.3/components/partition_table/check_sizes.py --offset 0x8000 partition --type app C:/Users/marcu/baja/repos/UCBajaElectrical/tacometer_testing/hello_world/build/partition_table/partition-table.bin C:/Users/marcu/baja/repos/UCBajaElectrical/tacometer_testing/hello_world/build/hello_world.bin"
-hello_world.bin binary size 0x302a0 bytes. Smallest app partition is 0x100000 bytes. 0xcfd60 bytes (81%) free.
+hello_world.bin binary size 0x30340 bytes. Smallest app partition is 0x100000 bytes. 0xcfcc0 bytes (81%) free.
 [2/5] Performing build step for 'bootloader'
 [1/1] C:\windows\SYSTEM32\cmd.exe /C "cd /D C:\Users\marcu\baja\repos\UCBajaElectrical\tacometer_testing\hello_world\build\bootloader\esp-idf\esptool_py && C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:/Espressif/frameworks/esp-idf-v5.5.3/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 C:/Users/marcu/baja/repos/UCBajaElectrical/tacometer_testing/hello_world/build/bootloader/bootloader.bin"
 Bootloader binary size 0x5160 bytes. 0x2ea0 bytes (36%) free.
@@ -28,21 +28,21 @@ Flash will be erased from 0x00008000 to 0x00008fff...
 SHA digest in image updated
 Compressed 20832 bytes to 13347...
 Writing at 0x00000000... (100 %)
-Wrote 20832 bytes (13347 compressed) at 0x00000000 in 0.4 seconds (effective 467.9 kbit/s)...
+Wrote 20832 bytes (13347 compressed) at 0x00000000 in 0.4 seconds (effective 454.7 kbit/s)...
 Hash of data verified.
-Compressed 197280 bytes to 109404...
+Compressed 197440 bytes to 109514...
 Writing at 0x00010000... (14 %)
-Writing at 0x0001c9b8... (28 %)
-Writing at 0x0002274c... (42 %)
-Writing at 0x00028bfb... (57 %)
-Writing at 0x0002f7eb... (71 %)
-Writing at 0x00035685... (85 %)
-Writing at 0x0003bd2c... (100 %)
-Wrote 197280 bytes (109404 compressed) at 0x00010000 in 1.4 seconds (effective 1141.4 kbit/s)...
+Writing at 0x0001c9b0... (28 %)
+Writing at 0x00022768... (42 %)
+Writing at 0x00028bef... (57 %)
+Writing at 0x0002f7da... (71 %)
+Writing at 0x00035678... (85 %)
+Writing at 0x0003bcc1... (100 %)
+Wrote 197440 bytes (109514 compressed) at 0x00010000 in 1.4 seconds (effective 1139.5 kbit/s)...
 Hash of data verified.
 Compressed 3072 bytes to 103...
 Writing at 0x00008000... (100 %)
-Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.0 seconds (effective 522.9 kbit/s)...
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.1 seconds (effective 487.7 kbit/s)...
 Hash of data verified.
 
 Leaving...

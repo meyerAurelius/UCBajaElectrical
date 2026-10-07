@@ -1,0 +1,78 @@
+Command: C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:\Espressif\frameworks\esp-idf-v5.5.3\tools/idf_monitor.py -p COM10 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 C:\Users\marcu\baja\repos\UCBajaElectrical\tacometer_testing\hello_world\build\hello_world.elf C:\Users\marcu\baja\repos\UCBajaElectrical\tacometer_testing\hello_world\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'C:\Espressif\frameworks\esp-idf-v5.5.3\tools\idf.py'
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x28 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40377d22
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x14f0
+load:0x403c8700,len:0xd24
+load:0x403cb700,len:0x2ef0
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5.3 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Oct  3 2026 15:20:07[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (31) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (35) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (62) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (76) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=09b84h ( 39812) map[0m
+[0;32mI (93) esp_image: segment 1: paddr=00019bac vaddr=3fc93700 size=02db4h ( 11700) load[0m
+[0;32mI (96) esp_image: segment 2: paddr=0001c968 vaddr=40374000 size=036b0h ( 14000) load[0m
+[0;32mI (104) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=14494h ( 83092) map[0m
+[0;32mI (123) esp_image: segment 4: paddr=000344bc vaddr=403776b0 size=0bf88h ( 49032) load[0m
+[0;32mI (134) esp_image: segment 5: paddr=0004044c vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (141) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (141) boot: Disabling RNG early entropy source...[0m
+[0;32mI (152) cpu_start: Multicore app[0m
+[0;32mI (160) cpu_start: GPIO 44 and 43 are used as console UART I/O pins[0m
+[0;32mI (161) cpu_start: Pro cpu start user code[0m
+[0;32mI (161) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (163) app_init: Application information:[0m
+[0;32mI (167) app_init: Project name:     hello_world[0m
+[0;32mI (171) app_init: App version:      c5d166e9-dirty[0m
+[0;32mI (175) app_init: Compile time:     Oct  3 2026 15:45:49[0m
+[0;32mI (180) app_init: ELF file SHA256:  e10b2840d...[0m
+[0;32mI (185) app_init: ESP-IDF:          v5.5.3[0m
+[0;32mI (189) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (192) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (196) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (200) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (207) heap_init: At 3FC96D68 len 000529A8 (330 KiB): RAM[0m
+[0;32mI (212) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (217) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (222) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (228) spi_flash: detected chip: gd[0m
+[0;32mI (231) spi_flash: flash io: dio[0m
+[0;33mW (234) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (246) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (252) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (259) main_task: Started on CPU0[0m
+[0;32mI (269) main_task: Calling app_main()[0m
+[0;32mI (269) tachometer: ADC1 GPIO1 at 10000 samples/s, 0 dB attenuation; 2 spark(s)/rev[0m
+[0;32mI (779) tachometer: RPM=3360 interval_rpm=1351 sparks=56 window_sparks=56 last_interval_us=34400 baseline=16 threshold=90 zero=2402 fullscale=0 max_adc=233 signal=OK[0m
+[0;32mI (1279) tachometer: RPM=2280 interval_rpm=568 sparks=76 window_sparks=20 last_interval_us=7100 baseline=17 threshold=90 zero=2297 fullscale=0 max_adc=410 signal=OK[0m
+[0;32mI (1779) tachometer: RPM=1050 interval_rpm=678 sparks=91 window_sparks=15 last_interval_us=5800 baseline=16 threshold=90 zero=2253 fullscale=0 max_adc=533 signal=OK[0m
+[0;32mI (2279) tachometer: RPM=1080 interval_rpm=703 sparks=112 window_sparks=21 last_interval_us=27700 baseline=18 threshold=100 zero=2271 fullscale=0 max_adc=234 signal=OK[0m
+[0;32mI (2779) tachometer: RPM=1200 interval_rpm=1635 sparks=131 window_sparks=19 last_interval_us=10000 baseline=16 threshold=90 zero=2270 fullscale=0 max_adc=425 signal=OK[0m
+[0;32mI (3279) tachometer: RPM=1080 interval_rpm=2765 sparks=148 window_sparks=17 last_interval_us=5400 baseline=17 threshold=90 zero=2184 fullscale=0 max_adc=184 signal=OK[0m
+[0;32mI (3779) tachometer: RPM=840 interval_rpm=509 sparks=159 window_sparks=11 last_interval_us=32700 baseline=15 threshold=90 zero=2252 fullscale=0 max_adc=169 signal=OK[0m
+[0;32mI (4279) tachometer: RPM=810 interval_rpm=2055 sparks=175 window_sparks=16 last_interval_us=7100 baseline=18 threshold=90 zero=2162 fullscale=0 max_adc=142 signal=OK[0m
+[0;32mI (4779) tachometer: RPM=810 interval_rpm=654 sparks=186 window_sparks=11 last_interval_us=21500 baseline=20 threshold=110 zero=2179 fullscale=0 max_adc=150 signal=OK[0m
+[0;32mI (5279) tachometer: RPM=930 interval_rpm=2162 sparks=206 window_sparks=20 last_interval_us=23100 baseline=12 threshold=60 zero=2090 fullscale=0 max_adc=285 signal=OK[0m
+[0;32mI (5779) tachometer: RPM=1200 interval_rpm=1805 sparks=226 window_sparks=20 last_interval_us=33800 baseline=12 threshold=60 zero=1987 fullscale=0 max_adc=233 signal=OK[0m
+[0;32mI (6269) tachometer: RPM=1320 interval_rpm=3077 sparks=250 window_sparks=24 last_interval_us=7200 baseline=13 threshold=65 zero=1973 fullscale=0 max_adc=475 signal=OK[0m
+[0;32mI (6769) tachometer: RPM=1230 interval_rpm=870 sparks=267 window_sparks=17 last_interval_us=9400 baseline=13 threshold=65 zero=2039 fullscale=0 max_adc=165 signal=OK[0m
+[0;32mI (7269) tachometer: RPM=1050 interval_rpm=1156 sparks=285 window_sparks=18 last_interval_us=5900 baseline=14 threshold=75 zero=2078 fullscale=0 max_adc=125 signal=OK[0m
+[0;32mI (7769) tachometer: RPM=840 interval_rpm=690 sparks=295 window_sparks=10 last_interval_us=7600 baseline=13 threshold=70 zero=1983 fullscale=0 max_adc=331 signal=OK[0m
+[0;32mI (8269) tachometer: RPM=660 interval_rpm=669 sparks=307 window_sparks=12 last_interval_us=70300 baseline=13 threshold=75 zero=2041 fullscale=0 max_adc=140 signal=OK[0m
+[0;32mI (8779) tachometer: RPM=870 interval_rpm=1217 sparks=324 window_sparks=17 last_interval_us=17800 baseline=13 threshold=75 zero=2111 fullscale=0 max_adc=136 signal=OK[0m
+[0;32mI (9279) tachometer: RPM=780 interval_rpm=413 sparks=333 window_sparks=9 last_interval_us=15700 baseline=12 threshold=65 zero=2082 fullscale=0 max_adc=98 signal=OK[0m

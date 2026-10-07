@@ -1,0 +1,143 @@
+Command: C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:\Espressif\frameworks\esp-idf-v5.5.3\tools/idf_monitor.py -p COM10 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 C:\Users\marcu\baja\repos\UCBajaElectrical\tacometer_testing\hello_world\build\hello_world.elf C:\Users\marcu\baja\repos\UCBajaElectrical\tacometer_testing\hello_world\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'C:\Espressif\frameworks\esp-idf-v5.5.3\tools\idf.py'
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x28 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40377d22
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x14f0
+load:0x403c8700,len:0xd24
+load:0x403cb700,len:0x2ef0
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5.3 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Oct  3 2026 15:20:07[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (31) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (35) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (62) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (76) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=09b34h ( 39732) map[0m
+[0;32mI (93) esp_image: segment 1: paddr=00019b5c vaddr=3fc93700 size=02db4h ( 11700) load[0m
+[0;32mI (96) esp_image: segment 2: paddr=0001c918 vaddr=40374000 size=03700h ( 14080) load[0m
+[0;32mI (104) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=14388h ( 82824) map[0m
+[0;32mI (123) esp_image: segment 4: paddr=000343b0 vaddr=40377700 size=0bf38h ( 48952) load[0m
+[0;32mI (134) esp_image: segment 5: paddr=000402f0 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (141) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (141) boot: Disabling RNG early entropy source...[0m
+[0;32mI (152) cpu_start: Multicore app[0m
+[0;32mI (160) cpu_start: GPIO 44 and 43 are used as console UART I/O pins[0m
+[0;32mI (161) cpu_start: Pro cpu start user code[0m
+[0;32mI (161) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (163) app_init: Application information:[0m
+[0;32mI (167) app_init: Project name:     hello_world[0m
+[0;32mI (171) app_init: App version:      c5d166e9-dirty[0m
+[0;32mI (175) app_init: Compile time:     Oct  3 2026 15:34:36[0m
+[0;32mI (180) app_init: ELF file SHA256:  dc4647131...[0m
+[0;32mI (185) app_init: ESP-IDF:          v5.5.3[0m
+[0;32mI (188) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (192) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (196) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (200) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (207) heap_init: At 3FC96D68 len 000529A8 (330 KiB): RAM[0m
+[0;32mI (212) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (217) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (222) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (228) spi_flash: detected chip: gd[0m
+[0;32mI (231) spi_flash: flash io: dio[0m
+[0;33mW (233) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (246) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (252) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (259) main_task: Started on CPU0[0m
+[0;32mI (269) main_task: Calling app_main()[0m
+[0;32mI (269) tachometer: ADC1 GPIO1 at 10000 samples/s; 2 spark(s)/rev[0m
+[0;32mI (779) tachometer: RPM=2727 sparks=53 window_sparks=53 last_interval_us=8800 baseline=0 threshold=8 clipped=4406[0m
+[0;32mI (1279) tachometer: RPM=2941 sparks=103 window_sparks=50 last_interval_us=14000 baseline=0 threshold=8 clipped=4450[0m
+[0;32mI (1779) tachometer: RPM=3380 sparks=153 window_sparks=50 last_interval_us=16900 baseline=0 threshold=8 clipped=4449[0m
+[0;32mI (2279) tachometer: RPM=3046 sparks=201 window_sparks=48 last_interval_us=6400 baseline=0 threshold=8 clipped=4498[0m
+[0;32mI (2779) tachometer: RPM=3960 sparks=241 window_sparks=40 last_interval_us=5800 baseline=0 threshold=8 clipped=4474[0m
+[0;32mI (3279) tachometer: RPM=2810 sparks=294 window_sparks=53 last_interval_us=10100 baseline=0 threshold=8 clipped=4425[0m
+[0;32mI (3779) tachometer: RPM=2655 sparks=344 window_sparks=50 last_interval_us=7500 baseline=0 threshold=8 clipped=4426[0m
+[0;32mI (4279) tachometer: RPM=3704 sparks=389 window_sparks=45 last_interval_us=6400 baseline=0 threshold=8 clipped=4448[0m
+[0;32mI (4779) tachometer: RPM=3390 sparks=434 window_sparks=45 last_interval_us=8900 baseline=0 threshold=8 clipped=4474[0m
+[0;32mI (5279) tachometer: RPM=2906 sparks=476 window_sparks=42 last_interval_us=8400 baseline=0 threshold=8 clipped=4487[0m
+[0;32mI (5779) tachometer: RPM=4225 sparks=522 window_sparks=46 last_interval_us=6700 baseline=0 threshold=8 clipped=4430[0m
+[0;32mI (6269) tachometer: RPM=2784 sparks=576 window_sparks=54 last_interval_us=10500 baseline=0 threshold=8 clipped=4468[0m
+[0;32mI (6769) tachometer: RPM=3158 sparks=618 window_sparks=42 last_interval_us=12900 baseline=0 threshold=8 clipped=4515[0m
+[0;32mI (7269) tachometer: RPM=4110 sparks=669 window_sparks=51 last_interval_us=6100 baseline=0 threshold=8 clipped=4435[0m
+[0;32mI (7769) tachometer: RPM=4196 sparks=720 window_sparks=51 last_interval_us=7000 baseline=0 threshold=8 clipped=4478[0m
+[0;32mI (8269) tachometer: RPM=4225 sparks=766 window_sparks=46 last_interval_us=9200 baseline=0 threshold=8 clipped=4508[0m
+[0;32mI (8779) tachometer: RPM=3750 sparks=820 window_sparks=54 last_interval_us=6900 baseline=0 threshold=8 clipped=4416[0m
+[0;32mI (9279) tachometer: RPM=3166 sparks=862 window_sparks=42 last_interval_us=17100 baseline=0 threshold=8 clipped=4484[0m
+[0;32mI (9779) tachometer: RPM=2490 sparks=915 window_sparks=53 last_interval_us=6600 baseline=0 threshold=8 clipped=4473[0m
+[0;32mI (10279) tachometer: RPM=3896 sparks=970 window_sparks=55 last_interval_us=7200 baseline=0 threshold=8 clipped=4405[0m
+[0;32mI (10779) tachometer: RPM=3947 sparks=1018 window_sparks=48 last_interval_us=8800 baseline=0 threshold=8 clipped=4486[0m
+[0;32mI (11279) tachometer: RPM=1954 sparks=1061 window_sparks=43 last_interval_us=8800 baseline=0 threshold=8 clipped=4486[0m
+[0;32mI (11779) tachometer: RPM=1993 sparks=1110 window_sparks=49 last_interval_us=10100 baseline=0 threshold=8 clipped=4443[0m
+[0;32mI (12279) tachometer: RPM=2235 sparks=1158 window_sparks=48 last_interval_us=16600 baseline=0 threshold=8 clipped=4507[0m
+[0;32mI (12779) tachometer: RPM=2570 sparks=1206 window_sparks=48 last_interval_us=6100 baseline=0 threshold=8 clipped=4496[0m
+[0;32mI (13279) tachometer: RPM=1544 sparks=1246 window_sparks=40 last_interval_us=19500 baseline=0 threshold=8 clipped=4471[0m
+[0;32mI (13779) tachometer: RPM=3243 sparks=1277 window_sparks=31 last_interval_us=5200 baseline=0 threshold=8 clipped=4575[0m
+[0;32mI (14269) tachometer: RPM=1432 sparks=1303 window_sparks=26 last_interval_us=35300 baseline=0 threshold=8 clipped=4644[0m
+[0;32mI (14769) tachometer: RPM=1182 sparks=1325 window_sparks=22 last_interval_us=22900 baseline=0 threshold=8 clipped=4608[0m
+[0;32mI (15269) tachometer: RPM=1567 sparks=1346 window_sparks=21 last_interval_us=11800 baseline=0 threshold=8 clipped=4673[0m
+[0;32mI (15769) tachometer: RPM=729 sparks=1358 window_sparks=12 last_interval_us=50600 baseline=0 threshold=8 clipped=4732[0m
+[0;32mI (16269) tachometer: RPM=957 sparks=1376 window_sparks=18 last_interval_us=85100 baseline=0 threshold=8 clipped=4682[0m
+[0;32mI (16779) tachometer: RPM=681 sparks=1386 window_sparks=10 last_interval_us=43400 baseline=0 threshold=8 clipped=4733[0m
+[0;32mI (17279) tachometer: RPM=674 sparks=1394 window_sparks=8 last_interval_us=23900 baseline=0 threshold=8 clipped=4756[0m
+[0;32mI (17779) tachometer: RPM=1130 sparks=1413 window_sparks=19 last_interval_us=37200 baseline=0 threshold=8 clipped=4651[0m
+[0;32mI (18279) tachometer: RPM=675 sparks=1426 window_sparks=13 last_interval_us=97700 baseline=0 threshold=8 clipped=4739[0m
+[0;32mI (18779) tachometer: RPM=1929 sparks=1439 window_sparks=13 last_interval_us=8800 baseline=0 threshold=8 clipped=4703[0m
+[0;32mI (19279) tachometer: RPM=2643 sparks=1456 window_sparks=17 last_interval_us=11900 baseline=0 threshold=8 clipped=4667[0m
+[0;32mI (19779) tachometer: RPM=400 sparks=1466 window_sparks=10 last_interval_us=87700 baseline=0 threshold=8 clipped=4732[0m
+[0;32mI (20279) tachometer: RPM=3371 sparks=1497 window_sparks=31 last_interval_us=10600 baseline=0 threshold=8 clipped=4579[0m
+[0;32mI (20779) tachometer: RPM=4211 sparks=1545 window_sparks=48 last_interval_us=5400 baseline=0 threshold=8 clipped=4477[0m
+[0;32mI (21279) tachometer: RPM=0 sparks=1545 window_sparks=0 last_interval_us=0 baseline=0 threshold=8 clipped=5000[0m
+[0;32mI (21779) tachometer: RPM=0 sparks=1546 window_sparks=1 last_interval_us=0 baseline=0 threshold=8 clipped=4961[0m
+[0;32mI (22269) tachometer: RPM=0 sparks=1546 window_sparks=0 last_interval_us=0 baseline=0 threshold=8 clipped=0[0m
+[0;32mI (22769) tachometer: RPM=0 sparks=1546 window_sparks=0 last_interval_us=0 baseline=0 threshold=8 clipped=0[0m
+[0;32mI (23269) tachometer: RPM=0 sparks=1546 window_sparks=0 last_interval_us=0 baseline=0 threshold=8 clipped=0[0m
+[0;32mI (23769) tachometer: RPM=0 sparks=1546 window_sparks=0 last_interval_us=0 baseline=0 threshold=8 clipped=0[0m
+[0;32mI (24269) tachometer: RPM=0 sparks=1546 window_sparks=0 last_interval_us=0 baseline=0 threshold=8 clipped=0[0m
+[0;32mI (24779) tachometer: RPM=0 sparks=1546 window_sparks=0 last_interval_us=0 baseline=0 threshold=8 clipped=0[0m
+[0;32mI (25279) tachometer: RPM=0 sparks=1546 window_sparks=0 last_interval_us=0 baseline=0 threshold=8 clipped=0[0m
+[0;32mI (25779) tachometer: RPM=0 sparks=1546 window_sparks=0 last_interval_us=0 baseline=0 threshold=8 clipped=0[0m
+[0;32mI (26279) tachometer: RPM=5000 sparks=1564 window_sparks=18 last_interval_us=6500 baseline=14 threshold=30 clipped=76[0m
+[0;32mI (26779) tachometer: RPM=1824 sparks=1580 window_sparks=16 last_interval_us=15600 baseline=6 threshold=30 clipped=1056[0m
+[0;32mI (27279) tachometer: RPM=5479 sparks=1643 window_sparks=63 last_interval_us=5000 baseline=0 threshold=8 clipped=2381[0m
+[0;32mI (27779) tachometer: RPM=5505 sparks=1732 window_sparks=89 last_interval_us=5200 baseline=0 threshold=8 clipped=3166[0m
+[0;32mI (28279) tachometer: RPM=3797 sparks=1810 window_sparks=78 last_interval_us=7100 baseline=0 threshold=8 clipped=3710[0m
+[0;32mI (28779) tachometer: RPM=2344 sparks=1874 window_sparks=64 last_interval_us=17200 baseline=0 threshold=8 clipped=4166[0m
+[0;32mI (29279) tachometer: RPM=2120 sparks=1910 window_sparks=36 last_interval_us=12800 baseline=0 threshold=8 clipped=4422[0m
+[0;32mI (29779) tachometer: RPM=1678 sparks=1955 window_sparks=45 last_interval_us=11500 baseline=0 threshold=8 clipped=4433[0m
+[0;32mI (30269) tachometer: RPM=1762 sparks=1983 window_sparks=28 last_interval_us=14500 baseline=0 threshold=8 clipped=4624[0m
+[0;32mI (30769) tachometer: RPM=1970 sparks=2019 window_sparks=36 last_interval_us=20300 baseline=0 threshold=8 clipped=4553[0m
+[0;32mI (31269) tachometer: RPM=2733 sparks=2061 window_sparks=42 last_interval_us=17300 baseline=0 threshold=8 clipped=4456[0m
+[0;32mI (31769) tachometer: RPM=1048 sparks=2082 window_sparks=21 last_interval_us=5300 baseline=0 threshold=8 clipped=4607[0m
+[0;32mI (32269) tachometer: RPM=1794 sparks=2104 window_sparks=22 last_interval_us=27500 baseline=0 threshold=8 clipped=4687[0m
+[0;32mI (32779) tachometer: RPM=1152 sparks=2129 window_sparks=25 last_interval_us=9800 baseline=0 threshold=8 clipped=4614[0m
+[0;32mI (33279) tachometer: RPM=689 sparks=2142 window_sparks=13 last_interval_us=45100 baseline=0 threshold=8 clipped=4674[0m
+[0;32mI (33779) tachometer: RPM=1242 sparks=2165 window_sparks=23 last_interval_us=21900 baseline=0 threshold=8 clipped=4638[0m
+[0;32mI (34279) tachometer: RPM=1127 sparks=2190 window_sparks=25 last_interval_us=57300 baseline=0 threshold=8 clipped=4618[0m
+[0;32mI (34779) tachometer: RPM=2321 sparks=2222 window_sparks=32 last_interval_us=16600 baseline=0 threshold=8 clipped=4625[0m
+[0;32mI (35279) tachometer: RPM=3175 sparks=2272 window_sparks=50 last_interval_us=6500 baseline=0 threshold=8 clipped=4464[0m
+[0;32mI (35779) tachometer: RPM=5405 sparks=2320 window_sparks=48 last_interval_us=6000 baseline=0 threshold=8 clipped=4423[0m
+[0;32mI (36279) tachometer: RPM=4563 sparks=2385 window_sparks=65 last_interval_us=8300 baseline=0 threshold=8 clipped=4323[0m
+[0;32mI (36779) tachometer: RPM=2970 sparks=2446 window_sparks=61 last_interval_us=8500 baseline=0 threshold=8 clipped=4318[0m
+[0;32mI (37279) tachometer: RPM=2830 sparks=2490 window_sparks=44 last_interval_us=13600 baseline=0 threshold=8 clipped=4461[0m
+[0;32mI (37779) tachometer: RPM=1105 sparks=2513 window_sparks=23 last_interval_us=11000 baseline=0 threshold=8 clipped=4627[0m
+[0;32mI (38269) tachometer: RPM=1166 sparks=2524 window_sparks=11 last_interval_us=21000 baseline=0 threshold=8 clipped=4722[0m
+[0;32mI (38769) tachometer: RPM=2603 sparks=2550 window_sparks=26 last_interval_us=5300 baseline=0 threshold=8 clipped=4637[0m
+[0;32mI (39269) tachometer: RPM=626 sparks=2560 window_sparks=10 last_interval_us=124000 baseline=0 threshold=8 clipped=4711[0m
+[0;32mI (39769) tachometer: RPM=654 sparks=2568 window_sparks=8 last_interval_us=7100 baseline=0 threshold=8 clipped=4766[0m
+[0;32mI (40269) tachometer: RPM=2405 sparks=2591 window_sparks=23 last_interval_us=9500 baseline=0 threshold=8 clipped=4654[0m
+[0;32mI (40779) tachometer: RPM=814 sparks=2608 window_sparks=17 last_interval_us=45000 baseline=0 threshold=8 clipped=4716[0m
+[0;32mI (41279) tachometer: RPM=1151 sparks=2620 window_sparks=12 last_interval_us=24200 baseline=0 threshold=8 clipped=4742[0m
+[0;32mI (41779) tachometer: RPM=3529 sparks=2648 window_sparks=28 last_interval_us=9600 baseline=0 threshold=8 clipped=4583[0m

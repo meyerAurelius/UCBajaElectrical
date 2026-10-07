@@ -14,6 +14,7 @@
 #include "spark_detector.h"
 
 #define ADC_GPIO             1       // Stamp-S3 G1 = ADC1 channel 0
+#define ADC_ATTENUATION      ADC_ATTEN_DB_0 // More ADC codes for a millivolt-scale input
 #define SAMPLE_RATE_HZ       10000   // Same 100 us spacing as scope_7.csv
 #define READ_BYTES           512
 #define STORE_BYTES          4096
@@ -52,7 +53,7 @@ void app_main(void)
     ESP_ERROR_CHECK(adc_continuous_new_handle(&handle_config, &adc));
 
     adc_digi_pattern_config_t pattern = {
-        .atten = ADC_ATTEN_DB_12,
+        .atten = ADC_ATTENUATION,
         .channel = channel,
         .unit = unit,
         .bit_width = SOC_ADC_DIGI_MAX_BITWIDTH,
@@ -74,12 +75,17 @@ void app_main(void)
     spark_detector_t detector;
     spark_detector_reset(&detector);
     uint32_t seen_overflows = 0;
-    uint32_t clipped_samples = 0;
+    uint32_t zero_samples = 0;
+    uint32_t fullscale_samples = 0;
+    uint16_t max_adc = 0;
+    uint32_t last_report_sparks = 0;
+    uint32_t previous_window_sparks = 0;
+    bool have_previous_window = false;
     uint64_t sample_number = 0;
     uint64_t next_report = REPORT_SAMPLES;
     uint8_t bytes[READ_BYTES];
 
-    ESP_LOGI(TAG, "ADC1 GPIO%d at %d samples/s; %d spark(s)/rev",
+    ESP_LOGI(TAG, "ADC1 GPIO%d at %d samples/s, 0 dB attenuation; %d spark(s)/rev",
              ADC_GPIO, SAMPLE_RATE_HZ, SPARKS_PER_REV);
     while (true) {
         if (pool_overflows != seen_overflows) {
@@ -90,7 +96,12 @@ void app_main(void)
             spark_detector_reset(&detector); // Sample time is no longer continuous.
             sample_number = 0;
             next_report = REPORT_SAMPLES;
-            clipped_samples = 0;
+            zero_samples = 0;
+            fullscale_samples = 0;
+            max_adc = 0;
+            last_report_sparks = 0;
+            previous_window_sparks = 0;
+            have_previous_window = false;
             ESP_ERROR_CHECK(adc_continuous_start(adc));
             continue;
         }
@@ -106,6 +117,12 @@ void app_main(void)
             spark_detector_reset(&detector);
             sample_number = 0;
             next_report = REPORT_SAMPLES;
+            last_report_sparks = 0;
+            previous_window_sparks = 0;
+            have_previous_window = false;
+            zero_samples = 0;
+            fullscale_samples = 0;
+            max_adc = 0;
             ESP_ERROR_CHECK(adc_continuous_start(adc));
             continue;
         }
@@ -121,25 +138,50 @@ void app_main(void)
                 continue;
             }
             const uint16_t raw = result.type2.data;
-            if (raw == 0 || raw == 4095) {
-                clipped_samples++;
+            if (raw == 0) {
+                zero_samples++;
+            } else if (raw == 4095) {
+                fullscale_samples++;
+            }
+            if (raw > max_adc) {
+                max_adc = raw;
             }
             sample_number++;
-            if (spark_detector_process(&detector, raw, sample_number)) {
-                // ESP_LOGI(TAG, "spark #%-6" PRIu32 " ADC=%u baseline=%ld threshold=%u",
-                //          detector.spark_count, raw,
-                //          (long)spark_detector_baseline(&detector),
-                //          spark_detector_threshold(&detector));
-            }
+            spark_detector_process(&detector, raw, sample_number);
             if (sample_number >= next_report) {
-                const uint32_t rpm = spark_detector_rpm(&detector, sample_number,
-                                                         SAMPLE_RATE_HZ, SPARKS_PER_REV);
-                ESP_LOGI(TAG, "RPM=%" PRIu32 " sparks=%" PRIu32
-                         " baseline=%ld threshold=%u clipped=%" PRIu32,
-                         rpm, detector.spark_count,
+                const uint32_t interval_rpm = spark_detector_rpm(
+                    &detector, sample_number, SAMPLE_RATE_HZ, SPARKS_PER_REV);
+                const uint32_t window_sparks = detector.spark_count - last_report_sparks;
+                last_report_sparks = detector.spark_count;
+                uint32_t rpm = 0;
+                if (detector.spark_count != 0 &&
+                    sample_number - detector.last_spark_sample <= SAMPLE_RATE_HZ / 2) {
+                    const uint32_t count = window_sparks +
+                        (have_previous_window ? previous_window_sparks : 0);
+                    const uint32_t windows = have_previous_window ? 2 : 1;
+                    rpm = (uint32_t)(((uint64_t)count * 60 * SAMPLE_RATE_HZ +
+                                      windows * REPORT_SAMPLES * SPARKS_PER_REV / 2) /
+                                     (windows * REPORT_SAMPLES * SPARKS_PER_REV));
+                }
+                previous_window_sparks = window_sparks;
+                have_previous_window = true;
+                const uint32_t last_interval_us = interval_rpm == 0 ? 0 :
+                    (uint32_t)(((uint64_t)detector.period_samples[
+                        (detector.period_next + 3) % 4] * 1000000) / SAMPLE_RATE_HZ);
+                const char *signal = zero_samples >= REPORT_SAMPLES / 2 ? "LOW_RAIL" :
+                    (fullscale_samples >= REPORT_SAMPLES / 2 ? "HIGH_RAIL" : "OK");
+                ESP_LOGI(TAG, "RPM=%" PRIu32 " interval_rpm=%" PRIu32 " sparks=%" PRIu32
+                         " window_sparks=%" PRIu32 " last_interval_us=%" PRIu32
+                         " baseline=%ld threshold=%u zero=%" PRIu32
+                         " fullscale=%" PRIu32 " max_adc=%u signal=%s",
+                         rpm, interval_rpm, detector.spark_count,
+                         window_sparks, last_interval_us,
                          (long)spark_detector_baseline(&detector),
-                         spark_detector_threshold(&detector), clipped_samples);
-                clipped_samples = 0;
+                         spark_detector_threshold(&detector), zero_samples,
+                         fullscale_samples, max_adc, signal);
+                zero_samples = 0;
+                fullscale_samples = 0;
+                max_adc = 0;
                 next_report += REPORT_SAMPLES;
             }
         }

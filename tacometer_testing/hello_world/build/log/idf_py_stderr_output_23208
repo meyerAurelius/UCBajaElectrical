@@ -1,0 +1,9 @@
+Command: cmake -G Ninja -DPYTHON_DEPS_CHECKED=1 -DPYTHON=C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe -DESP_PLATFORM=1 -DCCACHE_ENABLE=0 C:\Users\marcu\baja\repos\UCBajaElectrical\tacometer_testing\hello_world
+fatal: detected dubious ownership in repository at 'C:/Espressif/frameworks/esp-idf-v5.5.3'
+'C:/Espressif/frameworks/esp-idf-v5.5.3' is owned by:
+	alien_pc/marcu (S-1-5-21-3912128070-3499529345-76942888-1001)
+but the current user is:
+	alien_pc/CodexSandboxOffline (S-1-5-21-3912128070-3499529345-76942888-1006)
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory C:/Espressif/frameworks/esp-idf-v5.5.3
