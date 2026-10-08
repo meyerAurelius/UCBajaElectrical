@@ -1,0 +1,897 @@
+Command: C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:\Espressif\frameworks\esp-idf-v5.5.3\tools/idf_monitor.py -p COM15 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 C:\Users\marcu\baja\repos\UCBajaElectrical\distributed_accel\build\adxl345_spi_test.elf C:\Users\marcu\baja\repos\UCBajaElectrical\distributed_accel\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'C:\Espressif\frameworks\esp-idf-v5.5.3\tools\idf.py'
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x2a (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4037c66e
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x14f0
+load:0x403c8700,len:0xd24
+load:0x403cb700,len:0x2ef0
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5.3 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Oct  7 2026 13:27:08[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.4[0m
+[0;32mI (31) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (35) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (62) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (76) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0c1d4h ( 49620) map[0m
+[0;32mI (95) esp_image: segment 1: paddr=0001c1fc vaddr=3fc94f00 size=0329ch ( 12956) load[0m
+[0;32mI (98) esp_image: segment 2: paddr=0001f4a0 vaddr=40374000 size=00b78h (  2936) load[0m
+[0;32mI (102) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=17e40h ( 97856) map[0m
+[0;32mI (126) esp_image: segment 4: paddr=00037e68 vaddr=40374b78 size=10318h ( 66328) load[0m
+[0;32mI (141) esp_image: segment 5: paddr=00048188 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (148) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (148) boot: Disabling RNG early entropy source...[0m
+[0;32mI (158) cpu_start: Multicore app[0m
+[0;32mI (167) cpu_start: GPIO 44 and 43 are used as console UART I/O pins[0m
+[0;32mI (168) cpu_start: Pro cpu start user code[0m
+[0;32mI (168) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (169) app_init: Application information:[0m
+[0;32mI (173) app_init: Project name:     adxl345_spi_test[0m
+[0;32mI (178) app_init: App version:      c5d166e9-dirty[0m
+[0;32mI (182) app_init: Compile time:     Oct  7 2026 13:26:52[0m
+[0;32mI (187) app_init: ELF file SHA256:  42d091ad4...[0m
+[0;32mI (191) app_init: ESP-IDF:          v5.5.3[0m
+[0;32mI (195) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (199) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (203) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (207) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (213) heap_init: At 3FC98AA8 len 00050C68 (323 KiB): RAM[0m
+[0;32mI (218) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (224) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (229) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (235) spi_flash: detected chip: generic[0m
+[0;32mI (238) spi_flash: flash io: dio[0m
+[0;33mW (241) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (253) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (259) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (266) main_task: Started on CPU0[0m
+[0;32mI (276) main_task: Calling app_main()[0m
+[0;32mI (276) adxl345_test: CS GPIO 1: ADXL345 detected (DEVID=0xE5)[0m
+[0;32mI (276) adxl345_test: Sampling the ADXL345 at 800 Hz; printing every 50th sample (~16 Hz)[0m
+[0;32mI (286) adxl345_test: INT1 GPIO 2 is configured as an input but is not required for polling[0m
+[0;32mI (356) adxl345_test: sample=50 | raw [   -46     11    258] | acceleration [-0.179 0.043 1.006 g][0m
+[0;32mI (416) adxl345_test: sample=100 | raw [   -48     10    257] | acceleration [-0.187 0.039 1.002 g][0m
+[0;32mI (476) adxl345_test: sample=150 | raw [   -48     14    256] | acceleration [-0.187 0.055 0.998 g][0m
+[0;32mI (546) adxl345_test: sample=200 | raw [   -47     13    255] | acceleration [-0.183 0.051 0.994 g][0m
+[0;32mI (606) adxl345_test: sample=250 | raw [   -44     13    258] | acceleration [-0.172 0.051 1.006 g][0m
+[0;32mI (666) adxl345_test: sample=300 | raw [   -48     13    255] | acceleration [-0.187 0.051 0.994 g][0m
+[0;32mI (726) adxl345_test: sample=350 | raw [   -46     10    258] | acceleration [-0.179 0.039 1.006 g][0m
+[0;32mI (796) adxl345_test: sample=400 | raw [   -43     13    256] | acceleration [-0.168 0.051 0.998 g][0m
+[0;32mI (856) adxl345_test: sample=450 | raw [   -49     13    256] | acceleration [-0.191 0.051 0.998 g][0m
+[0;32mI (916) adxl345_test: sample=500 | raw [   -47     13    257] | acceleration [-0.183 0.051 1.002 g][0m
+[0;32mI (976) adxl345_test: sample=550 | raw [   -48     14    254] | acceleration [-0.187 0.055 0.991 g][0m
+[0;32mI (1046) adxl345_test: sample=600 | raw [   -46     15    257] | acceleration [-0.179 0.058 1.002 g][0m
+[0;32mI (1106) adxl345_test: sample=650 | raw [   -49     12    255] | acceleration [-0.191 0.047 0.994 g][0m
+[0;32mI (1166) adxl345_test: sample=700 | raw [   -47      9    255] | acceleration [-0.183 0.035 0.994 g][0m
+[0;32mI (1226) adxl345_test: sample=750 | raw [   -48     13    256] | acceleration [-0.187 0.051 0.998 g][0m
+[0;32mI (1296) adxl345_test: sample=800 | raw [   -48     15    257] | acceleration [-0.187 0.058 1.002 g][0m
+[0;32mI (1356) adxl345_test: sample=850 | raw [   -45     13    255] | acceleration [-0.175 0.051 0.994 g][0m
+[0;32mI (1416) adxl345_test: sample=900 | raw [   -50      9    258] | acceleration [-0.195 0.035 1.006 g][0m
+[0;32mI (1476) adxl345_test: sample=950 | raw [   -48     15    259] | acceleration [-0.187 0.058 1.010 g][0m
+[0;32mI (1546) adxl345_test: sample=1000 | raw [   -49     11    255] | acceleration [-0.191 0.043 0.994 g][0m
+[0;32mI (1606) adxl345_test: sample=1050 | raw [   -45     13    257] | acceleration [-0.175 0.051 1.002 g][0m
+[0;32mI (1666) adxl345_test: sample=1100 | raw [   -47     13    257] | acceleration [-0.183 0.051 1.002 g][0m
+[0;32mI (1726) adxl345_test: sample=1150 | raw [   -45     14    258] | acceleration [-0.175 0.055 1.006 g][0m
+[0;32mI (1796) adxl345_test: sample=1200 | raw [   -48     10    256] | acceleration [-0.187 0.039 0.998 g][0m
+[0;32mI (1856) adxl345_test: sample=1250 | raw [   -46     13    259] | acceleration [-0.179 0.051 1.010 g][0m
+[0;32mI (1916) adxl345_test: sample=1300 | raw [   -46     12    256] | acceleration [-0.179 0.047 0.998 g][0m
+[0;32mI (1976) adxl345_test: sample=1350 | raw [   -47     12    257] | acceleration [-0.183 0.047 1.002 g][0m
+[0;32mI (2046) adxl345_test: sample=1400 | raw [   -47     13    257] | acceleration [-0.183 0.051 1.002 g][0m
+[0;32mI (2106) adxl345_test: sample=1450 | raw [   -46     13    256] | acceleration [-0.179 0.051 0.998 g][0m
+[0;32mI (2166) adxl345_test: sample=1500 | raw [   -49     15    256] | acceleration [-0.191 0.058 0.998 g][0m
+[0;32mI (2226) adxl345_test: sample=1550 | raw [   -48      9    256] | acceleration [-0.187 0.035 0.998 g][0m
+[0;32mI (2296) adxl345_test: sample=1600 | raw [   -46     13    257] | acceleration [-0.179 0.051 1.002 g][0m
+[0;32mI (2356) adxl345_test: sample=1650 | raw [   -46     14    257] | acceleration [-0.179 0.055 1.002 g][0m
+[0;32mI (2416) adxl345_test: sample=1700 | raw [   -48     11    256] | acceleration [-0.187 0.043 0.998 g][0m
+[0;32mI (2476) adxl345_test: sample=1750 | raw [   -47     14    257] | acceleration [-0.183 0.055 1.002 g][0m
+[0;32mI (2546) adxl345_test: sample=1800 | raw [   -46     12    257] | acceleration [-0.179 0.047 1.002 g][0m
+[0;32mI (2606) adxl345_test: sample=1850 | raw [   -49     12    255] | acceleration [-0.191 0.047 0.994 g][0m
+[0;32mI (2666) adxl345_test: sample=1900 | raw [   -47     11    256] | acceleration [-0.183 0.043 0.998 g][0m
+[0;32mI (2726) adxl345_test: sample=1950 | raw [   -44     12    256] | acceleration [-0.172 0.047 0.998 g][0m
+[0;32mI (2796) adxl345_test: sample=2000 | raw [   -48     12    256] | acceleration [-0.187 0.047 0.998 g][0m
+[0;32mI (2856) adxl345_test: sample=2050 | raw [   -50     13    255] | acceleration [-0.195 0.051 0.994 g][0m
+[0;32mI (2916) adxl345_test: sample=2100 | raw [   -48     13    254] | acceleration [-0.187 0.051 0.991 g][0m
+[0;32mI (2976) adxl345_test: sample=2150 | raw [   -44     11    255] | acceleration [-0.172 0.043 0.994 g][0m
+[0;32mI (3046) adxl345_test: sample=2200 | raw [   -49     14    254] | acceleration [-0.191 0.055 0.991 g][0m
+[0;32mI (3106) adxl345_test: sample=2250 | raw [   -44     11    259] | acceleration [-0.172 0.043 1.010 g][0m
+[0;32mI (3166) adxl345_test: sample=2300 | raw [   -44     11    258] | acceleration [-0.172 0.043 1.006 g][0m
+[0;32mI (3226) adxl345_test: sample=2350 | raw [   -48      8    255] | acceleration [-0.187 0.031 0.994 g][0m
+[0;32mI (3296) adxl345_test: sample=2400 | raw [   -45     14    258] | acceleration [-0.175 0.055 1.006 g][0m
+[0;32mI (3356) adxl345_test: sample=2450 | raw [   -48     11    256] | acceleration [-0.187 0.043 0.998 g][0m
+[0;32mI (3416) adxl345_test: sample=2500 | raw [   -46     14    261] | acceleration [-0.179 0.055 1.018 g][0m
+[0;32mI (3476) adxl345_test: sample=2550 | raw [   -47     13    255] | acceleration [-0.183 0.051 0.994 g][0m
+[0;32mI (3546) adxl345_test: sample=2600 | raw [   -45     10    256] | acceleration [-0.175 0.039 0.998 g][0m
+[0;32mI (3606) adxl345_test: sample=2650 | raw [   -47     13    258] | acceleration [-0.183 0.051 1.006 g][0m
+[0;32mI (3666) adxl345_test: sample=2700 | raw [   -46     16    257] | acceleration [-0.179 0.062 1.002 g][0m
+[0;32mI (3726) adxl345_test: sample=2750 | raw [   -49      9    257] | acceleration [-0.191 0.035 1.002 g][0m
+[0;32mI (3796) adxl345_test: sample=2800 | raw [   -45      7    257] | acceleration [-0.175 0.027 1.002 g][0m
+[0;32mI (3856) adxl345_test: sample=2850 | raw [   -48     19    255] | acceleration [-0.187 0.074 0.994 g][0m
+[0;32mI (3916) adxl345_test: sample=2900 | raw [   -49      9    257] | acceleration [-0.191 0.035 1.002 g][0m
+[0;32mI (3976) adxl345_test: sample=2950 | raw [   -45     13    258] | acceleration [-0.175 0.051 1.006 g][0m
+[0;32mI (4046) adxl345_test: sample=3000 | raw [   -48     11    257] | acceleration [-0.187 0.043 1.002 g][0m
+[0;32mI (4106) adxl345_test: sample=3050 | raw [   -46     18    256] | acceleration [-0.179 0.070 0.998 g][0m
+[0;32mI (4166) adxl345_test: sample=3100 | raw [  -345    126     -3] | acceleration [-1.345 0.491 -0.012 g][0m
+[0;32mI (4226) adxl345_test: sample=3150 | raw [    48    -60    290] | acceleration [0.187 -0.234 1.131 g][0m
+[0;32mI (4296) adxl345_test: sample=3200 | raw [   -62     -7    244] | acceleration [-0.242 -0.027 0.952 g][0m
+[0;32mI (4356) adxl345_test: sample=3250 | raw [   -49    -32    263] | acceleration [-0.191 -0.125 1.026 g][0m
+[0;32mI (4416) adxl345_test: sample=3300 | raw [   -48      5    253] | acceleration [-0.187 0.019 0.987 g][0m
+[0;32mI (4476) adxl345_test: sample=3350 | raw [   -64    -10    265] | acceleration [-0.250 -0.039 1.033 g][0m
+[0;32mI (4546) adxl345_test: sample=3400 | raw [    68    123    304] | acceleration [0.265 0.480 1.186 g][0m
+[0;32mI (4606) adxl345_test: sample=3450 | raw [   -64      0    249] | acceleration [-0.250 0.000 0.971 g][0m
+[0;32mI (4666) adxl345_test: sample=3500 | raw [   -64    -44    230] | acceleration [-0.250 -0.172 0.897 g][0m
+[0;32mI (4726) adxl345_test: sample=3550 | raw [   -52    -16    223] | acceleration [-0.203 -0.062 0.870 g][0m
+[0;32mI (4796) adxl345_test: sample=3600 | raw [    39    -46    454] | acceleration [0.152 -0.179 1.771 g][0m
+[0;32mI (4856) adxl345_test: sample=3650 | raw [   -84    -85    309] | acceleration [-0.328 -0.331 1.205 g][0m
+[0;32mI (4916) adxl345_test: sample=3700 | raw [   -95    -75    329] | acceleration [-0.370 -0.292 1.283 g][0m
+[0;32mI (4976) adxl345_test: sample=3750 | raw [  -157    -24    330] | acceleration [-0.612 -0.094 1.287 g][0m
+[0;32mI (5046) adxl345_test: sample=3800 | raw [  -181    -90   -294] | acceleration [-0.706 -0.351 -1.147 g][0m
+[0;32mI (5106) adxl345_test: sample=3850 | raw [    50     70     23] | acceleration [0.195 0.273 0.090 g][0m
+[0;32mI (5166) adxl345_test: sample=3900 | raw [   -39    477    173] | acceleration [-0.152 1.860 0.675 g][0m
+[0;32mI (5226) adxl345_test: sample=3950 | raw [   -26    -39    284] | acceleration [-0.101 -0.152 1.108 g][0m
+[1;31mE (5276) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (5276) task_wdt:  - IDLE0 (CPU 0)[0m
+[1;31mE (5276) task_wdt: Tasks currently running:[0m
+[1;31mE (5276) task_wdt: CPU 0: main[0m
+[1;31mE (5276) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (5276) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x4200C2CE:0x3FC960E0 0x4200C6E4:0x3FC96100 0x40376F3D:0x3FC96130 0x400559DD:0x3FC9B180 0x4037BBB5:0x3FC9B190 0x40377CA1:0x3FC9B1B0 0x40377DBD:0x3FC9B1E0 0x40378C9A:0x3FC9B200 0x40378CCD:0x3FC9B220 0x42009979:0x3FC9B240 0x42009BFF:0x3FC9B290 0x42009D8D:0x3FC9B2C0 0x4201702C:0x3FC9B390 0x4037BA41:0x3FC9B3C0
+
+[0;32mI (5356) adxl345_test: sample=4050 | raw [   -59    -14    258] | acceleration [-0.230 -0.055 1.006 g][0m
+[0;32mI (5416) adxl345_test: sample=4100 | raw [  -185    -49    300] | acceleration [-0.721 -0.191 1.170 g][0m
+[0;32mI (5476) adxl345_test: sample=4150 | raw [   -48    -65    272] | acceleration [-0.187 -0.253 1.061 g][0m
+[0;32mI (5546) adxl345_test: sample=4200 | raw [   -39    124    213] | acceleration [-0.152 0.484 0.831 g][0m
+[0;32mI (5606) adxl345_test: sample=4250 | raw [   -56    -31    260] | acceleration [-0.218 -0.121 1.014 g][0m
+[0;32mI (5666) adxl345_test: sample=4300 | raw [   -37     -5    220] | acceleration [-0.144 -0.019 0.858 g][0m
+[0;32mI (5726) adxl345_test: sample=4350 | raw [   -49    -12    268] | acceleration [-0.191 -0.047 1.045 g][0m
+[0;32mI (5796) adxl345_test: sample=4400 | raw [   -45     17    258] | acceleration [-0.175 0.066 1.006 g][0m
+[0;32mI (5856) adxl345_test: sample=4450 | raw [   -57     34    232] | acceleration [-0.222 0.133 0.905 g][0m
+[0;32mI (5916) adxl345_test: sample=4500 | raw [   -42    -28    269] | acceleration [-0.164 -0.109 1.049 g][0m
+[0;32mI (5976) adxl345_test: sample=4550 | raw [   -90     51    404] | acceleration [-0.351 0.199 1.576 g][0m
+[0;32mI (6046) adxl345_test: sample=4600 | raw [   164    124    543] | acceleration [0.640 0.484 2.118 g][0m
+[0;32mI (6106) adxl345_test: sample=4650 | raw [   -34    211    347] | acceleration [-0.133 0.823 1.353 g][0m
+[0;32mI (6166) adxl345_test: sample=4700 | raw [  -132   -163    -34] | acceleration [-0.515 -0.636 -0.133 g][0m
+[0;32mI (6226) adxl345_test: sample=4750 | raw [   237   -142   -547] | acceleration [0.924 -0.554 -2.133 g][0m
+[0;32mI (6296) adxl345_test: sample=4800 | raw [  -233     96    211] | acceleration [-0.909 0.374 0.823 g][0m
+[0;32mI (6356) adxl345_test: sample=4850 | raw [  -247    108    447] | acceleration [-0.963 0.421 1.743 g][0m
+[0;32mI (6416) adxl345_test: sample=4900 | raw [  -159      8    699] | acceleration [-0.620 0.031 2.726 g][0m
+[0;32mI (6476) adxl345_test: sample=4950 | raw [   -93     42    146] | acceleration [-0.363 0.164 0.569 g][0m
+[0;32mI (6546) adxl345_test: sample=5000 | raw [  -253    125    159] | acceleration [-0.987 0.487 0.620 g][0m
+[0;32mI (6606) adxl345_test: sample=5050 | raw [  -230     35    410] | acceleration [-0.897 0.137 1.599 g][0m
+[0;32mI (6666) adxl345_test: sample=5100 | raw [  -106     79    450] | acceleration [-0.413 0.308 1.755 g][0m
+[0;32mI (6726) adxl345_test: sample=5150 | raw [    12    202    297] | acceleration [0.047 0.788 1.158 g][0m
+[0;32mI (6796) adxl345_test: sample=5200 | raw [    51    170     37] | acceleration [0.199 0.663 0.144 g][0m
+[0;32mI (6856) adxl345_test: sample=5250 | raw [   321    340   -609] | acceleration [1.252 1.326 -2.375 g][0m
+[0;32mI (6916) adxl345_test: sample=5300 | raw [   187     94    -93] | acceleration [0.729 0.367 -0.363 g][0m
+[0;32mI (6976) adxl345_test: sample=5350 | raw [  -352   -344    201] | acceleration [-1.373 -1.342 0.784 g][0m
+[0;32mI (7046) adxl345_test: sample=5400 | raw [  -220   -428    682] | acceleration [-0.858 -1.669 2.660 g][0m
+[0;32mI (7106) adxl345_test: sample=5450 | raw [  -323   -327    520] | acceleration [-1.260 -1.275 2.028 g][0m
+[0;32mI (7166) adxl345_test: sample=5500 | raw [  -155    -83    259] | acceleration [-0.604 -0.324 1.010 g][0m
+[0;32mI (7226) adxl345_test: sample=5550 | raw [   -47     39    -57] | acceleration [-0.183 0.152 -0.222 g][0m
+[0;32mI (7296) adxl345_test: sample=5600 | raw [    -5    147   -201] | acceleration [-0.019 0.573 -0.784 g][0m
+[0;32mI (7356) adxl345_test: sample=5650 | raw [   -78    152   -239] | acceleration [-0.304 0.593 -0.932 g][0m
+[0;32mI (7416) adxl345_test: sample=5700 | raw [   -74    268   -163] | acceleration [-0.289 1.045 -0.636 g][0m
+[0;32mI (7476) adxl345_test: sample=5750 | raw [  -103    185   -171] | acceleration [-0.402 0.721 -0.667 g][0m
+[0;32mI (7546) adxl345_test: sample=5800 | raw [  -152    122     85] | acceleration [-0.593 0.476 0.331 g][0m
+[0;32mI (7606) adxl345_test: sample=5850 | raw [  -217    -81    -64] | acceleration [-0.846 -0.316 -0.250 g][0m
+[0;32mI (7666) adxl345_test: sample=5900 | raw [  -147    -35     65] | acceleration [-0.573 -0.137 0.253 g][0m
+[0;32mI (7726) adxl345_test: sample=5950 | raw [  -176   -207    416] | acceleration [-0.686 -0.807 1.622 g][0m
+[0;32mI (7796) adxl345_test: sample=6000 | raw [  -132    -23    935] | acceleration [-0.515 -0.090 3.646 g][0m
+[0;32mI (7856) adxl345_test: sample=6050 | raw [  -101      8    491] | acceleration [-0.394 0.031 1.915 g][0m
+[0;32mI (7916) adxl345_test: sample=6100 | raw [   -19    -73    136] | acceleration [-0.074 -0.285 0.530 g][0m
+[0;32mI (7976) adxl345_test: sample=6150 | raw [   247   -187   -254] | acceleration [0.963 -0.729 -0.991 g][0m
+[0;32mI (8046) adxl345_test: sample=6200 | raw [   325    187   -635] | acceleration [1.267 0.729 -2.477 g][0m
+[0;32mI (8106) adxl345_test: sample=6250 | raw [  -101     69   -280] | acceleration [-0.394 0.269 -1.092 g][0m
+[0;32mI (8166) adxl345_test: sample=6300 | raw [   -80    348    -75] | acceleration [-0.312 1.357 -0.292 g][0m
+[0;32mI (8226) adxl345_test: sample=6350 | raw [  -102    178    103] | acceleration [-0.398 0.694 0.402 g][0m
+[0;32mI (8296) adxl345_test: sample=6400 | raw [  -182     36     39] | acceleration [-0.710 0.140 0.152 g][0m
+[0;32mI (8356) adxl345_test: sample=6450 | raw [  -230   -218    -99] | acceleration [-0.897 -0.850 -0.386 g][0m
+[0;32mI (8416) adxl345_test: sample=6500 | raw [  -298   -336   -158] | acceleration [-1.162 -1.310 -0.616 g][0m
+[0;32mI (8476) adxl345_test: sample=6550 | raw [  -348   -267    -54] | acceleration [-1.357 -1.041 -0.211 g][0m
+[0;32mI (8546) adxl345_test: sample=6600 | raw [  -471   -550    -75] | acceleration [-1.837 -2.145 -0.292 g][0m
+[0;32mI (8606) adxl345_test: sample=6650 | raw [  -255   -269   -193] | acceleration [-0.994 -1.049 -0.753 g][0m
+[0;32mI (8666) adxl345_test: sample=6700 | raw [   -83     32    -93] | acceleration [-0.324 0.125 -0.363 g][0m
+[0;32mI (8726) adxl345_test: sample=6750 | raw [    78    233     52] | acceleration [0.304 0.909 0.203 g][0m
+[0;32mI (8796) adxl345_test: sample=6800 | raw [   123    595     67] | acceleration [0.480 2.320 0.261 g][0m
+[0;32mI (8856) adxl345_test: sample=6850 | raw [  -106    323     17] | acceleration [-0.413 1.260 0.066 g][0m
+[0;32mI (8916) adxl345_test: sample=6900 | raw [  -238    112      2] | acceleration [-0.928 0.437 0.008 g][0m
+[0;32mI (8976) adxl345_test: sample=6950 | raw [  -224     91     43] | acceleration [-0.874 0.355 0.168 g][0m
+[0;32mI (9046) adxl345_test: sample=7000 | raw [  -203    127     34] | acceleration [-0.792 0.495 0.133 g][0m
+[0;32mI (9106) adxl345_test: sample=7050 | raw [  -193    159     14] | acceleration [-0.753 0.620 0.055 g][0m
+[0;32mI (9166) adxl345_test: sample=7100 | raw [  -208    139     18] | acceleration [-0.811 0.542 0.070 g][0m
+[0;32mI (9226) adxl345_test: sample=7150 | raw [  -191    149     11] | acceleration [-0.745 0.581 0.043 g][0m
+[0;32mI (9296) adxl345_test: sample=7200 | raw [  -198    157      9] | acceleration [-0.772 0.612 0.035 g][0m
+[0;32mI (9356) adxl345_test: sample=7250 | raw [  -204    153     13] | acceleration [-0.796 0.597 0.051 g][0m
+[0;32mI (9416) adxl345_test: sample=7300 | raw [  -197    141     26] | acceleration [-0.768 0.550 0.101 g][0m
+[0;32mI (9476) adxl345_test: sample=7350 | raw [  -201    155     26] | acceleration [-0.784 0.604 0.101 g][0m
+[0;32mI (9546) adxl345_test: sample=7400 | raw [  -196    140     15] | acceleration [-0.764 0.546 0.058 g][0m
+[0;32mI (9606) adxl345_test: sample=7450 | raw [  -196    151     14] | acceleration [-0.764 0.589 0.055 g][0m
+[0;32mI (9666) adxl345_test: sample=7500 | raw [  -193    150      5] | acceleration [-0.753 0.585 0.019 g][0m
+[0;32mI (9726) adxl345_test: sample=7550 | raw [  -200    150     34] | acceleration [-0.780 0.585 0.133 g][0m
+[0;32mI (9796) adxl345_test: sample=7600 | raw [  -200    146      4] | acceleration [-0.780 0.569 0.016 g][0m
+[0;32mI (9856) adxl345_test: sample=7650 | raw [  -204    147     11] | acceleration [-0.796 0.573 0.043 g][0m
+[0;32mI (9916) adxl345_test: sample=7700 | raw [  -204    133     15] | acceleration [-0.796 0.519 0.058 g][0m
+[0;32mI (9976) adxl345_test: sample=7750 | raw [  -200    148     10] | acceleration [-0.780 0.577 0.039 g][0m
+[0;32mI (10046) adxl345_test: sample=7800 | raw [  -208    132     18] | acceleration [-0.811 0.515 0.070 g][0m
+[0;32mI (10106) adxl345_test: sample=7850 | raw [  -213    119      0] | acceleration [-0.831 0.464 0.000 g][0m
+[0;32mI (10166) adxl345_test: sample=7900 | raw [  -204    150     20] | acceleration [-0.796 0.585 0.078 g][0m
+[0;32mI (10226) adxl345_test: sample=7950 | raw [  -197    159     -5] | acceleration [-0.768 0.620 -0.019 g][0m
+[1;31mE (10276) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (10276) task_wdt:  - IDLE0 (CPU 0)[0m
+[1;31mE (10276) task_wdt: Tasks currently running:[0m
+[1;31mE (10276) task_wdt: CPU 0: main[0m
+[1;31mE (10276) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (10276) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x4200C2CE:0x3FC960E0 0x4200C6E4:0x3FC96100 0x40376F3D:0x3FC96130 0x40381145:0x3FC9B180 0x40375E42:0x3FC9B1A0 0x403828E1:0x3FC9B1C0 0x40377FCD:0x3FC9B1E0 0x40378C75:0x3FC9B200 0x40378CCD:0x3FC9B220 0x42009979:0x3FC9B240 0x42009BFF:0x3FC9B290 0x42009D8D:0x3FC9B2C0 0x4201702C:0x3FC9B390 0x4037BA41:0x3FC9B3C0
+
+[0;32mI (10356) adxl345_test: sample=8050 | raw [  -225    159      1] | acceleration [-0.877 0.620 0.004 g][0m
+[0;32mI (10416) adxl345_test: sample=8100 | raw [   202    482    123] | acceleration [0.788 1.880 0.480 g][0m
+[0;32mI (10476) adxl345_test: sample=8150 | raw [   574    636    -38] | acceleration [2.239 2.480 -0.148 g][0m
+[0;32mI (10546) adxl345_test: sample=8200 | raw [  -184  -1046   -108] | acceleration [-0.718 -4.079 -0.421 g][0m
+[0;32mI (10606) adxl345_test: sample=8250 | raw [  -494   -431   -498] | acceleration [-1.927 -1.681 -1.942 g][0m
+[0;32mI (10666) adxl345_test: sample=8300 | raw [  -410   -394   -192] | acceleration [-1.599 -1.537 -0.749 g][0m
+[0;32mI (10726) adxl345_test: sample=8350 | raw [  -193   -172   -117] | acceleration [-0.753 -0.671 -0.456 g][0m
+[0;32mI (10796) adxl345_test: sample=8400 | raw [   -54    160     34] | acceleration [-0.211 0.624 0.133 g][0m
+[0;32mI (10856) adxl345_test: sample=8450 | raw [   -89    237     33] | acceleration [-0.347 0.924 0.129 g][0m
+[0;32mI (10916) adxl345_test: sample=8500 | raw [  -110    245     51] | acceleration [-0.429 0.955 0.199 g][0m
+[0;32mI (10976) adxl345_test: sample=8550 | raw [  -113    289     21] | acceleration [-0.441 1.127 0.082 g][0m
+[0;32mI (11046) adxl345_test: sample=8600 | raw [   183    546    100] | acceleration [0.714 2.129 0.390 g][0m
+[0;32mI (11106) adxl345_test: sample=8650 | raw [   432    634    150] | acceleration [1.685 2.473 0.585 g][0m
+[0;32mI (11166) adxl345_test: sample=8700 | raw [    -4   -470   -217] | acceleration [-0.016 -1.833 -0.846 g][0m
+[0;32mI (11226) adxl345_test: sample=8750 | raw [  -503   -752   -439] | acceleration [-1.962 -2.933 -1.712 g][0m
+[0;32mI (11296) adxl345_test: sample=8800 | raw [  -350   -113   -266] | acceleration [-1.365 -0.441 -1.037 g][0m
+[0;32mI (11356) adxl345_test: sample=8850 | raw [  -252      0   -145] | acceleration [-0.983 0.000 -0.565 g][0m
+[0;32mI (11416) adxl345_test: sample=8900 | raw [  -280   -160   -152] | acceleration [-1.092 -0.624 -0.593 g][0m
+[0;32mI (11476) adxl345_test: sample=8950 | raw [  -242    -41   -121] | acceleration [-0.944 -0.160 -0.472 g][0m
+[0;32mI (11546) adxl345_test: sample=9000 | raw [  -104     67    365] | acceleration [-0.406 0.261 1.423 g][0m
+[0;32mI (11606) adxl345_test: sample=9050 | raw [  -175      6    122] | acceleration [-0.683 0.023 0.476 g][0m
+[0;32mI (11666) adxl345_test: sample=9100 | raw [  -257    -47     68] | acceleration [-1.002 -0.183 0.265 g][0m
+[0;32mI (11726) adxl345_test: sample=9150 | raw [  -245    203   -130] | acceleration [-0.955 0.792 -0.507 g][0m
+[0;32mI (11796) adxl345_test: sample=9200 | raw [  -276    -32   -103] | acceleration [-1.076 -0.125 -0.402 g][0m
+[0;32mI (11856) adxl345_test: sample=9250 | raw [  -267    -37   -154] | acceleration [-1.041 -0.144 -0.601 g][0m
+[0;32mI (11916) adxl345_test: sample=9300 | raw [  -268     76   -137] | acceleration [-1.045 0.296 -0.534 g][0m
+[0;32mI (11976) adxl345_test: sample=9350 | raw [  -224    -40   -100] | acceleration [-0.874 -0.156 -0.390 g][0m
+[0;32mI (12046) adxl345_test: sample=9400 | raw [  -210    -53   -136] | acceleration [-0.819 -0.207 -0.530 g][0m
+[0;32mI (12106) adxl345_test: sample=9450 | raw [  -193    -52   -127] | acceleration [-0.753 -0.203 -0.495 g][0m
+[0;32mI (12166) adxl345_test: sample=9500 | raw [  -190    -57   -133] | acceleration [-0.741 -0.222 -0.519 g][0m
+[0;32mI (12226) adxl345_test: sample=9550 | raw [  -252    -82   -124] | acceleration [-0.983 -0.320 -0.484 g][0m
+[0;32mI (12296) adxl345_test: sample=9600 | raw [  -194    -71   -132] | acceleration [-0.757 -0.277 -0.515 g][0m
+[0;32mI (12356) adxl345_test: sample=9650 | raw [  -110    138   -169] | acceleration [-0.429 0.538 -0.659 g][0m
+[0;32mI (12416) adxl345_test: sample=9700 | raw [  -195   -102   -146] | acceleration [-0.760 -0.398 -0.569 g][0m
+[0;32mI (12476) adxl345_test: sample=9750 | raw [  -204    -74    -82] | acceleration [-0.796 -0.289 -0.320 g][0m
+[0;32mI (12546) adxl345_test: sample=9800 | raw [  -257     52     -5] | acceleration [-1.002 0.203 -0.019 g][0m
+[0;32mI (12606) adxl345_test: sample=9850 | raw [  -194     10   -186] | acceleration [-0.757 0.039 -0.725 g][0m
+[0;32mI (12666) adxl345_test: sample=9900 | raw [  -232    -44   -277] | acceleration [-0.905 -0.172 -1.080 g][0m
+[0;32mI (12726) adxl345_test: sample=9950 | raw [  -169   -113    -88] | acceleration [-0.659 -0.441 -0.343 g][0m
+[0;32mI (12796) adxl345_test: sample=10000 | raw [  -252      0   -125] | acceleration [-0.983 0.000 -0.487 g][0m
+[0;32mI (12856) adxl345_test: sample=10050 | raw [    57     33    162] | acceleration [0.222 0.129 0.632 g][0m
+[0;32mI (12916) adxl345_test: sample=10100 | raw [  -258     -7    -91] | acceleration [-1.006 -0.027 -0.355 g][0m
+[0;32mI (12976) adxl345_test: sample=10150 | raw [  -218    -61      3] | acceleration [-0.850 -0.238 0.012 g][0m
+[0;32mI (13046) adxl345_test: sample=10200 | raw [  -227    -64     22] | acceleration [-0.885 -0.250 0.086 g][0m
+[0;32mI (13106) adxl345_test: sample=10250 | raw [  -240    -25     44] | acceleration [-0.936 -0.097 0.172 g][0m
+[0;32mI (13166) adxl345_test: sample=10300 | raw [  -235   -128     83] | acceleration [-0.916 -0.499 0.324 g][0m
+[0;32mI (13226) adxl345_test: sample=10350 | raw [  -171     22     31] | acceleration [-0.667 0.086 0.121 g][0m
+[0;32mI (13296) adxl345_test: sample=10400 | raw [  -151     51     -4] | acceleration [-0.589 0.199 -0.016 g][0m
+[0;32mI (13356) adxl345_test: sample=10450 | raw [  -254     84     55] | acceleration [-0.991 0.328 0.214 g][0m
+[0;32mI (13416) adxl345_test: sample=10500 | raw [  -266    170    -34] | acceleration [-1.037 0.663 -0.133 g][0m
+[0;32mI (13476) adxl345_test: sample=10550 | raw [  -247    216    168] | acceleration [-0.963 0.842 0.655 g][0m
+[0;32mI (13546) adxl345_test: sample=10600 | raw [  -208     89     68] | acceleration [-0.811 0.347 0.265 g][0m
+[0;32mI (13606) adxl345_test: sample=10650 | raw [   -27     -3   -328] | acceleration [-0.105 -0.012 -1.279 g][0m
+[0;32mI (13666) adxl345_test: sample=10700 | raw [   160   -275   -802] | acceleration [0.624 -1.072 -3.128 g][0m
+[0;32mI (13726) adxl345_test: sample=10750 | raw [   193   -243   -267] | acceleration [0.753 -0.948 -1.041 g][0m
+[0;32mI (13796) adxl345_test: sample=10800 | raw [    34    812   1550] | acceleration [0.133 3.167 6.045 g][0m
+[0;32mI (13856) adxl345_test: sample=10850 | raw [  -178    -21    218] | acceleration [-0.694 -0.082 0.850 g][0m
+[0;32mI (13916) adxl345_test: sample=10900 | raw [  -191    -28    283] | acceleration [-0.745 -0.109 1.104 g][0m
+[0;32mI (13976) adxl345_test: sample=10950 | raw [  -187     32    243] | acceleration [-0.729 0.125 0.948 g][0m
+[0;32mI (14046) adxl345_test: sample=11000 | raw [  -149    312    498] | acceleration [-0.581 1.217 1.942 g][0m
+[0;32mI (14106) adxl345_test: sample=11050 | raw [  -111     61    264] | acceleration [-0.433 0.238 1.030 g][0m
+[0;32mI (14166) adxl345_test: sample=11100 | raw [  -132    -17    -10] | acceleration [-0.515 -0.066 -0.039 g][0m
+[0;32mI (14226) adxl345_test: sample=11150 | raw [  -176   -151   -192] | acceleration [-0.686 -0.589 -0.749 g][0m
+[0;32mI (14296) adxl345_test: sample=11200 | raw [  -127   -347   -350] | acceleration [-0.495 -1.353 -1.365 g][0m
+[0;32mI (14356) adxl345_test: sample=11250 | raw [  -126   -420   -348] | acceleration [-0.491 -1.638 -1.357 g][0m
+[0;32mI (14416) adxl345_test: sample=11300 | raw [   -79   -177    -96] | acceleration [-0.308 -0.690 -0.374 g][0m
+[0;32mI (14476) adxl345_test: sample=11350 | raw [   162    136    234] | acceleration [0.632 0.530 0.913 g][0m
+[0;32mI (14546) adxl345_test: sample=11400 | raw [   -81    854    585] | acceleration [-0.316 3.331 2.281 g][0m
+[0;32mI (14606) adxl345_test: sample=11450 | raw [  -100    475    489] | acceleration [-0.390 1.852 1.907 g][0m
+[0;32mI (14666) adxl345_test: sample=11500 | raw [   -79     51     11] | acceleration [-0.308 0.199 0.043 g][0m
+[0;32mI (14726) adxl345_test: sample=11550 | raw [   -98   -218     18] | acceleration [-0.382 -0.850 0.070 g][0m
+[0;32mI (14796) adxl345_test: sample=11600 | raw [    17   -638   -118] | acceleration [0.066 -2.488 -0.460 g][0m
+[0;32mI (14856) adxl345_test: sample=11650 | raw [   -30   -661      6] | acceleration [-0.117 -2.578 0.023 g][0m
+[0;32mI (14916) adxl345_test: sample=11700 | raw [   -10   -126    179] | acceleration [-0.039 -0.491 0.698 g][0m
+[0;32mI (14976) adxl345_test: sample=11750 | raw [  -228   1323     -6] | acceleration [-0.889 5.160 -0.023 g][0m
+[0;32mI (15046) adxl345_test: sample=11800 | raw [  -240    511    -68] | acceleration [-0.936 1.993 -0.265 g][0m
+[0;32mI (15106) adxl345_test: sample=11850 | raw [  -130    197    -24] | acceleration [-0.507 0.768 -0.094 g][0m
+[0;32mI (15166) adxl345_test: sample=11900 | raw [   -48   -136     92] | acceleration [-0.187 -0.530 0.359 g][0m
+[0;32mI (15226) adxl345_test: sample=11950 | raw [    80   -660     82] | acceleration [0.312 -2.574 0.320 g][0m
+[1;31mE (15276) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (15276) task_wdt:  - IDLE0 (CPU 0)[0m
+[1;31mE (15276) task_wdt: Tasks currently running:[0m
+[1;31mE (15276) task_wdt: CPU 0: main[0m
+[1;31mE (15276) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (15276) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x4200C2CE:0x3FC960E0 0x4200C6E4:0x3FC96100 0x40376F3D:0x3FC96130 0x400559DD:0x3FC9B130 0x4037BDA2:0x3FC9B140 0x40381196:0x3FC9B160 0x40381145:0x3FC9B180 0x40375E42:0x3FC9B1A0 0x403828E1:0x3FC9B1C0 0x40377FCD:0x3FC9B1E0 0x40378C75:0x3FC9B200 0x40378CCD:0x3FC9B220 0x42009979:0x3FC9B240 0x42009BFF:0x3FC9B290 0x42009D8D:0x3FC9B2C0 0x4201702C:0x3FC9B390 0x4037BA41:0x3FC9B3C0
+
+[0;32mI (15326) adxl345_test: sample=12000 | raw [    30   -363    174] | acceleration [0.117 -1.416 0.679 g][0m
+[0;32mI (15356) adxl345_test: sample=12050 | raw [     7   -207    192] | acceleration [0.027 -0.807 0.749 g][0m
+[0;32mI (15416) adxl345_test: sample=12100 | raw [    80    601    -52] | acceleration [0.312 2.344 -0.203 g][0m
+[0;32mI (15476) adxl345_test: sample=12150 | raw [  -310   1097   -305] | acceleration [-1.209 4.278 -1.189 g][0m
+[0;32mI (15546) adxl345_test: sample=12200 | raw [  -161    406    -14] | acceleration [-0.628 1.583 -0.055 g][0m
+[0;32mI (15606) adxl345_test: sample=12250 | raw [     0    -95     71] | acceleration [0.000 -0.370 0.277 g][0m
+[0;32mI (15666) adxl345_test: sample=12300 | raw [   190   -880    158] | acceleration [0.741 -3.432 0.616 g][0m
+[0;32mI (15726) adxl345_test: sample=12350 | raw [   126   -621    245] | acceleration [0.491 -2.422 0.955 g][0m
+[0;32mI (15796) adxl345_test: sample=12400 | raw [    34    -99    214] | acceleration [0.133 -0.386 0.835 g][0m
+[0;32mI (15856) adxl345_test: sample=12450 | raw [  -259   1168   -297] | acceleration [-1.010 4.555 -1.158 g][0m
+[0;32mI (15916) adxl345_test: sample=12500 | raw [  -251    205     34] | acceleration [-0.979 0.799 0.133 g][0m
+[0;32mI (15976) adxl345_test: sample=12550 | raw [  -205     -4     63] | acceleration [-0.799 -0.016 0.246 g][0m
+[0;32mI (16046) adxl345_test: sample=12600 | raw [  -220     31     25] | acceleration [-0.858 0.121 0.097 g][0m
+[0;32mI (16106) adxl345_test: sample=12650 | raw [  -239    256    -12] | acceleration [-0.932 0.998 -0.047 g][0m
+[0;32mI (16166) adxl345_test: sample=12700 | raw [  -204    254    -81] | acceleration [-0.796 0.991 -0.316 g][0m
+[0;32mI (16226) adxl345_test: sample=12750 | raw [  -182    198     -6] | acceleration [-0.710 0.772 -0.023 g][0m
+[0;32mI (16296) adxl345_test: sample=12800 | raw [   -85   -212     84] | acceleration [-0.331 -0.827 0.328 g][0m
+[0;32mI (16356) adxl345_test: sample=12850 | raw [   -82    -30     18] | acceleration [-0.320 -0.117 0.070 g][0m
+[0;32mI (16416) adxl345_test: sample=12900 | raw [     1    142    212] | acceleration [0.004 0.554 0.827 g][0m
+[0;32mI (16476) adxl345_test: sample=12950 | raw [  -130    464    693] | acceleration [-0.507 1.810 2.703 g][0m
+[0;32mI (16546) adxl345_test: sample=13000 | raw [   -55    442    581] | acceleration [-0.214 1.724 2.266 g][0m
+[0;32mI (16606) adxl345_test: sample=13050 | raw [   110    225    -47] | acceleration [0.429 0.877 -0.183 g][0m
+[0;32mI (16666) adxl345_test: sample=13100 | raw [   -23   -510   -681] | acceleration [-0.090 -1.989 -2.656 g][0m
+[0;32mI (16726) adxl345_test: sample=13150 | raw [   117   -110   -328] | acceleration [0.456 -0.429 -1.279 g][0m
+[0;32mI (16796) adxl345_test: sample=13200 | raw [   304    434    158] | acceleration [1.186 1.693 0.616 g][0m
+[0;32mI (16856) adxl345_test: sample=13250 | raw [    63    888   1062] | acceleration [0.246 3.463 4.142 g][0m
+[0;32mI (16916) adxl345_test: sample=13300 | raw [   244    686    676] | acceleration [0.952 2.675 2.636 g][0m
+[0;32mI (16976) adxl345_test: sample=13350 | raw [   399   -109   -442] | acceleration [1.556 -0.425 -1.724 g][0m
+[0;32mI (17046) adxl345_test: sample=13400 | raw [    73   -650   -820] | acceleration [0.285 -2.535 -3.198 g][0m
+[0;32mI (17106) adxl345_test: sample=13450 | raw [   249    516   -137] | acceleration [0.971 2.012 -0.534 g][0m
+[0;32mI (17166) adxl345_test: sample=13500 | raw [    30   1248   1349] | acceleration [0.117 4.867 5.261 g][0m
+[0;32mI (17226) adxl345_test: sample=13550 | raw [   269    535    489] | acceleration [1.049 2.086 1.907 g][0m
+[0;32mI (17296) adxl345_test: sample=13600 | raw [   366    -75   -297] | acceleration [1.427 -0.292 -1.158 g][0m
+[0;32mI (17356) adxl345_test: sample=13650 | raw [   169   -912   -856] | acceleration [0.659 -3.557 -3.338 g][0m
+[0;32mI (17416) adxl345_test: sample=13700 | raw [   305    755    -74] | acceleration [1.189 2.944 -0.289 g][0m
+[0;32mI (17476) adxl345_test: sample=13750 | raw [    70   1184   1527] | acceleration [0.273 4.618 5.955 g][0m
+[0;32mI (17546) adxl345_test: sample=13800 | raw [   345    511    189] | acceleration [1.345 1.993 0.737 g][0m
+[0;32mI (17606) adxl345_test: sample=13850 | raw [   260   -838  -1014] | acceleration [1.014 -3.268 -3.955 g][0m
+[0;32mI (17666) adxl345_test: sample=13900 | raw [   266    -66   -504] | acceleration [1.037 -0.257 -1.966 g][0m
+[0;32mI (17726) adxl345_test: sample=13950 | raw [   268   1185    825] | acceleration [1.045 4.622 3.217 g][0m
+[0;32mI (17796) adxl345_test: sample=14000 | raw [   176    744    909] | acceleration [0.686 2.902 3.545 g][0m
+[0;32mI (17856) adxl345_test: sample=14050 | raw [   389    -22   -286] | acceleration [1.517 -0.086 -1.115 g][0m
+[0;32mI (17916) adxl345_test: sample=14100 | raw [    92   -772   -757] | acceleration [0.359 -3.011 -2.952 g][0m
+[0;32mI (17976) adxl345_test: sample=14150 | raw [   309    494   -291] | acceleration [1.205 1.927 -1.135 g][0m
+[0;32mI (18046) adxl345_test: sample=14200 | raw [   106   1137   1210] | acceleration [0.413 4.434 4.719 g][0m
+[0;32mI (18106) adxl345_test: sample=14250 | raw [   167    446    374] | acceleration [0.651 1.739 1.459 g][0m
+[0;32mI (18166) adxl345_test: sample=14300 | raw [   148   -432   -540] | acceleration [0.577 -1.685 -2.106 g][0m
+[0;32mI (18226) adxl345_test: sample=14350 | raw [   -26   -140   -299] | acceleration [-0.101 -0.546 -1.166 g][0m
+[0;32mI (18296) adxl345_test: sample=14400 | raw [   -38    782    408] | acceleration [-0.148 3.050 1.591 g][0m
+[0;32mI (18356) adxl345_test: sample=14450 | raw [   -83    645    558] | acceleration [-0.324 2.515 2.176 g][0m
+[0;32mI (18416) adxl345_test: sample=14500 | raw [   -49    533   -385] | acceleration [-0.191 2.079 -1.502 g][0m
+[0;32mI (18476) adxl345_test: sample=14550 | raw [     5   -339   -117] | acceleration [0.019 -1.322 -0.456 g][0m
+[0;32mI (18546) adxl345_test: sample=14600 | raw [    46    -29    273] | acceleration [0.179 -0.113 1.065 g][0m
+[0;32mI (18606) adxl345_test: sample=14650 | raw [    92    -53    281] | acceleration [0.359 -0.207 1.096 g][0m
+[0;32mI (18666) adxl345_test: sample=14700 | raw [   300   -335    386] | acceleration [1.170 -1.306 1.505 g][0m
+[0;32mI (18726) adxl345_test: sample=14750 | raw [   115    250   -238] | acceleration [0.448 0.975 -0.928 g][0m
+[0;32mI (18796) adxl345_test: sample=14800 | raw [  -239    498    434] | acceleration [-0.932 1.942 1.693 g][0m
+[0;32mI (18856) adxl345_test: sample=14850 | raw [    10    162    172] | acceleration [0.039 0.632 0.671 g][0m
+[0;32mI (18916) adxl345_test: sample=14900 | raw [    32    -19    245] | acceleration [0.125 -0.074 0.955 g][0m
+[0;32mI (18976) adxl345_test: sample=14950 | raw [  -101     23    183] | acceleration [-0.394 0.090 0.714 g][0m
+[0;32mI (19046) adxl345_test: sample=15000 | raw [   -25    -14    244] | acceleration [-0.097 -0.055 0.952 g][0m
+[0;32mI (19106) adxl345_test: sample=15050 | raw [    57     -3    264] | acceleration [0.222 -0.012 1.030 g][0m
+[0;32mI (19166) adxl345_test: sample=15100 | raw [  -101     40    338] | acceleration [-0.394 0.156 1.318 g][0m
+[0;32mI (19226) adxl345_test: sample=15150 | raw [  -126    -39    165] | acceleration [-0.491 -0.152 0.643 g][0m
+[0;32mI (19296) adxl345_test: sample=15200 | raw [   -83    108    255] | acceleration [-0.324 0.421 0.994 g][0m
+[0;32mI (19356) adxl345_test: sample=15250 | raw [  -154     42    177] | acceleration [-0.601 0.164 0.690 g][0m
+[0;32mI (19416) adxl345_test: sample=15300 | raw [  -165     12    176] | acceleration [-0.643 0.047 0.686 g][0m
+[0;32mI (19476) adxl345_test: sample=15350 | raw [  -214     39    201] | acceleration [-0.835 0.152 0.784 g][0m
+[0;32mI (19546) adxl345_test: sample=15400 | raw [  -215     69    167] | acceleration [-0.838 0.269 0.651 g][0m
+[0;32mI (19606) adxl345_test: sample=15450 | raw [  -189     76    197] | acceleration [-0.737 0.296 0.768 g][0m
+[0;32mI (19666) adxl345_test: sample=15500 | raw [   -38     34    252] | acceleration [-0.148 0.133 0.983 g][0m
+[0;32mI (19726) adxl345_test: sample=15550 | raw [  -196    -54     85] | acceleration [-0.764 -0.211 0.331 g][0m
+[0;32mI (19796) adxl345_test: sample=15600 | raw [  -145    -53    185] | acceleration [-0.565 -0.207 0.721 g][0m
+[0;32mI (19856) adxl345_test: sample=15650 | raw [  -202    -26    135] | acceleration [-0.788 -0.101 0.526 g][0m
+[0;32mI (19916) adxl345_test: sample=15700 | raw [  -169    -71    190] | acceleration [-0.659 -0.277 0.741 g][0m
+[0;32mI (19976) adxl345_test: sample=15750 | raw [  -187     -2    250] | acceleration [-0.729 -0.008 0.975 g][0m
+[0;32mI (20046) adxl345_test: sample=15800 | raw [  -112    -72     10] | acceleration [-0.437 -0.281 0.039 g][0m
+[0;32mI (20106) adxl345_test: sample=15850 | raw [   -92    -57    231] | acceleration [-0.359 -0.222 0.901 g][0m
+[0;32mI (20166) adxl345_test: sample=15900 | raw [  -137    219     67] | acceleration [-0.534 0.854 0.261 g][0m
+[0;32mI (20226) adxl345_test: sample=15950 | raw [  -141    120    179] | acceleration [-0.550 0.468 0.698 g][0m
+[1;31mE (20276) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (20276) task_wdt:  - IDLE0 (CPU 0)[0m
+[1;31mE (20276) task_wdt: Tasks currently running:[0m
+[1;31mE (20276) task_wdt: CPU 0: main[0m
+[1;31mE (20276) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (20276) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x4200C2CE:0x3FC960E0 0x4200C6E4:0x3FC96100 0x40376F3D:0x3FC96130 0x400559DD:0x3FC9B180 0x4037BBB5:0x3FC9B190 0x40377CA1:0x3FC9B1B0 0x40377DBD:0x3FC9B1E0 0x40378C9A:0x3FC9B200 0x40378CCD:0x3FC9B220 0x42009979:0x3FC9B240 0x42009BFF:0x3FC9B290 0x42009D8D:0x3FC9B2C0 0x4201702C:0x3FC9B390 0x4037BA41:0x3FC9B3C0
+
+[0;32mI (20356) adxl345_test: sample=16050 | raw [  -140    120    162] | acceleration [-0.546 0.468 0.632 g][0m
+[0;32mI (20416) adxl345_test: sample=16100 | raw [  -155    126    168] | acceleration [-0.604 0.491 0.655 g][0m
+[0;32mI (20476) adxl345_test: sample=16150 | raw [  -162    133    151] | acceleration [-0.632 0.519 0.589 g][0m
+[0;32mI (20546) adxl345_test: sample=16200 | raw [  -171     99    170] | acceleration [-0.667 0.386 0.663 g][0m
+[0;32mI (20606) adxl345_test: sample=16250 | raw [  -127    120    147] | acceleration [-0.495 0.468 0.573 g][0m
+[0;32mI (20666) adxl345_test: sample=16300 | raw [  -189    134    152] | acceleration [-0.737 0.523 0.593 g][0m
+[0;32mI (20726) adxl345_test: sample=16350 | raw [   -26   -128    349] | acceleration [-0.101 -0.499 1.361 g][0m
+[0;32mI (20796) adxl345_test: sample=16400 | raw [  -176    -17    160] | acceleration [-0.686 -0.066 0.624 g][0m
+[0;32mI (20856) adxl345_test: sample=16450 | raw [  -220    -32    165] | acceleration [-0.858 -0.125 0.643 g][0m
+[0;32mI (20916) adxl345_test: sample=16500 | raw [  -193    -57    175] | acceleration [-0.753 -0.222 0.683 g][0m
+[0;32mI (20976) adxl345_test: sample=16550 | raw [  -159   -140    261] | acceleration [-0.620 -0.546 1.018 g][0m
+[0;32mI (21046) adxl345_test: sample=16600 | raw [  -124    -92    197] | acceleration [-0.484 -0.359 0.768 g][0m
+[0;32mI (21106) adxl345_test: sample=16650 | raw [  -143    -51    177] | acceleration [-0.558 -0.199 0.690 g][0m
+[0;32mI (21166) adxl345_test: sample=16700 | raw [  -129     22    168] | acceleration [-0.503 0.086 0.655 g][0m
+[0;32mI (21226) adxl345_test: sample=16750 | raw [  -125     85    198] | acceleration [-0.487 0.331 0.772 g][0m
+[0;32mI (21296) adxl345_test: sample=16800 | raw [   -44    105    234] | acceleration [-0.172 0.410 0.913 g][0m
+[0;32mI (21356) adxl345_test: sample=16850 | raw [    70     67    189] | acceleration [0.273 0.261 0.737 g][0m
+[0;32mI (21416) adxl345_test: sample=16900 | raw [   304    139    238] | acceleration [1.186 0.542 0.928 g][0m
+[0;32mI (21476) adxl345_test: sample=16950 | raw [   347     -6    362] | acceleration [1.353 -0.023 1.412 g][0m
+[0;32mI (21546) adxl345_test: sample=17000 | raw [   139    -48    339] | acceleration [0.542 -0.187 1.322 g][0m
+[0;32mI (21606) adxl345_test: sample=17050 | raw [  -346    157    278] | acceleration [-1.349 0.612 1.084 g][0m
+[0;32mI (21666) adxl345_test: sample=17100 | raw [  -585     98    188] | acceleration [-2.281 0.382 0.733 g][0m
+[0;32mI (21726) adxl345_test: sample=17150 | raw [  -274     76    215] | acceleration [-1.069 0.296 0.838 g][0m
+[0;32mI (21796) adxl345_test: sample=17200 | raw [    -9    -17    220] | acceleration [-0.035 -0.066 0.858 g][0m
+[0;32mI (21856) adxl345_test: sample=17250 | raw [   297    161    391] | acceleration [1.158 0.628 1.525 g][0m
+[0;32mI (21916) adxl345_test: sample=17300 | raw [   537    226    289] | acceleration [2.094 0.881 1.127 g][0m
+[0;32mI (21976) adxl345_test: sample=17350 | raw [   376    -25    155] | acceleration [1.466 -0.097 0.604 g][0m
+[0;32mI (22046) adxl345_test: sample=17400 | raw [   137     85    264] | acceleration [0.534 0.331 1.030 g][0m
+[0;32mI (22106) adxl345_test: sample=17450 | raw [   -82    134    323] | acceleration [-0.320 0.523 1.260 g][0m
+[0;32mI (22166) adxl345_test: sample=17500 | raw [  -362     68    194] | acceleration [-1.412 0.265 0.757 g][0m
+[0;32mI (22226) adxl345_test: sample=17550 | raw [  -295    115    365] | acceleration [-1.150 0.448 1.423 g][0m
+[0;32mI (22296) adxl345_test: sample=17600 | raw [  -118     32    182] | acceleration [-0.460 0.125 0.710 g][0m
+[0;32mI (22356) adxl345_test: sample=17650 | raw [    23    121    308] | acceleration [0.090 0.472 1.201 g][0m
+[0;32mI (22416) adxl345_test: sample=17700 | raw [   110    183    288] | acceleration [0.429 0.714 1.123 g][0m
+[0;32mI (22476) adxl345_test: sample=17750 | raw [   261    177    160] | acceleration [1.018 0.690 0.624 g][0m
+[0;32mI (22546) adxl345_test: sample=17800 | raw [   293    141    229] | acceleration [1.143 0.550 0.893 g][0m
+[0;32mI (22606) adxl345_test: sample=17850 | raw [   211     72    184] | acceleration [0.823 0.281 0.718 g][0m
+[0;32mI (22666) adxl345_test: sample=17900 | raw [   110    116    263] | acceleration [0.429 0.452 1.026 g][0m
+[0;32mI (22726) adxl345_test: sample=17950 | raw [     4    150    330] | acceleration [0.016 0.585 1.287 g][0m
+[0;32mI (22796) adxl345_test: sample=18000 | raw [  -137     12    261] | acceleration [-0.534 0.047 1.018 g][0m
+[0;32mI (22856) adxl345_test: sample=18050 | raw [  -304    -81    192] | acceleration [-1.186 -0.316 0.749 g][0m
+[0;32mI (22916) adxl345_test: sample=18100 | raw [  -308    142    222] | acceleration [-1.201 0.554 0.866 g][0m
+[0;32mI (22976) adxl345_test: sample=18150 | raw [  -130     28    234] | acceleration [-0.507 0.109 0.913 g][0m
+[0;32mI (23046) adxl345_test: sample=18200 | raw [    44     83    358] | acceleration [0.172 0.324 1.396 g][0m
+[0;32mI (23106) adxl345_test: sample=18250 | raw [   236    218    340] | acceleration [0.920 0.850 1.326 g][0m
+[0;32mI (23166) adxl345_test: sample=18300 | raw [   264    102    169] | acceleration [1.030 0.398 0.659 g][0m
+[0;32mI (23226) adxl345_test: sample=18350 | raw [   156    123    238] | acceleration [0.608 0.480 0.928 g][0m
+[0;32mI (23296) adxl345_test: sample=18400 | raw [   111     30    202] | acceleration [0.433 0.117 0.788 g][0m
+[0;32mI (23356) adxl345_test: sample=18450 | raw [    68     54    188] | acceleration [0.265 0.211 0.733 g][0m
+[0;32mI (23416) adxl345_test: sample=18500 | raw [    48    120    289] | acceleration [0.187 0.468 1.127 g][0m
+[0;32mI (23476) adxl345_test: sample=18550 | raw [    34     90    226] | acceleration [0.133 0.351 0.881 g][0m
+[0;32mI (23546) adxl345_test: sample=18600 | raw [    31    131    263] | acceleration [0.121 0.511 1.026 g][0m
+[0;32mI (23606) adxl345_test: sample=18650 | raw [    28     59    245] | acceleration [0.109 0.230 0.955 g][0m
+[0;32mI (23666) adxl345_test: sample=18700 | raw [    10     43    216] | acceleration [0.039 0.168 0.842 g][0m
+[0;32mI (23726) adxl345_test: sample=18750 | raw [    21     69    242] | acceleration [0.082 0.269 0.944 g][0m
+[0;32mI (23796) adxl345_test: sample=18800 | raw [    28     64    258] | acceleration [0.109 0.250 1.006 g][0m
+[0;32mI (23856) adxl345_test: sample=18850 | raw [    35     88    254] | acceleration [0.137 0.343 0.991 g][0m
+[0;32mI (23916) adxl345_test: sample=18900 | raw [    39     56    250] | acceleration [0.152 0.218 0.975 g][0m
+[0;32mI (23976) adxl345_test: sample=18950 | raw [    37     77    248] | acceleration [0.144 0.300 0.967 g][0m
+[0;32mI (24046) adxl345_test: sample=19000 | raw [    36     66    250] | acceleration [0.140 0.257 0.975 g][0m
+[0;32mI (24106) adxl345_test: sample=19050 | raw [    33     80    244] | acceleration [0.129 0.312 0.952 g][0m
+[0;32mI (24166) adxl345_test: sample=19100 | raw [    28     62    239] | acceleration [0.109 0.242 0.932 g][0m
+[0;32mI (24226) adxl345_test: sample=19150 | raw [    36     75    259] | acceleration [0.140 0.292 1.010 g][0m
+[0;32mI (24296) adxl345_test: sample=19200 | raw [    35     60    252] | acceleration [0.137 0.234 0.983 g][0m
+[0;32mI (24356) adxl345_test: sample=19250 | raw [    38     62    264] | acceleration [0.148 0.242 1.030 g][0m
+[0;32mI (24416) adxl345_test: sample=19300 | raw [    33     69    241] | acceleration [0.129 0.269 0.940 g][0m
+[0;32mI (24476) adxl345_test: sample=19350 | raw [    31     56    247] | acceleration [0.121 0.218 0.963 g][0m
+[0;32mI (24546) adxl345_test: sample=19400 | raw [    31     63    246] | acceleration [0.121 0.246 0.959 g][0m
+[0;32mI (24606) adxl345_test: sample=19450 | raw [    31     77    245] | acceleration [0.121 0.300 0.955 g][0m
+[0;32mI (24666) adxl345_test: sample=19500 | raw [    32     66    249] | acceleration [0.125 0.257 0.971 g][0m
+[0;32mI (24726) adxl345_test: sample=19550 | raw [    30     65    246] | acceleration [0.117 0.253 0.959 g][0m
+[0;32mI (24796) adxl345_test: sample=19600 | raw [    33     67    256] | acceleration [0.129 0.261 0.998 g][0m
+[0;32mI (24856) adxl345_test: sample=19650 | raw [    30     65    253] | acceleration [0.117 0.253 0.987 g][0m
+[0;32mI (24916) adxl345_test: sample=19700 | raw [    34     72    256] | acceleration [0.133 0.281 0.998 g][0m
+[0;32mI (24976) adxl345_test: sample=19750 | raw [    29     65    247] | acceleration [0.113 0.253 0.963 g][0m
+[0;32mI (25046) adxl345_test: sample=19800 | raw [    31     74    258] | acceleration [0.121 0.289 1.006 g][0m
+[0;32mI (25106) adxl345_test: sample=19850 | raw [    32     68    251] | acceleration [0.125 0.265 0.979 g][0m
+[0;32mI (25166) adxl345_test: sample=19900 | raw [    29     69    240] | acceleration [0.113 0.269 0.936 g][0m
+[0;32mI (25226) adxl345_test: sample=19950 | raw [    32     69    244] | acceleration [0.125 0.269 0.952 g][0m
+[1;31mE (25276) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (25276) task_wdt:  - IDLE0 (CPU 0)[0m
+[1;31mE (25276) task_wdt: Tasks currently running:[0m
+[1;31mE (25276) task_wdt: CPU 0: main[0m
+[1;31mE (25276) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (25276) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x4200C2CE:0x3FC960E0 0x4200C6E4:0x3FC96100 0x40376F3D:0x3FC96130 0x400559DD:0x3FC9B180 0x4037BBB5:0x3FC9B190 0x40377CA1:0x3FC9B1B0 0x40377DBD:0x3FC9B1E0 0x40378C9A:0x3FC9B200 0x40378CCD:0x3FC9B220 0x42009979:0x3FC9B240 0x42009BFF:0x3FC9B290 0x42009D8D:0x3FC9B2C0 0x4201702C:0x3FC9B390 0x4037BA41:0x3FC9B3C0
+
+[0;32mI (25356) adxl345_test: sample=20050 | raw [    26     68    251] | acceleration [0.101 0.265 0.979 g][0m
+[0;32mI (25416) adxl345_test: sample=20100 | raw [    28     59    255] | acceleration [0.109 0.230 0.994 g][0m
+[0;32mI (25476) adxl345_test: sample=20150 | raw [    22     47    256] | acceleration [0.086 0.183 0.998 g][0m
+[0;32mI (25546) adxl345_test: sample=20200 | raw [    33    -14    283] | acceleration [0.129 -0.055 1.104 g][0m
+[0;32mI (25606) adxl345_test: sample=20250 | raw [    15      3    250] | acceleration [0.058 0.012 0.975 g][0m
+[0;32mI (25666) adxl345_test: sample=20300 | raw [    29    -39    275] | acceleration [0.113 -0.152 1.072 g][0m
+[0;32mI (25726) adxl345_test: sample=20350 | raw [    12    -44    235] | acceleration [0.047 -0.172 0.916 g][0m
+[0;32mI (25796) adxl345_test: sample=20400 | raw [     8    -62    276] | acceleration [0.031 -0.242 1.076 g][0m
+[0;32mI (25856) adxl345_test: sample=20450 | raw [    10    -74    255] | acceleration [0.039 -0.289 0.994 g][0m
+[0;32mI (25916) adxl345_test: sample=20500 | raw [     6    -68    212] | acceleration [0.023 -0.265 0.827 g][0m
+[0;32mI (25976) adxl345_test: sample=20550 | raw [     6    -64    264] | acceleration [0.023 -0.250 1.030 g][0m
+[0;32mI (26046) adxl345_test: sample=20600 | raw [     1    -59    251] | acceleration [0.004 -0.230 0.979 g][0m
+[0;32mI (26106) adxl345_test: sample=20650 | raw [     2    -48    271] | acceleration [0.008 -0.187 1.057 g][0m
+[0;32mI (26166) adxl345_test: sample=20700 | raw [    10    -69    260] | acceleration [0.039 -0.269 1.014 g][0m
+[0;32mI (26226) adxl345_test: sample=20750 | raw [     8    -57    261] | acceleration [0.031 -0.222 1.018 g][0m
+[0;32mI (26296) adxl345_test: sample=20800 | raw [     6    -53    243] | acceleration [0.023 -0.207 0.948 g][0m
+[0;32mI (26356) adxl345_test: sample=20850 | raw [     4    -43    260] | acceleration [0.016 -0.168 1.014 g][0m
+[0;32mI (26416) adxl345_test: sample=20900 | raw [     0    -50    260] | acceleration [0.000 -0.195 1.014 g][0m
+[0;32mI (26476) adxl345_test: sample=20950 | raw [     4    -56    256] | acceleration [0.016 -0.218 0.998 g][0m
+[0;32mI (26546) adxl345_test: sample=21000 | raw [     4    -50    262] | acceleration [0.016 -0.195 1.022 g][0m
+[0;32mI (26606) adxl345_test: sample=21050 | raw [     2    -52    257] | acceleration [0.008 -0.203 1.002 g][0m
+[0;32mI (26666) adxl345_test: sample=21100 | raw [     0    -44    255] | acceleration [0.000 -0.172 0.994 g][0m
+[0;32mI (26726) adxl345_test: sample=21150 | raw [     4    -40    256] | acceleration [0.016 -0.156 0.998 g][0m
+[0;32mI (26796) adxl345_test: sample=21200 | raw [     2    -54    248] | acceleration [0.008 -0.211 0.967 g][0m
+[0;32mI (26856) adxl345_test: sample=21250 | raw [     6    -47    263] | acceleration [0.023 -0.183 1.026 g][0m
+[0;32mI (26916) adxl345_test: sample=21300 | raw [     3    -46    250] | acceleration [0.012 -0.179 0.975 g][0m
+[0;32mI (26976) adxl345_test: sample=21350 | raw [     2    -49    266] | acceleration [0.008 -0.191 1.037 g][0m
+[0;32mI (27046) adxl345_test: sample=21400 | raw [     3    -50    252] | acceleration [0.012 -0.195 0.983 g][0m
+[0;32mI (27106) adxl345_test: sample=21450 | raw [     1    -52    257] | acceleration [0.004 -0.203 1.002 g][0m
+[0;32mI (27166) adxl345_test: sample=21500 | raw [     7    -49    264] | acceleration [0.027 -0.191 1.030 g][0m
+[0;32mI (27226) adxl345_test: sample=21550 | raw [     1    -51    260] | acceleration [0.004 -0.199 1.014 g][0m
+[0;32mI (27296) adxl345_test: sample=21600 | raw [     5    -50    258] | acceleration [0.019 -0.195 1.006 g][0m
+[0;32mI (27356) adxl345_test: sample=21650 | raw [     4    -52    259] | acceleration [0.016 -0.203 1.010 g][0m
+[0;32mI (27416) adxl345_test: sample=21700 | raw [     8    -41    256] | acceleration [0.031 -0.160 0.998 g][0m
+[0;32mI (27476) adxl345_test: sample=21750 | raw [    -1    -54    248] | acceleration [-0.004 -0.211 0.967 g][0m
+[0;32mI (27546) adxl345_test: sample=21800 | raw [    -5    -39    246] | acceleration [-0.019 -0.152 0.959 g][0m
+[0;32mI (27606) adxl345_test: sample=21850 | raw [     1    -44    258] | acceleration [0.004 -0.172 1.006 g][0m
+[0;32mI (27666) adxl345_test: sample=21900 | raw [     2    -50    264] | acceleration [0.008 -0.195 1.030 g][0m
+[0;32mI (27726) adxl345_test: sample=21950 | raw [     4    -46    259] | acceleration [0.016 -0.179 1.010 g][0m
+[0;32mI (27796) adxl345_test: sample=22000 | raw [     4    -48    245] | acceleration [0.016 -0.187 0.955 g][0m
+[0;32mI (27856) adxl345_test: sample=22050 | raw [     2    -44    254] | acceleration [0.008 -0.172 0.991 g][0m
+[0;32mI (27916) adxl345_test: sample=22100 | raw [     6    -41    264] | acceleration [0.023 -0.160 1.030 g][0m
+[0;32mI (27976) adxl345_test: sample=22150 | raw [     3    -49    256] | acceleration [0.012 -0.191 0.998 g][0m
+[0;32mI (28046) adxl345_test: sample=22200 | raw [     6    -41    262] | acceleration [0.023 -0.160 1.022 g][0m
+[0;32mI (28106) adxl345_test: sample=22250 | raw [     1    -41    256] | acceleration [0.004 -0.160 0.998 g][0m
+[0;32mI (28166) adxl345_test: sample=22300 | raw [     6    -52    317] | acceleration [0.023 -0.203 1.236 g][0m
+[0;32mI (28226) adxl345_test: sample=22350 | raw [   -14    -39    337] | acceleration [-0.055 -0.152 1.314 g][0m
+[0;32mI (28296) adxl345_test: sample=22400 | raw [   -49      5    314] | acceleration [-0.191 0.019 1.225 g][0m
+[0;32mI (28356) adxl345_test: sample=22450 | raw [   -93      6    196] | acceleration [-0.363 0.023 0.764 g][0m
+[0;32mI (28416) adxl345_test: sample=22500 | raw [  -152     78    124] | acceleration [-0.593 0.304 0.484 g][0m
+[0;32mI (28476) adxl345_test: sample=22550 | raw [  -185      6     47] | acceleration [-0.721 0.023 0.183 g][0m
+[0;32mI (28546) adxl345_test: sample=22600 | raw [  -228     20     60] | acceleration [-0.889 0.078 0.234 g][0m
+[0;32mI (28606) adxl345_test: sample=22650 | raw [  -247    -49     53] | acceleration [-0.963 -0.191 0.207 g][0m
+[0;32mI (28666) adxl345_test: sample=22700 | raw [  -229    -49    -21] | acceleration [-0.893 -0.191 -0.082 g][0m
+[0;32mI (28726) adxl345_test: sample=22750 | raw [  -227    -85    -60] | acceleration [-0.885 -0.331 -0.234 g][0m
+[0;32mI (28796) adxl345_test: sample=22800 | raw [  -243    -36     -2] | acceleration [-0.948 -0.140 -0.008 g][0m
+[0;32mI (28856) adxl345_test: sample=22850 | raw [  -250    -68     19] | acceleration [-0.975 -0.265 0.074 g][0m
+[0;32mI (28916) adxl345_test: sample=22900 | raw [  -246    -42     -7] | acceleration [-0.959 -0.164 -0.027 g][0m
+[0;32mI (28976) adxl345_test: sample=22950 | raw [  -243    -43     14] | acceleration [-0.948 -0.168 0.055 g][0m
+[0;32mI (29046) adxl345_test: sample=23000 | raw [  -238    -64     -6] | acceleration [-0.928 -0.250 -0.023 g][0m
+[0;32mI (29106) adxl345_test: sample=23050 | raw [  -247    -49     14] | acceleration [-0.963 -0.191 0.055 g][0m
+[0;32mI (29166) adxl345_test: sample=23100 | raw [  -247    -52     -1] | acceleration [-0.963 -0.203 -0.004 g][0m
+[0;32mI (29226) adxl345_test: sample=23150 | raw [  -247    -58     15] | acceleration [-0.963 -0.226 0.058 g][0m
+[0;32mI (29296) adxl345_test: sample=23200 | raw [  -241    -60    -16] | acceleration [-0.940 -0.234 -0.062 g][0m
+[0;32mI (29356) adxl345_test: sample=23250 | raw [  -244    -52     14] | acceleration [-0.952 -0.203 0.055 g][0m
+[0;32mI (29416) adxl345_test: sample=23300 | raw [  -249    -44      3] | acceleration [-0.971 -0.172 0.012 g][0m
+[0;32mI (29476) adxl345_test: sample=23350 | raw [  -242    -44      7] | acceleration [-0.944 -0.172 0.027 g][0m
+[0;32mI (29546) adxl345_test: sample=23400 | raw [  -246    -43     14] | acceleration [-0.959 -0.168 0.055 g][0m
+[0;32mI (29606) adxl345_test: sample=23450 | raw [  -245    -50     15] | acceleration [-0.955 -0.195 0.058 g][0m
+[0;32mI (29666) adxl345_test: sample=23500 | raw [  -243    -56     15] | acceleration [-0.948 -0.218 0.058 g][0m
+[0;32mI (29726) adxl345_test: sample=23550 | raw [  -245    -48      4] | acceleration [-0.955 -0.187 0.016 g][0m
+[0;32mI (29796) adxl345_test: sample=23600 | raw [  -240    -58     11] | acceleration [-0.936 -0.226 0.043 g][0m
+[0;32mI (29856) adxl345_test: sample=23650 | raw [  -250    -46     21] | acceleration [-0.975 -0.179 0.082 g][0m
+[0;32mI (29916) adxl345_test: sample=23700 | raw [  -246    -34     11] | acceleration [-0.959 -0.133 0.043 g][0m
+[0;32mI (29976) adxl345_test: sample=23750 | raw [  -247    -59     11] | acceleration [-0.963 -0.230 0.043 g][0m
+[0;32mI (30046) adxl345_test: sample=23800 | raw [  -242    -38     26] | acceleration [-0.944 -0.148 0.101 g][0m
+[0;32mI (30106) adxl345_test: sample=23850 | raw [  -239    -63     16] | acceleration [-0.932 -0.246 0.062 g][0m
+[0;32mI (30166) adxl345_test: sample=23900 | raw [  -238    -62     11] | acceleration [-0.928 -0.242 0.043 g][0m
+[0;32mI (30226) adxl345_test: sample=23950 | raw [  -242    -63     33] | acceleration [-0.944 -0.246 0.129 g][0m
+[1;31mE (30276) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (30276) task_wdt:  - IDLE0 (CPU 0)[0m
+[1;31mE (30276) task_wdt: Tasks currently running:[0m
+[1;31mE (30276) task_wdt: CPU 0: main[0m
+[1;31mE (30276) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (30276) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x4200C2CE:0x3FC960E0 0x4200C6E4:0x3FC96100 0x40376F3D:0x3FC96130 0x400559DD:0x3FC9B130 0x4037BDA2:0x3FC9B140 0x40381196:0x3FC9B160 0x40381145:0x3FC9B180 0x40375E42:0x3FC9B1A0 0x403828E1:0x3FC9B1C0 0x40377FCD:0x3FC9B1E0 0x40378C75:0x3FC9B200 0x40378CCD:0x3FC9B220 0x42009979:0x3FC9B240 0x42009BFF:0x3FC9B290 0x42009D8D:0x3FC9B2C0 0x4201702C:0x3FC9B390 0x4037BA41:0x3FC9B3C0
+
+[0;32mI (30326) adxl345_test: sample=24000 | raw [  -245    -69     25] | acceleration [-0.955 -0.269 0.097 g][0m
+[0;32mI (30356) adxl345_test: sample=24050 | raw [  -241    -66     29] | acceleration [-0.940 -0.257 0.113 g][0m
+[0;32mI (30416) adxl345_test: sample=24100 | raw [  -241    -59     19] | acceleration [-0.940 -0.230 0.074 g][0m
+[0;32mI (30476) adxl345_test: sample=24150 | raw [  -239    -68     28] | acceleration [-0.932 -0.265 0.109 g][0m
+[0;32mI (30546) adxl345_test: sample=24200 | raw [  -237    -62     22] | acceleration [-0.924 -0.242 0.086 g][0m
+[0;32mI (30606) adxl345_test: sample=24250 | raw [  -240    -62     22] | acceleration [-0.936 -0.242 0.086 g][0m
+[0;32mI (30666) adxl345_test: sample=24300 | raw [  -241    -71     25] | acceleration [-0.940 -0.277 0.097 g][0m
+[0;32mI (30726) adxl345_test: sample=24350 | raw [  -238    -70     21] | acceleration [-0.928 -0.273 0.082 g][0m
+[0;32mI (30796) adxl345_test: sample=24400 | raw [  -240    -70     33] | acceleration [-0.936 -0.273 0.129 g][0m
+[0;32mI (30856) adxl345_test: sample=24450 | raw [  -239    -77     25] | acceleration [-0.932 -0.300 0.097 g][0m
+[0;32mI (30916) adxl345_test: sample=24500 | raw [  -243    -59     12] | acceleration [-0.948 -0.230 0.047 g][0m
+[0;32mI (30976) adxl345_test: sample=24550 | raw [  -241    -49     21] | acceleration [-0.940 -0.191 0.082 g][0m
+[0;32mI (31046) adxl345_test: sample=24600 | raw [  -243    -87     23] | acceleration [-0.948 -0.339 0.090 g][0m
+[0;32mI (31106) adxl345_test: sample=24650 | raw [  -242   -120     48] | acceleration [-0.944 -0.468 0.187 g][0m
+[0;32mI (31166) adxl345_test: sample=24700 | raw [  -265    -37     38] | acceleration [-1.033 -0.144 0.148 g][0m
+[0;32mI (31226) adxl345_test: sample=24750 | raw [  -237     63     95] | acceleration [-0.924 0.246 0.370 g][0m
+[0;32mI (31296) adxl345_test: sample=24800 | raw [  -183     -1      3] | acceleration [-0.714 -0.004 0.012 g][0m
+[0;32mI (31356) adxl345_test: sample=24850 | raw [   -65     26      0] | acceleration [-0.253 0.101 0.000 g][0m
+[0;32mI (31416) adxl345_test: sample=24900 | raw [    51    272     -2] | acceleration [0.199 1.061 -0.008 g][0m
+[0;32mI (31476) adxl345_test: sample=24950 | raw [     8    362    -75] | acceleration [0.031 1.412 -0.292 g][0m
+[0;32mI (31546) adxl345_test: sample=25000 | raw [    44    390   -119] | acceleration [0.172 1.521 -0.464 g][0m
+[0;32mI (31606) adxl345_test: sample=25050 | raw [    47    274   -105] | acceleration [0.183 1.069 -0.410 g][0m
+[0;32mI (31666) adxl345_test: sample=25100 | raw [    21    233    -47] | acceleration [0.082 0.909 -0.183 g][0m
+[0;32mI (31726) adxl345_test: sample=25150 | raw [    17    214    -22] | acceleration [0.066 0.835 -0.086 g][0m
+[0;32mI (31796) adxl345_test: sample=25200 | raw [     0    270      8] | acceleration [0.000 1.053 0.031 g][0m
+[0;32mI (31856) adxl345_test: sample=25250 | raw [     1    257      2] | acceleration [0.004 1.002 0.008 g][0m
+[0;32mI (31916) adxl345_test: sample=25300 | raw [     3    273     -1] | acceleration [0.012 1.065 -0.004 g][0m
+[0;32mI (31976) adxl345_test: sample=25350 | raw [    -1    279      2] | acceleration [-0.004 1.088 0.008 g][0m
+[0;32mI (32046) adxl345_test: sample=25400 | raw [     1    251      1] | acceleration [0.004 0.979 0.004 g][0m
+[0;32mI (32106) adxl345_test: sample=25450 | raw [     4    243     -1] | acceleration [0.016 0.948 -0.004 g][0m
+[0;32mI (32166) adxl345_test: sample=25500 | raw [     1    255      9] | acceleration [0.004 0.994 0.035 g][0m
+[0;32mI (32226) adxl345_test: sample=25550 | raw [     2    257     16] | acceleration [0.008 1.002 0.062 g][0m
+[0;32mI (32296) adxl345_test: sample=25600 | raw [     2    254     10] | acceleration [0.008 0.991 0.039 g][0m
+[0;32mI (32356) adxl345_test: sample=25650 | raw [     1    262      5] | acceleration [0.004 1.022 0.019 g][0m
+[0;32mI (32416) adxl345_test: sample=25700 | raw [     1    254     11] | acceleration [0.004 0.991 0.043 g][0m
+[0;32mI (32476) adxl345_test: sample=25750 | raw [     3    245      7] | acceleration [0.012 0.955 0.027 g][0m
+[0;32mI (32546) adxl345_test: sample=25800 | raw [     0    257     11] | acceleration [0.000 1.002 0.043 g][0m
+[0;32mI (32606) adxl345_test: sample=25850 | raw [     5    264     13] | acceleration [0.019 1.030 0.051 g][0m
+[0;32mI (32666) adxl345_test: sample=25900 | raw [     1    260     11] | acceleration [0.004 1.014 0.043 g][0m
+[0;32mI (32726) adxl345_test: sample=25950 | raw [     0    246     13] | acceleration [0.000 0.959 0.051 g][0m
+[0;32mI (32796) adxl345_test: sample=26000 | raw [     0    259      6] | acceleration [0.000 1.010 0.023 g][0m
+[0;32mI (32856) adxl345_test: sample=26050 | raw [     0    252     13] | acceleration [0.000 0.983 0.051 g][0m
+[0;32mI (32916) adxl345_test: sample=26100 | raw [     2    257     15] | acceleration [0.008 1.002 0.058 g][0m
+[0;32mI (32976) adxl345_test: sample=26150 | raw [     2    251     10] | acceleration [0.008 0.979 0.039 g][0m
+[0;32mI (33046) adxl345_test: sample=26200 | raw [     1    262     17] | acceleration [0.004 1.022 0.066 g][0m
+[0;32mI (33106) adxl345_test: sample=26250 | raw [     2    259     16] | acceleration [0.008 1.010 0.062 g][0m
+[0;32mI (33166) adxl345_test: sample=26300 | raw [     1    261     16] | acceleration [0.004 1.018 0.062 g][0m
+[0;32mI (33226) adxl345_test: sample=26350 | raw [     3    244     15] | acceleration [0.012 0.952 0.058 g][0m
+[0;32mI (33296) adxl345_test: sample=26400 | raw [     0    258     17] | acceleration [0.000 1.006 0.066 g][0m
+[0;32mI (33356) adxl345_test: sample=26450 | raw [     0    250     11] | acceleration [0.000 0.975 0.043 g][0m
+[0;32mI (33416) adxl345_test: sample=26500 | raw [     7    259     23] | acceleration [0.027 1.010 0.090 g][0m
+[0;32mI (33476) adxl345_test: sample=26550 | raw [    10    239     24] | acceleration [0.039 0.932 0.094 g][0m
+[0;32mI (33546) adxl345_test: sample=26600 | raw [     5    202     81] | acceleration [0.019 0.788 0.316 g][0m
+[0;32mI (33606) adxl345_test: sample=26650 | raw [    21   -182    172] | acceleration [0.082 -0.710 0.671 g][0m
+[0;32mI (33666) adxl345_test: sample=26700 | raw [   -70    232     18] | acceleration [-0.273 0.905 0.070 g][0m
+[0;32mI (33726) adxl345_test: sample=26750 | raw [   -25    210    -50] | acceleration [-0.097 0.819 -0.195 g][0m
+[0;32mI (33796) adxl345_test: sample=26800 | raw [     5    279    -34] | acceleration [0.019 1.088 -0.133 g][0m
+[0;32mI (33856) adxl345_test: sample=26850 | raw [    -6    202    -71] | acceleration [-0.023 0.788 -0.277 g][0m
+[0;32mI (33916) adxl345_test: sample=26900 | raw [    29    214     56] | acceleration [0.113 0.835 0.218 g][0m
+[0;32mI (33976) adxl345_test: sample=26950 | raw [   -10    311     -2] | acceleration [-0.039 1.213 -0.008 g][0m
+[0;32mI (34046) adxl345_test: sample=27000 | raw [   -22    365     30] | acceleration [-0.086 1.423 0.117 g][0m
+[0;32mI (34106) adxl345_test: sample=27050 | raw [    -5    244     48] | acceleration [-0.019 0.952 0.187 g][0m
+[0;32mI (34166) adxl345_test: sample=27100 | raw [   -53    239     47] | acceleration [-0.207 0.932 0.183 g][0m
+[0;32mI (34226) adxl345_test: sample=27150 | raw [   -66    280   -119] | acceleration [-0.257 1.092 -0.464 g][0m
+[0;32mI (34296) adxl345_test: sample=27200 | raw [   -35    198     11] | acceleration [-0.137 0.772 0.043 g][0m
+[0;32mI (34356) adxl345_test: sample=27250 | raw [   -23    216    -38] | acceleration [-0.090 0.842 -0.148 g][0m
+[0;32mI (34416) adxl345_test: sample=27300 | raw [   -35    289     62] | acceleration [-0.137 1.127 0.242 g][0m
+[0;32mI (34476) adxl345_test: sample=27350 | raw [    -7    264    -88] | acceleration [-0.027 1.030 -0.343 g][0m
+[0;32mI (34546) adxl345_test: sample=27400 | raw [   -43    288    -36] | acceleration [-0.168 1.123 -0.140 g][0m
+[0;32mI (34606) adxl345_test: sample=27450 | raw [   -44    225     77] | acceleration [-0.172 0.877 0.300 g][0m
+[0;32mI (34666) adxl345_test: sample=27500 | raw [    61     -4    -29] | acceleration [0.238 -0.016 -0.113 g][0m
+[0;32mI (34726) adxl345_test: sample=27550 | raw [   -32    268   -102] | acceleration [-0.125 1.045 -0.398 g][0m
+[0;32mI (34796) adxl345_test: sample=27600 | raw [   -14    312    -60] | acceleration [-0.055 1.217 -0.234 g][0m
+[0;32mI (34856) adxl345_test: sample=27650 | raw [    -9    326   -174] | acceleration [-0.035 1.271 -0.679 g][0m
+[0;32mI (34916) adxl345_test: sample=27700 | raw [   -44    181    -90] | acceleration [-0.172 0.706 -0.351 g][0m
+[0;32mI (34976) adxl345_test: sample=27750 | raw [  -110    173      2] | acceleration [-0.429 0.675 0.008 g][0m
+[0;32mI (35046) adxl345_test: sample=27800 | raw [  -113    175      4] | acceleration [-0.441 0.683 0.016 g][0m
+[0;32mI (35106) adxl345_test: sample=27850 | raw [  -101    239     70] | acceleration [-0.394 0.932 0.273 g][0m
+[0;32mI (35166) adxl345_test: sample=27900 | raw [  -103    206    -34] | acceleration [-0.402 0.803 -0.133 g][0m
+[0;32mI (35226) adxl345_test: sample=27950 | raw [   -71    235    -44] | acceleration [-0.277 0.916 -0.172 g][0m
+[1;31mE (35276) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (35276) task_wdt:  - IDLE0 (CPU 0)[0m
+[1;31mE (35276) task_wdt: Tasks currently running:[0m
+[1;31mE (35276) task_wdt: CPU 0: main[0m
+[1;31mE (35276) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (35276) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x4200C2CE:0x3FC960E0 0x4200C6E4:0x3FC96100 0x40376F3D:0x3FC96130 0x400559DD:0x3FC9B180 0x4037BDA2:0x3FC9B190 0x40377CFF:0x3FC9B1B0 0x40377DBD:0x3FC9B1E0 0x40378C9A:0x3FC9B200 0x40378CCD:0x3FC9B220 0x42009979:0x3FC9B240 0x42009BFF:0x3FC9B290 0x42009D8D:0x3FC9B2C0 0x4201702C:0x3FC9B390 0x4037BA41:0x3FC9B3C0
+
+[0;32mI (35356) adxl345_test: sample=28050 | raw [   -33    185   -134] | acceleration [-0.129 0.721 -0.523 g][0m
+[0;32mI (35416) adxl345_test: sample=28100 | raw [  -107    184   -125] | acceleration [-0.417 0.718 -0.487 g][0m
+[0;32mI (35476) adxl345_test: sample=28150 | raw [  -130    215    -76] | acceleration [-0.507 0.838 -0.296 g][0m
+[0;32mI (35546) adxl345_test: sample=28200 | raw [  -107    184     33] | acceleration [-0.417 0.718 0.129 g][0m
+[0;32mI (35606) adxl345_test: sample=28250 | raw [  -200    296     15] | acceleration [-0.780 1.154 0.058 g][0m
+[0;32mI (35666) adxl345_test: sample=28300 | raw [  -120    237    114] | acceleration [-0.468 0.924 0.445 g][0m
+[0;32mI (35726) adxl345_test: sample=28350 | raw [  -201    -19   -146] | acceleration [-0.784 -0.074 -0.569 g][0m
+[0;32mI (35796) adxl345_test: sample=28400 | raw [    -5    381    168] | acceleration [-0.019 1.486 0.655 g][0m
+[0;32mI (35856) adxl345_test: sample=28450 | raw [  -186    423   -179] | acceleration [-0.725 1.650 -0.698 g][0m
+[0;32mI (35916) adxl345_test: sample=28500 | raw [     4    173   -277] | acceleration [0.016 0.675 -1.080 g][0m
+[0;32mI (35976) adxl345_test: sample=28550 | raw [  -167    223    -23] | acceleration [-0.651 0.870 -0.090 g][0m
+[0;32mI (36046) adxl345_test: sample=28600 | raw [  -236    185    -17] | acceleration [-0.920 0.721 -0.066 g][0m
+[0;32mI (36106) adxl345_test: sample=28650 | raw [  -175     75      7] | acceleration [-0.683 0.292 0.027 g][0m
+[0;32mI (36166) adxl345_test: sample=28700 | raw [  -141    187     98] | acceleration [-0.550 0.729 0.382 g][0m
+[0;32mI (36226) adxl345_test: sample=28750 | raw [  -161    196    146] | acceleration [-0.628 0.764 0.569 g][0m
+[0;32mI (36296) adxl345_test: sample=28800 | raw [  -229    165   -211] | acceleration [-0.893 0.643 -0.823 g][0m
+[0;32mI (36356) adxl345_test: sample=28850 | raw [  -213     13    -94] | acceleration [-0.831 0.051 -0.367 g][0m
+[0;32mI (36416) adxl345_test: sample=28900 | raw [  -180   -123    -61] | acceleration [-0.702 -0.480 -0.238 g][0m
+[0;32mI (36476) adxl345_test: sample=28950 | raw [  -318    402   -293] | acceleration [-1.240 1.568 -1.143 g][0m
+[0;32mI (36546) adxl345_test: sample=29000 | raw [  -225     12      3] | acceleration [-0.877 0.047 0.012 g][0m
+[0;32mI (36606) adxl345_test: sample=29050 | raw [  -239   -558    431] | acceleration [-0.932 -2.176 1.681 g][0m
+[0;32mI (36666) adxl345_test: sample=29100 | raw [  -124   -269     91] | acceleration [-0.484 -1.049 0.355 g][0m
+[0;32mI (36726) adxl345_test: sample=29150 | raw [  -270   -310   -206] | acceleration [-1.053 -1.209 -0.803 g][0m
+[0;32mI (36796) adxl345_test: sample=29200 | raw [  -105    113     -8] | acceleration [-0.410 0.441 -0.031 g][0m
+[0;32mI (36856) adxl345_test: sample=29250 | raw [  -297     34   -178] | acceleration [-1.158 0.133 -0.694 g][0m
+[0;32mI (36916) adxl345_test: sample=29300 | raw [  -146    -78   -350] | acceleration [-0.569 -0.304 -1.365 g][0m
+[0;32mI (36976) adxl345_test: sample=29350 | raw [  -161    253    -32] | acceleration [-0.628 0.987 -0.125 g][0m
+[0;32mI (37046) adxl345_test: sample=29400 | raw [  -265    142   -109] | acceleration [-1.033 0.554 -0.425 g][0m
+[0;32mI (37106) adxl345_test: sample=29450 | raw [  -161   -648    405] | acceleration [-0.628 -2.527 1.579 g][0m
+[0;32mI (37166) adxl345_test: sample=29500 | raw [   -76    147     27] | acceleration [-0.296 0.573 0.105 g][0m
+[0;32mI (37226) adxl345_test: sample=29550 | raw [  -224    -61    -83] | acceleration [-0.874 -0.238 -0.324 g][0m
+[0;32mI (37296) adxl345_test: sample=29600 | raw [  -202    -56    -48] | acceleration [-0.788 -0.218 -0.187 g][0m
+[0;32mI (37356) adxl345_test: sample=29650 | raw [  -221     53     18] | acceleration [-0.862 0.207 0.070 g][0m
+[0;32mI (37416) adxl345_test: sample=29700 | raw [  -162    292    713] | acceleration [-0.632 1.139 2.781 g][0m
+[0;32mI (37476) adxl345_test: sample=29750 | raw [  -222     17   -107] | acceleration [-0.866 0.066 -0.417 g][0m
+[0;32mI (37546) adxl345_test: sample=29800 | raw [  -343   -104    149] | acceleration [-1.338 -0.406 0.581 g][0m
+[0;32mI (37606) adxl345_test: sample=29850 | raw [  -232    -39    108] | acceleration [-0.905 -0.152 0.421 g][0m
+[0;32mI (37666) adxl345_test: sample=29900 | raw [  -164    -74    183] | acceleration [-0.640 -0.289 0.714 g][0m
+[0;32mI (37726) adxl345_test: sample=29950 | raw [  -176    -88    136] | acceleration [-0.686 -0.343 0.530 g][0m
+[0;32mI (37796) adxl345_test: sample=30000 | raw [   -97    -99    202] | acceleration [-0.378 -0.386 0.788 g][0m
+[0;32mI (37856) adxl345_test: sample=30050 | raw [   -98    -45    261] | acceleration [-0.382 -0.175 1.018 g][0m
+[0;32mI (37916) adxl345_test: sample=30100 | raw [  -115     10    246] | acceleration [-0.448 0.039 0.959 g][0m
+[0;32mI (37976) adxl345_test: sample=30150 | raw [   -95     66    238] | acceleration [-0.370 0.257 0.928 g][0m
+[0;32mI (38046) adxl345_test: sample=30200 | raw [   -89     85    237] | acceleration [-0.347 0.331 0.924 g][0m
+[0;32mI (38106) adxl345_test: sample=30250 | raw [   -71     86    227] | acceleration [-0.277 0.335 0.885 g][0m
+[0;32mI (38166) adxl345_test: sample=30300 | raw [   -72    110    200] | acceleration [-0.281 0.429 0.780 g][0m
+[0;32mI (38226) adxl345_test: sample=30350 | raw [   -65    105    237] | acceleration [-0.253 0.410 0.924 g][0m
+[0;32mI (38296) adxl345_test: sample=30400 | raw [   -65    119    237] | acceleration [-0.253 0.464 0.924 g][0m
+[0;32mI (38356) adxl345_test: sample=30450 | raw [   -58    108    230] | acceleration [-0.226 0.421 0.897 g][0m
+[0;32mI (38416) adxl345_test: sample=30500 | raw [   -68    110    225] | acceleration [-0.265 0.429 0.877 g][0m
+[0;32mI (38476) adxl345_test: sample=30550 | raw [   -53     65    203] | acceleration [-0.207 0.253 0.792 g][0m
+[0;32mI (38546) adxl345_test: sample=30600 | raw [   -64    102    226] | acceleration [-0.250 0.398 0.881 g][0m
+[0;32mI (38606) adxl345_test: sample=30650 | raw [   -69     93    239] | acceleration [-0.269 0.363 0.932 g][0m
+[0;32mI (38666) adxl345_test: sample=30700 | raw [   -68     89    235] | acceleration [-0.265 0.347 0.916 g][0m
+[0;32mI (38726) adxl345_test: sample=30750 | raw [   -77     84    230] | acceleration [-0.300 0.328 0.897 g][0m
+[0;32mI (38796) adxl345_test: sample=30800 | raw [   -75     92    232] | acceleration [-0.292 0.359 0.905 g][0m
+[0;32mI (38856) adxl345_test: sample=30850 | raw [   -86     74    236] | acceleration [-0.335 0.289 0.920 g][0m
+[0;32mI (38916) adxl345_test: sample=30900 | raw [   -80     80    230] | acceleration [-0.312 0.312 0.897 g][0m
+[0;32mI (38976) adxl345_test: sample=30950 | raw [   -90     77    234] | acceleration [-0.351 0.300 0.913 g][0m
+[0;32mI (39046) adxl345_test: sample=31000 | raw [   -91     87    230] | acceleration [-0.355 0.339 0.897 g][0m
+[0;32mI (39106) adxl345_test: sample=31050 | raw [   -88     69    233] | acceleration [-0.343 0.269 0.909 g][0m
+[0;32mI (39166) adxl345_test: sample=31100 | raw [   -90     65    226] | acceleration [-0.351 0.253 0.881 g][0m
+[0;32mI (39226) adxl345_test: sample=31150 | raw [  -103      6    248] | acceleration [-0.402 0.023 0.967 g][0m
+[0;32mI (39296) adxl345_test: sample=31200 | raw [   -85     12    194] | acceleration [-0.331 0.047 0.757 g][0m
+[0;32mI (39356) adxl345_test: sample=31250 | raw [  -114    -23    215] | acceleration [-0.445 -0.090 0.838 g][0m
+[0;32mI (39416) adxl345_test: sample=31300 | raw [  -118    -82    228] | acceleration [-0.460 -0.320 0.889 g][0m
+[0;32mI (39476) adxl345_test: sample=31350 | raw [  -120     -6    230] | acceleration [-0.468 -0.023 0.897 g][0m
+[0;32mI (39546) adxl345_test: sample=31400 | raw [   -85     48    254] | acceleration [-0.331 0.187 0.991 g][0m
+[0;32mI (39606) adxl345_test: sample=31450 | raw [   -87     43    269] | acceleration [-0.339 0.168 1.049 g][0m
+[0;32mI (39666) adxl345_test: sample=31500 | raw [   -51     76    238] | acceleration [-0.199 0.296 0.928 g][0m
+[0;32mI (39726) adxl345_test: sample=31550 | raw [   -46     84    239] | acceleration [-0.179 0.328 0.932 g][0m
+[0;32mI (39796) adxl345_test: sample=31600 | raw [   -37    100    266] | acceleration [-0.144 0.390 1.037 g][0m
+[0;32mI (39856) adxl345_test: sample=31650 | raw [   -21    100    248] | acceleration [-0.082 0.390 0.967 g][0m
+[0;32mI (39916) adxl345_test: sample=31700 | raw [    -4     87    268] | acceleration [-0.016 0.339 1.045 g][0m
+[0;32mI (39976) adxl345_test: sample=31750 | raw [    21     70    274] | acceleration [0.082 0.273 1.069 g][0m
+[0;32mI (40046) adxl345_test: sample=31800 | raw [    17     -1    278] | acceleration [0.066 -0.004 1.084 g][0m
+[0;32mI (40106) adxl345_test: sample=31850 | raw [     9    -40    261] | acceleration [0.035 -0.156 1.018 g][0m
+[0;32mI (40166) adxl345_test: sample=31900 | raw [    14    -23    266] | acceleration [0.055 -0.090 1.037 g][0m
+[0;32mI (40226) adxl345_test: sample=31950 | raw [    10    -19    256] | acceleration [0.039 -0.074 0.998 g][0m
+[1;31mE (40276) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (40276) task_wdt:  - IDLE0 (CPU 0)[0m
+[1;31mE (40276) task_wdt: Tasks currently running:[0m
+[1;31mE (40276) task_wdt: CPU 0: main[0m
+[1;31mE (40276) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (40276) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x4200C2CE:0x3FC960E0 0x4200C6E4:0x3FC96100 0x40376F3D:0x3FC96130 0x40377C95:0x3FC9B1E0 0x40378C9A:0x3FC9B200 0x40378CCD:0x3FC9B220 0x42009979:0x3FC9B240 0x42009BFF:0x3FC9B290 0x42009D8D:0x3FC9B2C0 0x4201702C:0x3FC9B390 0x4037BA41:0x3FC9B3C0
+
+[0;32mI (40316) adxl345_test: sample=32000 | raw [     9    -17    256] | acceleration [0.035 -0.066 0.998 g][0m
+[0;32mI (40356) adxl345_test: sample=32050 | raw [     6    -26    254] | acceleration [0.023 -0.101 0.991 g][0m
+[0;32mI (40416) adxl345_test: sample=32100 | raw [     7    -17    263] | acceleration [0.027 -0.066 1.026 g][0m
+[0;32mI (40476) adxl345_test: sample=32150 | raw [    10    -25    252] | acceleration [0.039 -0.097 0.983 g][0m
+[0;32mI (40546) adxl345_test: sample=32200 | raw [    10    -26    267] | acceleration [0.039 -0.101 1.041 g][0m
+[0;32mI (40606) adxl345_test: sample=32250 | raw [    14    -10    254] | acceleration [0.055 -0.039 0.991 g][0m
+[0;32mI (40666) adxl345_test: sample=32300 | raw [    19     -6    262] | acceleration [0.074 -0.023 1.022 g][0m
+[0;32mI (40726) adxl345_test: sample=32350 | raw [    28      6    255] | acceleration [0.109 0.023 0.994 g][0m
+[0;32mI (40796) adxl345_test: sample=32400 | raw [    24     -6    287] | acceleration [0.094 -0.023 1.119 g][0m
+[0;32mI (40856) adxl345_test: sample=32450 | raw [    26     20    224] | acceleration [0.101 0.078 0.874 g][0m
+[0;32mI (40916) adxl345_test: sample=32500 | raw [   -63     53    223] | acceleration [-0.246 0.207 0.870 g][0m
+[0;32mI (40976) adxl345_test: sample=32550 | raw [   -39    -18    243] | acceleration [-0.152 -0.070 0.948 g][0m
+[0;32mI (41046) adxl345_test: sample=32600 | raw [   -46    -37    258] | acceleration [-0.179 -0.144 1.006 g][0m
+[0;32mI (41106) adxl345_test: sample=32650 | raw [   -37    -62    275] | acceleration [-0.144 -0.242 1.072 g][0m
+[0;32mI (41166) adxl345_test: sample=32700 | raw [    11    -43    289] | acceleration [0.043 -0.168 1.127 g][0m
+[0;32mI (41226) adxl345_test: sample=32750 | raw [    -7    -42    290] | acceleration [-0.027 -0.164 1.131 g][0m
+[0;32mI (41296) adxl345_test: sample=32800 | raw [    12    -40    245] | acceleration [0.047 -0.156 0.955 g][0m
+[0;32mI (41356) adxl345_test: sample=32850 | raw [    32     -1    250] | acceleration [0.125 -0.004 0.975 g][0m
+[0;32mI (41416) adxl345_test: sample=32900 | raw [    12    -24    234] | acceleration [0.047 -0.094 0.913 g][0m
+[0;32mI (41476) adxl345_test: sample=32950 | raw [    11    -25    272] | acceleration [0.043 -0.097 1.061 g][0m
+[0;32mI (41546) adxl345_test: sample=33000 | raw [    29    -11    238] | acceleration [0.113 -0.043 0.928 g][0m
+[0;32mI (41606) adxl345_test: sample=33050 | raw [     1    -34    259] | acceleration [0.004 -0.133 1.010 g][0m
+[0;32mI (41666) adxl345_test: sample=33100 | raw [     5    -18    252] | acceleration [0.019 -0.070 0.983 g][0m
+[0;32mI (41726) adxl345_test: sample=33150 | raw [    12    -20    260] | acceleration [0.047 -0.078 1.014 g][0m
+[0;32mI (41796) adxl345_test: sample=33200 | raw [     5    -19    253] | acceleration [0.019 -0.074 0.987 g][0m
+[0;32mI (41856) adxl345_test: sample=33250 | raw [    14    -21    263] | acceleration [0.055 -0.082 1.026 g][0m
+[0;32mI (41916) adxl345_test: sample=33300 | raw [     9    -30    258] | acceleration [0.035 -0.117 1.006 g][0m
+[0;32mI (41976) adxl345_test: sample=33350 | raw [    10    -28    258] | acceleration [0.039 -0.109 1.006 g][0m
+[0;32mI (42046) adxl345_test: sample=33400 | raw [    22    -19    270] | acceleration [0.086 -0.074 1.053 g][0m
+[0;32mI (42106) adxl345_test: sample=33450 | raw [    15    -21    266] | acceleration [0.058 -0.082 1.037 g][0m
+[0;32mI (42166) adxl345_test: sample=33500 | raw [     1    -20    245] | acceleration [0.004 -0.078 0.955 g][0m
+[0;32mI (42226) adxl345_test: sample=33550 | raw [    17    -33    278] | acceleration [0.066 -0.129 1.084 g][0m
+[0;32mI (42296) adxl345_test: sample=33600 | raw [    -9    -90    275] | acceleration [-0.035 -0.351 1.072 g][0m
+[0;32mI (42356) adxl345_test: sample=33650 | raw [   -17   -126    213] | acceleration [-0.066 -0.491 0.831 g][0m
+[0;32mI (42416) adxl345_test: sample=33700 | raw [   -42   -268    161] | acceleration [-0.164 -1.045 0.628 g][0m
+[0;32mI (42476) adxl345_test: sample=33750 | raw [  -149   -144     26] | acceleration [-0.581 -0.562 0.101 g][0m
+[0;32mI (42546) adxl345_test: sample=33800 | raw [  -113   -215    -54] | acceleration [-0.441 -0.838 -0.211 g][0m
+[0;32mI (42606) adxl345_test: sample=33850 | raw [  -113    130     54] | acceleration [-0.441 0.507 0.211 g][0m
+[0;32mI (42666) adxl345_test: sample=33900 | raw [  -144     -7   -246] | acceleration [-0.562 -0.027 -0.959 g][0m
+[0;32mI (42726) adxl345_test: sample=33950 | raw [  -113     57   -114] | acceleration [-0.441 0.222 -0.445 g][0m
+[0;32mI (42796) adxl345_test: sample=34000 | raw [   -98     53   -248] | acceleration [-0.382 0.207 -0.967 g][0m
+[0;32mI (42856) adxl345_test: sample=34050 | raw [   -85     76   -243] | acceleration [-0.331 0.296 -0.948 g][0m
+[0;32mI (42916) adxl345_test: sample=34100 | raw [   -55     35   -226] | acceleration [-0.214 0.137 -0.881 g][0m
+[0;32mI (42976) adxl345_test: sample=34150 | raw [   -35    -15   -220] | acceleration [-0.137 -0.058 -0.858 g][0m
+[0;32mI (43046) adxl345_test: sample=34200 | raw [   -31     27   -249] | acceleration [-0.121 0.105 -0.971 g][0m
+[0;32mI (43106) adxl345_test: sample=34250 | raw [   -31     11   -225] | acceleration [-0.121 0.043 -0.877 g][0m
+[0;32mI (43166) adxl345_test: sample=34300 | raw [   -20     21   -245] | acceleration [-0.078 0.082 -0.955 g][0m
+[0;32mI (43226) adxl345_test: sample=34350 | raw [   -22     16   -257] | acceleration [-0.086 0.062 -1.002 g][0m
+[0;32mI (43296) adxl345_test: sample=34400 | raw [   -17     10   -244] | acceleration [-0.066 0.039 -0.952 g][0m
+[0;32mI (43356) adxl345_test: sample=34450 | raw [    -6     17   -233] | acceleration [-0.023 0.066 -0.909 g][0m
+[0;32mI (43416) adxl345_test: sample=34500 | raw [   -16      8   -244] | acceleration [-0.062 0.031 -0.952 g][0m
+[0;32mI (43476) adxl345_test: sample=34550 | raw [   -17     12   -236] | acceleration [-0.066 0.047 -0.920 g][0m
+[0;32mI (43546) adxl345_test: sample=34600 | raw [   -13     12   -243] | acceleration [-0.051 0.047 -0.948 g][0m
+[0;32mI (43606) adxl345_test: sample=34650 | raw [    -8     14   -250] | acceleration [-0.031 0.055 -0.975 g][0m
+[0;32mI (43666) adxl345_test: sample=34700 | raw [   -15      3   -234] | acceleration [-0.058 0.012 -0.913 g][0m
+[0;32mI (43726) adxl345_test: sample=34750 | raw [   -24      5   -220] | acceleration [-0.094 0.019 -0.858 g][0m
+[0;32mI (43796) adxl345_test: sample=34800 | raw [   -28    -21   -261] | acceleration [-0.109 -0.082 -1.018 g][0m
+[0;32mI (43856) adxl345_test: sample=34850 | raw [   -24    -24   -201] | acceleration [-0.094 -0.094 -0.784 g][0m
+[0;32mI (43916) adxl345_test: sample=34900 | raw [    -4    -65   -251] | acceleration [-0.016 -0.253 -0.979 g][0m
+[0;32mI (43976) adxl345_test: sample=34950 | raw [   -28    -87   -212] | acceleration [-0.109 -0.339 -0.827 g][0m
+[0;32mI (44046) adxl345_test: sample=35000 | raw [   -19   -170   -207] | acceleration [-0.074 -0.663 -0.807 g][0m
+[0;32mI (44106) adxl345_test: sample=35050 | raw [   -29   -228   -150] | acceleration [-0.113 -0.889 -0.585 g][0m
+[0;32mI (44166) adxl345_test: sample=35100 | raw [   -56   -194     71] | acceleration [-0.218 -0.757 0.277 g][0m
+[0;32mI (44226) adxl345_test: sample=35150 | raw [   -83   -188     84] | acceleration [-0.324 -0.733 0.328 g][0m
+[0;32mI (44296) adxl345_test: sample=35200 | raw [  -106   -285     99] | acceleration [-0.413 -1.112 0.386 g][0m
+[0;32mI (44356) adxl345_test: sample=35250 | raw [   -62     -1    291] | acceleration [-0.242 -0.004 1.135 g][0m
+[0;32mI (44416) adxl345_test: sample=35300 | raw [   -32    206      0] | acceleration [-0.125 0.803 0.000 g][0m
+[0;32mI (44476) adxl345_test: sample=35350 | raw [   -60    157     24] | acceleration [-0.234 0.612 0.094 g][0m
+[0;32mI (44546) adxl345_test: sample=35400 | raw [    52    212    -76] | acceleration [0.203 0.827 -0.296 g][0m
+[0;32mI (44606) adxl345_test: sample=35450 | raw [     4    132   -156] | acceleration [0.016 0.515 -0.608 g][0m
+[0;32mI (44666) adxl345_test: sample=35500 | raw [    28    135   -260] | acceleration [0.109 0.526 -1.014 g][0m
+[0;32mI (44726) adxl345_test: sample=35550 | raw [    31    117   -261] | acceleration [0.121 0.456 -1.018 g][0m
+[0;32mI (44796) adxl345_test: sample=35600 | raw [    -3    121   -251] | acceleration [-0.012 0.472 -0.979 g][0m
+[0;32mI (44856) adxl345_test: sample=35650 | raw [    44    111   -200] | acceleration [0.172 0.433 -0.780 g][0m
+[0;32mI (44916) adxl345_test: sample=35700 | raw [   -63     31   -220] | acceleration [-0.246 0.121 -0.858 g][0m
+[0;32mI (44976) adxl345_test: sample=35750 | raw [  -105     61   -277] | acceleration [-0.410 0.238 -1.080 g][0m
+[0;32mI (45046) adxl345_test: sample=35800 | raw [    13    -35   -229] | acceleration [0.051 -0.137 -0.893 g][0m
+[0;32mI (45106) adxl345_test: sample=35850 | raw [    -9    -46   -177] | acceleration [-0.035 -0.179 -0.690 g][0m
+[0;32mI (45166) adxl345_test: sample=35900 | raw [   -32     32   -271] | acceleration [-0.125 0.125 -1.057 g][0m
+[0;32mI (45226) adxl345_test: sample=35950 | raw [   -19    -36   -205] | acceleration [-0.074 -0.140 -0.799 g][0m
+[1;31mE (45276) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (45276) task_wdt:  - IDLE0 (CPU 0)[0m
+[1;31mE (45276) task_wdt: Tasks currently running:[0m
+[1;31mE (45276) task_wdt: CPU 0: main[0m
+[1;31mE (45276) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (45276) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x4200C2CE:0x3FC960E0 0x4200C6E4:0x3FC96100 0x40376F3D:0x3FC96130 0x40377FCD:0x3FC9B1E0 0x40378C75:0x3FC9B200 0x40378CCD:0x3FC9B220 0x42009979:0x3FC9B240 0x42009BFF:0x3FC9B290 0x42009D8D:0x3FC9B2C0 0x4201702C:0x3FC9B390 0x4037BA41:0x3FC9B3C0
+
+[0;32mI (45316) adxl345_test: sample=36000 | raw [   -31    -49   -261] | acceleration [-0.121 -0.191 -1.018 g][0m
+[0;32mI (45356) adxl345_test: sample=36050 | raw [    -9    -30   -222] | acceleration [-0.035 -0.117 -0.866 g][0m
+[0;32mI (45416) adxl345_test: sample=36100 | raw [    -9      9   -257] | acceleration [-0.035 0.035 -1.002 g][0m
+[0;32mI (45476) adxl345_test: sample=36150 | raw [   -10     24   -167] | acceleration [-0.039 0.094 -0.651 g][0m
+[0;32mI (45546) adxl345_test: sample=36200 | raw [    58     94   -250] | acceleration [0.226 0.367 -0.975 g][0m
+[0;32mI (45606) adxl345_test: sample=36250 | raw [    22    108   -135] | acceleration [0.086 0.421 -0.526 g][0m
+[0;32mI (45666) adxl345_test: sample=36300 | raw [   166     48    -98] | acceleration [0.647 0.187 -0.382 g][0m
+[0;32mI (45726) adxl345_test: sample=36350 | raw [   152    158   -195] | acceleration [0.593 0.616 -0.760 g][0m
+[0;32mI (45796) adxl345_test: sample=36400 | raw [    35    127   -247] | acceleration [0.137 0.495 -0.963 g][0m
+[0;32mI (45856) adxl345_test: sample=36450 | raw [   130    191   -201] | acceleration [0.507 0.745 -0.784 g][0m
+[0;32mI (45916) adxl345_test: sample=36500 | raw [   142    254    -41] | acceleration [0.554 0.991 -0.160 g][0m
+[0;32mI (45976) adxl345_test: sample=36550 | raw [   259    201   -121] | acceleration [1.010 0.784 -0.472 g][0m
+[0;32mI (46046) adxl345_test: sample=36600 | raw [   349    244      9] | acceleration [1.361 0.952 0.035 g][0m
+[0;32mI (46106) adxl345_test: sample=36650 | raw [   541    191   -531] | acceleration [2.110 0.745 -2.071 g][0m
+[0;32mI (46166) adxl345_test: sample=36700 | raw [    56    181    313] | acceleration [0.218 0.706 1.221 g][0m
+[0;32mI (46226) adxl345_test: sample=36750 | raw [    41    148    235] | acceleration [0.160 0.577 0.916 g][0m
+[0;32mI (46296) adxl345_test: sample=36800 | raw [    98    191    192] | acceleration [0.382 0.745 0.749 g][0m
+[0;32mI (46356) adxl345_test: sample=36850 | raw [    55    130    203] | acceleration [0.214 0.507 0.792 g][0m
+[0;32mI (46416) adxl345_test: sample=36900 | raw [   136    103    197] | acceleration [0.530 0.402 0.768 g][0m
+[0;32mI (46476) adxl345_test: sample=36950 | raw [   112    -24     64] | acceleration [0.437 -0.094 0.250 g][0m
+[0;32mI (46546) adxl345_test: sample=37000 | raw [    81    -63     48] | acceleration [0.316 -0.246 0.187 g][0m
+[0;32mI (46606) adxl345_test: sample=37050 | raw [    10   -259    193] | acceleration [0.039 -1.010 0.753 g][0m
+[0;32mI (46666) adxl345_test: sample=37100 | raw [   111    -79    303] | acceleration [0.433 -0.308 1.182 g][0m
+[0;32mI (46726) adxl345_test: sample=37150 | raw [    80   -169    193] | acceleration [0.312 -0.659 0.753 g][0m
+[0;32mI (46796) adxl345_test: sample=37200 | raw [   140    -74    247] | acceleration [0.546 -0.289 0.963 g][0m
+[0;32mI (46856) adxl345_test: sample=37250 | raw [   110    -96    233] | acceleration [0.429 -0.374 0.909 g][0m
+[0;32mI (46916) adxl345_test: sample=37300 | raw [    92    -85    258] | acceleration [0.359 -0.331 1.006 g][0m
+[0;32mI (46976) adxl345_test: sample=37350 | raw [    92    -85    234] | acceleration [0.359 -0.331 0.913 g][0m
+[0;32mI (47046) adxl345_test: sample=37400 | raw [   100    -56    243] | acceleration [0.390 -0.218 0.948 g][0m
+[0;32mI (47106) adxl345_test: sample=37450 | raw [    89    -55    243] | acceleration [0.347 -0.214 0.948 g][0m
+[0;32mI (47166) adxl345_test: sample=37500 | raw [    75    -61    223] | acceleration [0.292 -0.238 0.870 g][0m

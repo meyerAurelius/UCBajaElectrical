@@ -1,0 +1,150 @@
+Command: C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:\Espressif\frameworks\esp-idf-v5.5.3\tools/idf_monitor.py -p COM15 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 C:\Users\marcu\baja\repos\UCBajaElectrical\distributed_accel\build\adxl345_spi_test.elf C:\Users\marcu\baja\repos\UCBajaElectrical\distributed_accel\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'C:\Espressif\frameworks\esp-idf-v5.5.3\tools\idf.py'
+[0;33m--- Warning: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM15 instead...[0m
+[0;33m--- esp-idf-monitor 1.9.0 on \\.\COM15 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0m--- 0x4037c66e: [0;33mprvSelectHighestPriorityTaskSMP[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m3631[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c8924: [0;33mcall_start_cpu0[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x4200c2ce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x4200c6e4: [0;33mtask_wdt_isr[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40376f3d: [0;33m_xt_lowint1[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x400559dd: [0;33m_xtos_set_intlevel[0m[0m in [0;32mROM[0m
+[0m--- 0x4037bbb5: [0;33mvPortClearInterruptMaskFromISR[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h[0m[0m:[1;31m560[0m
+[0m--- (inlined by) [0;33mxPortInIsrContext[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m451[0m
+[0m--- 0x40377ca1: [0;33mxPortEnterCriticalTimeoutSafe[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h[0m[0m:[1;31m578[0m
+[0m--- (inlined by) [0;33mvPortEnterCriticalSafe[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h[0m[0m:[1;31m588[0m
+[0m--- (inlined by) [0;33macquire_end_core[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/esp_hw_support/spi_bus_lock.c[0m[0m:[1;31m454[0m
+[0m--- 0x40377dbd: [0;33mspi_bus_lock_acquire_end[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/esp_hw_support/spi_bus_lock.c[0m[0m:[1;31m757[0m
+[0m--- 0x40378c9a: [0;33mspi_device_polling_end[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/esp_driver_spi/src/gpspi/spi_master.c[0m[0m:[1;31m1492[0m
+[0m--- 0x40378ccd: [0;33mspi_device_polling_transmit[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/esp_driver_spi/src/gpspi/spi_master.c[0m[0m:[1;31m1506[0m
+[0m--- 0x42009979: [0;33madxl345_transfer[0m[0m at [0;32mC:/Users/marcu/baja/repos/UCBajaElectrical/distributed_accel/main/adxl345_test.c[0m[0m:[1;31m67[0m
+[0m--- 0x42009bff: [0;33madxl345_read_sample[0m[0m at [0;32mC:/Users/marcu/baja/repos/UCBajaElectrical/distributed_accel/main/adxl345_test.c[0m[0m:[1;31m97[0m
+[0m--- 0x42009d8d: [0;33mapp_main[0m[0m at [0;32mC:/Users/marcu/baja/repos/UCBajaElectrical/distributed_accel/main/adxl345_test.c[0m[0m:[1;31m200[0m
+[0m--- 0x4201702c: [0;33mmain_task[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/app_startup.c[0m[0m:[1;31m208[0m
+[0m--- 0x4037ba41: [0;33mvPortTaskWrapper[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x4200c2ce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x4200c6e4: [0;33mtask_wdt_isr[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40376f3d: [0;33m_xt_lowint1[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40381145: [0;33mmulti_heap_free_impl[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/heap/multi_heap.c[0m[0m:[1;31m241[0m
+[0m--- 0x40375e42: [0;33mheap_caps_free[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/heap/heap_caps_base.c[0m[0m:[1;31m86[0m
+[0m--- 0x403828e1: [0;33mfree[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/newlib/src/heap.c[0m[0m:[1;31m34[0m
+[0m--- 0x40377fcd: [0;33muninstall_priv_desc[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/esp_driver_spi/src/gpspi/spi_master.c[0m[0m:[1;31m1175[0m
+[0m--- 0x40378c75: [0;33mspi_device_polling_end[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/esp_driver_spi/src/gpspi/spi_master.c[0m[0m:[1;31m1484[0m
+[0m--- 0x40378ccd: [0;33mspi_device_polling_transmit[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/esp_driver_spi/src/gpspi/spi_master.c[0m[0m:[1;31m1506[0m
+[0m--- 0x42009979: [0;33madxl345_transfer[0m[0m at [0;32mC:/Users/marcu/baja/repos/UCBajaElectrical/distributed_accel/main/adxl345_test.c[0m[0m:[1;31m67[0m
+[0m--- 0x42009bff: [0;33madxl345_read_sample[0m[0m at [0;32mC:/Users/marcu/baja/repos/UCBajaElectrical/distributed_accel/main/adxl345_test.c[0m[0m:[1;31m97[0m
+[0m--- 0x42009d8d: [0;33mapp_main[0m[0m at [0;32mC:/Users/marcu/baja/repos/UCBajaElectrical/distributed_accel/main/adxl345_test.c[0m[0m:[1;31m200[0m
+[0m--- 0x4201702c: [0;33mmain_task[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/app_startup.c[0m[0m:[1;31m208[0m
+[0m--- 0x4037ba41: [0;33mvPortTaskWrapper[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x4200c2ce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x4200c6e4: [0;33mtask_wdt_isr[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40376f3d: [0;33m_xt_lowint1[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x400559dd: [0;33m_xtos_set_intlevel[0m[0m in [0;32mROM[0m
+[0m--- 0x4037bda2: [0;33mvPortClearInterruptMaskFromISR[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h[0m[0m:[1;31m560[0m
+[0m--- (inlined by) [0;33mvPortExitCritical[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m514[0m
+[0m--- 0x40381196: [0;33mvPortExitCriticalSafe[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h[0m[0m:[1;31m596[0m
+[0m--- (inlined by) [0;33mmulti_heap_internal_unlock[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/heap/multi_heap.c[0m[0m:[1;31m176[0m
+[0m--- 0x40381145: [0;33mmulti_heap_free_impl[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/heap/multi_heap.c[0m[0m:[1;31m241[0m
+[0m--- 0x40375e42: [0;33mheap_caps_free[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/heap/heap_caps_base.c[0m[0m:[1;31m86[0m
+[0m--- 0x403828e1: [0;33mfree[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/newlib/src/heap.c[0m[0m:[1;31m34[0m
+[0m--- 0x40377fcd: [0;33muninstall_priv_desc[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/esp_driver_spi/src/gpspi/spi_master.c[0m[0m:[1;31m1175[0m
+[0m--- 0x40378c75: [0;33mspi_device_polling_end[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/esp_driver_spi/src/gpspi/spi_master.c[0m[0m:[1;31m1484[0m
+[0m--- 0x40378ccd: [0;33mspi_device_polling_transmit[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/esp_driver_spi/src/gpspi/spi_master.c[0m[0m:[1;31m1506[0m
+[0m--- 0x42009979: [0;33madxl345_transfer[0m[0m at [0;32mC:/Users/marcu/baja/repos/UCBajaElectrical/distributed_accel/main/adxl345_test.c[0m[0m:[1;31m67[0m
+[0m--- 0x42009bff: [0;33madxl345_read_sample[0m[0m at [0;32mC:/Users/marcu/baja/repos/UCBajaElectrical/distributed_accel/main/adxl345_test.c[0m[0m:[1;31m97[0m
+[0m--- 0x42009d8d: [0;33mapp_main[0m[0m at [0;32mC:/Users/marcu/baja/repos/UCBajaElectrical/distributed_accel/main/adxl345_test.c[0m[0m:[1;31m200[0m
+[0m--- 0x4201702c: [0;33mmain_task[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/app_startup.c[0m[0m:[1;31m208[0m
+[0m--- 0x4037ba41: [0;33mvPortTaskWrapper[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x4200c2ce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x4200c6e4: [0;33mtask_wdt_isr[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40376f3d: [0;33m_xt_lowint1[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x400559dd: [0;33m_xtos_set_intlevel[0m[0m in [0;32mROM[0m
+[0m--- 0x4037bbb5: [0;33mvPortClearInterruptMaskFromISR[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h[0m[0m:[1;31m560[0m
+[0m--- (inlined by) [0;33mxPortInIsrContext[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m451[0m
+[0m--- 0x40377ca1: [0;33mxPortEnterCriticalTimeoutSafe[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h[0m[0m:[1;31m578[0m
+[0m--- (inlined by) [0;33mvPortEnterCriticalSafe[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h[0m[0m:[1;31m588[0m
+[0m--- (inlined by) [0;33macquire_end_core[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/esp_hw_support/spi_bus_lock.c[0m[0m:[1;31m454[0m
+[0m--- 0x40377dbd: [0;33mspi_bus_lock_acquire_end[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/esp_hw_support/spi_bus_lock.c[0m[0m:[1;31m757[0m
+[0m--- 0x40378c9a: [0;33mspi_device_polling_end[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/esp_driver_spi/src/gpspi/spi_master.c[0m[0m:[1;31m1492[0m
+[0m--- 0x40378ccd: [0;33mspi_device_polling_transmit[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/esp_driver_spi/src/gpspi/spi_master.c[0m[0m:[1;31m1506[0m
+[0m--- 0x42009979: [0;33madxl345_transfer[0m[0m at [0;32mC:/Users/marcu/baja/repos/UCBajaElectrical/distributed_accel/main/adxl345_test.c[0m[0m:[1;31m67[0m
+[0m--- 0x42009bff: [0;33madxl345_read_sample[0m[0m at [0;32mC:/Users/marcu/baja/repos/UCBajaElectrical/distributed_accel/main/adxl345_test.c[0m[0m:[1;31m97[0m
+[0m--- 0x42009d8d: [0;33mapp_main[0m[0m at [0;32mC:/Users/marcu/baja/repos/UCBajaElectrical/distributed_accel/main/adxl345_test.c[0m[0m:[1;31m200[0m
+[0m--- 0x4201702c: [0;33mmain_task[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/app_startup.c[0m[0m:[1;31m208[0m
+[0m--- 0x4037ba41: [0;33mvPortTaskWrapper[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x4200c2ce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x4200c6e4: [0;33mtask_wdt_isr[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40376f3d: [0;33m_xt_lowint1[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x400559dd: [0;33m_xtos_set_intlevel[0m[0m in [0;32mROM[0m
+[0m--- 0x4037bbb5: [0;33mvPortClearInterruptMaskFromISR[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h[0m[0m:[1;31m560[0m
+[0m--- (inlined by) [0;33mxPortInIsrContext[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m451[0m
+[0m--- 0x40377ca1: [0;33mxPortEnterCriticalTimeoutSafe[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h[0m[0m:[1;31m578[0m
+[0m--- (inlined by) [0;33mvPortEnterCriticalSafe[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h[0m[0m:[1;31m588[0m
+[0m--- (inlined by) [0;33macquire_end_core[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/esp_hw_support/spi_bus_lock.c[0m[0m:[1;31m454[0m
+[0m--- 0x40377dbd: [0;33mspi_bus_lock_acquire_end[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/esp_hw_support/spi_bus_lock.c[0m[0m:[1;31m757[0m
+[0m--- 0x40378c9a: [0;33mspi_device_polling_end[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/esp_driver_spi/src/gpspi/spi_master.c[0m[0m:[1;31m1492[0m
+[0m--- 0x40378ccd: [0;33mspi_device_polling_transmit[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/esp_driver_spi/src/gpspi/spi_master.c[0m[0m:[1;31m1506[0m
+[0m--- 0x42009979: [0;33madxl345_transfer[0m[0m at [0;32mC:/Users/marcu/baja/repos/UCBajaElectrical/distributed_accel/main/adxl345_test.c[0m[0m:[1;31m67[0m
+[0m--- 0x42009bff: [0;33madxl345_read_sample[0m[0m at [0;32mC:/Users/marcu/baja/repos/UCBajaElectrical/distributed_accel/main/adxl345_test.c[0m[0m:[1;31m97[0m
+[0m--- 0x42009d8d: [0;33mapp_main[0m[0m at [0;32mC:/Users/marcu/baja/repos/UCBajaElectrical/distributed_accel/main/adxl345_test.c[0m[0m:[1;31m200[0m
+[0m--- 0x4201702c: [0;33mmain_task[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/app_startup.c[0m[0m:[1;31m208[0m
+[0m--- 0x4037ba41: [0;33mvPortTaskWrapper[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x4200c2ce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x4200c6e4: [0;33mtask_wdt_isr[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40376f3d: [0;33m_xt_lowint1[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x400559dd: [0;33m_xtos_set_intlevel[0m[0m in [0;32mROM[0m
+[0m--- 0x4037bda2: [0;33mvPortClearInterruptMaskFromISR[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h[0m[0m:[1;31m560[0m
+[0m--- (inlined by) [0;33mvPortExitCritical[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m514[0m
+[0m--- 0x40381196: [0;33mvPortExitCriticalSafe[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h[0m[0m:[1;31m596[0m
+[0m--- (inlined by) [0;33mmulti_heap_internal_unlock[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/heap/multi_heap.c[0m[0m:[1;31m176[0m
+[0m--- 0x40381145: [0;33mmulti_heap_free_impl[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/heap/multi_heap.c[0m[0m:[1;31m241[0m
+[0m--- 0x40375e42: [0;33mheap_caps_free[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/heap/heap_caps_base.c[0m[0m:[1;31m86[0m
+[0m--- 0x403828e1: [0;33mfree[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/newlib/src/heap.c[0m[0m:[1;31m34[0m
+[0m--- 0x40377fcd: [0;33muninstall_priv_desc[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/esp_driver_spi/src/gpspi/spi_master.c[0m[0m:[1;31m1175[0m
+[0m--- 0x40378c75: [0;33mspi_device_polling_end[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/esp_driver_spi/src/gpspi/spi_master.c[0m[0m:[1;31m1484[0m
+[0m--- 0x40378ccd: [0;33mspi_device_polling_transmit[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/esp_driver_spi/src/gpspi/spi_master.c[0m[0m:[1;31m1506[0m
+[0m--- 0x42009979: [0;33madxl345_transfer[0m[0m at [0;32mC:/Users/marcu/baja/repos/UCBajaElectrical/distributed_accel/main/adxl345_test.c[0m[0m:[1;31m67[0m
+[0m--- 0x42009bff: [0;33madxl345_read_sample[0m[0m at [0;32mC:/Users/marcu/baja/repos/UCBajaElectrical/distributed_accel/main/adxl345_test.c[0m[0m:[1;31m97[0m
+[0m--- 0x42009d8d: [0;33mapp_main[0m[0m at [0;32mC:/Users/marcu/baja/repos/UCBajaElectrical/distributed_accel/main/adxl345_test.c[0m[0m:[1;31m200[0m
+[0m--- 0x4201702c: [0;33mmain_task[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/app_startup.c[0m[0m:[1;31m208[0m
+[0m--- 0x4037ba41: [0;33mvPortTaskWrapper[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x4200c2ce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x4200c6e4: [0;33mtask_wdt_isr[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40376f3d: [0;33m_xt_lowint1[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x400559dd: [0;33m_xtos_set_intlevel[0m[0m in [0;32mROM[0m
+[0m--- 0x4037bda2: [0;33mvPortClearInterruptMaskFromISR[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h[0m[0m:[1;31m560[0m
+[0m--- (inlined by) [0;33mvPortExitCritical[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m514[0m
+[0m--- 0x40377cff: [0;33mvPortExitCriticalSafe[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h[0m[0m:[1;31m596[0m
+[0m--- (inlined by) [0;33macquire_end_core[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/esp_hw_support/spi_bus_lock.c[0m[0m:[1;31m457[0m
+[0m--- 0x40377dbd: [0;33mspi_bus_lock_acquire_end[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/esp_hw_support/spi_bus_lock.c[0m[0m:[1;31m757[0m
+[0m--- 0x40378c9a: [0;33mspi_device_polling_end[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/esp_driver_spi/src/gpspi/spi_master.c[0m[0m:[1;31m1492[0m
+[0m--- 0x40378ccd: [0;33mspi_device_polling_transmit[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/esp_driver_spi/src/gpspi/spi_master.c[0m[0m:[1;31m1506[0m
+[0m--- 0x42009979: [0;33madxl345_transfer[0m[0m at [0;32mC:/Users/marcu/baja/repos/UCBajaElectrical/distributed_accel/main/adxl345_test.c[0m[0m:[1;31m67[0m
+[0m--- 0x42009bff: [0;33madxl345_read_sample[0m[0m at [0;32mC:/Users/marcu/baja/repos/UCBajaElectrical/distributed_accel/main/adxl345_test.c[0m[0m:[1;31m97[0m
+[0m--- 0x42009d8d: [0;33mapp_main[0m[0m at [0;32mC:/Users/marcu/baja/repos/UCBajaElectrical/distributed_accel/main/adxl345_test.c[0m[0m:[1;31m200[0m
+[0m--- 0x4201702c: [0;33mmain_task[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/app_startup.c[0m[0m:[1;31m208[0m
+[0m--- 0x4037ba41: [0;33mvPortTaskWrapper[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x4200c2ce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x4200c6e4: [0;33mtask_wdt_isr[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40376f3d: [0;33m_xt_lowint1[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40377c95: [0;33mbg_exit_core[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/esp_hw_support/spi_bus_lock.c[0m[0m:[1;31m550[0m
+[0m--- 0x40378c9a: [0;33mspi_device_polling_end[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/esp_driver_spi/src/gpspi/spi_master.c[0m[0m:[1;31m1492[0m
+[0m--- 0x40378ccd: [0;33mspi_device_polling_transmit[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/esp_driver_spi/src/gpspi/spi_master.c[0m[0m:[1;31m1506[0m
+[0m--- 0x42009979: [0;33madxl345_transfer[0m[0m at [0;32mC:/Users/marcu/baja/repos/UCBajaElectrical/distributed_accel/main/adxl345_test.c[0m[0m:[1;31m67[0m
+[0m--- 0x42009bff: [0;33madxl345_read_sample[0m[0m at [0;32mC:/Users/marcu/baja/repos/UCBajaElectrical/distributed_accel/main/adxl345_test.c[0m[0m:[1;31m97[0m
+[0m--- 0x42009d8d: [0;33mapp_main[0m[0m at [0;32mC:/Users/marcu/baja/repos/UCBajaElectrical/distributed_accel/main/adxl345_test.c[0m[0m:[1;31m200[0m
+[0m--- 0x4201702c: [0;33mmain_task[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/app_startup.c[0m[0m:[1;31m208[0m
+[0m--- 0x4037ba41: [0;33mvPortTaskWrapper[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x4200c2ce: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x4200c6e4: [0;33mtask_wdt_isr[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40376f3d: [0;33m_xt_lowint1[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40377fcd: [0;33muninstall_priv_desc[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/esp_driver_spi/src/gpspi/spi_master.c[0m[0m:[1;31m1175[0m
+[0m--- 0x40378c75: [0;33mspi_device_polling_end[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/esp_driver_spi/src/gpspi/spi_master.c[0m[0m:[1;31m1484[0m
+[0m--- 0x40378ccd: [0;33mspi_device_polling_transmit[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/esp_driver_spi/src/gpspi/spi_master.c[0m[0m:[1;31m1506[0m
+[0m--- 0x42009979: [0;33madxl345_transfer[0m[0m at [0;32mC:/Users/marcu/baja/repos/UCBajaElectrical/distributed_accel/main/adxl345_test.c[0m[0m:[1;31m67[0m
+[0m--- 0x42009bff: [0;33madxl345_read_sample[0m[0m at [0;32mC:/Users/marcu/baja/repos/UCBajaElectrical/distributed_accel/main/adxl345_test.c[0m[0m:[1;31m97[0m
+[0m--- 0x42009d8d: [0;33mapp_main[0m[0m at [0;32mC:/Users/marcu/baja/repos/UCBajaElectrical/distributed_accel/main/adxl345_test.c[0m[0m:[1;31m200[0m
+[0m--- 0x4201702c: [0;33mmain_task[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/app_startup.c[0m[0m:[1;31m208[0m
+[0m--- 0x4037ba41: [0;33mvPortTaskWrapper[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m
