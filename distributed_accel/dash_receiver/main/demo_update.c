@@ -157,7 +157,7 @@ static lv_obj_t *endurance_display(void) // gps speed + temperature
 
     lv_label_set_text(temp_label, temp_val);
     lv_obj_set_style_text_color(temp_label, lv_color_black(), LV_PART_MAIN);
-    lv_obj_set_style_text_font(temp_label, &lv_font_montserrat_22, 0);
+    lv_obj_set_style_text_font(temp_label, &lv_font_montserrat_14, 0);
 
     lv_obj_set_x(temp_label, 50);
     lv_obj_set_y(temp_label, 85);
@@ -206,7 +206,7 @@ static lv_obj_t *driver_display(void) // lap number, race time, brake pressure
     lap_time = lv_label_create(lv_obj_1);
     lv_label_set_text(lap_time, "00:00");
     lv_obj_align(lap_time, LV_ALIGN_TOP_MID, 0, 60);
-    lv_obj_set_style_text_font(lap_time, &lv_font_montserrat_30, 0);
+    lv_obj_set_style_text_font(lap_time, &lv_font_montserrat_14, 0);
     lv_obj_set_style_text_color(lap_time, lv_color_black(), LV_PART_MAIN);
 
     // lap number label
@@ -220,7 +220,7 @@ static lv_obj_t *driver_display(void) // lap number, race time, brake pressure
     lap_num = lv_label_create(lv_obj_1);
     lv_label_set_text(lap_num, "lap #");
     lv_obj_align(lap_num, LV_ALIGN_BOTTOM_LEFT, 30, -30);
-    lv_obj_set_style_text_font(lap_num, &lv_font_montserrat_22, 0);
+    lv_obj_set_style_text_font(lap_num, &lv_font_montserrat_14, 0);
     lv_obj_set_style_text_color(lap_num, lv_color_black(), LV_PART_MAIN);
 
     // brake pressure label
@@ -234,7 +234,7 @@ static lv_obj_t *driver_display(void) // lap number, race time, brake pressure
     brake_pressure = lv_label_create(lv_obj_1);
     lv_label_set_text(brake_pressure, "0000.00 PSI");
     lv_obj_align(brake_pressure, LV_ALIGN_BOTTOM_RIGHT, -30, -30);
-    lv_obj_set_style_text_font(brake_pressure, &lv_font_montserrat_22, 0);
+    lv_obj_set_style_text_font(brake_pressure, &lv_font_montserrat_14, 0);
     lv_obj_set_style_text_color(brake_pressure, lv_color_black(), LV_PART_MAIN);
 
     return lv_obj_1;
@@ -358,7 +358,7 @@ static void gui_task(void *arg)
                     char temp_val[16];
                     snprintf(temp_val, sizeof(temp_val), "%d °C", temp);
                     lv_label_set_text(temp_label, temp_val);
-                    lv_obj_set_style_text_font(temp_label, &lv_font_montserrat_30, 0);
+                    lv_obj_set_style_text_font(temp_label, &lv_font_montserrat_14, 0);
 
                     lv_slider_set_value(temp_slide, temp, LV_ANIM_OFF);
 

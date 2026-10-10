@@ -1,4 +1,4 @@
-idf_component_register(SRCS lcd.c demo_update.c images/engine-temp-light.c images/flag_icon.c images/pressure_icon.c
+idf_component_register(SRCS lcd.c testing_UI.c 
                     INCLUDE_DIRS "."
                     REQUIRES esp_lcd driver esp_timer esp_wifi nvs_flash esp_netif esp_system fatfs sdmmc
                     )
@@ -9,3 +9,13 @@ idf_component_register(SRCS lcd.c demo_update.c images/engine-temp-light.c image
 
 #removed for testing: espnow_example_main.c, demo.c
 #added for testing: demo_update.c, controller.c, flag_icon.c, pressure_icon.c
+
+
+#original: idf_component_register(SRCS lcd.c demo_update.c images/engine-temp-light.c images/flag_icon.c images/pressure_icon.c
+                    #INCLUDE_DIRS "."
+                    #REQUIRES esp_lcd driver esp_timer esp_wifi nvs_flash esp_netif esp_system fatfs sdmmc
+                    #)
+
+
+#changed for testing day UI: idf_component_register(SRCS lcd.c testing_UI.c ) 
+#everything else is the same
